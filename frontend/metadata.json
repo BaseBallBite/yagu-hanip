@@ -1,0 +1,6 @@
+{
+  "name": "야구한입 - 야구 초보자를 위한 AI 해설",
+  "description": "야구를 하나도 몰라도 🤔 왜? 한 번으로 방금 장면을 쉽게 이해하는 AI 야구 해설 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
