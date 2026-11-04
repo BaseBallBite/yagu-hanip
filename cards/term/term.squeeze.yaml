@@ -1,0 +1,26 @@
+id: term.squeeze
+kind: term
+title: 스퀴즈
+category: 주루
+one_liner: 3루 주자를 홈에 들여보내려고 번트를 대는 작전이에요.
+easy: '3루에 주자가 있을 때 타자가 번트를 대고, 3루 주자는 그 틈에 홈으로 뛰어 들어와요. 한 점이 꼭 필요한 접전 상황에서 많이 써요.
+
+  '
+example: '1사 3루에서 타자가 번트를 대자 3루 주자가 홈으로 뛰어 1점을 냈어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 71. SQUEEZE PLAY
+related:
+- term.bunt
+- term.sacrifice_bunt
+- term.rbi
+event_types:
+- SAC_BUNT
+aliases:
+- 스퀴즈 번트
+- 스퀴즈번트
+- 스퀴즈 플레이
+review_status: draft
+reviewer: ''

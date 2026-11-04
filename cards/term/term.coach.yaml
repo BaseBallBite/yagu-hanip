@@ -1,0 +1,23 @@
+id: term.coach
+kind: term
+title: 코치
+category: 경기 운영
+one_liner: 감독이 지명해 선수를 지도하는 유니폼을 입은 팀 구성원이에요.
+easy: 코치는 베이스 코치 역할이나 감독이 맡긴 일을 하는 유니폼 입은 팀 구성원이에요. KBO 경기에서는 코치를 최대 10명까지 벤치에 둘 수 있어요.
+example: 투수 코치가 마운드에 올라가 투수에게 이야기했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 19. COACH
+- name: KBO 리그 규정 2026
+  ref: 제14조 1항
+related:
+- term.manager
+- term.base_coach
+- term.dugout
+event_types: []
+aliases:
+- 투수코치
+- 타격코치
+- 수석코치
+review_status: draft
+reviewer: ''

@@ -1,0 +1,23 @@
+id: term.bases_loaded
+kind: term
+title: 만루
+category: 경기 운영
+one_liner: 1·2·3루에 모두 주자가 있는 상황이에요.
+easy: '1루, 2루, 3루가 모두 차 있으면 만루예요. 볼넷이나 몸에 맞는 공만 나와도 3루 주자가 밀려 들어와 점수가 나요. 수비는 어느 베이스에서든 포스 아웃을 노릴 수 있어요.
+
+  '
+example: '1사 만루에서 볼넷이 나와 3루 주자가 걸어서 홈에 들어왔어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.grand_slam
+- rule.base_on_balls
+- rule.force_play
+event_types: []
+aliases:
+- 베이스 만루
+- 풀베이스
+review_status: draft
+reviewer: ''

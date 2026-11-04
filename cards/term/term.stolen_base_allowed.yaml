@@ -1,0 +1,22 @@
+id: term.stolen_base_allowed
+kind: term
+title: 도루 허용·도루 저지
+category: 기록·통계
+one_liner: 수비 쪽에서 본 도루 기록이에요.
+easy: 수비(주로 포수) 입장에서 상대 도루를 막지 못한 게 도루 허용(SB)이고, 도루를 시도한 주자를 잡은 게 도루 저지(CS)예요. 저지 비율이 도루저지율이에요.
+example: 도루 시도 10번 중 4번 잡으면 도루 저지 4, 도루 허용 6이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: 공식야구규칙 9.07의 도루·도루 실패 정의를 수비 쪽에서 본 KBO 기록실 항목
+related:
+- term.stolen_base
+- term.caught_stealing
+- term.stolen_base_pct
+event_types: []
+aliases:
+- 도루허용
+- 도루 허용
+- 도루저지
+- 도루 저지
+review_status: draft
+reviewer: ''

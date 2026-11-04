@@ -1,0 +1,19 @@
+id: term.multi_hit
+kind: term
+title: 멀티히트
+category: 기록·통계
+one_liner: 한 경기에서 안타를 2개 이상 친 거예요.
+easy: 한 경기에서 한 타자가 안타를 두 개 이상 치면 멀티히트 경기예요. 한 시즌에 멀티히트를 몇 번 했는지는 KBO 기록실 타자 세부 항목으로 나와요.
+example: 4타수 2안타를 친 날은 멀티히트 경기예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 타자 세부 항목(MH). 공식야구규칙 9장에는 정의 없음
+related:
+- term.hit
+- term.batting_average
+event_types: []
+aliases:
+- 멀티 히트
+- 멀티히트 경기
+review_status: draft
+reviewer: ''

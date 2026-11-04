@@ -1,0 +1,26 @@
+id: term.innings_pitched
+kind: term
+title: 투구 이닝
+category: 기록·통계
+one_liner: 투수가 아웃을 잡은 수를 이닝으로 환산한 숫자예요.
+easy: 아웃 3개를 잡으면 1이닝, 아웃 1개는 ⅓이닝, 2개는 ⅔이닝으로 세요. 예를 들어 6이닝과 아웃 2개를 잡으면 6⅔이닝이에요. KBO는 평균자책점을 계산할 때 이 ⅓, ⅔도 그대로 넣어요.
+example: 선발 투수가 아웃 20개를 잡고 내려가면 투구 이닝은 6⅔이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(e) [부기]
+  note: KBO는 ⅓·⅔이닝까지 포함해 계산
+- name: 2026 KBO 연감 가이드북
+  note: 투수 기록표 '이닝'
+related:
+- term.era
+- term.whip
+- term.quality_start
+event_types: []
+aliases:
+- 투구횟수
+- 투구 횟수
+- 소화 이닝
+- 던진 이닝
+- 이닝 소화
+review_status: draft
+reviewer: ''

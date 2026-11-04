@@ -1,0 +1,32 @@
+id: rule.tag_up
+kind: rule
+title: 태그업
+category: 주루 규칙
+one_liner: 뜬공이 잡히면 주자는 원래 베이스를 다시 밟고 나서야 뛸 수 있어요.
+easy: '타자가 친 뜬공을 수비가 바로 잡으면, 주자는 공이 잡힌 뒤 자기가 있던 베이스를 다시 밟아야 해요. 다시 밟은 다음에는 다음 베이스로 뛸 수 있어요. 다시 밟지 않고 뛰었다면 수비가 공을 그 베이스로 보내 주자를 아웃시킬 수 있어요.
+
+  '
+example: '1사 3루에서 타자가 외야로 높은 뜬공을 쳤어요. 공이 잡히자 3루 주자가 3루를 밟고 출발해 홈에 들어왔어요.
+
+  '
+when:
+  outs: 무사 또는 1사
+  ball: 바로 잡힌 뜬공이나 직선타구
+source:
+- name: 공식야구규칙 2026
+  ref: 5.09(b)(5), 5.09(c)(1)
+  note: 플라이 볼이 잡힌 뒤 원래 베이스를 리터치하기 전에 떠나면 어필로 아웃
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 65. RETOUCH
+related:
+- term.sacrifice_fly
+- term.fly_ball
+- rule.appeal_play
+event_types:
+- TAG_UP
+- SAC_FLY
+aliases:
+- 태그 업
+- 리터치
+review_status: draft
+reviewer: ''

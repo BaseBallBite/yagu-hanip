@@ -1,0 +1,22 @@
+id: term.triple_play
+kind: term
+title: 삼중살
+category: 수비
+one_liner: 수비가 연속된 한 플레이로 아웃 3개를 잡는 거예요.
+easy: 수비 팀이 이어진 동작으로 공격 선수 3명을 아웃시키면 삼중살(트리플 플레이)이에요. 아웃 사이에 실책이 끼면 삼중살이 아니에요. 매우 드물게 나오는 플레이예요.
+example: 무사 1·2루에서 유격수 라인드라이브를 잡고 2루를 밟고 1루로 던져 한 번에 3명을 아웃시켰어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 80. TRIPLE PLAY, 9.11
+related:
+- term.double_play
+- term.out
+- term.line_drive
+event_types:
+- DOUBLE_PLAY
+aliases:
+- 트리플 플레이
+- 트리플플레이
+- 삼중살
+review_status: draft
+reviewer: ''

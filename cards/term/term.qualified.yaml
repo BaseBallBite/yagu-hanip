@@ -1,0 +1,26 @@
+id: term.qualified
+kind: term
+title: 규정타석·규정이닝
+category: 기록·통계
+one_liner: 타율왕·평균자책점왕 같은 개인 타이틀을 받으려면 채워야 하는 최소 기준이에요.
+easy: 타자는 소속 팀이 한 시즌에 치른 경기 수의 3.1배 이상 타석에 서야 타율·장타율·출루율 타이틀 자격이 생겨요. 투수는 팀 경기 수와 같은 수 이상의 이닝을 던져야 평균자책점 타이틀 자격이 생겨요. 기준 이닝·타석에 조금 모자라는 경우의 예외도 있어요.
+example: 팀이 144경기를 치르면 규정타석은 144×3.1 = 446타석(소수점 이하 버림)이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.22 개인상 결정의 최소 기준
+- name: KBO 리그 규정 2026
+  ref: KBO 표창규정 제10조
+  note: 규정투구횟수·규정타석수는 공식야구규칙에 따름
+related:
+- term.batting_average
+- term.era
+- term.at_bat
+event_types: []
+aliases:
+- 규정 타석
+- 규정타석
+- 규정 이닝
+- 규정이닝
+- 타이틀
+review_status: draft
+reviewer: ''

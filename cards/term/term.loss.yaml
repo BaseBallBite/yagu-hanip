@@ -1,0 +1,23 @@
+id: term.loss
+kind: term
+title: 패전 투수
+category: 기록·통계
+one_liner: 진 경기에서 패전 기록을 받는 투수예요.
+easy: 상대 팀이 리드를 잡은 뒤 그 리드가 경기 끝까지 이어졌을 때, 그 리드를 내준 투수가 패전 투수가 돼요. 승리 투수와 짝을 이루는 기록이고, 연감 투수 기록표의 '패' 항목이에요.
+example: 6회에 결승점을 내준 구원 투수가 그 리드가 끝까지 이어져 패전 투수가 됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.17 승리투수·패전투수
+- name: 2026 KBO 연감 가이드북
+  note: 투수 기록표 '패'
+related:
+- term.win
+- term.save
+- term.hold
+event_types: []
+aliases:
+- 패전투수
+- 패전
+- 1패
+review_status: draft
+reviewer: ''

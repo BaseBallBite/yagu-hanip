@@ -1,0 +1,27 @@
+id: term.line_drive
+kind: term
+title: 직선타
+category: 타격
+one_liner: 높이 뜨지 않고 빠르게 일직선으로 날아가는 타구예요.
+easy: '공이 거의 일직선으로 빠르게 날아가면 직선타(라인드라이브)예요. 수비 정면으로 가서 바로 잡히면 아웃이고, 수비 사이로 빠지면 안타가 되기 쉬워요.
+
+  '
+example: '빠른 직선타가 유격수 글러브에 그대로 잡혀 아웃됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 49. LINE DRIVE
+related:
+- term.fly_ball
+- term.ground_ball
+- term.double_play
+event_types:
+- LINEOUT
+aliases:
+- 직선타구
+- 직선 타구
+- 라인드라이브
+- 라이너
+review_status: draft
+reviewer: ''

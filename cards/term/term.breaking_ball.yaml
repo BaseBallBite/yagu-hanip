@@ -1,0 +1,22 @@
+id: term.breaking_ball
+kind: term
+title: 변화구
+category: 투구·구종
+one_liner: 직구를 뺀, 휘거나 떨어지는 모든 구종을 부르는 말이에요.
+easy: 변화구는 직구가 아닌 모든 구종을 묶어 부르는 말이에요. 슬라이더, 커브, 체인지업, 포크볼 같은 공들이 여기 속해요. 직구와 속도·움직임이 달라서 타자의 타이밍을 흔드는 데 써요.
+example: 투수가 직구 다음에 변화구를 던져 타자의 타이밍을 뺏었어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.fastball
+- term.slider
+- term.curveball
+event_types: []
+aliases:
+- 브레이킹볼
+- 브레이킹 볼
+- 변화구
+- 구종
+review_status: draft
+reviewer: ''

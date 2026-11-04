@@ -1,0 +1,32 @@
+id: rule.interference
+kind: rule
+title: 방해(인터피어런스)
+category: 특수 상황
+one_liner: 공격 팀 선수가 수비를 막으면 방해로 아웃이 될 수 있어요.
+easy: 공격 팀의 타자나 주자가 수비수가 공을 잡거나 던지는 걸 막으면 수비방해가 선언돼요. 방해한 선수는 보통 아웃되고 공은 죽어요(볼 데드). 반대로 포수 같은 수비수가 타자의 스윙을 막는 건 타격방해로, 따로 정리했어요.
+example: '1루로 뛰던 타자가 파울 라인 안쪽으로 달리다 1루로 던진 공에 맞아 수비 방해로 아웃됐어요.
+
+  '
+when:
+  who: 타자·주자(수비 방해) 또는 포수(타격 방해)
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 44. INTERFERENCE
+- name: 공식야구규칙 2026
+  ref: 6.01(a)
+  note: 타자·주자에 의한 방해와 벌칙
+- name: 공식야구규칙 2026
+  ref: 5.09(b)(3), 5.09(e)
+related:
+- rule.obstruction
+- rule.catcher_interference
+- rule.dead_ball
+- term.out
+event_types:
+- INTERFERENCE
+aliases:
+- 수비방해
+- 수비 방해
+- 인터피어런스
+review_status: draft
+reviewer: ''

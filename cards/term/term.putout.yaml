@@ -1,0 +1,20 @@
+id: term.putout
+kind: term
+title: 풋아웃
+category: 기록·통계
+one_liner: 아웃을 직접 완성한 수비수에게 주는 기록이에요.
+easy: 공을 잡거나 태그하거나 베이스를 밟아 아웃을 직접 만든 수비수에게 풋아웃을 줘요. 삼진은 공을 잡은 포수가 풋아웃을 기록해요. 아웃을 도운 수비수에게는 어시스트를 줘요.
+example: 유격수가 땅볼을 잡아 1루수에게 던져 아웃이 됐어요. 유격수는 어시스트, 1루수는 풋아웃을 기록해요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.09 풋아웃
+related:
+- term.assist
+- term.out
+- term.catcher
+event_types: []
+aliases:
+- 자살
+- 아웃 실행
+review_status: draft
+reviewer: ''

@@ -1,0 +1,23 @@
+id: term.win
+kind: term
+title: 승리 투수
+category: 기록·통계
+one_liner: 팀이 이긴 경기에서 승리 기록을 받는 투수예요.
+easy: 선발 투수는 5이닝 이상 던지고 내려갈 때 팀이 앞서 있고 그 리드가 경기 끝까지 이어지면 승리 투수가 돼요. 그 조건을 못 채우면 기록원이 구원투수 중 승리에 가장 효과적이었던 한 명에게 줘요. 상대 팀이 리드를 잡은 뒤 그 리드가 끝까지 이어지면, 리드를 내준 투수가 패전 투수가 돼요.
+example: '선발 투수가 6이닝을 막고 팀이 끝까지 이겨서 승리 투수가 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.17 승리투수·패전투수
+related:
+- term.loss
+- term.save
+- term.starting_pitcher
+- term.hold
+event_types: []
+aliases:
+- 승리투수
+- 승리 요건
+review_status: draft
+reviewer: ''

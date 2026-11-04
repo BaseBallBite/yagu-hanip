@@ -1,0 +1,33 @@
+id: rule.ground_rule_double
+kind: rule
+title: 인정 2루타
+category: 타격 규칙
+one_liner: 페어 타구가 튀어서 담장을 넘어가면 타자에게 2루까지 줘요.
+easy: '타자가 친 공이 페어 지역에 떨어진 뒤 튀어서 관중석이나 담장 밖으로 나가면 인정 2루타예요. 타자는 2루까지, 주자들은 두 베이스씩 가요. 공이 땅에 닿지 않고 그대로 넘어가면 홈런이에요.
+
+  '
+example: '1사 1루에서 타구가 외야 바닥에 맞고 튀어 담장을 넘어갔어요. 타자는 2루, 1루 주자는 3루까지 갔어요.
+
+  '
+when:
+  ball: 페어 지역에 떨어진 뒤 튀어 경기장 밖으로 나간 타구
+source:
+- name: 공식야구규칙 2026
+  ref: 5.05(a)(6)~(8)
+  note: 땅에 닿은 뒤 펜스 밖으로 나가면 2개 베이스
+- name: 공식야구규칙 2026
+  ref: 5.05(a)(5)
+  note: 본루에서 250피트 이상이면 홈런, 미만이면 2루타
+related:
+- term.double
+- term.home_run
+- rule.fair_ball
+event_types:
+- DOUBLE
+aliases:
+- 인정2루타
+- 그라운드 룰 더블
+review_status: draft
+reviewer: ''
+more:
+- 펜스가 본루에서 250피트(약 76m) 미만이면 공이 직접 넘어가도 홈런이 아니라 2루타예요.

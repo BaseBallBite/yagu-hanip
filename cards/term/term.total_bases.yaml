@@ -1,0 +1,25 @@
+id: term.total_bases
+kind: term
+title: 루타(루타수)
+category: 기록·통계
+one_liner: 안타로 나간 베이스 수를 점수처럼 합친 숫자예요.
+easy: 단타는 1, 2루타는 2, 3루타는 3, 홈런은 4로 세어 더한 값이에요. 장타율은 이 루타수를 타수로 나눈 값이에요.
+example: 단타 2개와 홈런 1개면 루타수는 2×1 + 4 = 6이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(c)
+  note: 장타율 = 루타수 ÷ 타수
+- name: 공식야구규칙 2026
+  ref: '9.06'
+  note: 단타·장타의 결정
+related:
+- term.slugging
+- term.hit
+- term.extra_base_hit
+event_types: []
+aliases:
+- 루타
+- TB
+- 루타수
+review_status: draft
+reviewer: ''

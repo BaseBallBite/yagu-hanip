@@ -1,0 +1,23 @@
+id: term.stolen_base_attempt
+kind: term
+title: 도루 시도·도루 성공
+category: 기록·통계
+one_liner: 도루를 시도한 횟수, 그중 성공한 횟수예요.
+easy: 도루 시도(SBA)는 도루 성공과 도루 실패를 더한 횟수예요. 주루 기록에서 도루 성공(SB)을 시도로 나누면 도루 성공률이에요.
+example: 도루 8번 성공, 2번 실패면 도루 시도 10번이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: 공식야구규칙 9.07 기준 도루·도루 실패를 합친 KBO 기록실 항목
+related:
+- term.stolen_base
+- term.caught_stealing
+- term.stolen_base_pct
+event_types: []
+aliases:
+- 도루시도
+- 도루 시도
+- SBA
+- 도루성공
+- 도루 성공
+review_status: draft
+reviewer: ''

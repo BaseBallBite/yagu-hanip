@@ -1,0 +1,25 @@
+id: term.sacrifice_fly
+kind: term
+title: 희생플라이
+category: 타격
+one_liner: 뜬공으로 타자는 아웃되지만 3루 주자가 홈에 들어와 점수를 낸 거예요.
+easy: '무사나 1사에 외야 뜬공이 잡히면 3루 주자가 태그업해서 홈으로 들어올 수 있어요. 이때 점수가 나면 타자의 뜬공을 희생플라이라고 하고 타점을 줘요. 희생플라이는 타율 계산에서 타수로 세지 않아요.
+
+  '
+example: '1사 3루에서 중견수 뜬공이 잡히자 3루 주자가 홈에 들어와 1점이 났어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.08(e)
+related:
+- rule.tag_up
+- term.fly_ball
+- term.rbi
+event_types:
+- SAC_FLY
+aliases:
+- 희생 플라이
+- 희플
+review_status: draft
+reviewer: ''

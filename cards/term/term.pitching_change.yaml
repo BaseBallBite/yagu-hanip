@@ -1,0 +1,26 @@
+id: term.pitching_change
+kind: term
+title: 투수 교체
+category: 경기 운영
+one_liner: 던지던 투수를 내리고 다른 투수를 올리는 거예요.
+easy: '감독이 투수가 지쳤거나 상대 타자와 맞지 않는다고 보면 다른 투수로 바꿔요. 교체되어 내려간 투수는 그 경기에 다시 던질 수 없어요.
+
+  '
+example: '7회 무사 1·2루에 감독이 마운드에 올라가 불펜 투수로 바꿨어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 5.10 선수교체
+related:
+- rule.substitution
+- term.bullpen
+- term.starting_pitcher
+event_types:
+- PITCHING_CHANGE
+aliases:
+- 투수교체
+- 강판
+- 마운드 교체
+review_status: draft
+reviewer: ''

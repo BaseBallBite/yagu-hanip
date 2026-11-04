@@ -1,0 +1,21 @@
+id: term.era
+kind: term
+title: 평균자책점
+category: 기록·통계
+one_liner: 투수가 9이닝 동안 평균 몇 점을 내줬는지 보여주는 기록이에요.
+easy: 평균자책점은 투수의 자책점 합계에 9를 곱하고 던진 이닝으로 나눈 값이에요. 실책 때문에 들어온 점수는 자책점에서 빠져요. 숫자가 낮을수록 좋은 투수예요. KBO는 ⅓이닝, ⅔이닝까지 넣어서 계산해요.
+example: 9⅓이닝을 던져 자책점이 3점이면 평균자책점은 3×9÷9⅓ = 2.89예요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(e)
+  note: 자책점 × 9 ÷ 투구 이닝. KBO는 ⅓·⅔이닝까지 포함해 계산
+related:
+- term.error
+- term.pitcher
+- term.whip
+event_types: []
+aliases:
+- 방어율
+- ERA
+review_status: draft
+reviewer: ''

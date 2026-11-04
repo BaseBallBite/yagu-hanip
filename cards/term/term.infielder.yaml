@@ -1,0 +1,26 @@
+id: term.infielder
+kind: term
+title: 내야수
+category: 수비
+one_liner: 1·2·3루와 유격수 자리, 내야를 지키는 수비수예요.
+easy: '내야수는 1루수, 2루수, 3루수, 유격수 네 명이에요. 땅볼을 잡아 1루로 던지거나, 베이스에서 주자를 태그·포스 아웃시켜요.
+
+  '
+example: '유격수가 2루수에게 공을 토스해 병살을 시작했어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 39. INFIELDER
+related:
+- term.outfielder
+- term.ground_ball
+- term.double_play
+event_types: []
+aliases:
+- 1루수
+- 2루수
+- 3루수
+- 유격수
+review_status: draft
+reviewer: ''

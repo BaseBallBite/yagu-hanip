@@ -1,0 +1,20 @@
+id: term.injured_list
+kind: term
+title: 부상자 명단
+category: 경기 운영
+one_liner: 다친 선수를 1군 등록에서 빼 두는 명단이에요.
+easy: 부상당한 선수는 10일, 15일, 30일 중 하나를 골라 부상자 명단에 올릴 수 있어요. 한 시즌에 최대 30일까지 쓸 수 있고 10일은 3번, 15일은 2번, 30일은 1번만 가능해요. 신청하려면 구단 지정 병원의 진단서가 필요해요.
+example: 3루수가 훈련 중 다쳐 15일 부상자 명단에 올라갔고, 그동안 다른 선수가 1군에 등록됐어요.
+source:
+- name: KBO 리그 규정 2026
+  ref: 제14조 3항 [부상자 명단]
+related:
+- rule.substitution
+- term.starting_pitcher
+event_types: []
+aliases:
+- IL
+- 부상자명단
+- 부상 엔트리
+review_status: draft
+reviewer: ''

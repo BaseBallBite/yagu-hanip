@@ -1,0 +1,23 @@
+id: term.pitcher
+kind: term
+title: 투수
+category: 수비
+one_liner: 마운드에서 타자에게 공을 던지는 선수예요.
+easy: '투수는 경기장 가운데 마운드에서 포수를 향해 공을 던져 타자를 상대해요. 처음 나오는 투수를 선발, 그 뒤에 나오는 투수를 불펜(구원 투수)이라고 해요.
+
+  '
+example: '투수가 직구와 슬라이더를 섞어 던져 삼진을 잡았어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 60. PITCHER
+related:
+- term.catcher
+- term.starting_pitcher
+- term.bullpen
+event_types: []
+aliases:
+- 피처
+review_status: draft
+reviewer: ''

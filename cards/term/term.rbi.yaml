@@ -1,0 +1,23 @@
+id: term.rbi
+kind: term
+title: 타점
+category: 기록·통계
+one_liner: 타자의 타격 덕분에 주자가 홈에 들어와 낸 점수예요.
+easy: 타점은 타자가 타격으로 주자를 홈에 들여보낸 점수예요. 안타, 희생번트, 희생플라이, 내야 땅볼 등으로 주자가 들어오거나, 만루에서 볼넷·몸에 맞는 공 같은 걸로 밀려 들어오면 타점이 생겨요. 홈런이면 타자 본인도 타점 1개를 더해요. 병살타나 수비 실책 때문에 들어온 점수에는 타점을 주지 않을 수 있어요.
+example: '2사 2·3루에서 안타로 두 주자가 모두 들어와 타자는 2타점을 올렸어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.04 타점
+related:
+- term.home_run
+- term.sacrifice_fly
+- term.hit
+event_types: []
+aliases:
+- 타 점
+- 적시타
+- 적시 안타
+review_status: draft
+reviewer: ''

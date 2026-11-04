@@ -1,0 +1,19 @@
+id: term.gpa
+kind: term
+title: GPA
+category: 기록·통계
+one_liner: 출루율에 가중치를 더 준 공격 종합 지표예요.
+easy: GPA는 (1.8 × 출루율 + 장타율) ÷ 4로 계산해요. 출루율을 장타율보다 더 중요하게 보는 지표예요.
+example: 출루율 0.400, 장타율 0.500이면 GPA는 (0.72+0.5)÷4 = 약 0.305예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.on_base_percentage
+- term.slugging
+- term.ops
+event_types: []
+aliases:
+- GPA
+review_status: draft
+reviewer: ''

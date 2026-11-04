@@ -1,0 +1,19 @@
+id: term.fielding_pct
+kind: term
+title: 수비율
+category: 기록·통계
+one_liner: 수비수가 실책 없이 처리한 비율이에요.
+easy: 수비율은 (풋아웃 + 어시스트)를 (풋아웃 + 어시스트 + 실책)으로 나눈 값이에요. 실책이 적을수록 1에 가까워져요.
+example: 풋아웃 90, 어시스트 8, 실책 2인 야수의 수비율은 98÷100 = 0.980이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(d) 수비율
+related:
+- term.error
+- term.putout
+- term.assist
+event_types: []
+aliases:
+- 수비 비율
+review_status: draft
+reviewer: ''

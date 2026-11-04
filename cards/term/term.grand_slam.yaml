@@ -1,0 +1,25 @@
+id: term.grand_slam
+kind: term
+title: 만루홈런
+category: 타격
+one_liner: 주자가 꽉 찬 만루에서 나온 홈런으로, 한 번에 4점이에요.
+easy: '1·2·3루에 모두 주자가 있을 때 홈런을 치면 주자 3명과 타자까지 4명이 홈에 들어와요. 한 타석에서 낼 수 있는 가장 많은 점수예요.
+
+  '
+example: '0대2로 지던 7회 만루에서 만루홈런이 나와 4대2로 뒤집었어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.home_run
+- term.bases_loaded
+- term.rbi
+event_types:
+- HOME_RUN
+aliases:
+- 만루 홈런
+- 그랜드슬램
+- 만루포
+review_status: draft
+reviewer: ''

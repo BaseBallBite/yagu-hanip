@@ -1,0 +1,26 @@
+id: term.bullpen
+kind: term
+title: 불펜
+category: 경기 운영
+one_liner: 선발 다음에 나오는 구원 투수들, 또는 그들이 몸을 푸는 곳이에요.
+easy: '불펜은 선발 투수가 내려간 뒤 이어 던지는 구원 투수들을 말해요. 원래는 경기장 한쪽에서 구원 투수들이 몸을 푸는 장소의 이름이에요.
+
+  '
+example: '선발이 5회에 내려가자 불펜 투수 세 명이 남은 이닝을 나눠 던졌어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.starting_pitcher
+- term.closer
+- term.pitching_change
+event_types: []
+aliases:
+- 구원 투수
+- 구원투수
+- 계투
+- 중간 계투
+- 불펜 투수
+review_status: draft
+reviewer: ''

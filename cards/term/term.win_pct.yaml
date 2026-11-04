@@ -1,0 +1,22 @@
+id: term.win_pct
+kind: term
+title: 승률
+category: 기록·통계
+one_liner: 승수를 승수와 패수의 합으로 나눈 값이에요.
+easy: 승률은 이긴 경기 수를 이긴 수와 진 수의 합으로 나눈 값이에요. 무승부는 계산에 넣지 않아요. 정규시즌 순위는 이 승률로 정해요.
+example: 70승 5무 69패인 팀의 승률은 70÷139 = 약 0.504예요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(a)
+- name: KBO 리그 규정 2026
+  ref: 제2조 승률계산법
+  note: 승 ÷ (승 + 패)
+related:
+- term.win
+- term.tie_game
+- term.inning
+event_types: []
+aliases:
+- 승 률
+review_status: draft
+reviewer: ''

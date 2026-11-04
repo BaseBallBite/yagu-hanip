@@ -1,0 +1,22 @@
+id: term.velocity
+kind: term
+title: 구속
+category: 투구·구종
+one_liner: 투수가 던진 공의 속도예요. 보통 시속 km로 말해요.
+easy: 구속은 공이 투수 손을 떠난 직후의 빠르기예요. KBO 중계에서는 시속 km로 보여줘요. 같은 투수라도 직구와 변화구의 구속이 달라서, 구속 차이가 타자의 타이밍을 흔드는 데 쓰여요.
+example: 직구는 시속 148km, 체인지업은 시속 130km로 구속 차이가 18km였어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.fastball
+- term.changeup
+- term.pitcher
+event_types: []
+aliases:
+- 구속
+- 시속
+- 최고 구속
+- 평균 구속
+- km/h
+review_status: draft
+reviewer: ''

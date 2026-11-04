@@ -1,0 +1,24 @@
+id: rule.check_swing
+kind: rule
+title: 체크스윙
+category: 타격 규칙
+one_liner: 타자가 휘두르다 멈춘 동작이 스윙인지 아닌지 가리는 판정이에요.
+easy: 타자가 배트를 내다가 멈췄을 때, 배트 끝이 홈플레이트 앞면과 나란한 선을 투수 쪽으로 넘으면 스윙(스트라이크)이에요. 넘지 않으면 스윙이 아니에요. 2026년부터 체크스윙도 비디오 판독을 신청할 수 있어요.
+example: 타자가 공을 치려다 멈췄지만 배트 끝이 기준선을 넘어 스윙 스트라이크로 판정됐어요.
+when:
+  swing: 배트 끝의 각도가 타자석 기준 90도를 넘음
+  no_swing: 90도 이하
+  review: 공격 팀은 '스윙' 판정에, 수비 팀은 '노스윙' 판정에만 요청, 번트 시도는 제외
+source:
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ⑮ 체크스윙
+related:
+- term.strike
+- rule.video_review
+- term.strikeout
+event_types: []
+aliases:
+- 체크 스윙
+- 체크스윙 판독
+review_status: draft
+reviewer: ''

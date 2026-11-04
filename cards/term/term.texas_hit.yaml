@@ -1,0 +1,21 @@
+id: term.texas_hit
+kind: term
+title: 텍사스 안타
+category: 타격
+one_liner: 내야수와 외야수 사이에 빗맞아 떨어진 안타예요.
+easy: 텍사스 안타는 잘 맞지 않은 공이 내야 뒤, 외야 앞 빈 곳에 뚝 떨어져 안타가 된 거예요. 정타가 아니어도 수비 사이 빈 곳에 떨어지면 안타로 기록돼요.
+example: 빗맞은 공이 유격수와 중견수 사이에 떨어져 텍사스 안타가 됐어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.hit
+- term.fly_ball
+- term.infield_hit
+event_types: []
+aliases:
+- 빗맞은 안타
+- 텍사스안타
+- 행운의 안타
+- 빗맞은 타구
+review_status: draft
+reviewer: ''

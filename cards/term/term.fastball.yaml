@@ -1,0 +1,27 @@
+id: term.fastball
+kind: term
+title: 직구
+category: 투구·구종
+one_liner: 가장 빠르고 곧게 날아가는 기본 구종이에요.
+easy: '직구는 투수가 가장 세게 던지는 공으로, 공이 거의 휘지 않고 곧게 날아가요. KBO 투수들은 보통 시속 140km 이상을 던지고, 다른 변화구와 섞어 타자의 타이밍을 흔들어요.
+
+  '
+example: '투수가 시속 150km 직구로 타자의 헛스윙을 끌어냈어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.twoseam
+- term.sinker
+- term.slider
+- term.changeup
+- term.strike
+event_types: []
+aliases:
+- 포심
+- 포심 패스트볼
+- 패스트볼
+- 속구
+review_status: draft
+reviewer: ''

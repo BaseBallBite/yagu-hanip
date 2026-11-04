@@ -1,0 +1,26 @@
+id: term.hit
+kind: term
+title: 안타
+category: 타격
+one_liner: 수비 실수 없이 타자가 쳐서 베이스에 나간 거예요.
+easy: '타자가 친 공이 페어가 되고, 실책이나 야수선택 없이 타자가 1루 이상 가면 안타예요. 1루까지 가면 단타, 2루는 2루타, 3루는 3루타, 홈까지 오면 홈런이에요.
+
+  '
+example: '타자가 친 땅볼이 유격수 옆을 빠져나가 외야로 굴러가 안타가 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.05 안타
+related:
+- term.double
+- term.triple
+- term.home_run
+event_types:
+- SINGLE
+aliases:
+- 단타
+- 1루타
+- 히트
+review_status: draft
+reviewer: ''

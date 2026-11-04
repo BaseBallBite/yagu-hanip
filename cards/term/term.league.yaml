@@ -1,0 +1,26 @@
+id: term.league
+kind: term
+title: 리그·구단
+category: 경기 운영
+one_liner: 경기를 치르는 팀들의 모임이 리그이고, 팀을 운영하는 주체가 구단이에요.
+easy: KBO 리그는 10개 구단이 단일 리그로 팀당 144경기씩 총 720경기를 치르는 프로야구 리그예요. 정규시즌 순위가 높은 팀이 포스트시즌에 올라가요. 2군 리그는 퓨처스리그라고 불러요.
+example: KBO 리그는 10개 구단이 서로 16번씩 만나 정규시즌을 치러요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 45. LEAGUE, 용어의 정의 18. CLUB
+- name: KBO 리그 규정 2026
+  ref: 제1조 1항 (144경기), 제58조 (퓨처스리그)
+related:
+- rule.extra_innings
+- rule.wild_card_game
+- term.inning
+event_types: []
+aliases:
+- KBO 리그
+- 정규시즌
+- 퓨처스리그
+- 퓨처스
+- 구단
+- 리그
+review_status: draft
+reviewer: ''

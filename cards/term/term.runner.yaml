@@ -1,0 +1,21 @@
+id: term.runner
+kind: term
+title: 주자
+category: 주루
+one_liner: 베이스를 점유하거나 달리는 공격 팀 선수예요.
+easy: 주자는 베이스 사이를 달리거나 베이스에 서 있는 공격 팀 선수예요. 타자가 공을 치고 달리기 시작하면 '타자주자'라고 불러요.
+example: 1루에 있는 주자가 투수의 공이 던져지는 순간 2루로 달렸어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 68. RUNNER, 용어의 정의 9. BATTER RUNNER
+related:
+- term.batter
+- term.base
+- term.stolen_base
+event_types: []
+aliases:
+- 러너
+- 타자주자
+- 루상 주자
+review_status: draft
+reviewer: ''

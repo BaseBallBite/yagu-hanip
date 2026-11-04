@@ -1,0 +1,21 @@
+id: term.twoseam
+kind: term
+title: 투심 패스트볼
+category: 투구·구종
+one_liner: 직구처럼 빠르지만 타자 몸쪽으로 살짝 휘며 가라앉는 공이에요.
+easy: 투심은 직구와 거의 같은 속도로 오다가 같은 손 타자의 몸쪽으로 살짝 파고들며 가라앉아요. 배트 중심을 피해 땅볼을 많이 만들어요.
+example: 몸쪽으로 파고드는 투심에 타자가 빗맞은 땅볼을 쳤어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.fastball
+- term.sinker
+- term.ground_ball
+event_types: []
+aliases:
+- 투심
+- 투 심
+- 투심패스트볼
+review_status: draft
+reviewer: ''

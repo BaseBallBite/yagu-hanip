@@ -1,0 +1,22 @@
+id: term.hold
+kind: term
+title: 홀드
+category: 기록·통계
+one_liner: 리드를 지키고 다음 투수에게 넘긴 중간 계투에게 주는 기록이에요.
+easy: 홀드는 이기고 있는 상황(세이브 상황)에서 던지다가 리드를 지킨 채 다음 투수에게 넘긴 중간 계투 투수에게 주는 기록이에요. 마무리 투수 앞에서 던지는 투수들의 활약을 보여줘요. 공식야구규칙에는 없고 연감에는 투수 기록표의 '홀' 항목으로 나와요.
+example: '1점 앞선 8회에 나와 무실점으로 막고 마무리에게 넘긴 투수가 홀드를 받았어요.
+
+  '
+source:
+- name: 팀 작성(KBO 기록 관례)
+  note: 공식야구규칙 9장에는 정의가 없음
+related:
+- term.save
+- term.bullpen
+- term.closer
+event_types: []
+aliases: []
+review_status: draft
+reviewer: ''
+more:
+- 정확한 KBO 홀드 인정 기준(필요 아웃 수·점수 차 등)은 KBO 기록 규정 원문으로 확인이 필요해요.

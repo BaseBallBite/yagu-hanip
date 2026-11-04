@@ -1,0 +1,26 @@
+id: term.bunt
+kind: term
+title: 번트
+category: 타격
+one_liner: 배트를 휘두르지 않고 공에 살짝 대서 굴리는 타격이에요.
+easy: '번트는 배트를 앞에 대고 공을 맞혀 내야에 천천히 굴리는 타격이에요. 주자를 다음 베이스로 보내거나, 발 빠른 타자가 1루에서 살려고 할 때 써요. 2스트라이크에서 번트가 파울이 되면 삼진이에요.
+
+  '
+example: '무사 1루에서 타자가 3루 쪽으로 번트를 대 공을 굴렸어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 13. BUNT
+related:
+- term.sacrifice_bunt
+- term.squeeze
+- rule.foul_ball
+event_types:
+- SAC_BUNT
+aliases:
+- 기습번트
+- 기습 번트
+- 번트 안타
+review_status: draft
+reviewer: ''

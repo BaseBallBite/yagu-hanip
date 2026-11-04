@@ -1,0 +1,25 @@
+id: term.caught_stealing
+kind: term
+title: 도루 실패
+category: 주루
+one_liner: 도루하던 주자가 태그당해 아웃된 거예요.
+easy: '주자가 다음 베이스로 뛰었는데 포수나 투수의 송구가 먼저 와서 태그되면 도루 실패예요. 도루 실패는 아웃 하나가 늘어서 공격 흐름이 끊기기 쉬워요.
+
+  '
+example: '1루 주자가 2루로 뛰었지만 포수의 빠른 송구에 태그돼 아웃됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.07 도루
+related:
+- term.stolen_base
+- rule.tag
+- term.catcher
+event_types:
+- CAUGHT_STEALING
+aliases:
+- 도루자
+- 도루실패
+review_status: draft
+reviewer: ''

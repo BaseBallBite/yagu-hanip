@@ -1,0 +1,24 @@
+id: rule.wild_card_game
+kind: rule
+title: 와일드카드 결정전
+category: 특수 상황
+one_liner: 정규시즌 4위와 5위가 준플레이오프에 오르려고 치르는 경기예요.
+easy: 정규시즌 4위와 5위 팀이 최대 2경기를 해요. 4위 팀은 1승이나 1무승부만 해도 준플레이오프에 올라가고, 5위 팀은 2승을 해야 올라가요. 그래서 5위 팀에게 훨씬 불리해요. 연장은 15회까지 해요.
+example: 4위 팀이 1차전을 이기면 2차전 없이 준플레이오프에 올라갔어요.
+when:
+  teams: 정규시즌 승률 4위 vs 5위
+  games: 최대 2경기
+  advance: 4위 1승/1무, 5위 2승
+source:
+- name: KBO 리그 규정 2026
+  ref: 제30조 경기방식
+related:
+- rule.extra_innings
+- term.inning
+event_types: []
+aliases:
+- 와일드카드
+- 와일드카드 경기
+- WC 결정전
+review_status: draft
+reviewer: ''

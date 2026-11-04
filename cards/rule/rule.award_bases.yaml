@@ -1,0 +1,25 @@
+id: rule.award_bases
+kind: rule
+title: 안전진루권
+category: 주루 규칙
+one_liner: 볼넷이나 몸에 맞는 공처럼 정해진 경우 아웃될 걱정 없이 베이스가 주어지는 거예요.
+easy: 타자가 아웃될 염려 없이 1루에 나가야 할 때(볼넷, 몸에 맞는 공, 타격방해) 그 때문에 베이스를 비워줘야 하는 주자들도 한 베이스씩 안전하게 진루해요. 그 밖에 보크가 선언되면 모든 주자가 한 베이스 진루해요. 안전진루권을 얻었다고 해도 베이스를 밟아야 인정돼요.
+example: 만루에서 볼넷이 나오자 타자는 1루로 가고 모든 주자가 한 베이스씩 밀려 3루 주자가 득점했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 5.06(b)(2)(3)
+  note: 타자가 주자가 되어 베이스를 비워줘야 하는 주자의 진루
+- name: 공식야구규칙 2026
+  ref: 5.06(c)(3)
+  note: 보크
+related:
+- rule.base_on_balls
+- rule.hit_by_pitch
+- rule.balk
+event_types:
+- WALK
+- HIT_BY_PITCH
+aliases:
+- 밀어내기 진루
+review_status: draft
+reviewer: ''

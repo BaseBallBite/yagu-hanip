@@ -1,0 +1,27 @@
+id: term.strikeout
+kind: term
+title: 삼진
+category: 타격
+one_liner: 스트라이크 3개로 타자가 아웃되는 거예요.
+easy: '타자가 스트라이크를 3개 받으면 삼진으로 아웃돼요. 공을 지켜보다 당하면 루킹 삼진, 헛스윙으로 당하면 헛스윙 삼진이라고 해요. 세 번째 스트라이크를 포수가 놓치면 낫아웃으로 1루에 뛸 수도 있어요.
+
+  '
+example: '2스트라이크에서 바깥쪽 직구를 지켜봤는데 스트라이크가 선언돼 루킹 삼진이 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.15 스트라이크 아웃, 5.09(a)(2)(3)
+related:
+- term.strike
+- rule.dropped_third_strike
+- rule.strike_zone
+event_types:
+- STRIKEOUT
+aliases:
+- 스트라이크아웃
+- 루킹 삼진
+- 헛스윙 삼진
+- 탈삼진
+review_status: draft
+reviewer: ''

@@ -1,0 +1,24 @@
+id: term.quality_start
+kind: term
+title: 퀄리티스타트
+category: 기록·통계
+one_liner: 선발 투수가 6이닝 이상 던지고 3자책점 이하로 막은 경기예요.
+easy: 퀄리티스타트는 선발 투수가 6이닝 이상 던지고 자책점을 3점 이하로 막은 경기예요. 승리 여부와 상관없이 선발 투수가 제 몫을 했는지 보는 기준이에요. 공식야구규칙과 연감에는 정의가 없는 기록이에요.
+example: '선발 투수가 7이닝 2자책점으로 퀄리티스타트를 기록했어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 2026 연감에는 정의가 없음
+related:
+- term.starting_pitcher
+- term.era
+- term.win
+event_types: []
+aliases:
+- 퀄리티 스타트
+- QS
+review_status: draft
+reviewer: ''
+more:
+- 승패와 별개로, 던진 이닝과 자책점 두 조건만으로 정해요.

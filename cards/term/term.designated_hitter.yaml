@@ -1,0 +1,23 @@
+id: term.designated_hitter
+kind: term
+title: 지명타자
+category: 경기 운영
+one_liner: 투수 대신 타석에만 들어서는 선수예요.
+easy: 지명타자는 수비는 하지 않고 투수 대신 타격만 하는 선수예요. 경기 전에 내는 타순표에 지명타자를 적어야 쓸 수 있고, 적지 않으면 그 경기에서 쓸 수 없어요. KBO 리그는 이 제도를 써서 보통 투수는 타석에 서지 않아요.
+example: '오늘 지명타자로 나온 선수는 수비 없이 4번 타순에서 타격만 했어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: '5.11'
+  note: 지명타자
+related:
+- term.batting_order
+- term.pitcher
+- rule.substitution
+event_types: []
+aliases:
+- 지명 타자
+- DH
+review_status: draft
+reviewer: ''

@@ -1,0 +1,25 @@
+id: rule.baseline_leave
+kind: rule
+title: 베이스 라인 이탈
+category: 주루 규칙
+one_liner: 태그를 피하려고 베이스를 잇는 선에서 3피트 넘게 벗어나면 아웃이에요.
+easy: 주자가 태그를 피하려고 베이스를 연결한 직선에서 3피트(약 91cm) 넘게 벗어나 달리면 아웃이에요. 다만 타구를 처리하는 야수를 피하려고 벗어난 건 괜찮아요. 수비수가 공을 들고 주자를 쫓는 런다운 때 자주 문제가 돼요.
+example: 런다운에 걸린 주자가 태그를 피하려고 베이스 라인에서 크게 벗어나 달리다가 심판이 아웃을 선언했어요.
+when:
+  trigger: 태그를 피하려는 의도
+  limit: 베이스를 잇는 직선에서 3피트
+source:
+- name: 공식야구규칙 2026
+  ref: 5.09(b)(1)
+  note: 베이스 라인에서 3피트 이상 벗어난 주자는 아웃
+related:
+- rule.tag
+- term.run_down
+- term.out
+event_types: []
+aliases:
+- 베이스 라인 이탈
+- 3피트 이탈
+- 라인 이탈
+review_status: draft
+reviewer: ''

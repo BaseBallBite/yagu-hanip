@@ -1,0 +1,24 @@
+id: term.hit_and_run
+kind: term
+title: 히트앤드런
+category: 주루
+one_liner: 주자가 미리 뛰고 타자는 꼭 공을 맞히는 작전이에요.
+easy: '투수가 공을 던지는 순간 주자가 먼저 뛰고, 타자는 그 공을 꼭 쳐서 굴려요. 주자가 미리 출발했기 때문에 병살을 피하고 한 베이스 더 갈 수 있어요. 타자가 헛스윙하면 주자가 도루 실패로 아웃될 위험이 있어요.
+
+  '
+example: '1사 1루에서 히트앤드런 작전이 나와 타자가 땅볼을 쳤고, 1루 주자는 3루까지 갔어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.stolen_base
+- term.double_play
+- term.ground_ball
+event_types: []
+aliases:
+- 히트 앤드 런
+- 히트앤런
+- 런앤히트
+review_status: draft
+reviewer: ''

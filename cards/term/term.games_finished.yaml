@@ -1,0 +1,20 @@
+id: term.games_finished
+kind: term
+title: 종료(GF)
+category: 기록·통계
+one_liner: 팀의 마지막 투수로 경기를 끝낸 횟수예요.
+easy: 구원 투수가 경기의 마지막 아웃까지 던져 경기를 끝낸 경기 수예요. 마무리 투수가 얼마나 자주 경기를 끝냈는지 볼 때 써요.
+example: 마무리 투수가 한 시즌 55경기를 끝냈다면 GF는 55예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.closer
+- term.save
+event_types: []
+aliases:
+- GF
+- 경기 종료
+- 경기 마무리
+review_status: draft
+reviewer: ''

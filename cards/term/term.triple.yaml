@@ -1,0 +1,25 @@
+id: term.triple
+kind: term
+title: 3루타
+category: 타격
+one_liner: 타자가 안타를 치고 3루까지 간 거예요.
+easy: '타자가 친 공으로 수비 실수 없이 3루까지 가면 3루타예요. 공이 외야 구석으로 굴러가고 타자가 빨라야 나오기 때문에 홈런보다 드물어요.
+
+  '
+example: '우익선상으로 굴러간 타구를 외야수가 쫓는 사이 타자가 3루까지 뛰었어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.06 단타·장타의 결정
+related:
+- term.hit
+- term.double
+- term.extra_base_hit
+event_types:
+- TRIPLE
+aliases:
+- 삼루타
+- 쓰리베이스
+review_status: draft
+reviewer: ''

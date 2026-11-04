@@ -1,0 +1,23 @@
+id: term.infield_hit
+kind: term
+title: 내야안타
+category: 타격
+one_liner: 공이 내야를 벗어나지 않았는데 타자가 1루에서 살아난 안타예요.
+easy: '타구가 내야에 머물렀지만 수비가 1루로 던지기 전에 타자가 먼저 1루를 밟으면 내야안타예요. 느린 땅볼이나 빗맞은 타구에 발 빠른 타자가 뛰면 자주 나와요.
+
+  '
+example: '3루 쪽으로 느리게 굴러간 땅볼을 3루수가 잡아 던졌지만 타자가 먼저 1루에 닿았어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.hit
+- term.ground_ball
+- term.bunt
+event_types:
+- SINGLE
+aliases:
+- 내야 안타
+review_status: draft
+reviewer: ''

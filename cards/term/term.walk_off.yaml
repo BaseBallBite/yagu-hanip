@@ -1,0 +1,25 @@
+id: term.walk_off
+kind: term
+title: 끝내기
+category: 타격
+one_liner: 홈 팀이 마지막 공격에서 앞서는 점수를 내 경기가 바로 끝나는 거예요.
+easy: '9회말이나 연장 말 공격에서 홈 팀이 앞서는 점수를 내면 그 순간 경기가 끝나요. 끝내기 안타, 끝내기 홈런, 끝내기 볼넷처럼 점수를 낸 방법을 붙여 불러요.
+
+  '
+example: '9회말 2사 2루, 동점 상황에서 안타가 나와 2루 주자가 홈에 들어오며 끝내기가 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 7.01(g)(3), 5.08(b)
+related:
+- term.inning
+- rule.extra_innings
+- term.hit
+event_types: []
+aliases:
+- 끝내기 안타
+- 끝내기 홈런
+- 워크오프
+review_status: draft
+reviewer: ''

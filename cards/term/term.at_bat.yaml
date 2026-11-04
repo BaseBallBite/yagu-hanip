@@ -1,0 +1,19 @@
+id: term.at_bat
+kind: term
+title: 타수
+category: 기록·통계
+one_liner: 타율 계산에 쓰는 타석 수예요. 볼넷·희생타 등은 빼요.
+easy: 타수는 타자가 타석에 선 횟수에서 볼넷, 몸에 맞는 공, 희생번트, 희생플라이, 방해로 출루한 경우를 뺀 숫자예요. 타율은 안타를 이 타수로 나눈 값이에요. 타석 수(타석)와는 달라요.
+example: 5번 타석에 섰고 볼넷 1개, 안타 2개, 땅볼 아웃 2개였다면 타수는 4예요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.02(a) 타수
+related:
+- term.plate_appearance
+- term.batting_average
+- term.hit
+event_types: []
+aliases:
+- 타수
+review_status: draft
+reviewer: ''

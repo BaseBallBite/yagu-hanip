@@ -1,0 +1,26 @@
+id: term.games_played
+kind: term
+title: 경기(출장 경기수)
+category: 기록·통계
+one_liner: 선수가 그 시즌에 출전한 경기 수예요.
+easy: 경기는 타자가 타석에 서거나 수비를 본 경기, 투수가 등판한 경기의 수예요. 선발이든 교체로 나왔든 한 경기에 한 번 센 숫자예요. 연감의 타자·투수 기록표 맨 앞에 나오는 항목이에요.
+example: 구원 투수가 한 시즌에 60번 마운드에 올랐다면 경기 수는 60이에요.
+source:
+- name: 2026 KBO 연감 가이드북
+  note: 타자·투수 기록표 항목
+- name: 공식야구규칙 2026
+  ref: 9.23(c)
+  note: 출전기록의 인정 기준
+related:
+- term.pitcher
+- term.batter
+- term.innings_pitched
+event_types: []
+aliases:
+- 출장
+- 출장 경기
+- 출장경기수
+- 경기수
+- 등판
+review_status: draft
+reviewer: ''

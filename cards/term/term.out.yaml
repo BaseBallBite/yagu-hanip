@@ -1,0 +1,29 @@
+id: term.out
+kind: term
+title: 아웃
+category: 경기 운영
+one_liner: 타자나 주자가 공격 자격을 잃는 거예요. 3개가 되면 공수가 바뀌어요.
+easy: '삼진, 잡힌 뜬공, 태그, 포스 등으로 타자나 주자가 아웃돼요. 한 이닝에 아웃이 3개 쌓이면 공격과 수비가 바뀌어요. 아웃 수를 무사(0), 1사(1), 2사(2)로 불러요.
+
+  '
+example: '2사 1루에서 뜬공이 잡혀 세 번째 아웃이 됐고, 공수가 바뀌었어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 54. OUT, 5.09
+related:
+- term.strikeout
+- rule.tag
+- rule.force_play
+event_types: []
+aliases:
+- 아웃카운트
+- 아웃 카운트
+- 무사
+- 1사
+- 2사
+- 원아웃
+- 투아웃
+review_status: draft
+reviewer: ''

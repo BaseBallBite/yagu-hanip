@@ -1,0 +1,24 @@
+id: term.shutout
+kind: term
+title: 완봉
+category: 기록·통계
+one_liner: 투수 한 명이 끝까지 던져 상대에게 점수를 하나도 주지 않은 거예요.
+easy: '선발 투수가 경기 끝까지 혼자 던지면서 한 점도 내주지 않으면 완봉승이에요. 점수를 주더라도 끝까지 혼자 던지면 완투라고 해요.
+
+  '
+example: '선발 투수가 9이닝을 혼자 던져 상대를 0점으로 막고 완봉승을 거뒀어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.18 셧아웃
+related:
+- term.no_hitter
+- term.starting_pitcher
+- term.era
+event_types: []
+aliases:
+- 완봉승
+- 셧아웃
+review_status: draft
+reviewer: ''

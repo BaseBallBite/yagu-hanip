@@ -1,0 +1,30 @@
+id: rule.foul_ball
+kind: rule
+title: 파울
+category: 기본 규칙
+one_liner: 타구가 파울 라인 밖으로 나가면 파울이고, 다시 쳐야 해요.
+easy: '타자가 친 공이 1루나 3루를 지나기 전에 파울 라인 밖으로 나가거나 파울 지역에 떨어지면 파울이에요. 스트라이크가 2개 미만이면 파울은 스트라이크 하나로 세요. 스트라이크가 2개일 때 파울은 카운트가 늘지 않아요. 단, 번트 파울은 삼진이에요.
+
+  '
+example: '볼카운트 1볼 2스트라이크에서 타자가 친 공이 3루 쪽 관중석으로 갔어요. 파울이라 카운트는 그대로예요.
+
+  '
+when:
+  ball: 파울 지역에서 멈추거나 떨어진 타구
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 32. FOUL BALL
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 72. STRIKE (c)(d)
+  note: 2스트라이크 뒤 파울은 스트라이크로 세지 않지만 번트 파울은 항상 스트라이크
+related:
+- rule.fair_ball
+- term.strike
+- term.count
+event_types: []
+aliases:
+- 파울볼
+- 파울 볼
+- 파울 타구
+review_status: draft
+reviewer: ''

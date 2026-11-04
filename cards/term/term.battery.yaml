@@ -1,0 +1,20 @@
+id: term.battery
+kind: term
+title: 배터리
+category: 수비
+one_liner: 투수와 포수를 묶어 부르는 말이에요.
+easy: 배터리는 투수와 포수 두 명을 함께 이르는 말이에요. 둘이 호흡을 맞춰 어떤 공을 어디에 던질지 정해요.
+example: 선발 배터리는 투수와 포수 둘이 호흡을 맞춰 6이닝을 막았어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 11. BATTERY
+related:
+- term.pitcher
+- term.catcher
+- term.starting_pitcher
+event_types: []
+aliases:
+- 투포수
+- 배터리 호흡
+review_status: draft
+reviewer: ''

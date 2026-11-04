@@ -1,0 +1,30 @@
+id: rule.fair_ball
+kind: rule
+title: 페어
+category: 기본 규칙
+one_liner: 타구가 파울 라인 안쪽에 들어오면 페어이고 경기가 이어져요.
+easy: '타자가 친 공이 1루와 3루 파울 라인 안쪽(페어 지역)에 떨어지거나 그 안에서 멈추면 페어예요. 파울 라인 위에 떨어진 공도 페어예요. 페어가 되면 타자는 1루로 뛰고 수비는 아웃을 노려요.
+
+  '
+example: '타구가 3루 파울 라인 바로 위에 떨어져 페어가 선언됐고, 타자는 2루까지 갔어요.
+
+  '
+when:
+  ball: 페어 지역에 떨어지거나 멈춘 타구
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 25. FAIR BALL
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 26. FAIR TERRITORY
+  note: 파울 라인은 페어지역에 속함
+related:
+- rule.foul_ball
+- term.hit
+- rule.ground_rule_double
+event_types: []
+aliases:
+- 페어볼
+- 페어 볼
+- 페어 타구
+review_status: draft
+reviewer: ''

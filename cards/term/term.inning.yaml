@@ -1,0 +1,25 @@
+id: term.inning
+kind: term
+title: 이닝
+category: 경기 운영
+one_liner: 두 팀이 한 번씩 공격과 수비를 하는 경기의 한 구간이에요.
+easy: '한 이닝은 원정 팀이 공격하는 ''초''와 홈 팀이 공격하는 ''말''로 나뉘어요. 각 팀이 아웃 3개를 당하면 공격이 끝나고, 보통 9이닝까지 해요.
+
+  '
+example: '7회초에 원정 팀이 2점을 냈고, 7회말에는 홈 팀이 공격했어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 43. INNING
+related:
+- term.out
+- rule.extra_innings
+- term.walk_off
+event_types: []
+aliases:
+- 회초
+- 회말
+- 이닝 교대
+review_status: draft
+reviewer: ''

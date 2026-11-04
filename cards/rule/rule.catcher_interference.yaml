@@ -1,0 +1,32 @@
+id: rule.catcher_interference
+kind: rule
+title: 타격방해(포수방해)
+category: 타격 규칙
+one_liner: 포수나 야수가 타자의 스윙을 막으면 타자가 1루로 나가요.
+easy: 포수 등 수비수가 타자의 타격을 방해하면 타자는 아웃될 염려 없이 1루로 나가요. 방해에도 플레이가 이어졌다면 공격 팀 감독은 그 플레이가 끝난 직후 방해 벌칙 대신 실제 플레이 결과를 고를 수 있어요. 타자가 안타·실책·볼넷 등으로 1루에 나가고 다른 주자가 모두 한 베이스 이상 진루했다면 방해와 상관없이 플레이가 이어져요.
+example: 무사 2루에서 타자가 포수에게 방해받으며 번트를 댔고 1루에서 아웃됐어요. 감독은 무사 1·2루로 할지, 1사 3루로 할지 고를 수 있었어요.
+when:
+  who: 포수 또는 다른 야수
+  effect: 타자 1루 안전진루, 감독이 방해 벌칙과 실제 플레이 중 선택 가능
+source:
+- name: 공식야구규칙 2026
+  ref: 5.05(b)(3)
+  note: 포수·야수가 타자를 방해하면 1루 진루
+- name: 공식야구규칙 2026
+  ref: 6.01(c)
+  note: 포수방해
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 44(b)
+related:
+- rule.interference
+- rule.obstruction
+- rule.hit_by_pitch
+event_types:
+- INTERFERENCE
+aliases:
+- 포수방해
+- 포수 방해
+- 타격방해
+- 타격 방해
+review_status: draft
+reviewer: ''

@@ -1,0 +1,37 @@
+id: rule.base_on_balls
+kind: rule
+title: 볼넷
+category: 기본 규칙
+one_liner: 스트라이크 존을 벗어난 공 4개를 골라내면 1루로 걸어 나가요.
+easy: '타자가 치지 않은 공 중 스트라이크 존 밖으로 들어온 공이 4개가 되면 1루가 주어져요. 수비팀이 일부러 걸러 보내겠다고 알리는 고의4구도 같은 방식으로 1루에 나가요. 만루에서 볼넷이 나오면 3루 주자가 밀려 들어와 1점이 나요.
+
+  '
+example: '3볼 2스트라이크에서 바깥쪽으로 빠진 공을 타자가 지켜봤어요. 볼넷으로 1루에 나갔어요.
+
+  '
+more:
+- 볼넷이 되는 공이 타자 몸에 맞으면 볼넷이 아니라 몸에 맞는 공으로 기록돼요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 7. BASE ON BALLS
+- name: 공식야구규칙 2026
+  ref: 5.05(b)(1)
+- name: 공식야구규칙 2026
+  ref: '9.14'
+  note: 기록
+quote: 스트라이크 존을 벗어난 4개의 투구
+related:
+- term.ball
+- rule.hit_by_pitch
+- term.bases_loaded
+event_types:
+- WALK
+- INTENTIONAL_WALK
+aliases:
+- 4구
+- 볼 넷
+- 고의4구
+- 고의사구
+- 밀어내기
+review_status: draft
+reviewer: ''

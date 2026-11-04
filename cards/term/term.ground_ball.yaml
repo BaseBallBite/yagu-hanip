@@ -1,0 +1,27 @@
+id: term.ground_ball
+kind: term
+title: 땅볼
+category: 타격
+one_liner: 타자가 친 공이 땅에 튀며 굴러가는 타구예요.
+easy: '타구가 땅에 닿아 튀거나 굴러가면 땅볼이에요. 내야수가 잡아 1루로 먼저 던지면 타자는 아웃이고, 주자가 있으면 병살이 나오기도 해요.
+
+  '
+example: '2루수 앞 땅볼을 잡아 1루로 던져 타자가 아웃됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 35. GROUND BALL
+related:
+- term.double_play
+- rule.force_play
+- term.infield_hit
+event_types:
+- GROUNDOUT
+aliases:
+- 땅 볼
+- 그라운드볼
+- 내야 땅볼
+- 땅볼 아웃
+review_status: draft
+reviewer: ''

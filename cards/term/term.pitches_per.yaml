@@ -1,0 +1,23 @@
+id: term.pitches_per
+kind: term
+title: 투구수 지표(P/PA·P/G·P/IP)
+category: 기록·통계
+one_liner: 투구수를 타석·경기·이닝으로 나눈 값이에요.
+easy: P/PA는 타석당 투구수로 타자가 얼마나 끈질긴지, 투수에게는 타자당 몇 개를 던지는지 보여줘요. P/G는 경기당, P/IP는 이닝당 투구수예요.
+example: 6이닝에 90구를 던지면 P/IP는 15예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.pitch_count
+- term.plate_appearance
+- term.innings_pitched
+event_types: []
+aliases:
+- P/PA
+- P/G
+- P/IP
+- 타석당 투구수
+- 이닝당 투구수
+review_status: draft
+reviewer: ''

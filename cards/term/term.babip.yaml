@@ -1,0 +1,21 @@
+id: term.babip
+kind: term
+title: BABIP(인플레이 타구 타율)
+category: 기록·통계
+one_liner: 홈런을 뺀, 필드 안에 들어간 타구가 안타가 된 비율이에요.
+easy: BABIP은 (안타 − 홈런) ÷ (타수 − 삼진 − 홈런 + 희생플라이)예요. 수비와 운의 영향이 커서, 평소보다 너무 높거나 낮으면 성적이 곧 바뀔 수 있다고 봐요.
+example: BABIP이 0.380이면 평균보다 운이 좋았다고 보기도 해요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 계산식은 일반 세이버메트릭스 정의
+related:
+- term.batting_average
+- term.hit
+- term.home_run
+event_types: []
+aliases:
+- BABIP
+- 인플레이타구타율
+- 인플레이 타구 타율
+review_status: draft
+reviewer: ''

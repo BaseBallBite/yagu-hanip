@@ -1,0 +1,26 @@
+id: rule.regulation_game
+kind: rule
+title: 정식경기
+category: 특수 상황
+one_liner: 5회까지 진행돼야 승패가 인정되는 경기예요.
+easy: 경기가 5회 초·말 공격이 끝나기 전에 끝나면 원칙적으로 노게임이에요. 다만 홈 팀이 앞서 있으면 5회초만 끝나도, 5회말 도중에 끝나도 정식경기가 돼요. 정식경기가 성립한 뒤 비가 와서 끝나면 그때까지의 득점으로 승패를 정해요.
+example: 홈 팀이 5회초까지 4대3으로 앞서고 있었는데 비가 쏟아져 경기가 끝났어요. 5회말을 안 해도 정식경기라 홈 팀 승리예요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 64. REGULATION GAME
+- name: 공식야구규칙 2026
+  ref: '7.01'
+  note: 정식경기
+- name: 공식야구규칙 2026
+  ref: 그림 8
+  note: 정식경기 예시
+related:
+- rule.called_game
+- rule.no_game
+- rule.suspended_game
+event_types: []
+aliases:
+- 레귤레이션 게임
+- 5회 성립
+review_status: draft
+reviewer: ''

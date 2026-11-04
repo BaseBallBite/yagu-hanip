@@ -1,0 +1,23 @@
+id: term.batter_hand
+kind: term
+title: 좌타자·우타자
+category: 타격
+one_liner: 타석에서 왼쪽에 서면 좌타자, 오른쪽에 서면 우타자예요.
+easy: 좌타자는 타석 오른쪽에서(1루 쪽을 향해) 치고, 우타자는 타석 왼쪽에서 쳐요. 양쪽 다 칠 수 있는 타자는 스위치히터라고 해요. 투수의 던지는 손과 타자의 타격 방향에 따라 유리하고 불리한 상대가 갈려서 대타나 투수 교체에 자주 쓰여요.
+example: 좌투수에게 약한 좌타자 대신 우타자 대타를 냈어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.batter
+- term.pitcher_arm
+- term.pinch_hitter
+event_types: []
+aliases:
+- 좌타
+- 우타
+- 스위치히터
+- 스위치 히터
+- 좌타석
+- 우타석
+review_status: draft
+reviewer: ''

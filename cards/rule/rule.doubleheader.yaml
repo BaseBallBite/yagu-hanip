@@ -1,0 +1,25 @@
+id: rule.doubleheader
+kind: rule
+title: 더블헤더
+category: 특수 상황
+one_liner: 한 팀이 같은 날 두 경기를 연달아 치르는 거예요.
+easy: 우천 등으로 미뤄진 경기는 월요일 경기나 더블헤더로 다시 해요. 1군 더블헤더의 첫 경기는 9회까지만 해요. 퓨처스리그 더블헤더는 두 경기 모두 7이닝으로 하고, 이때는 승부치기를 하지 않아요.
+example: 전날 비로 취소된 경기가 다음 날 더블헤더로 열렸고, 첫 경기는 9회까지로 끝났어요.
+when:
+  kbo: 연기 경기는 필요하면 월요일 경기·더블헤더, 1차전은 9회까지
+  futures: 1·2차전 모두 7이닝, 승부치기 없음
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 22. DOUBLE HEADER, 4.08
+- name: KBO 리그 규정 2026
+  ref: 제5조 1항 (1군), 제60조 (퓨처스리그)
+related:
+- rule.suspended_game
+- rule.extra_innings
+- rule.tiebreaker
+event_types: []
+aliases:
+- 더블 헤더
+- DH 경기
+review_status: draft
+reviewer: ''

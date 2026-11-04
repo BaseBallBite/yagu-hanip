@@ -1,0 +1,28 @@
+id: rule.missed_base
+kind: rule
+title: 누의 공과
+category: 주루 규칙
+one_liner: 주자가 지나가야 할 베이스를 밟지 않았을 때의 규칙이에요.
+easy: 주자는 1루, 2루, 3루, 본루 순서로 모든 베이스를 밟아야 해요. 볼 인 플레이 중에 베이스를 밟지 않고 지나가면 수비가 그 베이스를 공으로 밟거나 주자를 태그하면서 어필해야 아웃이 돼요. 어필하지 않으면 그대로 인정돼요.
+example: 주자가 3루를 밟지 않고 홈에 들어왔어요. 수비가 공을 3루로 던져 어필했고 아웃이 선언됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 5.06(b)(1)
+  note: 베이스를 순서대로 밟아야 함
+- name: 공식야구규칙 2026
+  ref: 5.09(c)(2)
+  note: 누의 공과 어필
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ⑪
+  note: 주자의 누의 공과는 비디오 판독 대상
+related:
+- rule.appeal_play
+- rule.tag_up
+- rule.video_review
+event_types: []
+aliases:
+- 누를 공과
+- 베이스 안 밟음
+- 누 공과
+review_status: draft
+reviewer: ''

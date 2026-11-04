@@ -1,0 +1,20 @@
+id: term.assist
+kind: term
+title: 어시스트
+category: 기록·통계
+one_liner: 아웃을 만들 때 공을 던져 도운 수비수에게 주는 기록이에요.
+easy: 수비수가 송구해서 다른 수비수가 아웃을 완성하도록 도우면 어시스트(보살)를 줘요. 한 아웃에 여러 명이 던졌다면 모두가 어시스트를 받을 수 있어요.
+example: 3루수가 던지고 1루수가 잡아 타자를 아웃시켰어요. 3루수는 어시스트, 1루수는 풋아웃이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.10 어시스트
+related:
+- term.putout
+- term.error
+- term.infielder
+event_types: []
+aliases:
+- 보살
+- 아웃도움
+review_status: draft
+reviewer: ''

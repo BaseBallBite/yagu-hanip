@@ -1,0 +1,21 @@
+id: term.save_opportunity
+kind: term
+title: 세이브 기회
+category: 기록·통계
+one_liner: 구원 투수가 세이브를 올릴 수 있는 상황에 등판한 횟수예요.
+easy: 이기고 있는 팀의 구원 투수가 세이브 조건(9.19)에 맞는 상황에 올라오면 세이브 기회 1번이에요. 그중 성공하면 세이브, 실패하면 블론세이브예요.
+example: 세이브 기회 30번 중 27번 성공하면 세이브 27개, 블론세이브 3개예요.
+source:
+- name: 공식야구규칙 2026
+  ref: '9.19'
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 투수 세부 항목(세이브 기회)
+related:
+- term.save
+- term.blown_save
+event_types: []
+aliases:
+- SVO
+- 세이브 기회 횟수
+review_status: draft
+reviewer: ''

@@ -1,0 +1,22 @@
+id: term.per_nine
+kind: term
+title: 9이닝당 삼진·볼넷
+category: 기록·통계
+one_liner: 9이닝을 던진다고 가정했을 때의 삼진 수와 볼넷 수예요.
+easy: 삼진 수나 볼넷 수에 9를 곱하고 던진 이닝으로 나눈 값이에요. K/9는 삼진, BB/9는 볼넷이고, 이닝 수가 다른 투수끼리 비교할 때 써요.
+example: 60이닝 동안 삼진 70개를 잡으면 K/9는 70×9÷60 = 10.5예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.strikeout
+- term.innings_pitched
+- term.k_bb_ratio
+event_types: []
+aliases:
+- 9이닝당 삼진
+- 9이닝당 볼넷
+- K/9
+- BB/9
+review_status: draft
+reviewer: ''

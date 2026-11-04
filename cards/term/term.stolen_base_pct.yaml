@@ -1,0 +1,21 @@
+id: term.stolen_base_pct
+kind: term
+title: 도루 성공률·도루저지율
+category: 기록·통계
+one_liner: 도루를 시도해서 성공한 비율, 포수가 막은 비율이에요.
+easy: 도루 성공률은 도루 성공을 (도루 성공 + 도루 실패)로 나눈 값이에요. 포수 입장에서는 도루를 시도한 주자 중 잡은 비율이 도루저지율이에요.
+example: 도루를 10번 시도해 8번 성공하면 성공률은 80%예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 주루·수비 항목(SB%, CS%). 도루·도루 실패 정의는 공식야구규칙 9.07
+related:
+- term.stolen_base
+- term.caught_stealing
+event_types: []
+aliases:
+- 도루성공률
+- 도루저지율
+- 도루 저지율
+- 도루 성공률
+review_status: draft
+reviewer: ''

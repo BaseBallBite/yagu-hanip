@@ -1,0 +1,32 @@
+id: rule.appeal_play
+kind: rule
+title: 어필 플레이
+category: 주루 규칙
+one_liner: 주자가 규칙을 어긴 걸 수비가 알려야 아웃이 되는 플레이예요.
+easy: '주자가 베이스를 밟지 않고 지나가거나, 뜬공이 잡혔는데 베이스를 다시 밟지 않고 뛰었을 때 수비가 심판에게 알리는 걸 어필이라고 해요. 수비가 공을 들고 그 베이스를 밟거나 주자를 태그하며 어필하면 심판이 아웃을 선언해요. 수비가 어필하지 않으면 그냥 넘어가요.
+
+  '
+example: '주자가 3루를 밟지 않고 홈에 들어왔어요. 수비가 공을 3루로 보내 어필했고, 주자는 아웃됐어요.
+
+  '
+when:
+  trigger: 수비의 어필
+  cases:
+  - 베이스를 밟지 않음
+  - 태그업 위반
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 2. APPEAL
+- name: 공식야구규칙 2026
+  ref: 5.09(c)
+  note: 어필 플레이로 아웃이 되는 경우
+related:
+- rule.tag_up
+- rule.tag
+- term.out
+event_types: []
+aliases:
+- 어필플레이
+- 어필
+review_status: draft
+reviewer: ''

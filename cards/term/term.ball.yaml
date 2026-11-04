@@ -1,0 +1,22 @@
+id: term.ball
+kind: term
+title: 볼
+category: 투구·구종
+one_liner: 스트라이크 존을 벗어났고 타자가 치지 않은 투구예요.
+easy: '타자가 스윙하지 않았는데 공이 스트라이크 존을 벗어나면 볼이에요. 볼이 4개 쌓이면 타자는 볼넷으로 1루에 가요.
+
+  '
+example: '공이 타자 무릎보다 낮게 들어와 볼이 선언됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 4. BALL
+related:
+- term.strike
+- rule.base_on_balls
+- term.count
+event_types: []
+aliases: []
+review_status: draft
+reviewer: ''

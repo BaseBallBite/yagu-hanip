@@ -1,0 +1,19 @@
+id: term.complete_game
+kind: term
+title: 완투
+category: 기록·통계
+one_liner: 한 투수가 경기 처음부터 끝까지 혼자 던진 거예요.
+easy: 선발 투수가 교체 없이 마지막 아웃까지 던지면 완투예요. 점수를 하나도 안 주면 완봉이에요. KBO 기록실 투수 항목에 '완투'로 나와요.
+example: 선발 투수가 9이닝을 혼자 던지고 4점을 줬다면 완투예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 투수 기본 항목. 공식야구규칙 9장에는 정의 없음
+related:
+- term.shutout
+- term.starting_pitcher
+event_types: []
+aliases:
+- 완투승
+- 완투패
+review_status: draft
+reviewer: ''

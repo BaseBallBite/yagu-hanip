@@ -1,0 +1,21 @@
+id: term.k_bb_ratio
+kind: term
+title: 삼진/볼넷 비율
+category: 기록·통계
+one_liner: 삼진을 볼넷으로 나눈 값이에요. 투수는 높을수록, 타자는 볼넷/삼진이 높을수록 좋아요.
+easy: 투수 입장에서는 삼진 수를 볼넷 수로 나눈 K/BB로, 제구가 좋고 삼진을 잘 잡을수록 커져요. 타자 입장에서는 볼넷을 삼진으로 나눈 BB/K로, 선구안이 좋을수록 커져요.
+example: 삼진 100개, 볼넷 25개를 기록한 투수의 K/BB는 4.00이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.strikeout
+- rule.base_on_balls
+event_types: []
+aliases:
+- 삼진/볼넷
+- 볼넷/삼진
+- K/BB
+- BB/K
+review_status: draft
+reviewer: ''

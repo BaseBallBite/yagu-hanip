@@ -1,0 +1,24 @@
+id: term.closer
+kind: term
+title: 마무리 투수
+category: 경기 운영
+one_liner: 이기고 있는 경기의 마지막 이닝을 맡는 구원 투수예요.
+easy: '마무리 투수는 팀이 근소하게 앞선 9회 같은 마지막 이닝에 나와 경기를 끝내요. 팀에서 가장 믿을 만한 구원 투수가 맡는 경우가 많아요.
+
+  '
+example: '1점 앞선 9회초에 마무리 투수가 나와 세 타자를 모두 잡고 경기를 끝냈어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.save
+- term.bullpen
+- term.hold
+event_types: []
+aliases:
+- 마무리투수
+- 마무리
+- 클로저
+review_status: draft
+reviewer: ''

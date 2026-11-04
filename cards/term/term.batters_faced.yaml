@@ -1,0 +1,20 @@
+id: term.batters_faced
+kind: term
+title: 상대 타자수
+category: 기록·통계
+one_liner: 투수가 상대한 타자의 수예요.
+easy: 투수가 던지는 동안 타석에 선 타자 수를 모두 센 숫자예요. 안타, 볼넷, 아웃 등 결과와 상관없이 한 타자를 상대하면 1이에요. KBO 기록실 투수 항목에서는 '타자'로 나와요.
+example: 한 이닝에 타자 4명을 상대하면 상대 타자수는 4예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 투수 기본 항목(TBF). 공식야구규칙 9장에는 정의 없음
+related:
+- term.innings_pitched
+- term.hits_allowed
+event_types: []
+aliases:
+- 타자수
+- TBF
+- 상대 타자
+review_status: draft
+reviewer: ''

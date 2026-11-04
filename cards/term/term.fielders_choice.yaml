@@ -1,0 +1,26 @@
+id: term.fielders_choice
+kind: term
+title: 야수선택
+category: 수비
+one_liner: 수비가 타자 대신 다른 주자를 아웃시키려다 타자가 살아 나간 거예요.
+easy: '수비가 공을 잡고 1루가 아니라 다른 베이스의 주자를 잡으려고 던지는 사이 타자가 1루에 살면 야수선택이에요. 타자가 1루에 나갔어도 안타로 치지 않아요.
+
+  '
+example: '1사 2루 땅볼 때 유격수가 3루로 던져 주자를 잡으려 했고, 그 사이 타자는 1루에 살았어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 28. FIELDER'S CHOICE
+related:
+- rule.force_play
+- term.hit
+- term.error
+event_types:
+- FIELDERS_CHOICE
+aliases:
+- 야수 선택
+- 필더스 초이스
+- 필더스초이스
+review_status: draft
+reviewer: ''

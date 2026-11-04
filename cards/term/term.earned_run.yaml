@@ -1,0 +1,21 @@
+id: term.earned_run
+kind: term
+title: 자책점
+category: 기록·통계
+one_liner: 투수에게 책임이 있다고 보는 실점이에요. 실책으로 들어온 점수는 빠져요.
+easy: 자책점은 수비 실책이나 포일이 없었다면 들어오지 않았을 점수를 뺀, 투수 책임의 실점이에요. 실책으로 나간 주자가 득점해도 자책점이 아닐 수 있어요. 평균자책점은 이 자책점으로 계산해요.
+example: 실책으로 나간 주자가 홈런으로 득점했다면 그 주자의 점수는 자책점이 아닐 수 있어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.16 자책점
+related:
+- term.era
+- term.error
+- term.pitcher
+event_types: []
+aliases:
+- 자책
+- 비자책
+- 비자책점
+review_status: draft
+reviewer: ''

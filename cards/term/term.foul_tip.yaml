@@ -1,0 +1,20 @@
+id: term.foul_tip
+kind: term
+title: 파울 팁
+category: 타격
+one_liner: 타자의 배트를 살짝 스치고 곧바로 포수가 잡은 공이에요.
+easy: 타자가 친 공이 배트를 날카롭게 스친 뒤 곧장 포수 쪽으로 가서 정규로 잡히면 파울 팁이에요. 포구된 파울 팁은 스트라이크이고 공은 살아 있어요(볼 인 플레이). 포수가 잡지 못하면 파울 팁이 아니라 그냥 파울이에요.
+example: 2스트라이크에서 배트에 스친 공이 포수 미트로 들어가 삼진이 됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 34. FOUL TIP
+related:
+- rule.foul_ball
+- term.strikeout
+- term.catcher
+event_types:
+- STRIKEOUT
+aliases:
+- 파울팁
+review_status: draft
+reviewer: ''

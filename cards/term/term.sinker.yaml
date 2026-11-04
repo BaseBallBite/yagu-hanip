@@ -1,0 +1,21 @@
+id: term.sinker
+kind: term
+title: 싱커
+category: 투구·구종
+one_liner: 직구처럼 빠르게 오다 아래로 가라앉는 공이에요.
+easy: 싱커는 직구와 비슷한 속도로 오다가 타자 앞에서 아래로 꺼지는 공이에요. 타자가 공 위쪽을 쳐서 땅볼이 되기 쉬워요. 투심과 비슷하지만 더 많이 가라앉는다고 말하는 경우가 많아요.
+example: 싱커에 타자가 공 위를 때려 유격수 앞 땅볼이 됐어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.twoseam
+- term.fastball
+- term.ground_ball
+event_types: []
+aliases:
+- 싱킹 패스트볼
+- 싱킹패스트볼
+- 싱킹 볼
+review_status: draft
+reviewer: ''

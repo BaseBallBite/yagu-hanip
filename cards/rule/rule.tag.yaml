@@ -1,0 +1,27 @@
+id: rule.tag
+kind: rule
+title: 태그
+category: 주루 규칙
+one_liner: 공을 쥔 수비수가 공이나 글러브를 주자 몸에 대는 거예요.
+easy: '수비수가 공, 또는 공을 확실히 쥔 글러브나 손을 주자의 몸에 대면 태그예요. 공을 확실하게 잡고 있어야 하고, 대는 순간 공을 떨어뜨리면 태그가 아니에요. 포스 상황이 아닌 주자는 태그를 당해야 아웃이 돼요.
+
+  '
+example: '2루로 뛰던 주자에게 유격수가 공을 든 글러브를 갖다 대서 도루가 실패했어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 75. TAG
+quote: 확실하게 공을 잡고
+related:
+- rule.force_play
+- term.out
+- term.stolen_base
+event_types:
+- CAUGHT_STEALING
+- PICKOFF
+aliases:
+- 태그 아웃
+- 태그아웃
+review_status: draft
+reviewer: ''

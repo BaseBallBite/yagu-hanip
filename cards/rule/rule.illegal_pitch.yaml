@@ -1,0 +1,26 @@
+id: rule.illegal_pitch
+kind: rule
+title: 반칙투구
+category: 수비 규칙
+one_liner: 투수가 규정에 어긋난 방법으로 던진 공이에요. 주자가 있으면 보크예요.
+easy: 투수가 투수판에 중심발을 대지 않고 던지거나, 타자가 준비하기 전에 던지는 퀵 리턴 피치는 반칙투구예요. 주자가 없으면 볼로 선언되고, 주자가 있으면 보크가 돼요.
+example: 주자가 없을 때 투수가 타자가 준비하기 전에 빠르게 공을 던져 반칙투구로 볼이 선언됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 38. ILLEGAL PITCH
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 63. QUICK RETURN PITCH
+- name: 공식야구규칙 2026
+  ref: 6.02(b)
+related:
+- rule.balk
+- term.pitcher
+- term.ball
+event_types: []
+aliases:
+- 일리걸 피치
+- 퀵리턴 피치
+- 퀵 리턴 피치
+- 퀵 리턴
+review_status: draft
+reviewer: ''

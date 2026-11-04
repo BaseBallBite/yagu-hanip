@@ -1,0 +1,29 @@
+id: term.base
+kind: term
+title: 베이스
+category: 경기 운영
+one_liner: 주자가 득점하려면 닿아야 하는 네 곳이에요.
+easy: 베이스는 1루, 2루, 3루와 홈플레이트(본루) 네 곳이에요. 주자는 이 순서대로 모두 닿아야 득점해요. 베이스 사이 거리는 90피트(약 27.4m)이고, KBO는 18인치 크기의 베이스를 써요.
+example: 주자가 2루 베이스를 밟고 3루로 달렸어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 5. BASE
+- name: 공식야구규칙 2026
+  ref: 2.02~2.03
+- name: 공식야구규칙 2026
+  ref: 야구 도량형
+  note: 베이스 간 거리 90피트
+related:
+- term.runner
+- rule.tag
+- rule.force_play
+event_types: []
+aliases:
+- 1루
+- 2루
+- 3루
+- 본루
+- 홈플레이트
+- 홈 플레이트
+review_status: draft
+reviewer: ''

@@ -1,0 +1,25 @@
+id: term.extra_base_hit
+kind: term
+title: 장타
+category: 타격
+one_liner: 2루타 이상인 안타를 묶어 부르는 말이에요.
+easy: '2루타, 3루타, 홈런처럼 타자가 한 번에 2루 이상 간 안타를 장타라고 해요. 장타가 많으면 주자가 한 번에 많이 들어와 점수를 내기 쉬워요.
+
+  '
+example: '이 타자는 오늘 2루타와 홈런으로 장타 2개를 쳤어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.double
+- term.triple
+- term.home_run
+event_types:
+- DOUBLE
+- TRIPLE
+- HOME_RUN
+aliases:
+- 장타력
+review_status: draft
+reviewer: ''

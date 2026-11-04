@@ -1,0 +1,21 @@
+id: term.pitch_count
+kind: term
+title: 투구수
+category: 투구·구종
+one_liner: 투수가 한 경기에서 던진 공의 개수예요.
+easy: 투구수는 투수가 던진 공의 총개수예요. 많이 던질수록 지쳐서, 감독이 보통 100개 안팎에서 투수 교체를 고민해요. 공 하나하나가 스트라이크인지 볼인지 센 것과는 별개로, 던진 횟수 자체를 셈해요.
+example: 선발 투수가 6이닝 동안 투구수 98개를 기록하고 마운드를 내려갔어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.starting_pitcher
+- term.pitching_change
+- term.bullpen
+event_types: []
+aliases:
+- 투구 수
+- 투구 개수
+- 구수
+- 투구수 제한
+review_status: draft
+reviewer: ''

@@ -1,0 +1,33 @@
+id: rule.force_play
+kind: rule
+title: 포스 플레이
+category: 수비 규칙
+one_liner: 뒤 주자에 밀려 앞 주자가 꼭 다음 베이스로 가야 하는 상황이에요.
+easy: '타자가 주자가 되면 1루에 있던 주자는 2루로 비켜줘야 해요. 이렇게 꼭 가야 하는 주자는 수비가 공을 들고 그 베이스만 밟아도 아웃이에요. 강제가 풀리면 그 주자는 몸에 태그해야 아웃이 돼요.
+
+  '
+example: '1사 1루에서 땅볼이 나왔어요. 유격수가 공을 잡아 2루를 밟자 1루 주자는 태그 없이 아웃됐어요.
+
+  '
+more:
+- 처음엔 포스 상태였다가 다음 플레이로 풀리는 경우가 있어서, 득점 인정 여부가 달라질 수 있어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 30. FORCE PLAY
+- name: 공식야구규칙 2026
+  ref: 5.09(b)(6)
+  note: 포스 아웃
+quote: 기존의 주자가 그 베이스에 대한 점유권을 빼앗긴
+related:
+- rule.tag
+- term.double_play
+event_types:
+- FORCE_OUT
+- DOUBLE_PLAY
+aliases:
+- 포스플레이
+- 포스 아웃
+- 포스아웃
+- 강제 진루
+review_status: draft
+reviewer: ''

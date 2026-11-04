@@ -1,0 +1,19 @@
+id: term.whip
+kind: term
+title: WHIP
+category: 기록·통계
+one_liner: 투수가 한 이닝에 안타와 볼넷을 몇 개 내줬는지 보여주는 기록이에요.
+easy: WHIP는 (피안타 + 볼넷)을 투구 이닝으로 나눈 값이에요. 이닝당 평균으로 주자를 몇 명 내보냈는지 보여줘요. 낮을수록 좋은 투수예요. 공식야구규칙에는 없고 연감에는 투수 기록표 항목으로 나와요.
+example: 6이닝 동안 안타 5개, 볼넷 1개를 내주면 WHIP는 (5+1)÷6 = 1.00이에요.
+source:
+- name: 팀 작성(세이버메트릭스 일반 정의)
+  note: 2026 KBO 연감 투수 기록표 항목, 공식야구규칙에는 정의 없음
+related:
+- term.era
+- term.hits_allowed
+- term.innings_pitched
+event_types: []
+aliases:
+- 이닝당 출루 허용률
+review_status: draft
+reviewer: ''

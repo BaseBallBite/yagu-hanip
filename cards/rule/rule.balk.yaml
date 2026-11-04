@@ -1,0 +1,35 @@
+id: rule.balk
+kind: rule
+title: 보크
+category: 특수 상황
+one_liner: 주자가 있을 때 투수가 반칙 동작을 하면 모든 주자가 한 베이스씩 가요.
+easy: '투수가 규칙에 어긋나는 동작으로 주자를 속이는 걸 막는 규칙이에요. 주자가 있을 때 투구 동작을 하다 멈추거나, 1루나 3루에 던지는 척만 하면 보크예요. 보크가 선언되면 모든 주자가 한 베이스씩 진루해요.
+
+  '
+example: '1사 2루에서 투수가 투구 동작을 시작했다가 멈췄어요. 보크가 선언되어 2루 주자가 3루로 갔어요.
+
+  '
+when:
+  runners: 베이스에 주자가 있을 때
+  examples:
+  - 투구 동작을 일으키다가 중단
+  - 1루 또는 3루에 송구하는 시늉만 하고 던지지 않음
+  - 송구 전 그 베이스 쪽으로 발을 내딛지 않음
+  result: 모든 주자 한 베이스 진루
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 3. BALK
+- name: 공식야구규칙 2026
+  ref: 6.02(a)
+  note: 보크 11가지 경우
+- name: 공식야구규칙 2026
+  ref: 5.06(c)(3)
+  note: 보크 시 모든 주자 진루
+quote: 모든 주자는 한 베이스씩 진루한다
+related:
+- term.pickoff
+event_types:
+- BALK
+aliases: []
+review_status: draft
+reviewer: ''

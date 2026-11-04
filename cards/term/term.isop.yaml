@@ -1,0 +1,21 @@
+id: term.isop
+kind: term
+title: 순수장타율
+category: 기록·통계
+one_liner: 장타율에서 타율을 뺀 값이에요.
+easy: ISOP는 장타율 − 타율이에요. 단타를 빼고 장타(2루타 이상)로 얻은 추가 루타만 보여줘서 장타력을 따로 볼 수 있어요.
+example: 장타율 0.500, 타율 0.300이면 순수장타율은 0.200이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.slugging
+- term.batting_average
+- term.extra_base_hit
+event_types: []
+aliases:
+- ISOP
+- ISO
+- 순수 장타율
+review_status: draft
+reviewer: ''

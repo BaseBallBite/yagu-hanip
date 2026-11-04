@@ -1,0 +1,24 @@
+id: rule.runner_passing
+kind: rule
+title: 주자 추월
+category: 주루 규칙
+one_liner: 뒤따르던 주자가 앞 주자를 앞지르면 추월한 주자가 아웃이에요.
+easy: 후위 주자가 아웃되지 않은 선행 주자를 앞지르면 추월한 주자가 아웃돼요. 안타를 치고 앞 주자 바로 뒤에서 달리다가 나올 수 있어요. 이 판정은 비디오 판독 대상이에요.
+example: 1루 주자가 천천히 가는 사이 타자주자가 2루로 달리다 그 주자를 앞질러서 아웃이 됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 5.09(b)(9)
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ⑫
+  note: 선행주자 추월은 비디오 판독 대상
+related:
+- rule.video_review
+- rule.tag
+- term.out
+event_types: []
+aliases:
+- 추월
+- 선행주자 추월
+- 앞지르기
+review_status: draft
+reviewer: ''

@@ -1,0 +1,20 @@
+id: term.batter
+kind: term
+title: 타자
+category: 타격
+one_liner: 타석에 들어서 공격하는 선수예요.
+easy: 타자는 타자석에 서서 투수의 공을 치는 공격 팀 선수예요. 정해진 타순대로 차례가 돌아오고, 공을 치고 달리기 시작하면 타자주자가 돼요.
+example: 4번 타자가 타석에 들어섰어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 8. BATTER
+related:
+- term.batting_order
+- term.runner
+- term.pinch_hitter
+event_types: []
+aliases:
+- 타석에 선 선수
+- 배터
+review_status: draft
+reviewer: ''

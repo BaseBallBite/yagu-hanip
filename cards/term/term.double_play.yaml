@@ -1,0 +1,27 @@
+id: term.double_play
+kind: term
+title: 병살
+category: 수비
+one_liner: 한 번의 플레이로 아웃 2개를 잡는 거예요.
+easy: '수비가 공 하나로 연달아 두 명을 아웃시키면 병살이에요. 주자가 1루에 있을 때 땅볼이 나오면 2루와 1루에서 차례로 아웃시키는 경우가 가장 흔해요.
+
+  '
+example: '1사 1루에서 유격수 앞 땅볼을 2루, 1루로 이어 던져 두 명을 잡고 이닝이 끝났어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 23. DOUBLE PLAY, 9.11
+related:
+- rule.force_play
+- term.ground_ball
+- term.out
+event_types:
+- DOUBLE_PLAY
+aliases:
+- 더블플레이
+- 더블 플레이
+- 병살타
+- 6-4-3
+review_status: draft
+reviewer: ''

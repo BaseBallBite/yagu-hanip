@@ -1,0 +1,21 @@
+id: term.games_started
+kind: term
+title: 선발 등판(선발 경기)
+category: 기록·통계
+one_liner: 선발 투수나 선발 출전 선수로 나온 경기 수예요.
+easy: 투수는 선발로 나온 경기, 수비는 선발 라인업으로 나온 경기를 말해요. 연감과 기록실에서 GS로 표시해요.
+example: 시즌 28경기에 선발로 나오면 GS는 28이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.starting_pitcher
+- term.games_played
+event_types: []
+aliases:
+- GS
+- 선발경기
+- 선발 등판
+- 선발 출장
+review_status: draft
+reviewer: ''

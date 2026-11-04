@@ -1,0 +1,19 @@
+id: term.slurve
+kind: term
+title: 슬러브
+category: 투구·구종
+one_liner: 슬라이더와 커브의 중간쯤 되는 공이에요.
+easy: 슬러브(slurve)는 슬라이더(옆으로 휨)와 커브(아래로 떨어짐)의 특징을 섞은 공이에요. 옆으로 휘면서 아래로도 떨어져서, 둘 중 하나로 구분하기 애매할 때 슬러브라고 불러요.
+example: 슬러브가 바깥쪽으로 휘며 떨어져 타자가 헛스윙했어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.slider
+- term.curveball
+- term.sweeper
+event_types: []
+aliases:
+- 슬러브볼
+review_status: draft
+reviewer: ''

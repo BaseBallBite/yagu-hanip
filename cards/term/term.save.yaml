@@ -1,0 +1,21 @@
+id: term.save
+kind: term
+title: 세이브
+category: 기록·통계
+one_liner: 이긴 경기를 끝까지 지켜낸 구원 투수에게 주는 기록이에요.
+easy: 이긴 팀의 마지막 투수이고 승리투수가 아니어야 해요. 그리고 3점 이하 리드에서 올라와 1이닝 이상 던졌거나, 동점 주자가 루상·타석·다음 타석에 있는 상황에서 올라왔거나, 3이닝 이상 던졌어야 해요. 세이브는 한 경기에 한 명만 받아요.
+example: '2점 앞선 9회에 나온 마무리 투수가 세 타자를 잡고 세이브를 올렸어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.19 구원투수의 세이브 결정
+related:
+- term.closer
+- term.hold
+- term.win
+event_types: []
+aliases:
+- 세이브 상황
+review_status: draft
+reviewer: ''

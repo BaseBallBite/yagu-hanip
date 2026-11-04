@@ -1,0 +1,24 @@
+id: term.starting_pitcher
+kind: term
+title: 선발 투수
+category: 경기 운영
+one_liner: 경기를 처음 시작하는 투수예요.
+easy: '선발 투수는 1회부터 던지는 투수로, 보통 5~7이닝 정도를 책임져요. 한 번 던지면 며칠 쉬어야 해서 팀마다 선발 투수 여러 명이 돌아가며 나와요.
+
+  '
+example: '선발 투수가 6이닝을 던지고 불펜에게 마운드를 넘겼어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.bullpen
+- term.quality_start
+- term.pitcher
+event_types: []
+aliases:
+- 선발투수
+- 선발
+- 선발 로테이션
+review_status: draft
+reviewer: ''

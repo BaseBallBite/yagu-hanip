@@ -1,0 +1,26 @@
+id: term.walks_hbp
+kind: term
+title: 사사구
+category: 기록·통계
+one_liner: 볼넷, 몸에 맞는 공, 고의4구를 묶어 부르는 말이에요.
+easy: 사사구는 타자가 볼넷(4구), 몸에 맞는 공(사구), 고의4구로 1루에 나간 걸 합친 말이에요. 투수 쪽에서 보면 '내준 사사구'라서 제구가 얼마나 흔들렸는지 볼 때 써요. 연감 투수 기록표의 '볼넷'과는 구분해서 봐요.
+example: 투수가 볼넷 3개와 몸에 맞는 공 1개를 내줬다면 사사구는 4개예요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.14 4구
+  note: 볼넷·고의4구 기록
+- name: 공식야구규칙 2026
+  ref: 5.05(b)(2)
+  note: 몸에 맞는 공
+related:
+- rule.base_on_balls
+- rule.hit_by_pitch
+- term.whip
+event_types: []
+aliases:
+- 4사구
+- 사사구
+- 볼넷 허용
+- 고의4구 허용
+review_status: draft
+reviewer: ''

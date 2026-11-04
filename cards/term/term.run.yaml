@@ -1,0 +1,21 @@
+id: term.run
+kind: term
+title: 득점
+category: 기록·통계
+one_liner: 주자가 1루, 2루, 3루, 홈 순서로 모두 밟고 홈에 들어오면 얻는 점수예요.
+easy: 타자가 주자가 되어 1루, 2루, 3루, 본루를 차례로 밟으면 1점이 나요. 3아웃이 되기 전에 홈을 밟아야 하고, 상황에 따라 인정되지 않을 수도 있어요.
+example: 1사 3루에서 뜬공이 잡힌 뒤 3루 주자가 태그업해 홈을 밟아 1점이 났어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 66. RUN or SCORE, 5.08
+related:
+- rule.run_scoring
+- term.rbi
+- rule.tag_up
+event_types: []
+aliases:
+- 득점
+- 점수
+- 1점
+review_status: draft
+reviewer: ''

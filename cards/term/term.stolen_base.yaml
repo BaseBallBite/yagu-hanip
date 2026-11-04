@@ -1,0 +1,27 @@
+id: term.stolen_base
+kind: term
+title: 도루
+category: 주루
+one_liner: 투수가 공을 던지는 사이 주자가 다음 베이스로 뛰어 가는 거예요.
+easy: '안타나 실책 없이, 투수가 타자에게 공을 던지는 틈을 타 주자가 다음 베이스로 뛰어 살면 도루예요. 포수가 공을 베이스로 던져 태그하면 주자는 아웃되고, 이를 도루 실패라고 해요.
+
+  '
+example: '1사 1루에서 투수가 공을 던지자 1루 주자가 2루로 뛰어 세이프가 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.07 도루
+related:
+- term.caught_stealing
+- rule.tag
+- term.pickoff
+event_types:
+- STOLEN_BASE
+aliases:
+- 스틸
+- 2루 도루
+- 3루 도루
+- 홈스틸
+review_status: draft
+reviewer: ''

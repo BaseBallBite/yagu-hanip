@@ -1,0 +1,22 @@
+id: term.throw
+kind: term
+title: 송구
+category: 수비
+one_liner: 투수가 타자에게 던지는 투구를 뺀, 선수 사이에 던지는 모든 공이에요.
+easy: 송구는 목표 지점을 향해 손과 팔로 공을 보내는 행위예요. 투수가 타자에게 던지는 공은 '투구'라고 하고, 그 밖에 선수가 다른 선수에게 던지는 건 모두 송구예요.
+example: 유격수가 땅볼을 잡고 1루로 송구했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 59. PITCH
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 76. THROW
+related:
+- term.pitcher
+- term.infielder
+- term.error
+event_types: []
+aliases:
+- 악송구
+- 송구
+review_status: draft
+reviewer: ''

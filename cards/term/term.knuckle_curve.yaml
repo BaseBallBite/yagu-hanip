@@ -1,0 +1,22 @@
+id: term.knuckle_curve
+kind: term
+title: 너클커브
+category: 투구·구종
+one_liner: 검지를 구부려 쥐고 던지는, 크게 떨어지는 커브예요.
+easy: 너클커브는 검지(또는 검지·중지) 끝을 공 표면에 구부려 대고 던지는 커브예요. 일반 커브처럼 위에서 아래로 크게 떨어져요. 너클볼과 이름이 비슷하지만 회전이 있어서 흔들리는 공이 아니에요.
+example: 직구 뒤에 들어온 너클커브에 타자가 타이밍을 뺏겨 삼진을 당했어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.curveball
+- term.knuckleball
+- term.strikeout
+event_types: []
+aliases:
+- 너클 커브
+- 너클커브볼
+- 스파이크 커브
+- 스파이크커브
+review_status: draft
+reviewer: ''

@@ -1,0 +1,24 @@
+id: term.forkball
+kind: term
+title: 포크볼
+category: 투구·구종
+one_liner: 타자 앞에서 뚝 떨어지는 변화구예요.
+easy: '포크볼은 검지와 중지 사이에 공을 끼워 던져서, 회전이 적고 타자 앞에서 아래로 뚝 떨어져요. 타자가 땅볼을 치거나 헛스윙하게 만드는 데 많이 써요.
+
+  '
+example: '낮게 떨어지는 포크볼에 타자가 헛스윙해 삼진이 됐어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.changeup
+- term.strikeout
+- term.ground_ball
+event_types: []
+aliases:
+- 포크
+- 스플리터
+- 스플리터 패스트볼
+review_status: draft
+reviewer: ''

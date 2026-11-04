@@ -1,0 +1,19 @@
+id: term.slugging
+kind: term
+title: 장타율
+category: 기록·통계
+one_liner: 타자가 얼마나 멀리 가는 안타를 치는지 보여주는 비율이에요.
+easy: 장타율은 루타 수(단타 1, 2루타 2, 3루타 3, 홈런 4)를 타수로 나눈 값이에요. 같은 안타 수라도 2루타나 홈런이 많으면 장타율이 높아져요. 출루율과 더하면 OPS예요.
+example: 10타수에 단타 2개와 홈런 1개면 루타 수 6, 장타율은 0.600이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(c) 장타율
+related:
+- term.ops
+- term.batting_average
+- term.extra_base_hit
+event_types: []
+aliases:
+- 장타율
+review_status: draft
+reviewer: ''

@@ -1,0 +1,23 @@
+id: term.dugout
+kind: term
+title: 벤치(덕아웃)
+category: 경기 운영
+one_liner: 경기에 나가지 않은 선수들이 앉는 곳이에요.
+easy: 벤치 또는 덕아웃은 지금 경기 중이 아닌 선수와 팀 구성원이 앉는 시설이에요. 경기 중 벤치에 들어갈 수 있는 인원은 감독 1명, 코치 10명, 현역선수 29명 등으로 정해져 있어요(9월 1일 이후 선수 34명).
+example: 7회가 되자 벤치에서 대기하던 대타 선수가 방망이를 들고 일어났어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 12. BENCH or DUGOUT
+- name: KBO 리그 규정 2026
+  ref: 제14조 1항
+  note: 벤치 인원 제한
+related:
+- term.manager
+- term.pinch_hitter
+- rule.substitution
+event_types: []
+aliases:
+- 덕아웃
+- 벤치 대기
+review_status: draft
+reviewer: ''

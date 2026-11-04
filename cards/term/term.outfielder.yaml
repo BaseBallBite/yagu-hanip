@@ -1,0 +1,25 @@
+id: term.outfielder
+kind: term
+title: 외야수
+category: 수비
+one_liner: 내야 뒤 넓은 외야를 지키는 세 명의 수비수예요.
+easy: '외야수는 좌익수, 중견수, 우익수 세 명이에요. 뜬공을 잡고, 외야로 빠진 안타를 잡아 내야나 홈으로 던져 주자를 막아요.
+
+  '
+example: '중견수가 뜬공을 잡은 뒤 홈으로 던져 태그업한 주자를 잡으려 했어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 55. OUTFIELDER
+related:
+- term.infielder
+- term.fly_ball
+- rule.tag_up
+event_types: []
+aliases:
+- 좌익수
+- 중견수
+- 우익수
+review_status: draft
+reviewer: ''

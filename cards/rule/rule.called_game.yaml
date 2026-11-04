@@ -1,0 +1,24 @@
+id: rule.called_game
+kind: rule
+title: 콜드게임
+category: 특수 상황
+one_liner: 주심이 경기 종료를 선언한 경기예요. 정식경기 이후면 그때까지 점수로 승패를 정해요.
+easy: 콜드게임은 비나 어둠 등으로 주심이 경기 종료를 선언한 경기예요. 정식경기가 된 뒤에 콜드게임이 되면 그때까지의 두 팀 총득점으로 승패를 정해요. 점수 차이로 일찍 끝내는 제도가 아니라, 날씨 같은 이유로 더 할 수 없을 때 쓰는 거예요.
+example: 6회 도중 큰 비로 경기가 끝났고, 그때 5대3으로 앞서던 팀이 이겼어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 14. CALLED GAME
+- name: 공식야구규칙 2026
+  ref: '7.01'
+related:
+- rule.regulation_game
+- rule.no_game
+- rule.suspended_game
+event_types: []
+aliases:
+- 콜드 게임
+- 강우 콜드
+- 강우콜드게임
+- 중도종료경기
+review_status: draft
+reviewer: ''

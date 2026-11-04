@@ -1,0 +1,19 @@
+id: term.in_jeopardy
+kind: term
+title: 인 제퍼디
+category: 수비
+one_liner: 볼 인 플레이 때 공격 선수가 아웃될 수 있는 상태예요.
+easy: 인 제퍼디는 공이 살아 있을 때 공격 팀 선수가 아웃될 위험이 있는 상태를 말해요. 예를 들어 베이스에서 떨어진 주자는 인 제퍼디 상태예요.
+example: 리드 폭이 큰 주자가 베이스에서 떨어져 있어, 수비가 태그할 수 있는 상태였어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 42. IN JEOPARDY
+related:
+- term.out
+- rule.tag
+- rule.dead_ball
+event_types: []
+aliases:
+- 인제퍼디
+review_status: draft
+reviewer: ''

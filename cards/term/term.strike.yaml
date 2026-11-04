@@ -1,0 +1,24 @@
+id: term.strike
+kind: term
+title: 스트라이크
+category: 투구·구종
+one_liner: 타자에게 불리한 투구 판정으로, 3개가 되면 삼진이에요.
+easy: '투구가 스트라이크 존을 지나가거나, 타자가 헛스윙하거나, 2스트라이크 전 파울이 나오면 스트라이크예요. 스트라이크가 3개 쌓이면 타자는 삼진 아웃이에요.
+
+  '
+example: '타자가 바깥쪽 공에 헛스윙해서 스트라이크가 하나 늘었어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 72. STRIKE
+related:
+- term.ball
+- rule.strike_zone
+- term.strikeout
+event_types: []
+aliases:
+- 스트라익
+- 헛스윙
+review_status: draft
+reviewer: ''

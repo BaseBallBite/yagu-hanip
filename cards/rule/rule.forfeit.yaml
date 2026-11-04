@@ -1,0 +1,25 @@
+id: rule.forfeit
+kind: rule
+title: 몰수 경기
+category: 특수 상황
+one_liner: 한 팀이 규칙을 어겨 경기를 못 하면 반칙 없는 팀이 9대0으로 이기는 걸로 처리해요.
+easy: 공식야구규칙에서는 한 팀이 경기에 나오지 않거나, 경기를 거부하거나, 고의로 지연시키는 등 규칙을 어기면 주심이 몰수경기를 선언하고 상대 팀에게 9대0 승리를 줘요. KBO 리그 규정은 홈 팀이 공식 일정을 이행하지 못하면 총재가 그 경기를 몰수하고 원정 팀에게 승리를 준다고 정해요. 단, 원정 팀이 경기 시작 전에 구장에 도착했을 때만 그래요.
+example: 홈 팀이 경기장을 쓸 수 없게 됐는데 원정 팀이 제시간에 도착해 있어서, 원정 팀 승리로 몰수 처리됐어요.
+when:
+  obr: 규칙 위반으로 주심이 경기 종료를 선언 → 반칙 없는 팀 9-0 승리
+  kbo: 홈 팀이 일정 이행 못함 + 원정 팀이 시작 전 도착
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 31. FORFEITED GAME, 7.03
+- name: KBO 리그 규정 2026
+  ref: 제6조 1항
+related:
+- rule.suspended_game
+- rule.doubleheader
+event_types: []
+aliases:
+- 몰수게임
+- 몰수승
+- 몰수패
+review_status: draft
+reviewer: ''

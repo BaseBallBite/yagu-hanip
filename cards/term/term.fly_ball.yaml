@@ -1,0 +1,29 @@
+id: term.fly_ball
+kind: term
+title: 뜬공
+category: 타격
+one_liner: 타자가 친 공이 공중으로 높이 뜬 타구예요.
+easy: '타자가 친 공이 높이 떠오르면 뜬공이에요. 수비가 땅에 떨어지기 전에 잡으면 타자는 아웃이에요. 잡히더라도 주자는 태그업해서 다음 베이스로 갈 수 있어요.
+
+  '
+example: '1사 1루에서 중견수 쪽 뜬공이 잡혀 타자가 아웃됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 29. FLY BALL
+related:
+- rule.tag_up
+- rule.infield_fly
+- term.sacrifice_fly
+event_types:
+- FLYOUT
+aliases:
+- 플라이
+- 플라이볼
+- 플라이 볼
+- 뜬 공
+- 외야 플라이
+- 플라이 아웃
+review_status: draft
+reviewer: ''

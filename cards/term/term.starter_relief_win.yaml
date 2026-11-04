@@ -1,0 +1,22 @@
+id: term.starter_relief_win
+kind: term
+title: 선발승·구원승
+category: 기록·통계
+one_liner: 선발 투수로 거둔 승리, 구원 투수로 거둔 승리예요.
+easy: 승리 투수 중 선발로 나와 이기면 선발승(Wgs), 구원으로 나와 이기면 구원승(Wgr)이에요. 두 숫자를 더하면 시즌 승이 돼요.
+example: 선발 12승, 구원 3승이면 시즌 15승이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.win
+- term.starting_pitcher
+- term.bullpen
+event_types: []
+aliases:
+- 선발승
+- 구원승
+- Wgs
+- Wgr
+review_status: draft
+reviewer: ''

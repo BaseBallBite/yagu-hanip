@@ -1,0 +1,29 @@
+id: rule.substitution
+kind: rule
+title: 선수 교체
+category: 기본 규칙
+one_liner: 경기 중 선수를 바꿀 수 있지만, 한 번 빠진 선수는 다시 못 나와요.
+easy: '감독은 공이 죽은 상태에서 심판에게 알리고 선수를 바꿀 수 있어요. 교체돼 빠진 선수는 그 경기에 다시 나올 수 없어요. 대타, 대주자, 투수 교체가 모두 선수 교체예요.
+
+  '
+example: '7회 2사 2루에서 감독이 타자를 대타로 바꿨어요. 빠진 타자는 남은 경기에 나올 수 없어요.
+
+  '
+when:
+  timing: 볼 데드 상태
+  effect: 빠진 선수 재출장 불가
+source:
+- name: 공식야구규칙 2026
+  ref: 5.10(a)~(f)
+  note: 볼 데드에만 교체 가능, 빠진 선수는 재출장 불가
+related:
+- term.pinch_hitter
+- term.pinch_runner
+- term.pitching_change
+event_types:
+- PITCHING_CHANGE
+aliases:
+- 교체
+- 선수교체
+review_status: draft
+reviewer: ''

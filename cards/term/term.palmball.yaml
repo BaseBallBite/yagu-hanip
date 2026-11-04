@@ -1,0 +1,19 @@
+id: term.palmball
+kind: term
+title: 팜볼
+category: 투구·구종
+one_liner: 손바닥 전체로 쥐고 느리게 던지는 체인지업 계열의 공이에요.
+easy: 팜볼은 공을 손바닥에 깊이 쥐고 던지는 공이에요. 직구와 같은 팔 동작으로 던지지만 속도가 크게 느려서 타자의 타이밍을 뺏는 체인지업 계열이에요. 요즘은 던지는 투수가 많지 않아요.
+example: 직구를 예상한 타자가 팜볼에 일찍 배트를 내밀어 헛스윙했어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.changeup
+- term.fastball
+- term.forkball
+event_types: []
+aliases:
+- 팜 볼
+review_status: draft
+reviewer: ''

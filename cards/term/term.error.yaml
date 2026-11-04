@@ -1,0 +1,27 @@
+id: term.error
+kind: term
+title: 실책
+category: 수비
+one_liner: 수비수의 실수로 타자나 주자가 살거나 더 간 거예요.
+easy: '평범한 수비로 아웃시킬 수 있었는데 공을 놓치거나 잘못 던져서 타자나 주자가 살거나 더 가면 실책이에요. 실책으로 나간 타자는 안타로 치지 않아요.
+
+  '
+example: '평범한 땅볼을 3루수가 놓쳐 타자가 1루에 살았어요. 기록은 3루수 실책이에요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.12 실책
+related:
+- term.fielders_choice
+- term.hit
+- term.era
+event_types:
+- ERROR
+aliases:
+- 에러
+- 송구 실책
+- 포구 실책
+- 수비 실책
+review_status: draft
+reviewer: ''

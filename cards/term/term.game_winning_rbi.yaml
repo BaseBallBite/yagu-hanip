@@ -1,0 +1,20 @@
+id: term.game_winning_rbi
+kind: term
+title: 결승타
+category: 기록·통계
+one_liner: 팀이 이기는 데 결정적인 마지막 리드를 만든 타점이에요.
+easy: 이긴 팀에서, 상대가 끝내 따라오지 못한 리드를 만든 타점을 올린 타자에게 주는 기록이에요. KBO 기록실 타자 항목 GW RBI예요.
+example: 3대2로 이겼는데 3번째 점수를 낸 적시타를 친 타자가 결승타를 받아요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 세부 인정 기준은 KBO 기록 규정 확인 필요
+related:
+- term.rbi
+- term.run
+event_types: []
+aliases:
+- 결승타점
+- GW RBI
+- 결승 타점
+review_status: draft
+reviewer: ''

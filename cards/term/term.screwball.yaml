@@ -1,0 +1,20 @@
+id: term.screwball
+kind: term
+title: 스크루볼
+category: 투구·구종
+one_liner: 일반 변화구와 반대 방향으로 휘는 공이에요.
+easy: 스크루볼은 보통 변화구(슬라이더 등)와 반대 방향으로 휘는 공이에요. 예를 들어 오른손 투수가 던지면 왼손 타자 쪽이 아닌 오른손 타자 쪽으로 휘며 떨어져요. 팔과 어깨에 부담이 커서 요즘은 거의 던지는 선수가 없어요.
+example: 오래된 경기 영상에서 스크루볼이 타자 몸쪽으로 휘어 들어왔어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.changeup
+- term.slider
+- term.forkball
+event_types: []
+aliases:
+- 스크류볼
+- 스크루 볼
+review_status: draft
+reviewer: ''

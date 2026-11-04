@@ -1,0 +1,23 @@
+id: term.catcher
+kind: term
+title: 포수
+category: 수비
+one_liner: 홈플레이트 뒤에 앉아 투수의 공을 받는 선수예요.
+easy: '포수는 홈플레이트 뒤에서 투수의 공을 받고, 어떤 공을 던질지 사인을 내요. 도루하는 주자를 잡으려고 베이스로 공을 던지기도 하고, 홈으로 오는 주자를 태그해요.
+
+  '
+example: '포수가 2루로 빠르게 던져 도루하던 주자를 잡았어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 16. CATCHER
+related:
+- term.pitcher
+- term.passed_ball
+- rule.home_plate_collision
+event_types: []
+aliases:
+- 캐처
+review_status: draft
+reviewer: ''

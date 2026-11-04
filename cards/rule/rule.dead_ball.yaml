@@ -1,0 +1,33 @@
+id: rule.dead_ball
+kind: rule
+title: 볼 데드
+category: 기본 규칙
+one_liner: 경기가 잠깐 멈춘 상태로, 이때는 아무도 아웃되거나 진루할 수 없어요.
+easy: '심판이 타임을 선언하거나, 몸에 맞는 공·방해·파울처럼 정해진 일이 생기면 공이 죽은 상태(볼 데드)가 돼요. 볼 데드 동안에는 주자가 진루하거나 아웃될 수 없어요. 투수가 다시 공을 들고 심판이 플레이를 선언하면 경기가 다시 이어져요.
+
+  '
+example: '타자가 몸에 맞는 공을 맞자 볼 데드가 됐고, 그 사이 뛰던 1루 주자는 2루까지만 갔어요.
+
+  '
+when:
+  trigger: 타임 선언·몸에 맞는 공·파울·방해 등
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 20. DEAD BALL
+- name: 공식야구규칙 2026
+  ref: 5.06(c)
+  note: 볼 데드가 되는 경우
+- name: 공식야구규칙 2026
+  ref: '5.12'
+  note: 타임 선언
+related:
+- rule.interference
+- rule.hit_by_pitch
+- rule.foul_ball
+event_types: []
+aliases:
+- 볼데드
+- 데드 볼 상태
+- 타임
+review_status: draft
+reviewer: ''

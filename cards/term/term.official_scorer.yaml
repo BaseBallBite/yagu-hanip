@@ -1,0 +1,24 @@
+id: term.official_scorer
+kind: term
+title: 공식기록원
+category: 경기 운영
+one_liner: 경기의 공식 기록을 정하는 사람이에요.
+easy: 공식기록원은 안타인지 실책인지, 폭투인지 포일인지 같은 판단을 내리고 경기 기록을 적어요. 심판의 판정과는 별개의 일이에요. 기록에 이의가 있으면 KBO의 기록 이의신청 심의 제도를 통해 다툴 수 있어요.
+example: 타구를 놓친 3루수의 플레이를 공식기록원이 안타가 아닌 실책으로 판단했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 53. OFFICIAL SCORER, 9.01
+- name: KBO 리그 규정 2026
+  ref: 기록 이의신청 심의 제도
+related:
+- term.error
+- term.hit
+- term.wild_pitch
+event_types: []
+aliases:
+- 공식 기록원
+- 기록원
+- 기록위원
+- 스코어러
+review_status: draft
+reviewer: ''

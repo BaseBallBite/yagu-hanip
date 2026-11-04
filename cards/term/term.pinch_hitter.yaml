@@ -1,0 +1,25 @@
+id: term.pinch_hitter
+kind: term
+title: 대타
+category: 경기 운영
+one_liner: 원래 타자 대신 타석에 들어서는 교체 선수예요.
+easy: '중요한 순간에 원래 타자 대신 더 잘 칠 것 같은 선수를 타석에 세우는 교체예요. 교체돼 빠진 타자는 그 경기에 다시 나올 수 없어요.
+
+  '
+example: '8회 2사 만루에서 감독이 왼손 투수에 강한 대타를 냈어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 5.10(e)(f)
+  note: 타순표에 올라 있지 않은 선수가 대신 타석에 서는 교체
+related:
+- rule.substitution
+- term.pinch_runner
+- term.batting_order
+event_types: []
+aliases:
+- 핀치 히터
+- 대타 작전
+review_status: draft
+reviewer: ''

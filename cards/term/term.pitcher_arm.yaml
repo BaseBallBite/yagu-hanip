@@ -1,0 +1,28 @@
+id: term.pitcher_arm
+kind: term
+title: 좌완·우완(사이드암·언더핸드)
+category: 투구·구종
+one_liner: 투수가 던지는 손과 팔을 내리는 높이를 부르는 말이에요.
+easy: 좌완은 왼손으로, 우완은 오른손으로 던지는 투수예요. 팔을 어깨 위에서 내리면 오버핸드, 옆에서 내리면 사이드암, 아래에서 올리면 언더핸드라고 해요. 던지는 손과 팔 높이에 따라 공이 오는 각도가 달라져요.
+example: 사이드암 우완 투수가 타자 몸쪽으로 낮게 던졌어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.pitcher
+- term.batter_hand
+- term.fastball
+event_types: []
+aliases:
+- 좌투
+- 우투
+- 좌투수
+- 우투수
+- 좌완
+- 우완
+- 사이드암
+- 언더핸드
+- 오버핸드
+- 좌완 투수
+- 우완 투수
+review_status: draft
+reviewer: ''

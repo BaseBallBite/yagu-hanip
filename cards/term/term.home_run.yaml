@@ -1,0 +1,30 @@
+id: term.home_run
+kind: term
+title: 홈런
+category: 타격
+one_liner: 타자가 친 공으로 한 번에 홈까지 돌아와 점수를 내는 거예요.
+easy: '타구가 페어 지역 담장을 넘어가면 홈런이에요. 타자와 루에 있던 주자 모두 홈에 들어와 점수가 나요. 담장을 넘기지 않고 그라운드 안에서 홈까지 뛰어 들어와도 홈런(그라운드 홈런)이에요.
+
+  '
+example: '2사 1루에서 타구가 좌측 담장을 넘어가 한 번에 2점이 났어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 5.05(a)(5), 9.06
+related:
+- term.grand_slam
+- term.rbi
+- term.extra_base_hit
+event_types:
+- HOME_RUN
+aliases:
+- 홈 런
+- 투런
+- 쓰리런
+- 솔로 홈런
+- 솔로포
+- 장외 홈런
+- 그라운드 홈런
+review_status: draft
+reviewer: ''

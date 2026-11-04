@@ -1,0 +1,19 @@
+id: term.tough_save
+kind: term
+title: 터프세이브
+category: 기록·통계
+one_liner: 어려운 상황에서 올린 세이브예요.
+easy: TS는 KBO 기록실 투수 항목이에요. 일반 세이브보다 위기 상황에서 올린 세이브를 따로 센 기록이에요. 정확한 인정 기준은 KBO 기록 규정에서 확인이 필요해요.
+example: 주자가 많은 위기 상황에서 올라와 리드를 지키면 터프세이브 후보예요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 인정 기준 확인 필요
+related:
+- term.save
+- term.blown_save
+event_types: []
+aliases:
+- TS
+- 터프 세이브
+review_status: draft
+reviewer: ''

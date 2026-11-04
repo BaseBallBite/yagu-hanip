@@ -1,0 +1,30 @@
+id: rule.home_plate_collision
+kind: rule
+title: 홈 충돌 방지 규칙
+category: 주루 규칙
+one_liner: 홈에서 주자와 포수가 서로 일부러 부딪치거나 길을 막지 못하게 하는 규칙이에요.
+easy: 득점하려는 주자는 포수와 부딪치려고 주로를 벗어나거나 피할 수 있는 충돌을 시도하면 안 돼요. 어기면 주자가 아웃이에요. 포수도 공을 갖고 있지 않으면 주자가 들어오는 길을 막을 수 없고, 어기면 심판이 업스트럭션(주루방해)을 선언해요.
+example: 공을 받기 전인 포수가 홈 앞을 막고 있다가 주자를 태그했어요. 심판은 주루방해로 보고 주자를 세이프로 처리했어요.
+when:
+  who: 홈으로 들어오는 주자와 포수
+  runner_violation: 일부러 부딪치려고 주로 이탈 → 주자 아웃, 볼 데드
+  catcher_violation: 공 없이 주로를 막음 → 업스트럭션
+  legal_slide: 적절한 슬라이딩이면 위반 아님
+source:
+- name: 공식야구규칙 2026
+  ref: 6.01(i)
+  note: 홈 플레이트에서의 충돌
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ⑦
+  note: 비디오 판독 대상
+related:
+- rule.obstruction
+- rule.tag
+- term.catcher
+event_types: []
+aliases:
+- 홈충돌 방지
+- 홈 충돌
+- 충돌 방지 규칙
+review_status: draft
+reviewer: ''

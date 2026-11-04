@@ -1,0 +1,22 @@
+id: term.productive_out
+kind: term
+title: 진루타
+category: 타격
+one_liner: 타자는 아웃됐지만 주자를 다음 베이스로 보낸 타격이에요.
+easy: '타자가 땅볼 등으로 아웃되면서 주자가 한 베이스 이상 나아가면 진루타라고 불러요. 공식 기록 이름은 아니지만 중계에서 자주 쓰는 말이에요.
+
+  '
+example: '무사 2루에서 2루수 쪽 땅볼로 타자는 아웃됐지만 2루 주자는 3루로 갔어요.
+
+  '
+source:
+- name: 팀 작성(중계 관용 표현)
+related:
+- term.ground_ball
+- term.sacrifice_bunt
+- term.out
+event_types:
+- GROUNDOUT
+aliases: []
+review_status: draft
+reviewer: ''

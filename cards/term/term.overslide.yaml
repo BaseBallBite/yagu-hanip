@@ -1,0 +1,20 @@
+id: term.overslide
+kind: term
+title: 오버슬라이드
+category: 주루
+one_liner: 슬라이딩하다 여세로 베이스에서 떨어지는 거예요.
+easy: 주자가 1루가 아닌 베이스로 슬라이딩하다가 그 여세로 베이스에서 떨어지면 오버슬라이드예요. 이때 수비가 태그하면 아웃이에요. 본루에서 1루로 갈 때 곧바로 돌아올 수 있는 슬라이딩은 오버슬라이드가 아니에요.
+example: 2루로 슬라이딩한 주자의 발이 베이스를 지나쳐 떨어졌고, 유격수가 태그해 아웃이 됐어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 56. OVERSLIDE
+related:
+- rule.tag
+- term.stolen_base
+- term.safe
+event_types: []
+aliases:
+- 오버슬라이딩
+- 오버런
+review_status: draft
+reviewer: ''

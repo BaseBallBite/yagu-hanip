@@ -1,0 +1,21 @@
+id: term.on_base_percentage
+kind: term
+title: 출루율
+category: 기록·통계
+one_liner: 타자가 타석에서 베이스에 나간 비율이에요.
+easy: 출루율은 (안타 + 볼넷·몸에 맞는 공)을 (타수 + 볼넷·몸에 맞는 공 + 희생플라이)로 나눈 값이에요. 타율과 달리 볼넷으로 나간 것도 세어서, 얼마나 자주 살아 나가는지를 보여줘요. 방해나 주루방해로 나간 건 포함하지 않아요.
+example: '안타는 적어도 볼넷을 많이 고르는 타자는 출루율이 높아요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(f)
+related:
+- term.batting_average
+- term.ops
+- rule.base_on_balls
+event_types: []
+aliases:
+- OBP
+review_status: draft
+reviewer: ''

@@ -1,0 +1,34 @@
+id: rule.hit_by_pitch
+kind: rule
+title: 몸에 맞는 공
+category: 타격 규칙
+one_liner: 투수가 던진 공이 타자 몸에 맞으면 타자가 1루로 걸어 나가요.
+easy: '타자가 치려고 하지 않았는데 투수의 공이 타자 몸에 맞으면 타자는 1루로 가요. 공이 스트라이크 존 안에서 맞았거나, 타자가 일부러 피하지 않았다고 심판이 보면 1루에 보내지 않을 수 있어요. 볼넷처럼 안타로 치지 않아요.
+
+  '
+example: '2사 1루에서 몸쪽 공이 타자 팔꿈치에 맞았어요. 타자는 1루로, 1루 주자는 2루로 갔어요.
+
+  '
+when:
+  ball: 타자가 치려 하지 않은 투구가 몸·옷에 닿음
+  excluded:
+  - 바운드하지 않은 투구가 스트라이크 존에서 맞은 경우(스트라이크)
+  - 타자가 피하려 하지 않은 경우(볼)
+source:
+- name: 공식야구규칙 2026
+  ref: 5.05(b)(2)
+  note: 투구가 치려 하지 않은 타자에게 닿으면 1루 안전진루. 존에서 맞거나 피하지 않았으면 제외
+related:
+- rule.base_on_balls
+- rule.strike_zone
+- term.bases_loaded
+event_types:
+- HIT_BY_PITCH
+aliases:
+- 몸맞는공
+- 몸 맞는 볼
+- 데드볼
+- 힛바이피치
+- 사구
+review_status: draft
+reviewer: ''

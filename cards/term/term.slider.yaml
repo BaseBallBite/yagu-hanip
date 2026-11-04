@@ -1,0 +1,23 @@
+id: term.slider
+kind: term
+title: 슬라이더
+category: 투구·구종
+one_liner: 빠르게 오다가 옆으로 휘는 변화구예요.
+easy: '슬라이더는 직구처럼 빠르게 오다가 타자 앞에서 옆(오른손 투수는 보통 바깥쪽)으로 휘는 공이에요. 직구와 비슷해 보여서 타자가 헛스윙하기 쉬워요.
+
+  '
+example: '2스트라이크에서 바깥쪽으로 휘는 슬라이더에 타자가 헛스윙 삼진을 당했어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.fastball
+- term.cutter
+- term.curveball
+- term.sweeper
+- term.slurve
+event_types: []
+aliases: []
+review_status: draft
+reviewer: ''

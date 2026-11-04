@@ -1,0 +1,22 @@
+id: term.base_coach
+kind: term
+title: 베이스 코치
+category: 경기 운영
+one_liner: 1루·3루 쪽에서 주자와 타자에게 지시하는 코치예요.
+easy: 베이스 코치는 1루와 3루 근처 코치석에 서서 타자와 주자에게 달릴지 멈출지 알려줘요. 각 팀은 두 명을 둬요. 주자를 직접 밀거나 안으면 방해가 될 수 있어요.
+example: 3루 코치가 팔을 돌려 주자에게 홈까지 달리라고 알렸어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 6. BASE COACH, 5.03
+related:
+- term.runner
+- rule.interference
+- term.manager
+event_types: []
+aliases:
+- 3루 코치
+- 1루 코치
+- 주루코치
+- 코치석
+review_status: draft
+reviewer: ''

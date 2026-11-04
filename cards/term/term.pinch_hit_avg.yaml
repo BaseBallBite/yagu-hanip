@@ -1,0 +1,19 @@
+id: term.pinch_hit_avg
+kind: term
+title: 대타 타율
+category: 기록·통계
+one_liner: 대타로 나왔을 때의 타율이에요.
+easy: PH-BA는 대타로 타석에 섰을 때의 안타 비율이에요. 벤치에서 나와 바로 쳐야 하는 상황이라 일반 타율과 따로 봐요.
+example: 대타로 20타수 5안타면 대타 타율은 0.250이에요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음
+related:
+- term.pinch_hitter
+- term.batting_average
+event_types: []
+aliases:
+- PH-BA
+- 대타타율
+review_status: draft
+reviewer: ''

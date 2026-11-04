@@ -1,0 +1,20 @@
+id: term.run_down
+kind: term
+title: 런다운
+category: 수비
+one_liner: 두 베이스 사이에 갇힌 주자를 아웃시키려는 수비 플레이예요.
+easy: 주자가 두 베이스 사이에서 앞뒤로 막혀 도망 다니는 상황을 런다운(협살)이라고 해요. 수비가 공을 주고받으며 주자를 태그하려고 해요. 주자가 태그를 피하려고 베이스 라인에서 3피트 넘게 벗어나면 아웃이에요.
+example: 1루와 2루 사이에서 협살에 걸린 주자가 유격수와 2루수 사이에서 태그당했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 67. RUN-DOWN
+related:
+- rule.baseline_leave
+- rule.tag
+- term.pickoff
+event_types: []
+aliases:
+- 협살
+- 런다운 플레이
+review_status: draft
+reviewer: ''

@@ -1,0 +1,19 @@
+id: term.defensive_sub
+kind: term
+title: 대수비
+category: 경기 운영
+one_liner: 수비를 보강하려고 교체해 넣는 선수예요.
+easy: 대수비는 앞선 상황에서 수비를 강화하려고 타자나 야수 대신 넣는 선수예요. 이긴 경기를 지키려는 후반 이닝에 자주 나와요. 한 번 교체된 선수는 그 경기에 다시 나올 수 없어요.
+example: 9회에 1점 차로 앞서 감독이 수비가 좋은 대수비를 외야에 넣었어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- rule.substitution
+- term.pinch_hitter
+- term.pinch_runner
+event_types: []
+aliases:
+- 대수비 선수
+- 수비 교체
+review_status: draft
+reviewer: ''

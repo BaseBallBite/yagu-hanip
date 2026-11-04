@@ -1,0 +1,20 @@
+id: term.xr
+kind: term
+title: 추정득점
+category: 기록·통계
+one_liner: 타자의 기록으로 팀 득점에 얼마나 기여했는지 추정한 값이에요.
+easy: XR은 안타, 볼넷, 도루 같은 개별 기록에 가중치를 곱해 더해서 그 타자가 만든 점수를 추정한 지표예요. 계산 가중치는 KBO 기록실 기준을 확인해야 해요.
+example: 추정득점이 높을수록 팀 득점 생산에 기여가 크다고 봐요.
+source:
+- name: 팀 작성(KBO 기록실 항목)
+  note: KBO 기록실 지표. 계산식 확인 필요
+related:
+- term.run
+- term.rbi
+- term.ops
+event_types: []
+aliases:
+- XR
+- 추정 득점
+review_status: draft
+reviewer: ''

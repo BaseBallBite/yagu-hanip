@@ -1,0 +1,23 @@
+id: term.blown_save
+kind: term
+title: 블론세이브
+category: 기록·통계
+one_liner: 세이브 상황에서 리드를 날려 동점이나 역전을 내준 거예요.
+easy: 세이브를 올릴 수 있는 상황에 나온 구원 투수가 리드를 지키지 못하고 동점 또는 역전을 허용하면 블론세이브예요. 마무리 투수의 실패 기록이라고 보면 쉬워요.
+example: 1점 앞선 9회에 나온 마무리가 동점 홈런을 맞으면 블론세이브예요.
+source:
+- name: 공식야구규칙 2026
+  ref: '9.19'
+  note: 세이브 상황의 정의
+- name: 팀 작성(KBO 기록실 항목)
+  note: 블론세이브 자체는 KBO 기록실 항목
+related:
+- term.save
+- term.closer
+- term.hold
+event_types: []
+aliases:
+- 블론
+- 블론 세이브
+review_status: draft
+reviewer: ''

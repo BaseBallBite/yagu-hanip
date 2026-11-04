@@ -1,0 +1,27 @@
+id: rule.pitching_position
+kind: rule
+title: 투구자세(와인드업·세트 포지션)
+category: 기본 규칙
+one_liner: 투수가 던지기 전에 취해야 하는 두 가지 정해진 자세예요.
+easy: 투수는 와인드업 포지션이나 세트 포지션 중 하나로 던져야 해요. 와인드업은 팔을 크게 돌려 던지는 자세이고, 세트 포지션은 주자가 있을 때 많이 쓰는, 멈췄다 던지는 자세예요. 세트 포지션에서 멈춘 뒤에는 던지기, 견제, 투수판에서 발을 빼기 중 하나만 할 수 있고, 어기면 보크가 될 수 있어요.
+example: 주자가 1루에 있을 때 투수가 세트 포지션으로 한 번 멈춘 뒤 던졌어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 5.07(a)
+  note: 정규투구
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 70. SET POSITION
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 82. WIND-UP POSITION
+related:
+- rule.balk
+- rule.illegal_pitch
+- term.pickoff
+event_types: []
+aliases:
+- 와인드업
+- 와인드업 포지션
+- 세트 포지션
+- 세트포지션
+review_status: draft
+reviewer: ''

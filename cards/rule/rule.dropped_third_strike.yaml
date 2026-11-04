@@ -1,0 +1,36 @@
+id: rule.dropped_third_strike
+kind: rule
+title: 낫아웃
+category: 타격 규칙
+one_liner: 삼진인데 포수가 공을 못 잡으면, 상황에 따라 타자가 1루로 뛸 수 있어요.
+easy: '스트라이크 3개가 되어도 포수가 그 공을 잡지 못하면 아직 끝이 아닐 수 있어요. 1루에 주자가 없거나, 있어도 2아웃이면 타자가 1루로 뛸 수 있고 수비가 먼저 잡아 던지면 아웃이에요. 무사나 1사에 1루 주자가 있으면 타자는 바로 아웃이에요.
+
+  '
+example: '2사 1루에서 헛스윙 삼진이 나왔는데 공이 포수 뒤로 빠졌어요. 2아웃이라 타자가 1루로 뛰어 살았어요.
+
+  '
+when:
+  strike: 제3스트라이크
+  catcher: 포수가 공을 잡지 못함
+  can_run: 1루 주자가 없거나, 있어도 2아웃
+  no_run: 무사·1사에 1루 주자가 있으면 타자 아웃
+source:
+- name: 공식야구규칙 2026
+  ref: 5.05(a)(2)
+  note: 포수가 제3스트라이크를 잡지 못하면 타자가 주자가 됨
+- name: 공식야구규칙 2026
+  ref: 5.09(a)(3)
+  note: 무사·1사에 1루 주자가 있으면 타자 아웃
+quote: 주자가 1루에 있더라도 2아웃일 때
+related:
+- term.strikeout
+- term.wild_pitch
+- term.passed_ball
+event_types:
+- DROPPED_THIRD_STRIKE
+aliases:
+- 낫 아웃
+- 스트라이크 낫아웃
+- 떨어뜨린 제3스트라이크
+review_status: draft
+reviewer: ''

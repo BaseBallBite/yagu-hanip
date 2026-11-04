@@ -1,0 +1,34 @@
+id: rule.pitch_clock
+kind: rule
+title: 피치클락
+category: 특수 상황
+one_liner: 투수와 타자가 정해진 시간 안에 준비해야 하는 경기 시간 규칙이에요.
+easy: 피치클락은 경기 속도를 높이려고 투수·타자·포수에게 시간 제한을 두는 제도예요. 투수는 주자가 없으면 18초, 있으면 23초 안에 투구 동작을 시작해야 해요. 타석과 타석 사이는 33초, 이닝 교대와 투수 교체는 2분 10초예요. 투수나 포수가 어기면 자동 볼, 타자가 어기면 자동 스트라이크가 선언돼요.
+example: 주자가 없는 상황에서 투수가 18초 안에 투구 동작을 시작하지 못해 자동 볼이 선언됐어요.
+when:
+  between_pitches: 주자 없음 18초 / 주자 있음 23초
+  between_batters: 33초
+  inning_break: 2분 10초 (투수 교체도 2분 10초)
+  batter_rule: 시간이 8초 남을 때까지 타격 준비 자세
+  catcher_rule: 시간이 9초 남을 때까지 포수석에 위치
+  penalty: 투수·포수 위반 = 볼, 타자 위반 = 스트라이크
+  first_pitch: 경기 첫 투구에는 적용하지 않음
+source:
+- name: KBO 리그 규정 2026
+  ref: KBO 피치클락 규정
+- name: 공식야구규칙 2026
+  ref: 5.07(c)
+  note: 투구 지연
+related:
+- term.ball
+- term.strike
+- term.count
+- rule.abs
+event_types: []
+aliases:
+- 피치 클락
+review_status: draft
+reviewer: ''
+more:
+- 2026년부터 투구 간 시간이 2초 줄었어요 (주자 없을 때 18초, 있을 때 23초).
+- KBO 리그에는 투수판 이탈 제한이 없고, 이탈하면 피치클락이 다시 시작돼요.

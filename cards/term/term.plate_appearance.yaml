@@ -1,0 +1,23 @@
+id: term.plate_appearance
+kind: term
+title: 타석
+category: 기록·통계
+one_liner: 타자가 타석에 선 횟수예요. 볼넷·희생타 등도 포함해요.
+easy: 타석은 타수에 볼넷·몸에 맞는 공(4사구), 희생번트, 희생플라이, 방해나 주루방해로 나간 횟수를 모두 더한 숫자예요. 타수는 이 중 볼넷·희생타 등을 뺀 숫자예요. 규정타석은 이 타석 수로 따져요.
+example: 타수 400, 볼넷 50, 몸에 맞는 공 5, 희생번트 3, 희생플라이 2라면 타석은 460이에요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.22(a)
+  note: 타석수 = 타수+4사구+희생번트+희생플라이+방해·주루방해 출루
+related:
+- term.at_bat
+- term.qualified
+- term.batting_average
+event_types: []
+aliases:
+- 타석수
+- 타석 수
+- 플레이트 어피어런스
+- PA
+review_status: draft
+reviewer: ''

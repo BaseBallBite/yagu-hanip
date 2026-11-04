@@ -1,0 +1,21 @@
+id: term.hits_allowed
+kind: term
+title: 피안타·피홈런
+category: 기록·통계
+one_liner: 투수가 상대 타자에게 맞은 안타와 홈런 수예요.
+easy: 피안타는 투수가 허용한 안타의 개수이고, 피홈런은 그중 홈런의 개수예요. WHIP 계산에서 피안타와 볼넷을 더해서 써요.
+example: 한 경기에서 안타 5개를 맞았고 그중 1개가 홈런이면 피안타 5, 피홈런 1이에요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 안타의 정의는 공식야구규칙 9.05
+related:
+- term.hit
+- term.whip
+- term.home_run
+event_types: []
+aliases:
+- 피안타
+- 피홈런
+- 허용 안타
+review_status: draft
+reviewer: ''

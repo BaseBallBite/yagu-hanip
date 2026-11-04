@@ -1,0 +1,25 @@
+id: term.wild_pitch
+kind: term
+title: 폭투
+category: 투구·구종
+one_liner: 투수가 포수가 잡기 어렵게 던져 주자가 진루한 투구예요.
+easy: '투수의 공이 너무 높거나 낮아서 포수가 평범하게 잡을 수 없었고, 그 사이 주자가 진루하면 폭투예요. 포수가 잡을 수 있었던 공을 놓치면 폭투가 아니라 포일이에요.
+
+  '
+example: '2사 3루에서 원바운드된 공이 포수 뒤로 빠져 3루 주자가 홈에 들어왔어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.13(a), 용어의 정의 81. WILD PITCH
+related:
+- term.passed_ball
+- rule.dropped_third_strike
+- term.catcher
+event_types:
+- WILD_PITCH
+aliases:
+- 와일드 피치
+- 와일드피치
+review_status: draft
+reviewer: ''

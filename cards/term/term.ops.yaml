@@ -1,0 +1,19 @@
+id: term.ops
+kind: term
+title: OPS
+category: 기록·통계
+one_liner: 출루율과 장타율을 더한 값으로, 타자의 공격력을 한 번에 보여줘요.
+easy: OPS는 출루율과 장타율을 더한 값이에요. 출루율은 얼마나 자주 나가는지, 장타율은 안타가 얼마나 멀리 가는지를 보여줘요. 두 숫자를 한 번에 봐서 타자의 공격력을 평가해요. 공식야구규칙에는 없고 연감에는 타자 기록표 항목으로 나와요.
+example: 출루율 0.400, 장타율 0.500인 타자의 OPS는 0.900이에요.
+source:
+- name: 팀 작성(세이버메트릭스 일반 정의)
+  note: 출루율 9.21(f), 장타율 9.21(c)을 더한 값. 2026 KBO 연감 타자 기록표 항목
+related:
+- term.on_base_percentage
+- term.slugging
+- term.batting_average
+event_types: []
+aliases:
+- 오피에스
+review_status: draft
+reviewer: ''

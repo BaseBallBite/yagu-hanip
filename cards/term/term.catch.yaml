@@ -1,0 +1,24 @@
+id: term.catch
+kind: term
+title: 포구
+category: 수비
+one_liner: 야수가 날아가는 공을 확실하게 손이나 글러브로 잡는 거예요.
+easy: 포구는 야수가 타구나 송구를 손이나 글러브로 확실하게 잡는 거예요. 모자나 주머니 같은 곳으로 잡은 건 포구가 아니에요. 잡은 직후에 부딪혀서 떨어뜨리면 포구가 아니고, 잡은 뒤 던지는 동작으로 이어진 다음에 떨어뜨리면 포구예요.
+example: 중견수가 달려가며 공을 잡은 뒤 펜스에 부딪쳐 공을 떨어뜨렸어요. 이 경우 포구가 아니라 판정돼요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 15. CATCH
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ④
+  note: 야수의 포구는 비디오 판독 대상
+related:
+- term.fly_ball
+- rule.tag_up
+- rule.video_review
+event_types:
+- FLYOUT
+aliases:
+- 캐치
+- 정규 포구
+review_status: draft
+reviewer: ''

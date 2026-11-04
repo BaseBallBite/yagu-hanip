@@ -1,0 +1,25 @@
+id: term.home_team
+kind: term
+title: 홈팀·원정팀
+category: 경기 운영
+one_liner: 자기 구장에서 하는 팀이 홈팀이고 상대가 원정팀이에요.
+easy: 홈팀은 자기 구장에서 경기를 하는 팀이고 상대 팀은 원정팀이에요. 원정팀이 먼저 공격(초)하고 홈팀이 나중에 공격(말)해요. 그래서 홈팀은 9회말에 이기고 있으면 공격을 안 해도 돼요.
+example: 원정팀이 9회초에 점수를 내고 홈팀이 9회말에 따라잡으면 끝내기 승부가 돼요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 36. HOME TEAM
+related:
+- term.inning
+- term.walk_off
+- term.manager
+event_types: []
+aliases:
+- 홈 팀
+- 원정 팀
+- 원정팀
+- 홈구단
+- 원정구단
+- 후공
+- 선공
+review_status: draft
+reviewer: ''

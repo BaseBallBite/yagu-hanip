@@ -1,0 +1,24 @@
+id: term.batting_average
+kind: term
+title: 타율
+category: 기록·통계
+one_liner: 타자가 친 안타를 타수로 나눈 비율이에요.
+easy: '타율은 안타 수를 타수로 나눈 값이에요. 볼넷·몸에 맞는 공·희생타는 타수에 넣지 않아요. 보통 3할(0.300)이 넘으면 잘 치는 타자로 봐요.
+
+  '
+example: '10타수 3안타면 타율은 0.300, 흔히 3할이라고 해요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.21(b)
+related:
+- term.hit
+- term.on_base_percentage
+- term.ops
+event_types: []
+aliases:
+- 타 율
+- 3할
+review_status: draft
+reviewer: ''

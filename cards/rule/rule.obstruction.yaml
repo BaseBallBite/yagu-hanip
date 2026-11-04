@@ -1,0 +1,31 @@
+id: rule.obstruction
+kind: rule
+title: 주루 방해
+category: 주루 규칙
+one_liner: 공을 갖지 않은 수비수가 주자의 길을 막으면 주자에게 베이스를 줘요.
+easy: '공을 갖고 있지 않고 공을 잡으려는 중도 아닌 수비수가 주자가 달리는 길을 막으면 주루 방해예요. 주루 방해가 선언되면 심판이 방해가 없었을 때 갔을 베이스까지 주자를 보내요.
+
+  '
+example: '2루를 돌던 주자가 공 없이 서 있던 유격수와 부딪혀 넘어졌어요. 심판이 주루 방해를 선언해 주자를 3루로 보냈어요.
+
+  '
+when:
+  who: 공을 갖지 않은 수비수
+  action: 주자의 진로를 막음
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 51. OBSTRUCTION
+- name: 공식야구규칙 2026
+  ref: 6.01(h)
+  note: 방해의 선언과 처리
+related:
+- rule.interference
+- rule.home_plate_collision
+- term.infielder
+event_types:
+- OBSTRUCTION
+aliases:
+- 주루방해
+- 오브스트럭션
+review_status: draft
+reviewer: ''

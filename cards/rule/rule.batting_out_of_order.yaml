@@ -1,0 +1,30 @@
+id: rule.batting_out_of_order
+kind: rule
+title: 타순 착오
+category: 타격 규칙
+one_liner: 정해진 순서가 아닌 타자가 타석에 들어서면 수비가 어필해 아웃시킬 수 있어요.
+easy: '타자는 경기 전에 낸 타순표 순서대로 타석에 서야 해요. 순서가 틀린 타자가 타격을 마친 뒤 수비가 어필하면, 원래 나와야 했던 타자가 아웃돼요. 수비가 어필하지 않고 다음 투구가 나오면 그대로 인정돼요.
+
+  '
+example: '5번 타자 차례에 6번 타자가 나와 안타를 쳤어요. 수비가 바로 어필해 5번 타자가 아웃되고 안타는 취소됐어요.
+
+  '
+when:
+  trigger: 순서가 틀린 타자의 타격 종료 후 수비 어필
+source:
+- name: 공식야구규칙 2026
+  ref: 6.03(b)
+  note: 타격순서 착오(부정위타자)
+- name: 공식야구규칙 2026
+  ref: 5.04(a)
+  note: 타격의 순서
+related:
+- term.batting_order
+- rule.appeal_play
+- term.out
+event_types: []
+aliases:
+- 타순착오
+- 부정위 타자
+review_status: draft
+reviewer: ''

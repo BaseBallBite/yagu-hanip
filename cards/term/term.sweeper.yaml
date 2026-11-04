@@ -1,0 +1,20 @@
+id: term.sweeper
+kind: term
+title: 스위퍼
+category: 투구·구종
+one_liner: 옆으로 크게 휘는 슬라이더의 한 종류예요.
+easy: 스위퍼는 슬라이더보다 좌우로 더 크게 휘는 공이에요. 직구와 비슷한 팔 동작으로 오다가 옆으로 크게 쓸고 지나가서(sweep) 타자의 배트가 헛돌기 쉬워요.
+example: 바깥쪽으로 크게 휘는 스위퍼에 타자가 헛스윙해 삼진이 됐어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+related:
+- term.slider
+- term.slurve
+- term.strikeout
+event_types: []
+aliases:
+- 스윕퍼
+- 스위핑 슬라이더
+review_status: draft
+reviewer: ''

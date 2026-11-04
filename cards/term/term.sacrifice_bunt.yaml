@@ -1,0 +1,25 @@
+id: term.sacrifice_bunt
+kind: term
+title: 희생번트
+category: 타격
+one_liner: 타자가 아웃되는 대신 번트로 주자를 다음 베이스로 보내는 거예요.
+easy: '타자가 번트를 대서 자신은 1루에서 아웃되지만, 그 사이 주자는 한 베이스 진루해요. 점수를 낼 수 있는 2루나 3루로 주자를 보내려고 할 때 써요. 희생번트는 타율 계산에서 타수로 세지 않아요.
+
+  '
+example: '무사 1루에서 번트로 타자는 아웃됐지만 1루 주자는 2루로 갔어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.08(a)~(c)
+related:
+- term.bunt
+- term.sacrifice_fly
+- term.squeeze
+event_types:
+- SAC_BUNT
+aliases:
+- 희생 번트
+- 보내기 번트
+review_status: draft
+reviewer: ''

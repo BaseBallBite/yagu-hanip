@@ -1,0 +1,25 @@
+id: term.passed_ball
+kind: term
+title: 포일
+category: 수비
+one_liner: 포수가 잡을 수 있던 공을 놓쳐 주자가 진루한 거예요.
+easy: '평범하게 잡을 수 있는 투구를 포수가 놓쳐서 주자가 진루하면 포일이에요. 투수의 공이 너무 빗나가서 못 잡은 거면 포일이 아니라 폭투예요.
+
+  '
+example: '2사 2루에서 포수가 정면으로 온 공을 놓쳐 2루 주자가 3루로 갔어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.13(b)
+related:
+- term.wild_pitch
+- term.catcher
+- rule.dropped_third_strike
+event_types:
+- PASSED_BALL
+aliases:
+- 패스드볼
+- 패스드 볼
+review_status: draft
+reviewer: ''

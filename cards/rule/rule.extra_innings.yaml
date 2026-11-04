@@ -1,0 +1,29 @@
+id: rule.extra_innings
+kind: rule
+title: 연장전
+category: 특수 상황
+one_liner: 9회까지 동점이면 정규시즌은 11회까지, 포스트시즌은 15회까지 더 해요.
+easy: 9회가 끝났는데 점수가 같으면 연장전을 해요. 정규시즌은 11회까지만 하고, 그때까지 승부가 안 나면 무승부예요. 포스트시즌은 15회까지 해요. 올스타전은 10회부터 승부치기로 이닝 제한 없이 이어가요.
+example: 정규시즌에서 9회말까지 3대3이라 10회, 11회를 했지만 승부가 안 나서 무승부가 됐어요.
+when:
+  regular_season: 11회까지, 그래도 동점이면 무승부
+  postseason: 15회까지
+  all_star: 10회부터 승부치기, 이닝 제한 없음
+source:
+- name: KBO 리그 규정 2026
+  ref: 제1조 2항 (정규시즌·포스트시즌), 제53조 2항 (올스타전)
+- name: 공식야구규칙 2026
+  ref: 7.01(g)
+  note: 경기 종료 방식
+related:
+- term.inning
+- term.walk_off
+- term.tie_game
+event_types: []
+aliases:
+- 연장
+- 연장 승부
+review_status: draft
+reviewer: ''
+more:
+- 공식야구규칙의 승패 계산은 7.01 정식경기에 있어요. 정규시즌 연장 한도(11회)는 KBO 리그 규정이 우선해요.

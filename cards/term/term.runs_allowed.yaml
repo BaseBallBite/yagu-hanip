@@ -1,0 +1,23 @@
+id: term.runs_allowed
+kind: term
+title: 실점
+category: 기록·통계
+one_liner: 투수가 던지는 동안 상대에게 내준 점수예요.
+easy: 실점은 투수가 마운드에 있는 동안 그 투수 책임으로 상대가 낸 점수의 합이에요. 그중 수비 실책 등을 빼고 투수에게 책임이 있다고 보는 것만 자책점이에요. 그래서 실점은 항상 자책점 이상이에요.
+example: 실책으로 1점, 안타로 2점을 내줬다면 실점 3, 자책점 2일 수 있어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.16 자책점
+  note: 실점 중 투수 책임 몫이 자책점
+- name: 2026 KBO 연감 가이드북
+  note: 투수 기록표 '실점'
+related:
+- term.earned_run
+- term.era
+- term.error
+event_types: []
+aliases:
+- 내준 점수
+- 비자책 실점
+review_status: draft
+reviewer: ''

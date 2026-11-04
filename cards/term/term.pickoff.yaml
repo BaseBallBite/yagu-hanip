@@ -1,0 +1,26 @@
+id: term.pickoff
+kind: term
+title: 견제
+category: 수비
+one_liner: 투수나 포수가 루에 있는 주자에게 공을 던져 아웃을 노리는 거예요.
+easy: '주자가 다음 베이스로 가려고 베이스에서 멀리 떨어지면 투수나 포수가 그 베이스로 공을 던져 태그를 노려요. 견제로 아웃되면 견제사, 아웃은 안 돼도 주자가 도루하기 어렵게 만드는 효과가 있어요. 투수가 견제 동작을 잘못하면 보크가 될 수 있어요.
+
+  '
+example: '1루 주자가 크게 떨어진 순간 투수가 1루로 던져 태그 아웃시켰어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 견제 동작의 규칙은 공식야구규칙 5.07(a), 6.02(a) 참고
+related:
+- rule.balk
+- term.stolen_base
+- rule.tag
+event_types:
+- PICKOFF
+aliases:
+- 견제구
+- 견제사
+- 픽오프
+review_status: draft
+reviewer: ''

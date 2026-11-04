@@ -1,0 +1,25 @@
+id: term.count
+kind: term
+title: 볼카운트
+category: 투구·구종
+one_liner: 지금 타자가 받은 볼과 스트라이크 개수예요.
+easy: '볼카운트는 ''2볼 1스트라이크''처럼 볼 개수와 스트라이크 개수를 함께 말해요. 3볼 2스트라이크는 풀카운트라고 하고, 다음 공에 볼넷이나 삼진이 나올 수 있어요.
+
+  '
+example: '3볼 2스트라이크 풀카운트에서 타자가 파울을 쳐 카운트가 그대로 남았어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.ball
+- term.strike
+- rule.foul_ball
+event_types: []
+aliases:
+- 볼 카운트
+- 카운트
+- 풀카운트
+- 풀 카운트
+review_status: draft
+reviewer: ''

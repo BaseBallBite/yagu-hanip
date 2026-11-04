@@ -1,0 +1,32 @@
+id: rule.slide_rule
+kind: rule
+title: 슬라이딩 규칙
+category: 주루 규칙
+one_liner: 병살을 막으려고 수비수에게 위험하게 미끄러져 들어가는 걸 금지해요.
+easy: '주자가 2루 등으로 미끄러질 때는 베이스를 향해 미끄러져야 하고, 베이스에 머물려고 해야 해요. 수비수를 넘어뜨리려고 베이스 밖으로 미끄러지면 규칙 위반이에요. 위반하면 주자와 타자가 함께 아웃될 수 있어요.
+
+  '
+example: '1사 1루 땅볼 때 1루 주자가 2루 베이스가 아닌 유격수 다리 쪽으로 미끄러졌어요. 심판은 위반을 선언해 주자와 타자 모두 아웃시켰어요.
+
+  '
+when:
+  situation: 병살 시도 중 주자의 슬라이딩
+source:
+- name: 공식야구규칙 2026
+  ref: 6.01(j)
+  note: 더블 플레이 시도 시 슬라이딩. 위반하면 주자와 타자 모두 아웃
+- name: KBO 리그 규정 2026
+  ref: 제28조 3항 ⑧
+  note: 이 슬라이딩 판정은 비디오 판독 대상
+related:
+- term.double_play
+- rule.interference
+- rule.force_play
+event_types:
+- DOUBLE_PLAY
+- INTERFERENCE
+aliases:
+- 슬라이딩 방해
+- 병살 방지 슬라이딩
+review_status: draft
+reviewer: ''

@@ -1,0 +1,25 @@
+id: term.double
+kind: term
+title: 2루타
+category: 타격
+one_liner: 타자가 안타를 치고 2루까지 간 거예요.
+easy: '타자가 친 공으로 수비 실수 없이 2루까지 가면 2루타예요. 외야 깊숙이 날아가거나 외야수 사이를 가르는 타구에서 많이 나와요.
+
+  '
+example: '타구가 좌중간을 가르자 타자가 2루까지 들어가 2루타가 됐어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 9.06 단타·장타의 결정
+related:
+- term.hit
+- term.extra_base_hit
+- rule.ground_rule_double
+event_types:
+- DOUBLE
+aliases:
+- 이루타
+- 투베이스
+review_status: draft
+reviewer: ''

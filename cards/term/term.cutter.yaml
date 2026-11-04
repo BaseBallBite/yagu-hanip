@@ -1,0 +1,23 @@
+id: term.cutter
+kind: term
+title: 커터
+category: 투구·구종
+one_liner: 직구처럼 빠르지만 끝에서 살짝 휘는 공이에요.
+easy: '커터는 직구와 거의 같은 속도로 오다가 타자 앞에서 조금 옆으로 휘어요. 슬라이더보다 덜 휘고 더 빨라서, 배트 중심을 피해 약한 타구를 만들어요.
+
+  '
+example: '몸쪽으로 살짝 휘는 커터에 타자 배트가 부러지며 땅볼이 됐어요.
+
+  '
+source:
+- name: 팀 작성(일반 야구 용어)
+related:
+- term.fastball
+- term.slider
+- term.ground_ball
+event_types: []
+aliases:
+- 컷패스트볼
+- 컷 패스트볼
+review_status: draft
+reviewer: ''

@@ -1,0 +1,24 @@
+id: term.pinch_runner
+kind: term
+title: 대주자
+category: 주루
+one_liner: 루에 나간 선수 대신 뛰는 교체 선수예요.
+easy: '루에 나간 주자 대신 발이 빠른 선수를 넣어 뛰게 하는 교체예요. 교체돼 나간 선수는 그 경기에 다시 나올 수 없어요.
+
+  '
+example: '9회말 동점 주자가 1루에 나가자 발 빠른 대주자로 바꿨어요.
+
+  '
+source:
+- name: 공식야구규칙 2026
+  ref: 5.10(e)
+  note: 교체 선수는 타순표에 올라 있지 않은 선수 중에서
+related:
+- rule.substitution
+- term.pinch_hitter
+- term.stolen_base
+event_types: []
+aliases:
+- 핀치 러너
+review_status: draft
+reviewer: ''

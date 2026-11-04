@@ -1,0 +1,23 @@
+id: term.manager
+kind: term
+title: 감독
+category: 경기 운영
+one_liner: 경기장 안에서 팀을 책임지고 대표하는 사람이에요.
+easy: 감독은 팀의 경기 중 활동을 책임지고, 심판이나 상대 팀과의 관계에서 팀을 대표해요. 비디오 판독 신청도 감독만 할 수 있어요.
+example: 감독이 마운드에 올라가 투수를 교체했어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 용어의 정의 50. MANAGER
+- name: KBO 리그 규정 2026
+  ref: 제28조 4항 ①
+  note: 비디오 판독은 감독만 신청
+related:
+- rule.video_review
+- term.pitching_change
+- term.base_coach
+event_types: []
+aliases:
+- 매니저
+- 벤치
+review_status: draft
+reviewer: ''

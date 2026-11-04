@@ -1,0 +1,20 @@
+id: rule.designated_hitter
+kind: rule
+title: 지명타자 제도
+category: 특수 상황
+one_liner: 경기 전에 정한 지명타자가 투수 대신 타석에 서는 제도예요.
+easy: 각 팀은 경기 시작 전에 내는 타순표에 지명타자를 적어 투수 대신 타격하게 할 수 있어요. 지명타자는 수비 위치에 서지 않아요. 타순표에 지명타자를 적지 않으면 그 경기에서는 지명타자를 쓸 수 없어요.
+example: 선발 투수는 타순표의 타격 순서 밖에 적혀 있고, 4번 타순에 지명타자가 이름을 올렸어요.
+source:
+- name: 공식야구규칙 2026
+  ref: '5.11'
+related:
+- term.designated_hitter
+- term.batting_order
+- rule.substitution
+event_types: []
+aliases:
+- DH 제도
+- 지명 타자 제도
+review_status: draft
+reviewer: ''

@@ -1,0 +1,28 @@
+id: rule.abs
+kind: rule
+title: ABS 자동 투구 판정
+category: 기본 규칙
+one_liner: 사람 심판 대신 기계가 볼과 스트라이크를 판정하는 제도예요.
+easy: ABS는 카메라로 공의 위치를 재서 볼인지 스트라이크인지 자동으로 알려 주는 시스템이에요. 주심의 볼·스트라이크 판정을 대신하고, 이 판정에는 이의를 제기할 수 없어요. 타자가 스윙한 공이나 체크스윙은 ABS 대상이 아니에요. 장비 문제가 생기면 주심이 직접 판정해요.
+example: 바깥쪽 공이 존을 살짝 벗어나자 ABS가 볼로 판정했고, 투수가 항의했지만 판정은 그대로였어요.
+when:
+  applies_to: 승인된 장비가 있는 구장의 KBO 리그 경기
+  excluded:
+  - 타자가 스윙한 투구
+  - 체크스윙
+  fallback: 장비 오류 시 주심 판정으로 대체
+source:
+- name: KBO 리그 규정 2026
+  ref: 자동 투구 판정 시스템(ABS) 규정
+related:
+- rule.strike_zone
+- term.strike
+- term.ball
+event_types: []
+aliases:
+- ABS
+- 자동 볼 판정
+- 자동 투구 판정 시스템
+- 로봇 심판
+review_status: draft
+reviewer: ''

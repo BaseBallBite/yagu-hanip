@@ -1,0 +1,22 @@
+id: term.out_on_base
+kind: term
+title: 주루사
+category: 주루
+one_liner: 주자가 베이스를 돌다가 아웃된 거예요.
+easy: '주자가 안타나 뜬공 때 더 가려다가 수비 송구에 태그되거나 포스로 아웃되면 주루사라고 해요. 무리하게 뛰다 나오는 경우가 많아 아쉬운 플레이로 꼽혀요.
+
+  '
+example: '안타 때 1루 주자가 3루까지 뛰었지만 외야수의 송구에 태그돼 아웃됐어요.
+
+  '
+source:
+- name: 팀 작성(중계 관용 표현)
+related:
+- rule.tag
+- term.out
+- term.caught_stealing
+event_types: []
+aliases:
+- 주루 아웃
+review_status: draft
+reviewer: ''
