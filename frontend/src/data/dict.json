@@ -1,0 +1,6615 @@
+{
+ "cards": {
+  "rule.abs": {
+   "id": "rule.abs",
+   "kind": "rule",
+   "title": "ABS 자동 투구 판정",
+   "category": "기본 규칙",
+   "one_liner": "사람 심판 대신 기계가 볼과 스트라이크를 판정하는 제도예요.",
+   "easy": "ABS는 카메라로 공의 위치를 재서 볼인지 스트라이크인지 자동으로 알려 주는 시스템이에요. 주심의 볼·스트라이크 판정을 대신하고, 이 판정에는 이의를 제기할 수 없어요. 타자가 스윙한 공이나 체크스윙은 ABS 대상이 아니에요. 장비 문제가 생기면 주심이 직접 판정해요.",
+   "example": "바깥쪽 공이 존을 살짝 벗어나자 ABS가 볼로 판정했고, 투수가 항의했지만 판정은 그대로였어요.",
+   "when": {
+    "applies_to": "승인된 장비가 있는 구장의 KBO 리그 경기",
+    "excluded": [
+     "타자가 스윙한 투구",
+     "체크스윙"
+    ],
+    "fallback": "장비 오류 시 주심 판정으로 대체"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "자동 투구 판정 시스템(ABS) 규정"
+    }
+   ],
+   "related": [
+    "rule.strike_zone",
+    "term.strike",
+    "term.ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "ABS",
+    "자동 볼 판정",
+    "자동 투구 판정 시스템",
+    "로봇 심판"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.appeal_play": {
+   "id": "rule.appeal_play",
+   "kind": "rule",
+   "title": "어필 플레이",
+   "category": "주루 규칙",
+   "one_liner": "주자가 규칙을 어긴 걸 수비가 알려야 아웃이 되는 플레이예요.",
+   "easy": "주자가 베이스를 밟지 않고 지나가거나, 뜬공이 잡혔는데 베이스를 다시 밟지 않고 뛰었을 때 수비가 심판에게 알리는 걸 어필이라고 해요. 수비가 공을 들고 그 베이스를 밟거나 주자를 태그하며 어필하면 심판이 아웃을 선언해요. 수비가 어필하지 않으면 그냥 넘어가요.",
+   "example": "주자가 3루를 밟지 않고 홈에 들어왔어요. 수비가 공을 3루로 보내 어필했고, 주자는 아웃됐어요.",
+   "when": {
+    "trigger": "수비의 어필",
+    "cases": [
+     "베이스를 밟지 않음",
+     "태그업 위반"
+    ]
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 2. APPEAL"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(c)",
+     "note": "어필 플레이로 아웃이 되는 경우"
+    }
+   ],
+   "related": [
+    "rule.tag_up",
+    "rule.tag",
+    "term.out"
+   ],
+   "event_types": [],
+   "aliases": [
+    "어필플레이",
+    "어필"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.award_bases": {
+   "id": "rule.award_bases",
+   "kind": "rule",
+   "title": "안전진루권",
+   "category": "주루 규칙",
+   "one_liner": "볼넷이나 몸에 맞는 공처럼 정해진 경우 아웃될 걱정 없이 베이스가 주어지는 거예요.",
+   "easy": "타자가 아웃될 염려 없이 1루에 나가야 할 때(볼넷, 몸에 맞는 공, 타격방해) 그 때문에 베이스를 비워줘야 하는 주자들도 한 베이스씩 안전하게 진루해요. 그 밖에 보크가 선언되면 모든 주자가 한 베이스 진루해요. 안전진루권을 얻었다고 해도 베이스를 밟아야 인정돼요.",
+   "example": "만루에서 볼넷이 나오자 타자는 1루로 가고 모든 주자가 한 베이스씩 밀려 3루 주자가 득점했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.06(b)(2)(3)",
+     "note": "타자가 주자가 되어 베이스를 비워줘야 하는 주자의 진루"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.06(c)(3)",
+     "note": "보크"
+    }
+   ],
+   "related": [
+    "rule.base_on_balls",
+    "rule.hit_by_pitch",
+    "rule.balk"
+   ],
+   "event_types": [
+    "WALK",
+    "HIT_BY_PITCH"
+   ],
+   "aliases": [
+    "밀어내기 진루"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.balk": {
+   "id": "rule.balk",
+   "kind": "rule",
+   "title": "보크",
+   "category": "특수 상황",
+   "one_liner": "주자가 있을 때 투수가 반칙 동작을 하면 모든 주자가 한 베이스씩 가요.",
+   "easy": "투수가 규칙에 어긋나는 동작으로 주자를 속이는 걸 막는 규칙이에요. 주자가 있을 때 투구 동작을 하다 멈추거나, 1루나 3루에 던지는 척만 하면 보크예요. 보크가 선언되면 모든 주자가 한 베이스씩 진루해요.",
+   "example": "1사 2루에서 투수가 투구 동작을 시작했다가 멈췄어요. 보크가 선언되어 2루 주자가 3루로 갔어요.",
+   "when": {
+    "runners": "베이스에 주자가 있을 때",
+    "examples": [
+     "투구 동작을 일으키다가 중단",
+     "1루 또는 3루에 송구하는 시늉만 하고 던지지 않음",
+     "송구 전 그 베이스 쪽으로 발을 내딛지 않음"
+    ],
+    "result": "모든 주자 한 베이스 진루"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 3. BALK"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.02(a)",
+     "note": "보크 11가지 경우"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.06(c)(3)",
+     "note": "보크 시 모든 주자 진루"
+    }
+   ],
+   "quote": "모든 주자는 한 베이스씩 진루한다",
+   "related": [
+    "term.pickoff"
+   ],
+   "event_types": [
+    "BALK"
+   ],
+   "aliases": [],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.base_on_balls": {
+   "id": "rule.base_on_balls",
+   "kind": "rule",
+   "title": "볼넷",
+   "category": "기본 규칙",
+   "one_liner": "스트라이크 존을 벗어난 공 4개를 골라내면 1루로 걸어 나가요.",
+   "easy": "타자가 치지 않은 공 중 스트라이크 존 밖으로 들어온 공이 4개가 되면 1루가 주어져요. 수비팀이 일부러 걸러 보내겠다고 알리는 고의4구도 같은 방식으로 1루에 나가요. 만루에서 볼넷이 나오면 3루 주자가 밀려 들어와 1점이 나요.",
+   "example": "3볼 2스트라이크에서 바깥쪽으로 빠진 공을 타자가 지켜봤어요. 볼넷으로 1루에 나갔어요.",
+   "more": [
+    "볼넷이 되는 공이 타자 몸에 맞으면 볼넷이 아니라 몸에 맞는 공으로 기록돼요."
+   ],
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 7. BASE ON BALLS"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(b)(1)"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.14",
+     "note": "기록"
+    }
+   ],
+   "quote": "스트라이크 존을 벗어난 4개의 투구",
+   "related": [
+    "term.ball",
+    "rule.hit_by_pitch",
+    "term.bases_loaded"
+   ],
+   "event_types": [
+    "WALK",
+    "INTENTIONAL_WALK"
+   ],
+   "aliases": [
+    "4구",
+    "볼 넷",
+    "고의4구",
+    "고의사구",
+    "밀어내기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.baseline_leave": {
+   "id": "rule.baseline_leave",
+   "kind": "rule",
+   "title": "베이스 라인 이탈",
+   "category": "주루 규칙",
+   "one_liner": "태그를 피하려고 베이스를 잇는 선에서 3피트 넘게 벗어나면 아웃이에요.",
+   "easy": "주자가 태그를 피하려고 베이스를 연결한 직선에서 3피트(약 91cm) 넘게 벗어나 달리면 아웃이에요. 다만 타구를 처리하는 야수를 피하려고 벗어난 건 괜찮아요. 수비수가 공을 들고 주자를 쫓는 런다운 때 자주 문제가 돼요.",
+   "example": "런다운에 걸린 주자가 태그를 피하려고 베이스 라인에서 크게 벗어나 달리다가 심판이 아웃을 선언했어요.",
+   "when": {
+    "trigger": "태그를 피하려는 의도",
+    "limit": "베이스를 잇는 직선에서 3피트"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(b)(1)",
+     "note": "베이스 라인에서 3피트 이상 벗어난 주자는 아웃"
+    }
+   ],
+   "related": [
+    "rule.tag",
+    "term.run_down",
+    "term.out"
+   ],
+   "event_types": [],
+   "aliases": [
+    "베이스 라인 이탈",
+    "3피트 이탈",
+    "라인 이탈"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.batting_out_of_order": {
+   "id": "rule.batting_out_of_order",
+   "kind": "rule",
+   "title": "타순 착오",
+   "category": "타격 규칙",
+   "one_liner": "정해진 순서가 아닌 타자가 타석에 들어서면 수비가 어필해 아웃시킬 수 있어요.",
+   "easy": "타자는 경기 전에 낸 타순표 순서대로 타석에 서야 해요. 순서가 틀린 타자가 타격을 마친 뒤 수비가 어필하면, 원래 나와야 했던 타자가 아웃돼요. 수비가 어필하지 않고 다음 투구가 나오면 그대로 인정돼요.",
+   "example": "5번 타자 차례에 6번 타자가 나와 안타를 쳤어요. 수비가 바로 어필해 5번 타자가 아웃되고 안타는 취소됐어요.",
+   "when": {
+    "trigger": "순서가 틀린 타자의 타격 종료 후 수비 어필"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.03(b)",
+     "note": "타격순서 착오(부정위타자)"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.04(a)",
+     "note": "타격의 순서"
+    }
+   ],
+   "related": [
+    "term.batting_order",
+    "rule.appeal_play",
+    "term.out"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타순착오",
+    "부정위 타자"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.called_game": {
+   "id": "rule.called_game",
+   "kind": "rule",
+   "title": "콜드게임",
+   "category": "특수 상황",
+   "one_liner": "주심이 경기 종료를 선언한 경기예요. 정식경기 이후면 그때까지 점수로 승패를 정해요.",
+   "easy": "콜드게임은 비나 어둠 등으로 주심이 경기 종료를 선언한 경기예요. 정식경기가 된 뒤에 콜드게임이 되면 그때까지의 두 팀 총득점으로 승패를 정해요. 점수 차이로 일찍 끝내는 제도가 아니라, 날씨 같은 이유로 더 할 수 없을 때 쓰는 거예요.",
+   "example": "6회 도중 큰 비로 경기가 끝났고, 그때 5대3으로 앞서던 팀이 이겼어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 14. CALLED GAME"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "7.01"
+    }
+   ],
+   "related": [
+    "rule.regulation_game",
+    "rule.no_game",
+    "rule.suspended_game"
+   ],
+   "event_types": [],
+   "aliases": [
+    "콜드 게임",
+    "강우 콜드",
+    "강우콜드게임",
+    "중도종료경기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.catcher_interference": {
+   "id": "rule.catcher_interference",
+   "kind": "rule",
+   "title": "타격방해(포수방해)",
+   "category": "타격 규칙",
+   "one_liner": "포수나 야수가 타자의 스윙을 막으면 타자가 1루로 나가요.",
+   "easy": "포수 등 수비수가 타자의 타격을 방해하면 타자는 아웃될 염려 없이 1루로 나가요. 방해에도 플레이가 이어졌다면 공격 팀 감독은 그 플레이가 끝난 직후 방해 벌칙 대신 실제 플레이 결과를 고를 수 있어요. 타자가 안타·실책·볼넷 등으로 1루에 나가고 다른 주자가 모두 한 베이스 이상 진루했다면 방해와 상관없이 플레이가 이어져요.",
+   "example": "무사 2루에서 타자가 포수에게 방해받으며 번트를 댔고 1루에서 아웃됐어요. 감독은 무사 1·2루로 할지, 1사 3루로 할지 고를 수 있었어요.",
+   "when": {
+    "who": "포수 또는 다른 야수",
+    "effect": "타자 1루 안전진루, 감독이 방해 벌칙과 실제 플레이 중 선택 가능"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(b)(3)",
+     "note": "포수·야수가 타자를 방해하면 1루 진루"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(c)",
+     "note": "포수방해"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 44(b)"
+    }
+   ],
+   "related": [
+    "rule.interference",
+    "rule.obstruction",
+    "rule.hit_by_pitch"
+   ],
+   "event_types": [
+    "INTERFERENCE"
+   ],
+   "aliases": [
+    "포수방해",
+    "포수 방해",
+    "타격방해",
+    "타격 방해"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.check_swing": {
+   "id": "rule.check_swing",
+   "kind": "rule",
+   "title": "체크스윙",
+   "category": "타격 규칙",
+   "one_liner": "타자가 휘두르다 멈춘 동작이 스윙인지 아닌지 가리는 판정이에요.",
+   "easy": "타자가 배트를 내다가 멈췄을 때, 배트 끝이 홈플레이트 앞면과 나란한 선을 투수 쪽으로 넘으면 스윙(스트라이크)이에요. 넘지 않으면 스윙이 아니에요. 2026년부터 체크스윙도 비디오 판독을 신청할 수 있어요.",
+   "example": "타자가 공을 치려다 멈췄지만 배트 끝이 기준선을 넘어 스윙 스트라이크로 판정됐어요.",
+   "when": {
+    "swing": "배트 끝의 각도가 타자석 기준 90도를 넘음",
+    "no_swing": "90도 이하",
+    "review": "공격 팀은 '스윙' 판정에, 수비 팀은 '노스윙' 판정에만 요청, 번트 시도는 제외"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑮ 체크스윙"
+    }
+   ],
+   "related": [
+    "term.strike",
+    "rule.video_review",
+    "term.strikeout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "체크 스윙",
+    "체크스윙 판독"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.dead_ball": {
+   "id": "rule.dead_ball",
+   "kind": "rule",
+   "title": "볼 데드",
+   "category": "기본 규칙",
+   "one_liner": "경기가 잠깐 멈춘 상태로, 이때는 아무도 아웃되거나 진루할 수 없어요.",
+   "easy": "심판이 타임을 선언하거나, 몸에 맞는 공·방해·파울처럼 정해진 일이 생기면 공이 죽은 상태(볼 데드)가 돼요. 볼 데드 동안에는 주자가 진루하거나 아웃될 수 없어요. 투수가 다시 공을 들고 심판이 플레이를 선언하면 경기가 다시 이어져요.",
+   "example": "타자가 몸에 맞는 공을 맞자 볼 데드가 됐고, 그 사이 뛰던 1루 주자는 2루까지만 갔어요.",
+   "when": {
+    "trigger": "타임 선언·몸에 맞는 공·파울·방해 등"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 20. DEAD BALL"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.06(c)",
+     "note": "볼 데드가 되는 경우"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.12",
+     "note": "타임 선언"
+    }
+   ],
+   "related": [
+    "rule.interference",
+    "rule.hit_by_pitch",
+    "rule.foul_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "볼데드",
+    "데드 볼 상태",
+    "타임"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.designated_hitter": {
+   "id": "rule.designated_hitter",
+   "kind": "rule",
+   "title": "지명타자 제도",
+   "category": "특수 상황",
+   "one_liner": "경기 전에 정한 지명타자가 투수 대신 타석에 서는 제도예요.",
+   "easy": "각 팀은 경기 시작 전에 내는 타순표에 지명타자를 적어 투수 대신 타격하게 할 수 있어요. 지명타자는 수비 위치에 서지 않아요. 타순표에 지명타자를 적지 않으면 그 경기에서는 지명타자를 쓸 수 없어요.",
+   "example": "선발 투수는 타순표의 타격 순서 밖에 적혀 있고, 4번 타순에 지명타자가 이름을 올렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.11"
+    }
+   ],
+   "related": [
+    "term.designated_hitter",
+    "term.batting_order",
+    "rule.substitution"
+   ],
+   "event_types": [],
+   "aliases": [
+    "DH 제도",
+    "지명 타자 제도"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.doubleheader": {
+   "id": "rule.doubleheader",
+   "kind": "rule",
+   "title": "더블헤더",
+   "category": "특수 상황",
+   "one_liner": "한 팀이 같은 날 두 경기를 연달아 치르는 거예요.",
+   "easy": "우천 등으로 미뤄진 경기는 월요일 경기나 더블헤더로 다시 해요. 1군 더블헤더의 첫 경기는 9회까지만 해요. 퓨처스리그 더블헤더는 두 경기 모두 7이닝으로 하고, 이때는 승부치기를 하지 않아요.",
+   "example": "전날 비로 취소된 경기가 다음 날 더블헤더로 열렸고, 첫 경기는 9회까지로 끝났어요.",
+   "when": {
+    "kbo": "연기 경기는 필요하면 월요일 경기·더블헤더, 1차전은 9회까지",
+    "futures": "1·2차전 모두 7이닝, 승부치기 없음"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 22. DOUBLE HEADER, 4.08"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제5조 1항 (1군), 제60조 (퓨처스리그)"
+    }
+   ],
+   "related": [
+    "rule.suspended_game",
+    "rule.extra_innings",
+    "rule.tiebreaker"
+   ],
+   "event_types": [],
+   "aliases": [
+    "더블 헤더",
+    "DH 경기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.dropped_third_strike": {
+   "id": "rule.dropped_third_strike",
+   "kind": "rule",
+   "title": "낫아웃",
+   "category": "타격 규칙",
+   "one_liner": "삼진인데 포수가 공을 못 잡으면, 상황에 따라 타자가 1루로 뛸 수 있어요.",
+   "easy": "스트라이크 3개가 되어도 포수가 그 공을 잡지 못하면 아직 끝이 아닐 수 있어요. 1루에 주자가 없거나, 있어도 2아웃이면 타자가 1루로 뛸 수 있고 수비가 먼저 잡아 던지면 아웃이에요. 무사나 1사에 1루 주자가 있으면 타자는 바로 아웃이에요.",
+   "example": "2사 1루에서 헛스윙 삼진이 나왔는데 공이 포수 뒤로 빠졌어요. 2아웃이라 타자가 1루로 뛰어 살았어요.",
+   "when": {
+    "strike": "제3스트라이크",
+    "catcher": "포수가 공을 잡지 못함",
+    "can_run": "1루 주자가 없거나, 있어도 2아웃",
+    "no_run": "무사·1사에 1루 주자가 있으면 타자 아웃"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(a)(2)",
+     "note": "포수가 제3스트라이크를 잡지 못하면 타자가 주자가 됨"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(a)(3)",
+     "note": "무사·1사에 1루 주자가 있으면 타자 아웃"
+    }
+   ],
+   "quote": "주자가 1루에 있더라도 2아웃일 때",
+   "related": [
+    "term.strikeout",
+    "term.wild_pitch",
+    "term.passed_ball"
+   ],
+   "event_types": [
+    "DROPPED_THIRD_STRIKE"
+   ],
+   "aliases": [
+    "낫 아웃",
+    "스트라이크 낫아웃",
+    "떨어뜨린 제3스트라이크"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.extra_innings": {
+   "id": "rule.extra_innings",
+   "kind": "rule",
+   "title": "연장전",
+   "category": "특수 상황",
+   "one_liner": "9회까지 동점이면 정규시즌은 11회까지, 포스트시즌은 15회까지 더 해요.",
+   "easy": "9회가 끝났는데 점수가 같으면 연장전을 해요. 정규시즌은 11회까지만 하고, 그때까지 승부가 안 나면 무승부예요. 포스트시즌은 15회까지 해요. 올스타전은 10회부터 승부치기로 이닝 제한 없이 이어가요.",
+   "example": "정규시즌에서 9회말까지 3대3이라 10회, 11회를 했지만 승부가 안 나서 무승부가 됐어요.",
+   "when": {
+    "regular_season": "11회까지, 그래도 동점이면 무승부",
+    "postseason": "15회까지",
+    "all_star": "10회부터 승부치기, 이닝 제한 없음"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제1조 2항 (정규시즌·포스트시즌), 제53조 2항 (올스타전)"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "7.01(g)",
+     "note": "경기 종료 방식"
+    }
+   ],
+   "related": [
+    "term.inning",
+    "term.walk_off",
+    "term.tie_game"
+   ],
+   "event_types": [],
+   "aliases": [
+    "연장",
+    "연장 승부"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "공식야구규칙의 승패 계산은 7.01 정식경기에 있어요. 정규시즌 연장 한도(11회)는 KBO 리그 규정이 우선해요."
+   ]
+  },
+  "rule.fair_ball": {
+   "id": "rule.fair_ball",
+   "kind": "rule",
+   "title": "페어",
+   "category": "기본 규칙",
+   "one_liner": "타구가 파울 라인 안쪽에 들어오면 페어이고 경기가 이어져요.",
+   "easy": "타자가 친 공이 1루와 3루 파울 라인 안쪽(페어 지역)에 떨어지거나 그 안에서 멈추면 페어예요. 파울 라인 위에 떨어진 공도 페어예요. 페어가 되면 타자는 1루로 뛰고 수비는 아웃을 노려요.",
+   "example": "타구가 3루 파울 라인 바로 위에 떨어져 페어가 선언됐고, 타자는 2루까지 갔어요.",
+   "when": {
+    "ball": "페어 지역에 떨어지거나 멈춘 타구"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 25. FAIR BALL"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 26. FAIR TERRITORY",
+     "note": "파울 라인은 페어지역에 속함"
+    }
+   ],
+   "related": [
+    "rule.foul_ball",
+    "term.hit",
+    "rule.ground_rule_double"
+   ],
+   "event_types": [],
+   "aliases": [
+    "페어볼",
+    "페어 볼",
+    "페어 타구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.force_play": {
+   "id": "rule.force_play",
+   "kind": "rule",
+   "title": "포스 플레이",
+   "category": "수비 규칙",
+   "one_liner": "뒤 주자에 밀려 앞 주자가 꼭 다음 베이스로 가야 하는 상황이에요.",
+   "easy": "타자가 주자가 되면 1루에 있던 주자는 2루로 비켜줘야 해요. 이렇게 꼭 가야 하는 주자는 수비가 공을 들고 그 베이스만 밟아도 아웃이에요. 강제가 풀리면 그 주자는 몸에 태그해야 아웃이 돼요.",
+   "example": "1사 1루에서 땅볼이 나왔어요. 유격수가 공을 잡아 2루를 밟자 1루 주자는 태그 없이 아웃됐어요.",
+   "more": [
+    "처음엔 포스 상태였다가 다음 플레이로 풀리는 경우가 있어서, 득점 인정 여부가 달라질 수 있어요."
+   ],
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 30. FORCE PLAY"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(b)(6)",
+     "note": "포스 아웃"
+    }
+   ],
+   "quote": "기존의 주자가 그 베이스에 대한 점유권을 빼앗긴",
+   "related": [
+    "rule.tag",
+    "term.double_play"
+   ],
+   "event_types": [
+    "FORCE_OUT",
+    "DOUBLE_PLAY"
+   ],
+   "aliases": [
+    "포스플레이",
+    "포스 아웃",
+    "포스아웃",
+    "강제 진루"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.forfeit": {
+   "id": "rule.forfeit",
+   "kind": "rule",
+   "title": "몰수 경기",
+   "category": "특수 상황",
+   "one_liner": "한 팀이 규칙을 어겨 경기를 못 하면 반칙 없는 팀이 9대0으로 이기는 걸로 처리해요.",
+   "easy": "공식야구규칙에서는 한 팀이 경기에 나오지 않거나, 경기를 거부하거나, 고의로 지연시키는 등 규칙을 어기면 주심이 몰수경기를 선언하고 상대 팀에게 9대0 승리를 줘요. KBO 리그 규정은 홈 팀이 공식 일정을 이행하지 못하면 총재가 그 경기를 몰수하고 원정 팀에게 승리를 준다고 정해요. 단, 원정 팀이 경기 시작 전에 구장에 도착했을 때만 그래요.",
+   "example": "홈 팀이 경기장을 쓸 수 없게 됐는데 원정 팀이 제시간에 도착해 있어서, 원정 팀 승리로 몰수 처리됐어요.",
+   "when": {
+    "obr": "규칙 위반으로 주심이 경기 종료를 선언 → 반칙 없는 팀 9-0 승리",
+    "kbo": "홈 팀이 일정 이행 못함 + 원정 팀이 시작 전 도착"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 31. FORFEITED GAME, 7.03"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제6조 1항"
+    }
+   ],
+   "related": [
+    "rule.suspended_game",
+    "rule.doubleheader"
+   ],
+   "event_types": [],
+   "aliases": [
+    "몰수게임",
+    "몰수승",
+    "몰수패"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.foul_ball": {
+   "id": "rule.foul_ball",
+   "kind": "rule",
+   "title": "파울",
+   "category": "기본 규칙",
+   "one_liner": "타구가 파울 라인 밖으로 나가면 파울이고, 다시 쳐야 해요.",
+   "easy": "타자가 친 공이 1루나 3루를 지나기 전에 파울 라인 밖으로 나가거나 파울 지역에 떨어지면 파울이에요. 스트라이크가 2개 미만이면 파울은 스트라이크 하나로 세요. 스트라이크가 2개일 때 파울은 카운트가 늘지 않아요. 단, 번트 파울은 삼진이에요.",
+   "example": "볼카운트 1볼 2스트라이크에서 타자가 친 공이 3루 쪽 관중석으로 갔어요. 파울이라 카운트는 그대로예요.",
+   "when": {
+    "ball": "파울 지역에서 멈추거나 떨어진 타구"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 32. FOUL BALL"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 72. STRIKE (c)(d)",
+     "note": "2스트라이크 뒤 파울은 스트라이크로 세지 않지만 번트 파울은 항상 스트라이크"
+    }
+   ],
+   "related": [
+    "rule.fair_ball",
+    "term.strike",
+    "term.count"
+   ],
+   "event_types": [],
+   "aliases": [
+    "파울볼",
+    "파울 볼",
+    "파울 타구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.ground_rule_double": {
+   "id": "rule.ground_rule_double",
+   "kind": "rule",
+   "title": "인정 2루타",
+   "category": "타격 규칙",
+   "one_liner": "페어 타구가 튀어서 담장을 넘어가면 타자에게 2루까지 줘요.",
+   "easy": "타자가 친 공이 페어 지역에 떨어진 뒤 튀어서 관중석이나 담장 밖으로 나가면 인정 2루타예요. 타자는 2루까지, 주자들은 두 베이스씩 가요. 공이 땅에 닿지 않고 그대로 넘어가면 홈런이에요.",
+   "example": "1사 1루에서 타구가 외야 바닥에 맞고 튀어 담장을 넘어갔어요. 타자는 2루, 1루 주자는 3루까지 갔어요.",
+   "when": {
+    "ball": "페어 지역에 떨어진 뒤 튀어 경기장 밖으로 나간 타구"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(a)(6)~(8)",
+     "note": "땅에 닿은 뒤 펜스 밖으로 나가면 2개 베이스"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(a)(5)",
+     "note": "본루에서 250피트 이상이면 홈런, 미만이면 2루타"
+    }
+   ],
+   "related": [
+    "term.double",
+    "term.home_run",
+    "rule.fair_ball"
+   ],
+   "event_types": [
+    "DOUBLE"
+   ],
+   "aliases": [
+    "인정2루타",
+    "그라운드 룰 더블"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "펜스가 본루에서 250피트(약 76m) 미만이면 공이 직접 넘어가도 홈런이 아니라 2루타예요."
+   ]
+  },
+  "rule.hit_by_pitch": {
+   "id": "rule.hit_by_pitch",
+   "kind": "rule",
+   "title": "몸에 맞는 공",
+   "category": "타격 규칙",
+   "one_liner": "투수가 던진 공이 타자 몸에 맞으면 타자가 1루로 걸어 나가요.",
+   "easy": "타자가 치려고 하지 않았는데 투수의 공이 타자 몸에 맞으면 타자는 1루로 가요. 공이 스트라이크 존 안에서 맞았거나, 타자가 일부러 피하지 않았다고 심판이 보면 1루에 보내지 않을 수 있어요. 볼넷처럼 안타로 치지 않아요.",
+   "example": "2사 1루에서 몸쪽 공이 타자 팔꿈치에 맞았어요. 타자는 1루로, 1루 주자는 2루로 갔어요.",
+   "when": {
+    "ball": "타자가 치려 하지 않은 투구가 몸·옷에 닿음",
+    "excluded": [
+     "바운드하지 않은 투구가 스트라이크 존에서 맞은 경우(스트라이크)",
+     "타자가 피하려 하지 않은 경우(볼)"
+    ]
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(b)(2)",
+     "note": "투구가 치려 하지 않은 타자에게 닿으면 1루 안전진루. 존에서 맞거나 피하지 않았으면 제외"
+    }
+   ],
+   "related": [
+    "rule.base_on_balls",
+    "rule.strike_zone",
+    "term.bases_loaded"
+   ],
+   "event_types": [
+    "HIT_BY_PITCH"
+   ],
+   "aliases": [
+    "몸맞는공",
+    "몸 맞는 볼",
+    "데드볼",
+    "힛바이피치",
+    "사구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.home_plate_collision": {
+   "id": "rule.home_plate_collision",
+   "kind": "rule",
+   "title": "홈 충돌 방지 규칙",
+   "category": "주루 규칙",
+   "one_liner": "홈에서 주자와 포수가 서로 일부러 부딪치거나 길을 막지 못하게 하는 규칙이에요.",
+   "easy": "득점하려는 주자는 포수와 부딪치려고 주로를 벗어나거나 피할 수 있는 충돌을 시도하면 안 돼요. 어기면 주자가 아웃이에요. 포수도 공을 갖고 있지 않으면 주자가 들어오는 길을 막을 수 없고, 어기면 심판이 업스트럭션(주루방해)을 선언해요.",
+   "example": "공을 받기 전인 포수가 홈 앞을 막고 있다가 주자를 태그했어요. 심판은 주루방해로 보고 주자를 세이프로 처리했어요.",
+   "when": {
+    "who": "홈으로 들어오는 주자와 포수",
+    "runner_violation": "일부러 부딪치려고 주로 이탈 → 주자 아웃, 볼 데드",
+    "catcher_violation": "공 없이 주로를 막음 → 업스트럭션",
+    "legal_slide": "적절한 슬라이딩이면 위반 아님"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(i)",
+     "note": "홈 플레이트에서의 충돌"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑦",
+     "note": "비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "rule.obstruction",
+    "rule.tag",
+    "term.catcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "홈충돌 방지",
+    "홈 충돌",
+    "충돌 방지 규칙"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.illegal_pitch": {
+   "id": "rule.illegal_pitch",
+   "kind": "rule",
+   "title": "반칙투구",
+   "category": "수비 규칙",
+   "one_liner": "투수가 규정에 어긋난 방법으로 던진 공이에요. 주자가 있으면 보크예요.",
+   "easy": "투수가 투수판에 중심발을 대지 않고 던지거나, 타자가 준비하기 전에 던지는 퀵 리턴 피치는 반칙투구예요. 주자가 없으면 볼로 선언되고, 주자가 있으면 보크가 돼요.",
+   "example": "주자가 없을 때 투수가 타자가 준비하기 전에 빠르게 공을 던져 반칙투구로 볼이 선언됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 38. ILLEGAL PITCH"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 63. QUICK RETURN PITCH"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.02(b)"
+    }
+   ],
+   "related": [
+    "rule.balk",
+    "term.pitcher",
+    "term.ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "일리걸 피치",
+    "퀵리턴 피치",
+    "퀵 리턴 피치",
+    "퀵 리턴"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.infield_fly": {
+   "id": "rule.infield_fly",
+   "kind": "rule",
+   "title": "인필드 플라이",
+   "category": "수비 규칙",
+   "one_liner": "수비수가 뜬공을 일부러 놓쳐 주자를 한꺼번에 잡는 걸 막는 규칙이에요.",
+   "easy": "무사나 1사에 주자가 1·2루 또는 만루일 때 내야로 높이 뜬 공이 나오면 심판이 인필드 플라이를 선언해요. 선언되면 공을 잡든 못 잡든 타자는 아웃이에요. 이 규칙이 없으면 수비가 일부러 공을 떨어뜨려 베이스에 묶인 주자들을 한꺼번에 아웃시킬 수 있기 때문이에요.",
+   "example": "1사 1·2루에서 타자가 2루수 쪽으로 높은 뜬공을 쳤어요. 심판이 인필드 플라이를 선언했고, 2루수가 공을 놓쳤지만 타자는 아웃이에요.",
+   "when": {
+    "outs": "무사 또는 1사",
+    "runners": "1·2루 또는 만루",
+    "ball": "내야수가 평범한 수비로 잡을 수 있는 플라이 볼",
+    "excluded": [
+     "직선타구",
+     "번트가 떠서 된 플라이 볼"
+    ]
+   },
+   "more": [
+    "투수·포수, 내야에 자리 잡은 외야수도 이 규칙에서는 내야수로 봐요.",
+    "선언돼도 공은 살아 있어서, 주자는 위험을 감수하고 진루할 수 있어요."
+   ],
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 40. INFIELD FLY"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(a)(5)",
+     "note": "인필드 플라이가 선언되면 타자 아웃"
+    }
+   ],
+   "quote": "무사 또는 1사에 주자 1·2루 또는 만루일 때",
+   "related": [
+    "term.fly_ball",
+    "rule.force_play",
+    "term.out"
+   ],
+   "event_types": [
+    "INFIELD_FLY"
+   ],
+   "aliases": [
+    "인필드플라이",
+    "내야 뜬공 규칙"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.intentional_drop": {
+   "id": "rule.intentional_drop",
+   "kind": "rule",
+   "title": "고의낙구",
+   "category": "수비 규칙",
+   "one_liner": "내야수가 일부러 뜬공을 떨어뜨려 주자를 노리는 걸 막는 규칙이에요.",
+   "easy": "무사나 1사에 주자가 1루, 1·2루, 1·3루 또는 만루일 때 내야수가 쉽게 잡을 수 있는 페어 뜬공이나 직선타를 땅에 닿기 전 손이나 글러브에 댄 뒤 일부러 떨어뜨리면 타자는 아웃이에요. 이때는 공이 죽고 주자는 원래 베이스로 돌아가요. 인필드 플라이가 선언되면 그 규칙이 우선해요.",
+   "example": "1사 1·2루에서 3루수가 쉬운 직선타를 글러브에 맞힌 뒤 일부러 떨어뜨렸어요. 심판은 타자 아웃을 선언하고 주자들을 원래 베이스로 돌려보냈어요.",
+   "when": {
+    "outs": "무사 또는 1사",
+    "runners": "1루, 1·2루, 1·3루 또는 만루",
+    "ball": "쉽게 잡을 수 있는 페어 플라이 볼 또는 직선타"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(a)(12)",
+     "note": "내야수의 고의낙구"
+    }
+   ],
+   "related": [
+    "rule.infield_fly",
+    "rule.force_play",
+    "term.fly_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "고의 낙구",
+    "고의로 공 떨어뜨림"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.interference": {
+   "id": "rule.interference",
+   "kind": "rule",
+   "title": "방해(인터피어런스)",
+   "category": "특수 상황",
+   "one_liner": "공격 팀 선수가 수비를 막으면 방해로 아웃이 될 수 있어요.",
+   "easy": "공격 팀의 타자나 주자가 수비수가 공을 잡거나 던지는 걸 막으면 수비방해가 선언돼요. 방해한 선수는 보통 아웃되고 공은 죽어요(볼 데드). 반대로 포수 같은 수비수가 타자의 스윙을 막는 건 타격방해로, 따로 정리했어요.",
+   "example": "1루로 뛰던 타자가 파울 라인 안쪽으로 달리다 1루로 던진 공에 맞아 수비 방해로 아웃됐어요.",
+   "when": {
+    "who": "타자·주자(수비 방해) 또는 포수(타격 방해)"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 44. INTERFERENCE"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(a)",
+     "note": "타자·주자에 의한 방해와 벌칙"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(b)(3), 5.09(e)"
+    }
+   ],
+   "related": [
+    "rule.obstruction",
+    "rule.catcher_interference",
+    "rule.dead_ball",
+    "term.out"
+   ],
+   "event_types": [
+    "INTERFERENCE"
+   ],
+   "aliases": [
+    "수비방해",
+    "수비 방해",
+    "인터피어런스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.missed_base": {
+   "id": "rule.missed_base",
+   "kind": "rule",
+   "title": "누의 공과",
+   "category": "주루 규칙",
+   "one_liner": "주자가 지나가야 할 베이스를 밟지 않았을 때의 규칙이에요.",
+   "easy": "주자는 1루, 2루, 3루, 본루 순서로 모든 베이스를 밟아야 해요. 볼 인 플레이 중에 베이스를 밟지 않고 지나가면 수비가 그 베이스를 공으로 밟거나 주자를 태그하면서 어필해야 아웃이 돼요. 어필하지 않으면 그대로 인정돼요.",
+   "example": "주자가 3루를 밟지 않고 홈에 들어왔어요. 수비가 공을 3루로 던져 어필했고 아웃이 선언됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.06(b)(1)",
+     "note": "베이스를 순서대로 밟아야 함"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(c)(2)",
+     "note": "누의 공과 어필"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑪",
+     "note": "주자의 누의 공과는 비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "rule.appeal_play",
+    "rule.tag_up",
+    "rule.video_review"
+   ],
+   "event_types": [],
+   "aliases": [
+    "누를 공과",
+    "베이스 안 밟음",
+    "누 공과"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.no_game": {
+   "id": "rule.no_game",
+   "kind": "rule",
+   "title": "노게임",
+   "category": "특수 상황",
+   "one_liner": "정식경기가 되기 전에 끝나 아무 기록도 인정하지 않는 경기예요.",
+   "easy": "5회가 채워지기 전에 주심이 경기 종료를 명하면 노게임이 선언돼요. 노게임이면 그 경기는 없던 일로 하고 개인 기록도 인정하지 않아요. 다음 경기에서 처음부터 다시 해요.",
+   "example": "3회에 폭우로 경기가 중단되어 끝내 재개하지 못했고 노게임이 선언됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "7.01(e)",
+     "note": "정식경기가 되기 전 종료 → 노게임"
+    }
+   ],
+   "related": [
+    "rule.regulation_game",
+    "rule.called_game",
+    "rule.suspended_game"
+   ],
+   "event_types": [],
+   "aliases": [
+    "노 게임"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.obstruction": {
+   "id": "rule.obstruction",
+   "kind": "rule",
+   "title": "주루 방해",
+   "category": "주루 규칙",
+   "one_liner": "공을 갖지 않은 수비수가 주자의 길을 막으면 주자에게 베이스를 줘요.",
+   "easy": "공을 갖고 있지 않고 공을 잡으려는 중도 아닌 수비수가 주자가 달리는 길을 막으면 주루 방해예요. 주루 방해가 선언되면 심판이 방해가 없었을 때 갔을 베이스까지 주자를 보내요.",
+   "example": "2루를 돌던 주자가 공 없이 서 있던 유격수와 부딪혀 넘어졌어요. 심판이 주루 방해를 선언해 주자를 3루로 보냈어요.",
+   "when": {
+    "who": "공을 갖지 않은 수비수",
+    "action": "주자의 진로를 막음"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 51. OBSTRUCTION"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(h)",
+     "note": "방해의 선언과 처리"
+    }
+   ],
+   "related": [
+    "rule.interference",
+    "rule.home_plate_collision",
+    "term.infielder"
+   ],
+   "event_types": [
+    "OBSTRUCTION"
+   ],
+   "aliases": [
+    "주루방해",
+    "오브스트럭션"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.pitch_clock": {
+   "id": "rule.pitch_clock",
+   "kind": "rule",
+   "title": "피치클락",
+   "category": "특수 상황",
+   "one_liner": "투수와 타자가 정해진 시간 안에 준비해야 하는 경기 시간 규칙이에요.",
+   "easy": "피치클락은 경기 속도를 높이려고 투수·타자·포수에게 시간 제한을 두는 제도예요. 투수는 주자가 없으면 18초, 있으면 23초 안에 투구 동작을 시작해야 해요. 타석과 타석 사이는 33초, 이닝 교대와 투수 교체는 2분 10초예요. 투수나 포수가 어기면 자동 볼, 타자가 어기면 자동 스트라이크가 선언돼요.",
+   "example": "주자가 없는 상황에서 투수가 18초 안에 투구 동작을 시작하지 못해 자동 볼이 선언됐어요.",
+   "when": {
+    "between_pitches": "주자 없음 18초 / 주자 있음 23초",
+    "between_batters": "33초",
+    "inning_break": "2분 10초 (투수 교체도 2분 10초)",
+    "batter_rule": "시간이 8초 남을 때까지 타격 준비 자세",
+    "catcher_rule": "시간이 9초 남을 때까지 포수석에 위치",
+    "penalty": "투수·포수 위반 = 볼, 타자 위반 = 스트라이크",
+    "first_pitch": "경기 첫 투구에는 적용하지 않음"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "KBO 피치클락 규정"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.07(c)",
+     "note": "투구 지연"
+    }
+   ],
+   "related": [
+    "term.ball",
+    "term.strike",
+    "term.count",
+    "rule.abs"
+   ],
+   "event_types": [],
+   "aliases": [
+    "피치 클락"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "2026년부터 투구 간 시간이 2초 줄었어요 (주자 없을 때 18초, 있을 때 23초).",
+    "KBO 리그에는 투수판 이탈 제한이 없고, 이탈하면 피치클락이 다시 시작돼요."
+   ]
+  },
+  "rule.pitching_position": {
+   "id": "rule.pitching_position",
+   "kind": "rule",
+   "title": "투구자세(와인드업·세트 포지션)",
+   "category": "기본 규칙",
+   "one_liner": "투수가 던지기 전에 취해야 하는 두 가지 정해진 자세예요.",
+   "easy": "투수는 와인드업 포지션이나 세트 포지션 중 하나로 던져야 해요. 와인드업은 팔을 크게 돌려 던지는 자세이고, 세트 포지션은 주자가 있을 때 많이 쓰는, 멈췄다 던지는 자세예요. 세트 포지션에서 멈춘 뒤에는 던지기, 견제, 투수판에서 발을 빼기 중 하나만 할 수 있고, 어기면 보크가 될 수 있어요.",
+   "example": "주자가 1루에 있을 때 투수가 세트 포지션으로 한 번 멈춘 뒤 던졌어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.07(a)",
+     "note": "정규투구"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 70. SET POSITION"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 82. WIND-UP POSITION"
+    }
+   ],
+   "related": [
+    "rule.balk",
+    "rule.illegal_pitch",
+    "term.pickoff"
+   ],
+   "event_types": [],
+   "aliases": [
+    "와인드업",
+    "와인드업 포지션",
+    "세트 포지션",
+    "세트포지션"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.regulation_game": {
+   "id": "rule.regulation_game",
+   "kind": "rule",
+   "title": "정식경기",
+   "category": "특수 상황",
+   "one_liner": "5회까지 진행돼야 승패가 인정되는 경기예요.",
+   "easy": "경기가 5회 초·말 공격이 끝나기 전에 끝나면 원칙적으로 노게임이에요. 다만 홈 팀이 앞서 있으면 5회초만 끝나도, 5회말 도중에 끝나도 정식경기가 돼요. 정식경기가 성립한 뒤 비가 와서 끝나면 그때까지의 득점으로 승패를 정해요.",
+   "example": "홈 팀이 5회초까지 4대3으로 앞서고 있었는데 비가 쏟아져 경기가 끝났어요. 5회말을 안 해도 정식경기라 홈 팀 승리예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 64. REGULATION GAME"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "7.01",
+     "note": "정식경기"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "그림 8",
+     "note": "정식경기 예시"
+    }
+   ],
+   "related": [
+    "rule.called_game",
+    "rule.no_game",
+    "rule.suspended_game"
+   ],
+   "event_types": [],
+   "aliases": [
+    "레귤레이션 게임",
+    "5회 성립"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.run_scoring": {
+   "id": "rule.run_scoring",
+   "kind": "rule",
+   "title": "득점 인정",
+   "category": "기본 규칙",
+   "one_liner": "3아웃째가 어떻게 나오느냐에 따라 마지막 순간의 득점이 인정되지 않을 수 있어요.",
+   "easy": "주자가 홈을 밟기 전에 3아웃이 되면 득점이 인정되지 않는 경우가 있어요. 타자주자가 1루에 닿기 전에 아웃되거나, 포스 아웃으로 3아웃이 되거나, 앞선 주자가 베이스를 밟지 못해 어필로 아웃되었을 때가 그래요. 그 외의 태그 아웃으로 3아웃이 되면, 그 전에 홈을 밟은 주자의 점수는 인정돼요.",
+   "example": "2사 만루에서 타자가 땅볼을 쳐 2루에서 포스 아웃이 되어 3아웃이 됐어요. 그 사이 3루 주자가 홈을 밟았지만 득점은 인정되지 않았어요.",
+   "when": {
+    "no_score_if": [
+     "타자주자가 1루 닿기 전에 3아웃",
+     "포스 아웃으로 3아웃",
+     "선행주자 누의 공과 어필로 3아웃"
+    ]
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.08(a)",
+     "note": "3아웃 이전의 득점 조건"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 30. FORCE PLAY",
+     "note": "포스 상태 해제의 예"
+    }
+   ],
+   "related": [
+    "rule.force_play",
+    "rule.tag",
+    "term.out"
+   ],
+   "event_types": [],
+   "aliases": [
+    "득점 불인정",
+    "득점 무효"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.runner_passing": {
+   "id": "rule.runner_passing",
+   "kind": "rule",
+   "title": "주자 추월",
+   "category": "주루 규칙",
+   "one_liner": "뒤따르던 주자가 앞 주자를 앞지르면 추월한 주자가 아웃이에요.",
+   "easy": "후위 주자가 아웃되지 않은 선행 주자를 앞지르면 추월한 주자가 아웃돼요. 안타를 치고 앞 주자 바로 뒤에서 달리다가 나올 수 있어요. 이 판정은 비디오 판독 대상이에요.",
+   "example": "1루 주자가 천천히 가는 사이 타자주자가 2루로 달리다 그 주자를 앞질러서 아웃이 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(b)(9)"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑫",
+     "note": "선행주자 추월은 비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "rule.video_review",
+    "rule.tag",
+    "term.out"
+   ],
+   "event_types": [],
+   "aliases": [
+    "추월",
+    "선행주자 추월",
+    "앞지르기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.shift_restriction": {
+   "id": "rule.shift_restriction",
+   "kind": "rule",
+   "title": "수비 시프트 제한",
+   "category": "수비 규칙",
+   "one_liner": "투구 전에 내야수를 2루 한쪽에 몰아 세우지 못하게 하는 규칙이에요.",
+   "easy": "KBO에서는 투수가 공을 놓는 순간 투수·포수를 뺀 내야수 4명이 내야 흙 안쪽에 있어야 하고, 2루를 기준으로 양쪽에 최소 2명씩 서야 해요. 이닝 첫 투구 뒤에는 2루 양쪽 내야수가 자기 쪽을 바꿀 수 없어요. 어기면 타자가 처음 공을 만진 선수가 위반한 경우 타자는 1루로 나가고 주자도 한 베이스씩 가요. 그 밖의 경우에는 볼이 선언돼요.",
+   "example": "투수가 공을 던질 때 내야수 3명이 2루 오른쪽에 서 있자 심판이 위반을 선언하고 그 투구를 볼로 처리했어요.",
+   "when": {
+    "must": "내야 흙 바깥선 안쪽에 내야수 4명, 2루 양쪽에 각각 2명",
+    "inning": "이닝 첫 투구 뒤에는 2루 기준 좌우 위치 교대 금지"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.02(c)",
+     "note": "KBO 수비 시프트 제한(2026 강화)"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑭",
+     "note": "시프트 제한 위반 판정은 비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "rule.video_review",
+    "term.infielder",
+    "term.ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "시프트 제한",
+    "수비 시프트",
+    "내야 시프트",
+    "시프트 금지"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.slide_rule": {
+   "id": "rule.slide_rule",
+   "kind": "rule",
+   "title": "슬라이딩 규칙",
+   "category": "주루 규칙",
+   "one_liner": "병살을 막으려고 수비수에게 위험하게 미끄러져 들어가는 걸 금지해요.",
+   "easy": "주자가 2루 등으로 미끄러질 때는 베이스를 향해 미끄러져야 하고, 베이스에 머물려고 해야 해요. 수비수를 넘어뜨리려고 베이스 밖으로 미끄러지면 규칙 위반이에요. 위반하면 주자와 타자가 함께 아웃될 수 있어요.",
+   "example": "1사 1루 땅볼 때 1루 주자가 2루 베이스가 아닌 유격수 다리 쪽으로 미끄러졌어요. 심판은 위반을 선언해 주자와 타자 모두 아웃시켰어요.",
+   "when": {
+    "situation": "병살 시도 중 주자의 슬라이딩"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(j)",
+     "note": "더블 플레이 시도 시 슬라이딩. 위반하면 주자와 타자 모두 아웃"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑧",
+     "note": "이 슬라이딩 판정은 비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "term.double_play",
+    "rule.interference",
+    "rule.force_play"
+   ],
+   "event_types": [
+    "DOUBLE_PLAY",
+    "INTERFERENCE"
+   ],
+   "aliases": [
+    "슬라이딩 방해",
+    "병살 방지 슬라이딩"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.strike_zone": {
+   "id": "rule.strike_zone",
+   "kind": "rule",
+   "title": "스트라이크 존",
+   "category": "기본 규칙",
+   "one_liner": "홈플레이트 위의 보이지 않는 네모예요. 공이 여기를 지나가면 스트라이크예요.",
+   "easy": "스트라이크 존은 홈플레이트 위에 있는 보이지 않는 네모 상자예요. 공이 이 상자를 지나가면 타자가 치지 않아도 스트라이크가 돼요. KBO는 사람 심판 대신 기계(ABS)가 공의 위치를 재서 판정해요.",
+   "example": "타자가 가만히 서 있었는데 공이 무릎 높이로 존 안에 들어와 스트라이크가 선언됐어요.",
+   "when": {
+    "height": "타자 키의 27.04% ~ 55.75% (2025년 이후 ABS 기준)",
+    "width": "홈플레이트 43.18cm + 양옆 2cm씩 = 47.18cm",
+    "depth": "홈플레이트 중간면과 끝면 모두 상하 기준을 충족해야 스트라이크"
+   },
+   "more": [
+    "규칙집의 정의(용어의 정의 73)는 사람 심판 시절 기준(어깨와 바지 윗부분 중간 ~ 무릎 아랫부분)이에요. ABS 수치는 KBO 리그 규정에 있어요.",
+    "해설은 기록된 판정 결과를 근거로 하고, 좌표로 판정을 다시 계산해 단정하지 않아요.",
+    "ABS 존의 정확한 비율(키 대비 %)은 2026 연감에 없어요. 연감에는 '존 기준은 실행위원회가 정한다'고만 나와 있고, 위 수치는 KBO 웹사이트 자료예요."
+   ],
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 73. STRIKE ZONE",
+     "note": "규칙집의 정의는 어깨와 바지 윗부분 중간~무릎 아랫부분. ABS 기준은 KBO 리그 규정"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "자동 투구 판정 시스템(ABS) 규정"
+    }
+   ],
+   "related": [
+    "term.strike",
+    "term.ball",
+    "rule.abs"
+   ],
+   "event_types": [],
+   "aliases": [
+    "스트라이크존",
+    "스트존"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.substitution": {
+   "id": "rule.substitution",
+   "kind": "rule",
+   "title": "선수 교체",
+   "category": "기본 규칙",
+   "one_liner": "경기 중 선수를 바꿀 수 있지만, 한 번 빠진 선수는 다시 못 나와요.",
+   "easy": "감독은 공이 죽은 상태에서 심판에게 알리고 선수를 바꿀 수 있어요. 교체돼 빠진 선수는 그 경기에 다시 나올 수 없어요. 대타, 대주자, 투수 교체가 모두 선수 교체예요.",
+   "example": "7회 2사 2루에서 감독이 타자를 대타로 바꿨어요. 빠진 타자는 남은 경기에 나올 수 없어요.",
+   "when": {
+    "timing": "볼 데드 상태",
+    "effect": "빠진 선수 재출장 불가"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.10(a)~(f)",
+     "note": "볼 데드에만 교체 가능, 빠진 선수는 재출장 불가"
+    }
+   ],
+   "related": [
+    "term.pinch_hitter",
+    "term.pinch_runner",
+    "term.pitching_change"
+   ],
+   "event_types": [
+    "PITCHING_CHANGE"
+   ],
+   "aliases": [
+    "교체",
+    "선수교체"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.suspended_game": {
+   "id": "rule.suspended_game",
+   "kind": "rule",
+   "title": "서스펜디드 경기",
+   "category": "특수 상황",
+   "one_liner": "경기를 끝내지 못하고 멈췄다가 나중에 이어서 하는 경기예요.",
+   "easy": "조명이 없는 구장에서 해가 져서 9회까지 갈 수 없거나, 포스트시즌에서 날씨 때문에 계속할 수 없을 때 경기를 일시 정지(서스펜디드)해요. 정지된 경기는 나중에 멈춘 상황부터 이어서 해요. 퓨처스리그에서는 서스펜디드 경기가 없고, 이닝 도중 중단되면 그 이닝을 무효로 해요.",
+   "example": "조명이 없는 구장 낮 경기가 7회에 해가 져서 계속할 수 없어 서스펜디드 경기가 선언됐어요.",
+   "when": {
+    "daytime_no_lights": "일몰 15분 전에는 새 이닝에 들어갈 수 없고, 9회까지 못 가면 서스펜디드",
+    "postseason": "날씨 등으로 진행 불가 시 노게임·콜드게임 없이 서스펜디드",
+    "futures": "서스펜디드 없음, 이닝 도중 중단 시 그 이닝 무효"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 74. SUSPENDED GAME, 7.02"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제22조 (정규시즌), 제46조 4항 (포스트시즌), 제76조 (퓨처스리그)"
+    }
+   ],
+   "related": [
+    "rule.extra_innings",
+    "term.inning",
+    "rule.doubleheader"
+   ],
+   "event_types": [],
+   "aliases": [
+    "일시정지 경기",
+    "서스펜디드",
+    "서스펜디드 게임"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.tag": {
+   "id": "rule.tag",
+   "kind": "rule",
+   "title": "태그",
+   "category": "주루 규칙",
+   "one_liner": "공을 쥔 수비수가 공이나 글러브를 주자 몸에 대는 거예요.",
+   "easy": "수비수가 공, 또는 공을 확실히 쥔 글러브나 손을 주자의 몸에 대면 태그예요. 공을 확실하게 잡고 있어야 하고, 대는 순간 공을 떨어뜨리면 태그가 아니에요. 포스 상황이 아닌 주자는 태그를 당해야 아웃이 돼요.",
+   "example": "2루로 뛰던 주자에게 유격수가 공을 든 글러브를 갖다 대서 도루가 실패했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 75. TAG"
+    }
+   ],
+   "quote": "확실하게 공을 잡고",
+   "related": [
+    "rule.force_play",
+    "term.out",
+    "term.stolen_base"
+   ],
+   "event_types": [
+    "CAUGHT_STEALING",
+    "PICKOFF"
+   ],
+   "aliases": [
+    "태그 아웃",
+    "태그아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.tag_up": {
+   "id": "rule.tag_up",
+   "kind": "rule",
+   "title": "태그업",
+   "category": "주루 규칙",
+   "one_liner": "뜬공이 잡히면 주자는 원래 베이스를 다시 밟고 나서야 뛸 수 있어요.",
+   "easy": "타자가 친 뜬공을 수비가 바로 잡으면, 주자는 공이 잡힌 뒤 자기가 있던 베이스를 다시 밟아야 해요. 다시 밟은 다음에는 다음 베이스로 뛸 수 있어요. 다시 밟지 않고 뛰었다면 수비가 공을 그 베이스로 보내 주자를 아웃시킬 수 있어요.",
+   "example": "1사 3루에서 타자가 외야로 높은 뜬공을 쳤어요. 공이 잡히자 3루 주자가 3루를 밟고 출발해 홈에 들어왔어요.",
+   "when": {
+    "outs": "무사 또는 1사",
+    "ball": "바로 잡힌 뜬공이나 직선타구"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(b)(5), 5.09(c)(1)",
+     "note": "플라이 볼이 잡힌 뒤 원래 베이스를 리터치하기 전에 떠나면 어필로 아웃"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 65. RETOUCH"
+    }
+   ],
+   "related": [
+    "term.sacrifice_fly",
+    "term.fly_ball",
+    "rule.appeal_play"
+   ],
+   "event_types": [
+    "TAG_UP",
+    "SAC_FLY"
+   ],
+   "aliases": [
+    "태그 업",
+    "리터치"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.three_batter_minimum": {
+   "id": "rule.three_batter_minimum",
+   "kind": "rule",
+   "title": "세 타자 상대 규정",
+   "category": "수비 규칙",
+   "one_liner": "구원 투수는 최소 세 명의 타자를 상대하고 내려와야 하는 퓨처스리그 규정이에요.",
+   "easy": "KBO 퓨처스리그에서는 선발·구원 투수가 그때의 타자를 포함해 연속된 세 명의 타자에게 투구해야 하고, 그 전에는 교체할 수 없어요. 세 타자를 상대하기 전에 이닝이 끝나면 이닝 교대 때는 교체할 수 있어요. 부상이나 질병으로 던질 수 없다고 주심이 인정하면 예외예요.",
+   "example": "퓨처스리그에서 구원 투수가 한 타자만 상대하고 이닝이 끝나, 이닝 교대 때 교체됐어요.",
+   "when": {
+    "applies": "KBO 퓨처스리그만",
+    "exception": "부상·질병, 우천 재개 후 부상 위험"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.10(g)",
+     "note": "KBO는 퓨처스리그에만 적용"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.pitching_change",
+    "term.bullpen"
+   ],
+   "event_types": [
+    "PITCHING_CHANGE"
+   ],
+   "aliases": [
+    "3타자 상대",
+    "세 타자 규정",
+    "최소 3타자"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.three_foot_lane": {
+   "id": "rule.three_foot_lane",
+   "kind": "rule",
+   "title": "3피트 라인(주루 레인)",
+   "category": "타격 규칙",
+   "one_liner": "타자주자가 1루 쪽으로 뛸 때 송구를 방해하지 않도록 정해진 달리는 길이에요.",
+   "easy": "타자가 친 뒤 본루에서 1루 사이의 뒤쪽 절반을 달릴 때는 파울 라인 바깥의 3피트 선 안쪽(레인) 안에서 달려야 해요. 이 길을 벗어나 달리다가 1루로 던지는 공을 받으려는 야수를 방해했다고 심판이 보면 타자주자는 아웃이에요. 타구를 처리하는 야수를 피하려고 벗어난 건 괜찮아요.",
+   "example": "포수가 1루로 던진 공이 타자주자의 몸 쪽으로 날아갔는데, 타자주자가 레인 바깥 잔디를 달리고 있어 심판이 방해로 보고 아웃을 선언했어요.",
+   "when": {
+    "where": "본루~1루 사이 후반부",
+    "violation": "레인 밖을 달려 1루 송구를 처리하는 야수를 방해"
+   },
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.09(a)(8)",
+     "note": "3피트 라인 위반 방해"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "6.01(a)(10)"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ⑨",
+     "note": "비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "rule.interference",
+    "term.ground_ball",
+    "rule.video_review"
+   ],
+   "event_types": [
+    "INTERFERENCE"
+   ],
+   "aliases": [
+    "3피트 룰",
+    "3피트 레인",
+    "3피트 라인 위반",
+    "스리피트 라인"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "rule.tiebreaker": {
+   "id": "rule.tiebreaker",
+   "kind": "rule",
+   "title": "승부치기",
+   "category": "특수 상황",
+   "one_liner": "연장에서 주자를 1·2루에 미리 놓고 시작해 빨리 승부를 내는 방식이에요.",
+   "easy": "승부치기는 연장 이닝을 주자가 1·2루에 있는 상태로 시작하는 방식이에요. KBO 1군 정규시즌에는 쓰지 않고, 올스타전은 10회부터 이닝 제한 없이 써요. 퓨처스리그는 10~12회에 쓰고 그래도 동점이면 무승부예요.",
+   "example": "퓨처스리그 10회초가 1·2루 주자가 놓인 채 시작됐고, 이 주자들은 기록상 실책으로 나간 걸로 쳐요.",
+   "when": {
+    "all_star": "10회부터, 이닝 제한 없음",
+    "futures": "10~12회, 이후 무승부",
+    "runners": "1·2루 (타자는 이전 이닝 타순에서 이어서)",
+    "double_header_7inning": "7이닝으로 하는 퓨처스 더블헤더에서는 안 함"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제53조 2항 (올스타전), 제59조 (퓨처스리그)"
+    }
+   ],
+   "related": [
+    "rule.extra_innings",
+    "term.inning",
+    "term.sacrifice_bunt"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타이브레이커",
+    "타이 브레이크"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "승부치기 이닝의 기록도 공식 기록에 포함돼요. 시작할 때 루에 놓인 주자는 실책으로 나간 것으로 보지만, 수비 팀에는 실책을 매기지 않아요."
+   ]
+  },
+  "rule.video_review": {
+   "id": "rule.video_review",
+   "kind": "rule",
+   "title": "비디오 판독",
+   "category": "특수 상황",
+   "one_liner": "감독이 요청하면 영상으로 심판 판정을 다시 확인하는 제도예요.",
+   "easy": "비디오 판독은 감독만 신청할 수 있고, 심판이 판정을 내린 뒤 30초 안에 말로 요청해야 해요. 홈런, 페어/파울, 포스·태그 플레이의 아웃/세이프, 몸에 맞는 공, 홈 충돌, 체크스윙 같은 정해진 플레이만 대상이에요. 중계가 있는 경기에서 판독센터가 영상을 보고 결과를 심판팀장에게 알리면, 심판팀장이 최종 판정을 내려요.",
+   "example": "2루 도루가 세이프로 선언되자 수비 팀 감독이 30초 안에 판독을 요청했고, 판독센터가 영상을 보고 아웃으로 바꿨어요.",
+   "when": {
+    "who": "각 구단 감독(감독이 없을 땐 총재에게 대행 통보된 코치)",
+    "timing": "심판 판정 후 30초 이내",
+    "broadcast": "중계가 편성된 경기에서만",
+    "targets": [
+     "홈런",
+     "페어/파울",
+     "포스·태그 플레이 아웃/세이프",
+     "야수의 포구",
+     "몸에 맞는 공(맞았는지 여부만)",
+     "타자의 파울/헛스윙",
+     "홈 충돌",
+     "병살 시도 시 슬라이딩",
+     "1루 3피트 라인 위반",
+     "3아웃 이전 주자의 득점",
+     "누의 공과",
+     "선행주자 추월",
+     "태그업 시점",
+     "수비 시프트 제한 위반",
+     "체크스윙"
+    ]
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 비디오 판독",
+     "note": "2026.1.20 개정 반영"
+    }
+   ],
+   "related": [
+    "rule.tag",
+    "term.home_run",
+    "term.stolen_base"
+   ],
+   "event_types": [
+    "VIDEO_REVIEW"
+   ],
+   "aliases": [
+    "비디오판독",
+    "판독",
+    "리플레이"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "몸에 맞는 공에서 스트라이크 존 통과·스윙·피하려는 시도 여부는 판독 대상이 아니에요.",
+    "체크스윙 판독은 2026년에 새로 생겼고, 공격 팀은 '스윙' 판정에, 수비 팀은 '노스윙' 판정에만 요청할 수 있어요."
+   ]
+  },
+  "rule.wild_card_game": {
+   "id": "rule.wild_card_game",
+   "kind": "rule",
+   "title": "와일드카드 결정전",
+   "category": "특수 상황",
+   "one_liner": "정규시즌 4위와 5위가 준플레이오프에 오르려고 치르는 경기예요.",
+   "easy": "정규시즌 4위와 5위 팀이 최대 2경기를 해요. 4위 팀은 1승이나 1무승부만 해도 준플레이오프에 올라가고, 5위 팀은 2승을 해야 올라가요. 그래서 5위 팀에게 훨씬 불리해요. 연장은 15회까지 해요.",
+   "example": "4위 팀이 1차전을 이기면 2차전 없이 준플레이오프에 올라갔어요.",
+   "when": {
+    "teams": "정규시즌 승률 4위 vs 5위",
+    "games": "최대 2경기",
+    "advance": "4위 1승/1무, 5위 2승"
+   },
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제30조 경기방식"
+    }
+   ],
+   "related": [
+    "rule.extra_innings",
+    "term.inning"
+   ],
+   "event_types": [],
+   "aliases": [
+    "와일드카드",
+    "와일드카드 경기",
+    "WC 결정전"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.assist": {
+   "id": "term.assist",
+   "kind": "term",
+   "title": "어시스트",
+   "category": "기록·통계",
+   "one_liner": "아웃을 만들 때 공을 던져 도운 수비수에게 주는 기록이에요.",
+   "easy": "수비수가 송구해서 다른 수비수가 아웃을 완성하도록 도우면 어시스트(보살)를 줘요. 한 아웃에 여러 명이 던졌다면 모두가 어시스트를 받을 수 있어요.",
+   "example": "3루수가 던지고 1루수가 잡아 타자를 아웃시켰어요. 3루수는 어시스트, 1루수는 풋아웃이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.10 어시스트"
+    }
+   ],
+   "related": [
+    "term.putout",
+    "term.error",
+    "term.infielder"
+   ],
+   "event_types": [],
+   "aliases": [
+    "보살",
+    "아웃도움"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.at_bat": {
+   "id": "term.at_bat",
+   "kind": "term",
+   "title": "타수",
+   "category": "기록·통계",
+   "one_liner": "타율 계산에 쓰는 타석 수예요. 볼넷·희생타 등은 빼요.",
+   "easy": "타수는 타자가 타석에 선 횟수에서 볼넷, 몸에 맞는 공, 희생번트, 희생플라이, 방해로 출루한 경우를 뺀 숫자예요. 타율은 안타를 이 타수로 나눈 값이에요. 타석 수(타석)와는 달라요.",
+   "example": "5번 타석에 섰고 볼넷 1개, 안타 2개, 땅볼 아웃 2개였다면 타수는 4예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.02(a) 타수"
+    }
+   ],
+   "related": [
+    "term.plate_appearance",
+    "term.batting_average",
+    "term.hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.babip": {
+   "id": "term.babip",
+   "kind": "term",
+   "title": "BABIP(인플레이 타구 타율)",
+   "category": "기록·통계",
+   "one_liner": "홈런을 뺀, 필드 안에 들어간 타구가 안타가 된 비율이에요.",
+   "easy": "BABIP은 (안타 − 홈런) ÷ (타수 − 삼진 − 홈런 + 희생플라이)예요. 수비와 운의 영향이 커서, 평소보다 너무 높거나 낮으면 성적이 곧 바뀔 수 있다고 봐요.",
+   "example": "BABIP이 0.380이면 평균보다 운이 좋았다고 보기도 해요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 계산식은 일반 세이버메트릭스 정의"
+    }
+   ],
+   "related": [
+    "term.batting_average",
+    "term.hit",
+    "term.home_run"
+   ],
+   "event_types": [],
+   "aliases": [
+    "BABIP",
+    "인플레이타구타율",
+    "인플레이 타구 타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.ball": {
+   "id": "term.ball",
+   "kind": "term",
+   "title": "볼",
+   "category": "투구·구종",
+   "one_liner": "스트라이크 존을 벗어났고 타자가 치지 않은 투구예요.",
+   "easy": "타자가 스윙하지 않았는데 공이 스트라이크 존을 벗어나면 볼이에요. 볼이 4개 쌓이면 타자는 볼넷으로 1루에 가요.",
+   "example": "공이 타자 무릎보다 낮게 들어와 볼이 선언됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 4. BALL"
+    }
+   ],
+   "related": [
+    "term.strike",
+    "rule.base_on_balls",
+    "term.count"
+   ],
+   "event_types": [],
+   "aliases": [],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.base": {
+   "id": "term.base",
+   "kind": "term",
+   "title": "베이스",
+   "category": "경기 운영",
+   "one_liner": "주자가 득점하려면 닿아야 하는 네 곳이에요.",
+   "easy": "베이스는 1루, 2루, 3루와 홈플레이트(본루) 네 곳이에요. 주자는 이 순서대로 모두 닿아야 득점해요. 베이스 사이 거리는 90피트(약 27.4m)이고, KBO는 18인치 크기의 베이스를 써요.",
+   "example": "주자가 2루 베이스를 밟고 3루로 달렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 5. BASE"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "2.02~2.03"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "야구 도량형",
+     "note": "베이스 간 거리 90피트"
+    }
+   ],
+   "related": [
+    "term.runner",
+    "rule.tag",
+    "rule.force_play"
+   ],
+   "event_types": [],
+   "aliases": [
+    "1루",
+    "2루",
+    "3루",
+    "본루",
+    "홈플레이트",
+    "홈 플레이트"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.base_coach": {
+   "id": "term.base_coach",
+   "kind": "term",
+   "title": "베이스 코치",
+   "category": "경기 운영",
+   "one_liner": "1루·3루 쪽에서 주자와 타자에게 지시하는 코치예요.",
+   "easy": "베이스 코치는 1루와 3루 근처 코치석에 서서 타자와 주자에게 달릴지 멈출지 알려줘요. 각 팀은 두 명을 둬요. 주자를 직접 밀거나 안으면 방해가 될 수 있어요.",
+   "example": "3루 코치가 팔을 돌려 주자에게 홈까지 달리라고 알렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 6. BASE COACH, 5.03"
+    }
+   ],
+   "related": [
+    "term.runner",
+    "rule.interference",
+    "term.manager"
+   ],
+   "event_types": [],
+   "aliases": [
+    "3루 코치",
+    "1루 코치",
+    "주루코치",
+    "코치석"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.bases_loaded": {
+   "id": "term.bases_loaded",
+   "kind": "term",
+   "title": "만루",
+   "category": "경기 운영",
+   "one_liner": "1·2·3루에 모두 주자가 있는 상황이에요.",
+   "easy": "1루, 2루, 3루가 모두 차 있으면 만루예요. 볼넷이나 몸에 맞는 공만 나와도 3루 주자가 밀려 들어와 점수가 나요. 수비는 어느 베이스에서든 포스 아웃을 노릴 수 있어요.",
+   "example": "1사 만루에서 볼넷이 나와 3루 주자가 걸어서 홈에 들어왔어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.grand_slam",
+    "rule.base_on_balls",
+    "rule.force_play"
+   ],
+   "event_types": [],
+   "aliases": [
+    "베이스 만루",
+    "풀베이스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.batter": {
+   "id": "term.batter",
+   "kind": "term",
+   "title": "타자",
+   "category": "타격",
+   "one_liner": "타석에 들어서 공격하는 선수예요.",
+   "easy": "타자는 타자석에 서서 투수의 공을 치는 공격 팀 선수예요. 정해진 타순대로 차례가 돌아오고, 공을 치고 달리기 시작하면 타자주자가 돼요.",
+   "example": "4번 타자가 타석에 들어섰어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 8. BATTER"
+    }
+   ],
+   "related": [
+    "term.batting_order",
+    "term.runner",
+    "term.pinch_hitter"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타석에 선 선수",
+    "배터"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.batter_hand": {
+   "id": "term.batter_hand",
+   "kind": "term",
+   "title": "좌타자·우타자",
+   "category": "타격",
+   "one_liner": "타석에서 왼쪽에 서면 좌타자, 오른쪽에 서면 우타자예요.",
+   "easy": "좌타자는 타석 오른쪽에서(1루 쪽을 향해) 치고, 우타자는 타석 왼쪽에서 쳐요. 양쪽 다 칠 수 있는 타자는 스위치히터라고 해요. 투수의 던지는 손과 타자의 타격 방향에 따라 유리하고 불리한 상대가 갈려서 대타나 투수 교체에 자주 쓰여요.",
+   "example": "좌투수에게 약한 좌타자 대신 우타자 대타를 냈어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.batter",
+    "term.pitcher_arm",
+    "term.pinch_hitter"
+   ],
+   "event_types": [],
+   "aliases": [
+    "좌타",
+    "우타",
+    "스위치히터",
+    "스위치 히터",
+    "좌타석",
+    "우타석"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.batters_faced": {
+   "id": "term.batters_faced",
+   "kind": "term",
+   "title": "상대 타자수",
+   "category": "기록·통계",
+   "one_liner": "투수가 상대한 타자의 수예요.",
+   "easy": "투수가 던지는 동안 타석에 선 타자 수를 모두 센 숫자예요. 안타, 볼넷, 아웃 등 결과와 상관없이 한 타자를 상대하면 1이에요. KBO 기록실 투수 항목에서는 '타자'로 나와요.",
+   "example": "한 이닝에 타자 4명을 상대하면 상대 타자수는 4예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 투수 기본 항목(TBF). 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.innings_pitched",
+    "term.hits_allowed"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타자수",
+    "TBF",
+    "상대 타자"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.battery": {
+   "id": "term.battery",
+   "kind": "term",
+   "title": "배터리",
+   "category": "수비",
+   "one_liner": "투수와 포수를 묶어 부르는 말이에요.",
+   "easy": "배터리는 투수와 포수 두 명을 함께 이르는 말이에요. 둘이 호흡을 맞춰 어떤 공을 어디에 던질지 정해요.",
+   "example": "선발 배터리는 투수와 포수 둘이 호흡을 맞춰 6이닝을 막았어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 11. BATTERY"
+    }
+   ],
+   "related": [
+    "term.pitcher",
+    "term.catcher",
+    "term.starting_pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "투포수",
+    "배터리 호흡"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.batting_average": {
+   "id": "term.batting_average",
+   "kind": "term",
+   "title": "타율",
+   "category": "기록·통계",
+   "one_liner": "타자가 친 안타를 타수로 나눈 비율이에요.",
+   "easy": "타율은 안타 수를 타수로 나눈 값이에요. 볼넷·몸에 맞는 공·희생타는 타수에 넣지 않아요. 보통 3할(0.300)이 넘으면 잘 치는 타자로 봐요.",
+   "example": "10타수 3안타면 타율은 0.300, 흔히 3할이라고 해요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(b)"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.on_base_percentage",
+    "term.ops"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타 율",
+    "3할"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.batting_order": {
+   "id": "term.batting_order",
+   "kind": "term",
+   "title": "타순",
+   "category": "경기 운영",
+   "one_liner": "타자들이 타석에 들어서는 정해진 순서예요.",
+   "easy": "경기 전에 감독이 1번부터 9번까지 타자 순서를 정해 내요. 1번은 보통 잘 나가는 타자, 3·4·5번은 장타를 칠 수 있는 중심 타자(클린업)를 둬요.",
+   "example": "9번 타자가 아웃되자 다음 타석에는 다시 1번 타자가 들어섰어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.04(a) 타격의 순서"
+    }
+   ],
+   "related": [
+    "rule.batting_out_of_order",
+    "term.pinch_hitter",
+    "term.designated_hitter"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타선",
+    "클린업",
+    "클린업 트리오",
+    "4번 타자",
+    "리드오프"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.blown_save": {
+   "id": "term.blown_save",
+   "kind": "term",
+   "title": "블론세이브",
+   "category": "기록·통계",
+   "one_liner": "세이브 상황에서 리드를 날려 동점이나 역전을 내준 거예요.",
+   "easy": "세이브를 올릴 수 있는 상황에 나온 구원 투수가 리드를 지키지 못하고 동점 또는 역전을 허용하면 블론세이브예요. 마무리 투수의 실패 기록이라고 보면 쉬워요.",
+   "example": "1점 앞선 9회에 나온 마무리가 동점 홈런을 맞으면 블론세이브예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.19",
+     "note": "세이브 상황의 정의"
+    },
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "블론세이브 자체는 KBO 기록실 항목"
+    }
+   ],
+   "related": [
+    "term.save",
+    "term.closer",
+    "term.hold"
+   ],
+   "event_types": [],
+   "aliases": [
+    "블론",
+    "블론 세이브"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.breaking_ball": {
+   "id": "term.breaking_ball",
+   "kind": "term",
+   "title": "변화구",
+   "category": "투구·구종",
+   "one_liner": "직구를 뺀, 휘거나 떨어지는 모든 구종을 부르는 말이에요.",
+   "easy": "변화구는 직구가 아닌 모든 구종을 묶어 부르는 말이에요. 슬라이더, 커브, 체인지업, 포크볼 같은 공들이 여기 속해요. 직구와 속도·움직임이 달라서 타자의 타이밍을 흔드는 데 써요.",
+   "example": "투수가 직구 다음에 변화구를 던져 타자의 타이밍을 뺏었어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.slider",
+    "term.curveball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "브레이킹볼",
+    "브레이킹 볼",
+    "변화구",
+    "구종"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.bullpen": {
+   "id": "term.bullpen",
+   "kind": "term",
+   "title": "불펜",
+   "category": "경기 운영",
+   "one_liner": "선발 다음에 나오는 구원 투수들, 또는 그들이 몸을 푸는 곳이에요.",
+   "easy": "불펜은 선발 투수가 내려간 뒤 이어 던지는 구원 투수들을 말해요. 원래는 경기장 한쪽에서 구원 투수들이 몸을 푸는 장소의 이름이에요.",
+   "example": "선발이 5회에 내려가자 불펜 투수 세 명이 남은 이닝을 나눠 던졌어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.starting_pitcher",
+    "term.closer",
+    "term.pitching_change"
+   ],
+   "event_types": [],
+   "aliases": [
+    "구원 투수",
+    "구원투수",
+    "계투",
+    "중간 계투",
+    "불펜 투수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.bunt": {
+   "id": "term.bunt",
+   "kind": "term",
+   "title": "번트",
+   "category": "타격",
+   "one_liner": "배트를 휘두르지 않고 공에 살짝 대서 굴리는 타격이에요.",
+   "easy": "번트는 배트를 앞에 대고 공을 맞혀 내야에 천천히 굴리는 타격이에요. 주자를 다음 베이스로 보내거나, 발 빠른 타자가 1루에서 살려고 할 때 써요. 2스트라이크에서 번트가 파울이 되면 삼진이에요.",
+   "example": "무사 1루에서 타자가 3루 쪽으로 번트를 대 공을 굴렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 13. BUNT"
+    }
+   ],
+   "related": [
+    "term.sacrifice_bunt",
+    "term.squeeze",
+    "rule.foul_ball"
+   ],
+   "event_types": [
+    "SAC_BUNT"
+   ],
+   "aliases": [
+    "기습번트",
+    "기습 번트",
+    "번트 안타"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.catch": {
+   "id": "term.catch",
+   "kind": "term",
+   "title": "포구",
+   "category": "수비",
+   "one_liner": "야수가 날아가는 공을 확실하게 손이나 글러브로 잡는 거예요.",
+   "easy": "포구는 야수가 타구나 송구를 손이나 글러브로 확실하게 잡는 거예요. 모자나 주머니 같은 곳으로 잡은 건 포구가 아니에요. 잡은 직후에 부딪혀서 떨어뜨리면 포구가 아니고, 잡은 뒤 던지는 동작으로 이어진 다음에 떨어뜨리면 포구예요.",
+   "example": "중견수가 달려가며 공을 잡은 뒤 펜스에 부딪쳐 공을 떨어뜨렸어요. 이 경우 포구가 아니라 판정돼요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 15. CATCH"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 3항 ④",
+     "note": "야수의 포구는 비디오 판독 대상"
+    }
+   ],
+   "related": [
+    "term.fly_ball",
+    "rule.tag_up",
+    "rule.video_review"
+   ],
+   "event_types": [
+    "FLYOUT"
+   ],
+   "aliases": [
+    "캐치",
+    "정규 포구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.catcher": {
+   "id": "term.catcher",
+   "kind": "term",
+   "title": "포수",
+   "category": "수비",
+   "one_liner": "홈플레이트 뒤에 앉아 투수의 공을 받는 선수예요.",
+   "easy": "포수는 홈플레이트 뒤에서 투수의 공을 받고, 어떤 공을 던질지 사인을 내요. 도루하는 주자를 잡으려고 베이스로 공을 던지기도 하고, 홈으로 오는 주자를 태그해요.",
+   "example": "포수가 2루로 빠르게 던져 도루하던 주자를 잡았어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 16. CATCHER"
+    }
+   ],
+   "related": [
+    "term.pitcher",
+    "term.passed_ball",
+    "rule.home_plate_collision"
+   ],
+   "event_types": [],
+   "aliases": [
+    "캐처"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.caught_stealing": {
+   "id": "term.caught_stealing",
+   "kind": "term",
+   "title": "도루 실패",
+   "category": "주루",
+   "one_liner": "도루하던 주자가 태그당해 아웃된 거예요.",
+   "easy": "주자가 다음 베이스로 뛰었는데 포수나 투수의 송구가 먼저 와서 태그되면 도루 실패예요. 도루 실패는 아웃 하나가 늘어서 공격 흐름이 끊기기 쉬워요.",
+   "example": "1루 주자가 2루로 뛰었지만 포수의 빠른 송구에 태그돼 아웃됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.07 도루"
+    }
+   ],
+   "related": [
+    "term.stolen_base",
+    "rule.tag",
+    "term.catcher"
+   ],
+   "event_types": [
+    "CAUGHT_STEALING"
+   ],
+   "aliases": [
+    "도루자",
+    "도루실패"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.changeup": {
+   "id": "term.changeup",
+   "kind": "term",
+   "title": "체인지업",
+   "category": "투구·구종",
+   "one_liner": "직구처럼 던지지만 느리게 오는 변화구예요.",
+   "easy": "체인지업은 직구와 같은 팔 동작으로 던지지만 공이 더 느리게 오고 살짝 떨어져요. 타자가 직구인 줄 알고 일찍 휘두르게 만드는 공이에요.",
+   "example": "타자가 직구 타이밍으로 휘둘렀지만 체인지업이라 공이 늦게 와서 헛스윙했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.forkball",
+    "term.curveball",
+    "term.palmball",
+    "term.screwball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "체인지 업",
+    "서클체인지업"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.closer": {
+   "id": "term.closer",
+   "kind": "term",
+   "title": "마무리 투수",
+   "category": "경기 운영",
+   "one_liner": "이기고 있는 경기의 마지막 이닝을 맡는 구원 투수예요.",
+   "easy": "마무리 투수는 팀이 근소하게 앞선 9회 같은 마지막 이닝에 나와 경기를 끝내요. 팀에서 가장 믿을 만한 구원 투수가 맡는 경우가 많아요.",
+   "example": "1점 앞선 9회초에 마무리 투수가 나와 세 타자를 모두 잡고 경기를 끝냈어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.save",
+    "term.bullpen",
+    "term.hold"
+   ],
+   "event_types": [],
+   "aliases": [
+    "마무리투수",
+    "마무리",
+    "클로저"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.coach": {
+   "id": "term.coach",
+   "kind": "term",
+   "title": "코치",
+   "category": "경기 운영",
+   "one_liner": "감독이 지명해 선수를 지도하는 유니폼을 입은 팀 구성원이에요.",
+   "easy": "코치는 베이스 코치 역할이나 감독이 맡긴 일을 하는 유니폼 입은 팀 구성원이에요. KBO 경기에서는 코치를 최대 10명까지 벤치에 둘 수 있어요.",
+   "example": "투수 코치가 마운드에 올라가 투수에게 이야기했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 19. COACH"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제14조 1항"
+    }
+   ],
+   "related": [
+    "term.manager",
+    "term.base_coach",
+    "term.dugout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "투수코치",
+    "타격코치",
+    "수석코치"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.complete_game": {
+   "id": "term.complete_game",
+   "kind": "term",
+   "title": "완투",
+   "category": "기록·통계",
+   "one_liner": "한 투수가 경기 처음부터 끝까지 혼자 던진 거예요.",
+   "easy": "선발 투수가 교체 없이 마지막 아웃까지 던지면 완투예요. 점수를 하나도 안 주면 완봉이에요. KBO 기록실 투수 항목에 '완투'로 나와요.",
+   "example": "선발 투수가 9이닝을 혼자 던지고 4점을 줬다면 완투예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 투수 기본 항목. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.shutout",
+    "term.starting_pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "완투승",
+    "완투패"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.count": {
+   "id": "term.count",
+   "kind": "term",
+   "title": "볼카운트",
+   "category": "투구·구종",
+   "one_liner": "지금 타자가 받은 볼과 스트라이크 개수예요.",
+   "easy": "볼카운트는 '2볼 1스트라이크'처럼 볼 개수와 스트라이크 개수를 함께 말해요. 3볼 2스트라이크는 풀카운트라고 하고, 다음 공에 볼넷이나 삼진이 나올 수 있어요.",
+   "example": "3볼 2스트라이크 풀카운트에서 타자가 파울을 쳐 카운트가 그대로 남았어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.ball",
+    "term.strike",
+    "rule.foul_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "볼 카운트",
+    "카운트",
+    "풀카운트",
+    "풀 카운트"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.curveball": {
+   "id": "term.curveball",
+   "kind": "term",
+   "title": "커브",
+   "category": "투구·구종",
+   "one_liner": "느리게 크게 떨어지는 변화구예요.",
+   "easy": "커브는 공이 위에서 아래로 크게 휘며 떨어지는 변화구예요. 직구보다 훨씬 느려서 타자의 타이밍을 빼앗는 데 써요.",
+   "example": "빠른 직구 다음에 느린 커브가 들어와 타자가 그대로 지켜봤고 스트라이크가 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.slider",
+    "term.changeup",
+    "term.fastball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "커브볼",
+    "슬로커브",
+    "슬로 커브",
+    "파워커브",
+    "파워 커브"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.cutter": {
+   "id": "term.cutter",
+   "kind": "term",
+   "title": "커터",
+   "category": "투구·구종",
+   "one_liner": "직구처럼 빠르지만 끝에서 살짝 휘는 공이에요.",
+   "easy": "커터는 직구와 거의 같은 속도로 오다가 타자 앞에서 조금 옆으로 휘어요. 슬라이더보다 덜 휘고 더 빨라서, 배트 중심을 피해 약한 타구를 만들어요.",
+   "example": "몸쪽으로 살짝 휘는 커터에 타자 배트가 부러지며 땅볼이 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.slider",
+    "term.ground_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "컷패스트볼",
+    "컷 패스트볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.defensive_sub": {
+   "id": "term.defensive_sub",
+   "kind": "term",
+   "title": "대수비",
+   "category": "경기 운영",
+   "one_liner": "수비를 보강하려고 교체해 넣는 선수예요.",
+   "easy": "대수비는 앞선 상황에서 수비를 강화하려고 타자나 야수 대신 넣는 선수예요. 이긴 경기를 지키려는 후반 이닝에 자주 나와요. 한 번 교체된 선수는 그 경기에 다시 나올 수 없어요.",
+   "example": "9회에 1점 차로 앞서 감독이 수비가 좋은 대수비를 외야에 넣었어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.pinch_hitter",
+    "term.pinch_runner"
+   ],
+   "event_types": [],
+   "aliases": [
+    "대수비 선수",
+    "수비 교체"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.designated_hitter": {
+   "id": "term.designated_hitter",
+   "kind": "term",
+   "title": "지명타자",
+   "category": "경기 운영",
+   "one_liner": "투수 대신 타석에만 들어서는 선수예요.",
+   "easy": "지명타자는 수비는 하지 않고 투수 대신 타격만 하는 선수예요. 경기 전에 내는 타순표에 지명타자를 적어야 쓸 수 있고, 적지 않으면 그 경기에서 쓸 수 없어요. KBO 리그는 이 제도를 써서 보통 투수는 타석에 서지 않아요.",
+   "example": "오늘 지명타자로 나온 선수는 수비 없이 4번 타순에서 타격만 했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.11",
+     "note": "지명타자"
+    }
+   ],
+   "related": [
+    "term.batting_order",
+    "term.pitcher",
+    "rule.substitution"
+   ],
+   "event_types": [],
+   "aliases": [
+    "지명 타자",
+    "DH"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.double": {
+   "id": "term.double",
+   "kind": "term",
+   "title": "2루타",
+   "category": "타격",
+   "one_liner": "타자가 안타를 치고 2루까지 간 거예요.",
+   "easy": "타자가 친 공으로 수비 실수 없이 2루까지 가면 2루타예요. 외야 깊숙이 날아가거나 외야수 사이를 가르는 타구에서 많이 나와요.",
+   "example": "타구가 좌중간을 가르자 타자가 2루까지 들어가 2루타가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.06 단타·장타의 결정"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.extra_base_hit",
+    "rule.ground_rule_double"
+   ],
+   "event_types": [
+    "DOUBLE"
+   ],
+   "aliases": [
+    "이루타",
+    "투베이스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.double_play": {
+   "id": "term.double_play",
+   "kind": "term",
+   "title": "병살",
+   "category": "수비",
+   "one_liner": "한 번의 플레이로 아웃 2개를 잡는 거예요.",
+   "easy": "수비가 공 하나로 연달아 두 명을 아웃시키면 병살이에요. 주자가 1루에 있을 때 땅볼이 나오면 2루와 1루에서 차례로 아웃시키는 경우가 가장 흔해요.",
+   "example": "1사 1루에서 유격수 앞 땅볼을 2루, 1루로 이어 던져 두 명을 잡고 이닝이 끝났어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 23. DOUBLE PLAY, 9.11"
+    }
+   ],
+   "related": [
+    "rule.force_play",
+    "term.ground_ball",
+    "term.out"
+   ],
+   "event_types": [
+    "DOUBLE_PLAY"
+   ],
+   "aliases": [
+    "더블플레이",
+    "더블 플레이",
+    "병살타",
+    "6-4-3"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.dugout": {
+   "id": "term.dugout",
+   "kind": "term",
+   "title": "벤치(덕아웃)",
+   "category": "경기 운영",
+   "one_liner": "경기에 나가지 않은 선수들이 앉는 곳이에요.",
+   "easy": "벤치 또는 덕아웃은 지금 경기 중이 아닌 선수와 팀 구성원이 앉는 시설이에요. 경기 중 벤치에 들어갈 수 있는 인원은 감독 1명, 코치 10명, 현역선수 29명 등으로 정해져 있어요(9월 1일 이후 선수 34명).",
+   "example": "7회가 되자 벤치에서 대기하던 대타 선수가 방망이를 들고 일어났어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 12. BENCH or DUGOUT"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제14조 1항",
+     "note": "벤치 인원 제한"
+    }
+   ],
+   "related": [
+    "term.manager",
+    "term.pinch_hitter",
+    "rule.substitution"
+   ],
+   "event_types": [],
+   "aliases": [
+    "덕아웃",
+    "벤치 대기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.earned_run": {
+   "id": "term.earned_run",
+   "kind": "term",
+   "title": "자책점",
+   "category": "기록·통계",
+   "one_liner": "투수에게 책임이 있다고 보는 실점이에요. 실책으로 들어온 점수는 빠져요.",
+   "easy": "자책점은 수비 실책이나 포일이 없었다면 들어오지 않았을 점수를 뺀, 투수 책임의 실점이에요. 실책으로 나간 주자가 득점해도 자책점이 아닐 수 있어요. 평균자책점은 이 자책점으로 계산해요.",
+   "example": "실책으로 나간 주자가 홈런으로 득점했다면 그 주자의 점수는 자책점이 아닐 수 있어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.16 자책점"
+    }
+   ],
+   "related": [
+    "term.era",
+    "term.error",
+    "term.pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "자책",
+    "비자책",
+    "비자책점"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.era": {
+   "id": "term.era",
+   "kind": "term",
+   "title": "평균자책점",
+   "category": "기록·통계",
+   "one_liner": "투수가 9이닝 동안 평균 몇 점을 내줬는지 보여주는 기록이에요.",
+   "easy": "평균자책점은 투수의 자책점 합계에 9를 곱하고 던진 이닝으로 나눈 값이에요. 실책 때문에 들어온 점수는 자책점에서 빠져요. 숫자가 낮을수록 좋은 투수예요. KBO는 ⅓이닝, ⅔이닝까지 넣어서 계산해요.",
+   "example": "9⅓이닝을 던져 자책점이 3점이면 평균자책점은 3×9÷9⅓ = 2.89예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(e)",
+     "note": "자책점 × 9 ÷ 투구 이닝. KBO는 ⅓·⅔이닝까지 포함해 계산"
+    }
+   ],
+   "related": [
+    "term.error",
+    "term.pitcher",
+    "term.whip"
+   ],
+   "event_types": [],
+   "aliases": [
+    "방어율",
+    "ERA"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.error": {
+   "id": "term.error",
+   "kind": "term",
+   "title": "실책",
+   "category": "수비",
+   "one_liner": "수비수의 실수로 타자나 주자가 살거나 더 간 거예요.",
+   "easy": "평범한 수비로 아웃시킬 수 있었는데 공을 놓치거나 잘못 던져서 타자나 주자가 살거나 더 가면 실책이에요. 실책으로 나간 타자는 안타로 치지 않아요.",
+   "example": "평범한 땅볼을 3루수가 놓쳐 타자가 1루에 살았어요. 기록은 3루수 실책이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.12 실책"
+    }
+   ],
+   "related": [
+    "term.fielders_choice",
+    "term.hit",
+    "term.era"
+   ],
+   "event_types": [
+    "ERROR"
+   ],
+   "aliases": [
+    "에러",
+    "송구 실책",
+    "포구 실책",
+    "수비 실책"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.extra_base_hit": {
+   "id": "term.extra_base_hit",
+   "kind": "term",
+   "title": "장타",
+   "category": "타격",
+   "one_liner": "2루타 이상인 안타를 묶어 부르는 말이에요.",
+   "easy": "2루타, 3루타, 홈런처럼 타자가 한 번에 2루 이상 간 안타를 장타라고 해요. 장타가 많으면 주자가 한 번에 많이 들어와 점수를 내기 쉬워요.",
+   "example": "이 타자는 오늘 2루타와 홈런으로 장타 2개를 쳤어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.double",
+    "term.triple",
+    "term.home_run"
+   ],
+   "event_types": [
+    "DOUBLE",
+    "TRIPLE",
+    "HOME_RUN"
+   ],
+   "aliases": [
+    "장타력"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.fastball": {
+   "id": "term.fastball",
+   "kind": "term",
+   "title": "직구",
+   "category": "투구·구종",
+   "one_liner": "가장 빠르고 곧게 날아가는 기본 구종이에요.",
+   "easy": "직구는 투수가 가장 세게 던지는 공으로, 공이 거의 휘지 않고 곧게 날아가요. KBO 투수들은 보통 시속 140km 이상을 던지고, 다른 변화구와 섞어 타자의 타이밍을 흔들어요.",
+   "example": "투수가 시속 150km 직구로 타자의 헛스윙을 끌어냈어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.twoseam",
+    "term.sinker",
+    "term.slider",
+    "term.changeup",
+    "term.strike"
+   ],
+   "event_types": [],
+   "aliases": [
+    "포심",
+    "포심 패스트볼",
+    "패스트볼",
+    "속구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.fielders_choice": {
+   "id": "term.fielders_choice",
+   "kind": "term",
+   "title": "야수선택",
+   "category": "수비",
+   "one_liner": "수비가 타자 대신 다른 주자를 아웃시키려다 타자가 살아 나간 거예요.",
+   "easy": "수비가 공을 잡고 1루가 아니라 다른 베이스의 주자를 잡으려고 던지는 사이 타자가 1루에 살면 야수선택이에요. 타자가 1루에 나갔어도 안타로 치지 않아요.",
+   "example": "1사 2루 땅볼 때 유격수가 3루로 던져 주자를 잡으려 했고, 그 사이 타자는 1루에 살았어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 28. FIELDER'S CHOICE"
+    }
+   ],
+   "related": [
+    "rule.force_play",
+    "term.hit",
+    "term.error"
+   ],
+   "event_types": [
+    "FIELDERS_CHOICE"
+   ],
+   "aliases": [
+    "야수 선택",
+    "필더스 초이스",
+    "필더스초이스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.fielding_pct": {
+   "id": "term.fielding_pct",
+   "kind": "term",
+   "title": "수비율",
+   "category": "기록·통계",
+   "one_liner": "수비수가 실책 없이 처리한 비율이에요.",
+   "easy": "수비율은 (풋아웃 + 어시스트)를 (풋아웃 + 어시스트 + 실책)으로 나눈 값이에요. 실책이 적을수록 1에 가까워져요.",
+   "example": "풋아웃 90, 어시스트 8, 실책 2인 야수의 수비율은 98÷100 = 0.980이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(d) 수비율"
+    }
+   ],
+   "related": [
+    "term.error",
+    "term.putout",
+    "term.assist"
+   ],
+   "event_types": [],
+   "aliases": [
+    "수비 비율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.fly_ball": {
+   "id": "term.fly_ball",
+   "kind": "term",
+   "title": "뜬공",
+   "category": "타격",
+   "one_liner": "타자가 친 공이 공중으로 높이 뜬 타구예요.",
+   "easy": "타자가 친 공이 높이 떠오르면 뜬공이에요. 수비가 땅에 떨어지기 전에 잡으면 타자는 아웃이에요. 잡히더라도 주자는 태그업해서 다음 베이스로 갈 수 있어요.",
+   "example": "1사 1루에서 중견수 쪽 뜬공이 잡혀 타자가 아웃됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 29. FLY BALL"
+    }
+   ],
+   "related": [
+    "rule.tag_up",
+    "rule.infield_fly",
+    "term.sacrifice_fly"
+   ],
+   "event_types": [
+    "FLYOUT"
+   ],
+   "aliases": [
+    "플라이",
+    "플라이볼",
+    "플라이 볼",
+    "뜬 공",
+    "외야 플라이",
+    "플라이 아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.forkball": {
+   "id": "term.forkball",
+   "kind": "term",
+   "title": "포크볼",
+   "category": "투구·구종",
+   "one_liner": "타자 앞에서 뚝 떨어지는 변화구예요.",
+   "easy": "포크볼은 검지와 중지 사이에 공을 끼워 던져서, 회전이 적고 타자 앞에서 아래로 뚝 떨어져요. 타자가 땅볼을 치거나 헛스윙하게 만드는 데 많이 써요.",
+   "example": "낮게 떨어지는 포크볼에 타자가 헛스윙해 삼진이 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.changeup",
+    "term.strikeout",
+    "term.ground_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "포크",
+    "스플리터",
+    "스플리터 패스트볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.foul_tip": {
+   "id": "term.foul_tip",
+   "kind": "term",
+   "title": "파울 팁",
+   "category": "타격",
+   "one_liner": "타자의 배트를 살짝 스치고 곧바로 포수가 잡은 공이에요.",
+   "easy": "타자가 친 공이 배트를 날카롭게 스친 뒤 곧장 포수 쪽으로 가서 정규로 잡히면 파울 팁이에요. 포구된 파울 팁은 스트라이크이고 공은 살아 있어요(볼 인 플레이). 포수가 잡지 못하면 파울 팁이 아니라 그냥 파울이에요.",
+   "example": "2스트라이크에서 배트에 스친 공이 포수 미트로 들어가 삼진이 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 34. FOUL TIP"
+    }
+   ],
+   "related": [
+    "rule.foul_ball",
+    "term.strikeout",
+    "term.catcher"
+   ],
+   "event_types": [
+    "STRIKEOUT"
+   ],
+   "aliases": [
+    "파울팁"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.game_winning_rbi": {
+   "id": "term.game_winning_rbi",
+   "kind": "term",
+   "title": "결승타",
+   "category": "기록·통계",
+   "one_liner": "팀이 이기는 데 결정적인 마지막 리드를 만든 타점이에요.",
+   "easy": "이긴 팀에서, 상대가 끝내 따라오지 못한 리드를 만든 타점을 올린 타자에게 주는 기록이에요. KBO 기록실 타자 항목 GW RBI예요.",
+   "example": "3대2로 이겼는데 3번째 점수를 낸 적시타를 친 타자가 결승타를 받아요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 세부 인정 기준은 KBO 기록 규정 확인 필요"
+    }
+   ],
+   "related": [
+    "term.rbi",
+    "term.run"
+   ],
+   "event_types": [],
+   "aliases": [
+    "결승타점",
+    "GW RBI",
+    "결승 타점"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.games_finished": {
+   "id": "term.games_finished",
+   "kind": "term",
+   "title": "종료(GF)",
+   "category": "기록·통계",
+   "one_liner": "팀의 마지막 투수로 경기를 끝낸 횟수예요.",
+   "easy": "구원 투수가 경기의 마지막 아웃까지 던져 경기를 끝낸 경기 수예요. 마무리 투수가 얼마나 자주 경기를 끝냈는지 볼 때 써요.",
+   "example": "마무리 투수가 한 시즌 55경기를 끝냈다면 GF는 55예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.closer",
+    "term.save"
+   ],
+   "event_types": [],
+   "aliases": [
+    "GF",
+    "경기 종료",
+    "경기 마무리"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.games_played": {
+   "id": "term.games_played",
+   "kind": "term",
+   "title": "경기(출장 경기수)",
+   "category": "기록·통계",
+   "one_liner": "선수가 그 시즌에 출전한 경기 수예요.",
+   "easy": "경기는 타자가 타석에 서거나 수비를 본 경기, 투수가 등판한 경기의 수예요. 선발이든 교체로 나왔든 한 경기에 한 번 센 숫자예요. 연감의 타자·투수 기록표 맨 앞에 나오는 항목이에요.",
+   "example": "구원 투수가 한 시즌에 60번 마운드에 올랐다면 경기 수는 60이에요.",
+   "source": [
+    {
+     "name": "2026 KBO 연감 가이드북",
+     "note": "타자·투수 기록표 항목"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.23(c)",
+     "note": "출전기록의 인정 기준"
+    }
+   ],
+   "related": [
+    "term.pitcher",
+    "term.batter",
+    "term.innings_pitched"
+   ],
+   "event_types": [],
+   "aliases": [
+    "출장",
+    "출장 경기",
+    "출장경기수",
+    "경기수",
+    "등판"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.games_started": {
+   "id": "term.games_started",
+   "kind": "term",
+   "title": "선발 등판(선발 경기)",
+   "category": "기록·통계",
+   "one_liner": "선발 투수나 선발 출전 선수로 나온 경기 수예요.",
+   "easy": "투수는 선발로 나온 경기, 수비는 선발 라인업으로 나온 경기를 말해요. 연감과 기록실에서 GS로 표시해요.",
+   "example": "시즌 28경기에 선발로 나오면 GS는 28이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.starting_pitcher",
+    "term.games_played"
+   ],
+   "event_types": [],
+   "aliases": [
+    "GS",
+    "선발경기",
+    "선발 등판",
+    "선발 출장"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.go_ao": {
+   "id": "term.go_ao",
+   "kind": "term",
+   "title": "땅볼/뜬공 비율",
+   "category": "기록·통계",
+   "one_liner": "땅볼 아웃과 뜬공 아웃의 비율이에요.",
+   "easy": "GO/AO는 땅볼 수를 뜬공 수로 나눈 값이에요. 1보다 크면 땅볼이 더 많아요. 땅볼 유도형 투수나 땅볼 타구가 많은 타자를 설명할 때 써요.",
+   "example": "땅볼 120개, 뜬공 80개면 GO/AO는 1.50이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.ground_ball",
+    "term.fly_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "GO/AO",
+    "땅볼 뜬공 비율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.gpa": {
+   "id": "term.gpa",
+   "kind": "term",
+   "title": "GPA",
+   "category": "기록·통계",
+   "one_liner": "출루율에 가중치를 더 준 공격 종합 지표예요.",
+   "easy": "GPA는 (1.8 × 출루율 + 장타율) ÷ 4로 계산해요. 출루율을 장타율보다 더 중요하게 보는 지표예요.",
+   "example": "출루율 0.400, 장타율 0.500이면 GPA는 (0.72+0.5)÷4 = 약 0.305예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.on_base_percentage",
+    "term.slugging",
+    "term.ops"
+   ],
+   "event_types": [],
+   "aliases": [
+    "GPA"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.grand_slam": {
+   "id": "term.grand_slam",
+   "kind": "term",
+   "title": "만루홈런",
+   "category": "타격",
+   "one_liner": "주자가 꽉 찬 만루에서 나온 홈런으로, 한 번에 4점이에요.",
+   "easy": "1·2·3루에 모두 주자가 있을 때 홈런을 치면 주자 3명과 타자까지 4명이 홈에 들어와요. 한 타석에서 낼 수 있는 가장 많은 점수예요.",
+   "example": "0대2로 지던 7회 만루에서 만루홈런이 나와 4대2로 뒤집었어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.home_run",
+    "term.bases_loaded",
+    "term.rbi"
+   ],
+   "event_types": [
+    "HOME_RUN"
+   ],
+   "aliases": [
+    "만루 홈런",
+    "그랜드슬램",
+    "만루포"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.ground_ball": {
+   "id": "term.ground_ball",
+   "kind": "term",
+   "title": "땅볼",
+   "category": "타격",
+   "one_liner": "타자가 친 공이 땅에 튀며 굴러가는 타구예요.",
+   "easy": "타구가 땅에 닿아 튀거나 굴러가면 땅볼이에요. 내야수가 잡아 1루로 먼저 던지면 타자는 아웃이고, 주자가 있으면 병살이 나오기도 해요.",
+   "example": "2루수 앞 땅볼을 잡아 1루로 던져 타자가 아웃됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 35. GROUND BALL"
+    }
+   ],
+   "related": [
+    "term.double_play",
+    "rule.force_play",
+    "term.infield_hit"
+   ],
+   "event_types": [
+    "GROUNDOUT"
+   ],
+   "aliases": [
+    "땅 볼",
+    "그라운드볼",
+    "내야 땅볼",
+    "땅볼 아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.hit": {
+   "id": "term.hit",
+   "kind": "term",
+   "title": "안타",
+   "category": "타격",
+   "one_liner": "수비 실수 없이 타자가 쳐서 베이스에 나간 거예요.",
+   "easy": "타자가 친 공이 페어가 되고, 실책이나 야수선택 없이 타자가 1루 이상 가면 안타예요. 1루까지 가면 단타, 2루는 2루타, 3루는 3루타, 홈까지 오면 홈런이에요.",
+   "example": "타자가 친 땅볼이 유격수 옆을 빠져나가 외야로 굴러가 안타가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.05 안타"
+    }
+   ],
+   "related": [
+    "term.double",
+    "term.triple",
+    "term.home_run"
+   ],
+   "event_types": [
+    "SINGLE"
+   ],
+   "aliases": [
+    "단타",
+    "1루타",
+    "히트"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.hit_and_run": {
+   "id": "term.hit_and_run",
+   "kind": "term",
+   "title": "히트앤드런",
+   "category": "주루",
+   "one_liner": "주자가 미리 뛰고 타자는 꼭 공을 맞히는 작전이에요.",
+   "easy": "투수가 공을 던지는 순간 주자가 먼저 뛰고, 타자는 그 공을 꼭 쳐서 굴려요. 주자가 미리 출발했기 때문에 병살을 피하고 한 베이스 더 갈 수 있어요. 타자가 헛스윙하면 주자가 도루 실패로 아웃될 위험이 있어요.",
+   "example": "1사 1루에서 히트앤드런 작전이 나와 타자가 땅볼을 쳤고, 1루 주자는 3루까지 갔어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.stolen_base",
+    "term.double_play",
+    "term.ground_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "히트 앤드 런",
+    "히트앤런",
+    "런앤히트"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.hits_allowed": {
+   "id": "term.hits_allowed",
+   "kind": "term",
+   "title": "피안타·피홈런",
+   "category": "기록·통계",
+   "one_liner": "투수가 상대 타자에게 맞은 안타와 홈런 수예요.",
+   "easy": "피안타는 투수가 허용한 안타의 개수이고, 피홈런은 그중 홈런의 개수예요. WHIP 계산에서 피안타와 볼넷을 더해서 써요.",
+   "example": "한 경기에서 안타 5개를 맞았고 그중 1개가 홈런이면 피안타 5, 피홈런 1이에요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "안타의 정의는 공식야구규칙 9.05"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.whip",
+    "term.home_run"
+   ],
+   "event_types": [],
+   "aliases": [
+    "피안타",
+    "피홈런",
+    "허용 안타"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.hold": {
+   "id": "term.hold",
+   "kind": "term",
+   "title": "홀드",
+   "category": "기록·통계",
+   "one_liner": "리드를 지키고 다음 투수에게 넘긴 중간 계투에게 주는 기록이에요.",
+   "easy": "홀드는 이기고 있는 상황(세이브 상황)에서 던지다가 리드를 지킨 채 다음 투수에게 넘긴 중간 계투 투수에게 주는 기록이에요. 마무리 투수 앞에서 던지는 투수들의 활약을 보여줘요. 공식야구규칙에는 없고 연감에는 투수 기록표의 '홀' 항목으로 나와요.",
+   "example": "1점 앞선 8회에 나와 무실점으로 막고 마무리에게 넘긴 투수가 홀드를 받았어요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록 관례)",
+     "note": "공식야구규칙 9장에는 정의가 없음"
+    }
+   ],
+   "related": [
+    "term.save",
+    "term.bullpen",
+    "term.closer"
+   ],
+   "event_types": [],
+   "aliases": [],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "정확한 KBO 홀드 인정 기준(필요 아웃 수·점수 차 등)은 KBO 기록 규정 원문으로 확인이 필요해요."
+   ]
+  },
+  "term.home_run": {
+   "id": "term.home_run",
+   "kind": "term",
+   "title": "홈런",
+   "category": "타격",
+   "one_liner": "타자가 친 공으로 한 번에 홈까지 돌아와 점수를 내는 거예요.",
+   "easy": "타구가 페어 지역 담장을 넘어가면 홈런이에요. 타자와 루에 있던 주자 모두 홈에 들어와 점수가 나요. 담장을 넘기지 않고 그라운드 안에서 홈까지 뛰어 들어와도 홈런(그라운드 홈런)이에요.",
+   "example": "2사 1루에서 타구가 좌측 담장을 넘어가 한 번에 2점이 났어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(a)(5), 9.06"
+    }
+   ],
+   "related": [
+    "term.grand_slam",
+    "term.rbi",
+    "term.extra_base_hit"
+   ],
+   "event_types": [
+    "HOME_RUN"
+   ],
+   "aliases": [
+    "홈 런",
+    "투런",
+    "쓰리런",
+    "솔로 홈런",
+    "솔로포",
+    "장외 홈런",
+    "그라운드 홈런"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.home_team": {
+   "id": "term.home_team",
+   "kind": "term",
+   "title": "홈팀·원정팀",
+   "category": "경기 운영",
+   "one_liner": "자기 구장에서 하는 팀이 홈팀이고 상대가 원정팀이에요.",
+   "easy": "홈팀은 자기 구장에서 경기를 하는 팀이고 상대 팀은 원정팀이에요. 원정팀이 먼저 공격(초)하고 홈팀이 나중에 공격(말)해요. 그래서 홈팀은 9회말에 이기고 있으면 공격을 안 해도 돼요.",
+   "example": "원정팀이 9회초에 점수를 내고 홈팀이 9회말에 따라잡으면 끝내기 승부가 돼요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 36. HOME TEAM"
+    }
+   ],
+   "related": [
+    "term.inning",
+    "term.walk_off",
+    "term.manager"
+   ],
+   "event_types": [],
+   "aliases": [
+    "홈 팀",
+    "원정 팀",
+    "원정팀",
+    "홈구단",
+    "원정구단",
+    "후공",
+    "선공"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.in_jeopardy": {
+   "id": "term.in_jeopardy",
+   "kind": "term",
+   "title": "인 제퍼디",
+   "category": "수비",
+   "one_liner": "볼 인 플레이 때 공격 선수가 아웃될 수 있는 상태예요.",
+   "easy": "인 제퍼디는 공이 살아 있을 때 공격 팀 선수가 아웃될 위험이 있는 상태를 말해요. 예를 들어 베이스에서 떨어진 주자는 인 제퍼디 상태예요.",
+   "example": "리드 폭이 큰 주자가 베이스에서 떨어져 있어, 수비가 태그할 수 있는 상태였어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 42. IN JEOPARDY"
+    }
+   ],
+   "related": [
+    "term.out",
+    "rule.tag",
+    "rule.dead_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "인제퍼디"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.infield_hit": {
+   "id": "term.infield_hit",
+   "kind": "term",
+   "title": "내야안타",
+   "category": "타격",
+   "one_liner": "공이 내야를 벗어나지 않았는데 타자가 1루에서 살아난 안타예요.",
+   "easy": "타구가 내야에 머물렀지만 수비가 1루로 던지기 전에 타자가 먼저 1루를 밟으면 내야안타예요. 느린 땅볼이나 빗맞은 타구에 발 빠른 타자가 뛰면 자주 나와요.",
+   "example": "3루 쪽으로 느리게 굴러간 땅볼을 3루수가 잡아 던졌지만 타자가 먼저 1루에 닿았어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.ground_ball",
+    "term.bunt"
+   ],
+   "event_types": [
+    "SINGLE"
+   ],
+   "aliases": [
+    "내야 안타"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.infielder": {
+   "id": "term.infielder",
+   "kind": "term",
+   "title": "내야수",
+   "category": "수비",
+   "one_liner": "1·2·3루와 유격수 자리, 내야를 지키는 수비수예요.",
+   "easy": "내야수는 1루수, 2루수, 3루수, 유격수 네 명이에요. 땅볼을 잡아 1루로 던지거나, 베이스에서 주자를 태그·포스 아웃시켜요.",
+   "example": "유격수가 2루수에게 공을 토스해 병살을 시작했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 39. INFIELDER"
+    }
+   ],
+   "related": [
+    "term.outfielder",
+    "term.ground_ball",
+    "term.double_play"
+   ],
+   "event_types": [],
+   "aliases": [
+    "1루수",
+    "2루수",
+    "3루수",
+    "유격수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.injured_list": {
+   "id": "term.injured_list",
+   "kind": "term",
+   "title": "부상자 명단",
+   "category": "경기 운영",
+   "one_liner": "다친 선수를 1군 등록에서 빼 두는 명단이에요.",
+   "easy": "부상당한 선수는 10일, 15일, 30일 중 하나를 골라 부상자 명단에 올릴 수 있어요. 한 시즌에 최대 30일까지 쓸 수 있고 10일은 3번, 15일은 2번, 30일은 1번만 가능해요. 신청하려면 구단 지정 병원의 진단서가 필요해요.",
+   "example": "3루수가 훈련 중 다쳐 15일 부상자 명단에 올라갔고, 그동안 다른 선수가 1군에 등록됐어요.",
+   "source": [
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제14조 3항 [부상자 명단]"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.starting_pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "IL",
+    "부상자명단",
+    "부상 엔트리"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.inning": {
+   "id": "term.inning",
+   "kind": "term",
+   "title": "이닝",
+   "category": "경기 운영",
+   "one_liner": "두 팀이 한 번씩 공격과 수비를 하는 경기의 한 구간이에요.",
+   "easy": "한 이닝은 원정 팀이 공격하는 '초'와 홈 팀이 공격하는 '말'로 나뉘어요. 각 팀이 아웃 3개를 당하면 공격이 끝나고, 보통 9이닝까지 해요.",
+   "example": "7회초에 원정 팀이 2점을 냈고, 7회말에는 홈 팀이 공격했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 43. INNING"
+    }
+   ],
+   "related": [
+    "term.out",
+    "rule.extra_innings",
+    "term.walk_off"
+   ],
+   "event_types": [],
+   "aliases": [
+    "회초",
+    "회말",
+    "이닝 교대"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.innings_pitched": {
+   "id": "term.innings_pitched",
+   "kind": "term",
+   "title": "투구 이닝",
+   "category": "기록·통계",
+   "one_liner": "투수가 아웃을 잡은 수를 이닝으로 환산한 숫자예요.",
+   "easy": "아웃 3개를 잡으면 1이닝, 아웃 1개는 ⅓이닝, 2개는 ⅔이닝으로 세요. 예를 들어 6이닝과 아웃 2개를 잡으면 6⅔이닝이에요. KBO는 평균자책점을 계산할 때 이 ⅓, ⅔도 그대로 넣어요.",
+   "example": "선발 투수가 아웃 20개를 잡고 내려가면 투구 이닝은 6⅔이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(e) [부기]",
+     "note": "KBO는 ⅓·⅔이닝까지 포함해 계산"
+    },
+    {
+     "name": "2026 KBO 연감 가이드북",
+     "note": "투수 기록표 '이닝'"
+    }
+   ],
+   "related": [
+    "term.era",
+    "term.whip",
+    "term.quality_start"
+   ],
+   "event_types": [],
+   "aliases": [
+    "투구횟수",
+    "투구 횟수",
+    "소화 이닝",
+    "던진 이닝",
+    "이닝 소화"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.isop": {
+   "id": "term.isop",
+   "kind": "term",
+   "title": "순수장타율",
+   "category": "기록·통계",
+   "one_liner": "장타율에서 타율을 뺀 값이에요.",
+   "easy": "ISOP는 장타율 − 타율이에요. 단타를 빼고 장타(2루타 이상)로 얻은 추가 루타만 보여줘서 장타력을 따로 볼 수 있어요.",
+   "example": "장타율 0.500, 타율 0.300이면 순수장타율은 0.200이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.slugging",
+    "term.batting_average",
+    "term.extra_base_hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "ISOP",
+    "ISO",
+    "순수 장타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.k_bb_ratio": {
+   "id": "term.k_bb_ratio",
+   "kind": "term",
+   "title": "삼진/볼넷 비율",
+   "category": "기록·통계",
+   "one_liner": "삼진을 볼넷으로 나눈 값이에요. 투수는 높을수록, 타자는 볼넷/삼진이 높을수록 좋아요.",
+   "easy": "투수 입장에서는 삼진 수를 볼넷 수로 나눈 K/BB로, 제구가 좋고 삼진을 잘 잡을수록 커져요. 타자 입장에서는 볼넷을 삼진으로 나눈 BB/K로, 선구안이 좋을수록 커져요.",
+   "example": "삼진 100개, 볼넷 25개를 기록한 투수의 K/BB는 4.00이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.strikeout",
+    "rule.base_on_balls"
+   ],
+   "event_types": [],
+   "aliases": [
+    "삼진/볼넷",
+    "볼넷/삼진",
+    "K/BB",
+    "BB/K"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.knuckle_curve": {
+   "id": "term.knuckle_curve",
+   "kind": "term",
+   "title": "너클커브",
+   "category": "투구·구종",
+   "one_liner": "검지를 구부려 쥐고 던지는, 크게 떨어지는 커브예요.",
+   "easy": "너클커브는 검지(또는 검지·중지) 끝을 공 표면에 구부려 대고 던지는 커브예요. 일반 커브처럼 위에서 아래로 크게 떨어져요. 너클볼과 이름이 비슷하지만 회전이 있어서 흔들리는 공이 아니에요.",
+   "example": "직구 뒤에 들어온 너클커브에 타자가 타이밍을 뺏겨 삼진을 당했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.curveball",
+    "term.knuckleball",
+    "term.strikeout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "너클 커브",
+    "너클커브볼",
+    "스파이크 커브",
+    "스파이크커브"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.knuckleball": {
+   "id": "term.knuckleball",
+   "kind": "term",
+   "title": "너클볼",
+   "category": "투구·구종",
+   "one_liner": "회전을 거의 주지 않아 불규칙하게 흔들리며 오는 느린 공이에요.",
+   "easy": "너클볼은 손가락 끝으로 공을 밀어 던져 회전이 거의 없어요. 회전이 없어서 공이 불규칙하게 흔들리고, 타자도 포수도 어디로 갈지 예측하기 어려워요. 던지는 투수가 매우 드물어요.",
+   "example": "너클볼이 타자 앞에서 흔들리며 떨어져 헛스윙이 나왔어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.knuckle_curve",
+    "term.passed_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "너클",
+    "너클 볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.league": {
+   "id": "term.league",
+   "kind": "term",
+   "title": "리그·구단",
+   "category": "경기 운영",
+   "one_liner": "경기를 치르는 팀들의 모임이 리그이고, 팀을 운영하는 주체가 구단이에요.",
+   "easy": "KBO 리그는 10개 구단이 단일 리그로 팀당 144경기씩 총 720경기를 치르는 프로야구 리그예요. 정규시즌 순위가 높은 팀이 포스트시즌에 올라가요. 2군 리그는 퓨처스리그라고 불러요.",
+   "example": "KBO 리그는 10개 구단이 서로 16번씩 만나 정규시즌을 치러요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 45. LEAGUE, 용어의 정의 18. CLUB"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제1조 1항 (144경기), 제58조 (퓨처스리그)"
+    }
+   ],
+   "related": [
+    "rule.extra_innings",
+    "rule.wild_card_game",
+    "term.inning"
+   ],
+   "event_types": [],
+   "aliases": [
+    "KBO 리그",
+    "정규시즌",
+    "퓨처스리그",
+    "퓨처스",
+    "구단",
+    "리그"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.line_drive": {
+   "id": "term.line_drive",
+   "kind": "term",
+   "title": "직선타",
+   "category": "타격",
+   "one_liner": "높이 뜨지 않고 빠르게 일직선으로 날아가는 타구예요.",
+   "easy": "공이 거의 일직선으로 빠르게 날아가면 직선타(라인드라이브)예요. 수비 정면으로 가서 바로 잡히면 아웃이고, 수비 사이로 빠지면 안타가 되기 쉬워요.",
+   "example": "빠른 직선타가 유격수 글러브에 그대로 잡혀 아웃됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 49. LINE DRIVE"
+    }
+   ],
+   "related": [
+    "term.fly_ball",
+    "term.ground_ball",
+    "term.double_play"
+   ],
+   "event_types": [
+    "LINEOUT"
+   ],
+   "aliases": [
+    "직선타구",
+    "직선 타구",
+    "라인드라이브",
+    "라이너"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.loss": {
+   "id": "term.loss",
+   "kind": "term",
+   "title": "패전 투수",
+   "category": "기록·통계",
+   "one_liner": "진 경기에서 패전 기록을 받는 투수예요.",
+   "easy": "상대 팀이 리드를 잡은 뒤 그 리드가 경기 끝까지 이어졌을 때, 그 리드를 내준 투수가 패전 투수가 돼요. 승리 투수와 짝을 이루는 기록이고, 연감 투수 기록표의 '패' 항목이에요.",
+   "example": "6회에 결승점을 내준 구원 투수가 그 리드가 끝까지 이어져 패전 투수가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.17 승리투수·패전투수"
+    },
+    {
+     "name": "2026 KBO 연감 가이드북",
+     "note": "투수 기록표 '패'"
+    }
+   ],
+   "related": [
+    "term.win",
+    "term.save",
+    "term.hold"
+   ],
+   "event_types": [],
+   "aliases": [
+    "패전투수",
+    "패전",
+    "1패"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.manager": {
+   "id": "term.manager",
+   "kind": "term",
+   "title": "감독",
+   "category": "경기 운영",
+   "one_liner": "경기장 안에서 팀을 책임지고 대표하는 사람이에요.",
+   "easy": "감독은 팀의 경기 중 활동을 책임지고, 심판이나 상대 팀과의 관계에서 팀을 대표해요. 비디오 판독 신청도 감독만 할 수 있어요.",
+   "example": "감독이 마운드에 올라가 투수를 교체했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 50. MANAGER"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제28조 4항 ①",
+     "note": "비디오 판독은 감독만 신청"
+    }
+   ],
+   "related": [
+    "rule.video_review",
+    "term.pitching_change",
+    "term.base_coach"
+   ],
+   "event_types": [],
+   "aliases": [
+    "매니저",
+    "벤치"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.multi_hit": {
+   "id": "term.multi_hit",
+   "kind": "term",
+   "title": "멀티히트",
+   "category": "기록·통계",
+   "one_liner": "한 경기에서 안타를 2개 이상 친 거예요.",
+   "easy": "한 경기에서 한 타자가 안타를 두 개 이상 치면 멀티히트 경기예요. 한 시즌에 멀티히트를 몇 번 했는지는 KBO 기록실 타자 세부 항목으로 나와요.",
+   "example": "4타수 2안타를 친 날은 멀티히트 경기예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 타자 세부 항목(MH). 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.batting_average"
+   ],
+   "event_types": [],
+   "aliases": [
+    "멀티 히트",
+    "멀티히트 경기"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.no_hitter": {
+   "id": "term.no_hitter",
+   "kind": "term",
+   "title": "노히트노런",
+   "category": "기록·통계",
+   "one_liner": "투수가 한 경기 동안 안타를 하나도 내주지 않고 이긴 거예요.",
+   "easy": "노히트노런은 한 투수가 경기 전체를 던지면서 안타를 하나도 맞지 않고 점수도 주지 않은 경기예요. 볼넷이나 실책으로 주자가 나가도 안타만 없으면 돼요. 주자를 한 명도 내보내지 않으면 퍼펙트게임이라고 해요. 공식야구규칙에는 이 정의가 없어요.",
+   "example": "볼넷은 2개 내줬지만 안타 없이 9이닝을 막아 노히트노런을 기록했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.pitcher",
+    "term.shutout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "노히터",
+    "노히트 노런",
+    "퍼펙트게임",
+    "퍼펙트 게임"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.official_scorer": {
+   "id": "term.official_scorer",
+   "kind": "term",
+   "title": "공식기록원",
+   "category": "경기 운영",
+   "one_liner": "경기의 공식 기록을 정하는 사람이에요.",
+   "easy": "공식기록원은 안타인지 실책인지, 폭투인지 포일인지 같은 판단을 내리고 경기 기록을 적어요. 심판의 판정과는 별개의 일이에요. 기록에 이의가 있으면 KBO의 기록 이의신청 심의 제도를 통해 다툴 수 있어요.",
+   "example": "타구를 놓친 3루수의 플레이를 공식기록원이 안타가 아닌 실책으로 판단했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 53. OFFICIAL SCORER, 9.01"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "기록 이의신청 심의 제도"
+    }
+   ],
+   "related": [
+    "term.error",
+    "term.hit",
+    "term.wild_pitch"
+   ],
+   "event_types": [],
+   "aliases": [
+    "공식 기록원",
+    "기록원",
+    "기록위원",
+    "스코어러"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.on_base_percentage": {
+   "id": "term.on_base_percentage",
+   "kind": "term",
+   "title": "출루율",
+   "category": "기록·통계",
+   "one_liner": "타자가 타석에서 베이스에 나간 비율이에요.",
+   "easy": "출루율은 (안타 + 볼넷·몸에 맞는 공)을 (타수 + 볼넷·몸에 맞는 공 + 희생플라이)로 나눈 값이에요. 타율과 달리 볼넷으로 나간 것도 세어서, 얼마나 자주 살아 나가는지를 보여줘요. 방해나 주루방해로 나간 건 포함하지 않아요.",
+   "example": "안타는 적어도 볼넷을 많이 고르는 타자는 출루율이 높아요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(f)"
+    }
+   ],
+   "related": [
+    "term.batting_average",
+    "term.ops",
+    "rule.base_on_balls"
+   ],
+   "event_types": [],
+   "aliases": [
+    "OBP"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.opp_batting_avg": {
+   "id": "term.opp_batting_avg",
+   "kind": "term",
+   "title": "피안타율",
+   "category": "기록·통계",
+   "one_liner": "투수가 상대 타자에게 안타를 맞은 비율이에요.",
+   "easy": "피안타 수를 상대 타자의 타수로 나눈 값이에요. 타자의 타율과 같은 방식으로, 투수 입장에서 계산해요. 낮을수록 잘 던진 거예요.",
+   "example": "타수 100 중 안타를 20개 맞았다면 피안타율은 0.200이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(a)",
+     "note": "타율 계산 방식을 투수에게 적용"
+    },
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 투수 세부 항목"
+    }
+   ],
+   "related": [
+    "term.batting_average",
+    "term.hits_allowed"
+   ],
+   "event_types": [],
+   "aliases": [
+    "상대 타율",
+    "피안타 비율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.opp_obp_slg": {
+   "id": "term.opp_obp_slg",
+   "kind": "term",
+   "title": "피출루율·피장타율·피OPS",
+   "category": "기록·통계",
+   "one_liner": "투수가 상대한 타자들의 출루율·장타율·OPS예요.",
+   "easy": "타자의 출루율, 장타율, OPS를 투수 입장에서 계산한 거예요. 피출루율은 상대가 얼마나 나갔는지, 피장타율은 얼마나 멀리 쳤는지 보여줘요. 낮을수록 좋아요.",
+   "example": "피OPS가 0.650이면 상대 타자들이 이 투수에게 평균 이하로 쳤다는 뜻이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.on_base_percentage",
+    "term.slugging",
+    "term.ops",
+    "term.opp_batting_avg"
+   ],
+   "event_types": [],
+   "aliases": [
+    "피출루율",
+    "피장타율",
+    "피OPS",
+    "피출루율+피장타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.ops": {
+   "id": "term.ops",
+   "kind": "term",
+   "title": "OPS",
+   "category": "기록·통계",
+   "one_liner": "출루율과 장타율을 더한 값으로, 타자의 공격력을 한 번에 보여줘요.",
+   "easy": "OPS는 출루율과 장타율을 더한 값이에요. 출루율은 얼마나 자주 나가는지, 장타율은 안타가 얼마나 멀리 가는지를 보여줘요. 두 숫자를 한 번에 봐서 타자의 공격력을 평가해요. 공식야구규칙에는 없고 연감에는 타자 기록표 항목으로 나와요.",
+   "example": "출루율 0.400, 장타율 0.500인 타자의 OPS는 0.900이에요.",
+   "source": [
+    {
+     "name": "팀 작성(세이버메트릭스 일반 정의)",
+     "note": "출루율 9.21(f), 장타율 9.21(c)을 더한 값. 2026 KBO 연감 타자 기록표 항목"
+    }
+   ],
+   "related": [
+    "term.on_base_percentage",
+    "term.slugging",
+    "term.batting_average"
+   ],
+   "event_types": [],
+   "aliases": [
+    "오피에스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.out": {
+   "id": "term.out",
+   "kind": "term",
+   "title": "아웃",
+   "category": "경기 운영",
+   "one_liner": "타자나 주자가 공격 자격을 잃는 거예요. 3개가 되면 공수가 바뀌어요.",
+   "easy": "삼진, 잡힌 뜬공, 태그, 포스 등으로 타자나 주자가 아웃돼요. 한 이닝에 아웃이 3개 쌓이면 공격과 수비가 바뀌어요. 아웃 수를 무사(0), 1사(1), 2사(2)로 불러요.",
+   "example": "2사 1루에서 뜬공이 잡혀 세 번째 아웃이 됐고, 공수가 바뀌었어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 54. OUT, 5.09"
+    }
+   ],
+   "related": [
+    "term.strikeout",
+    "rule.tag",
+    "rule.force_play"
+   ],
+   "event_types": [],
+   "aliases": [
+    "아웃카운트",
+    "아웃 카운트",
+    "무사",
+    "1사",
+    "2사",
+    "원아웃",
+    "투아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.out_on_base": {
+   "id": "term.out_on_base",
+   "kind": "term",
+   "title": "주루사",
+   "category": "주루",
+   "one_liner": "주자가 베이스를 돌다가 아웃된 거예요.",
+   "easy": "주자가 안타나 뜬공 때 더 가려다가 수비 송구에 태그되거나 포스로 아웃되면 주루사라고 해요. 무리하게 뛰다 나오는 경우가 많아 아쉬운 플레이로 꼽혀요.",
+   "example": "안타 때 1루 주자가 3루까지 뛰었지만 외야수의 송구에 태그돼 아웃됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(중계 관용 표현)"
+    }
+   ],
+   "related": [
+    "rule.tag",
+    "term.out",
+    "term.caught_stealing"
+   ],
+   "event_types": [],
+   "aliases": [
+    "주루 아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.outfielder": {
+   "id": "term.outfielder",
+   "kind": "term",
+   "title": "외야수",
+   "category": "수비",
+   "one_liner": "내야 뒤 넓은 외야를 지키는 세 명의 수비수예요.",
+   "easy": "외야수는 좌익수, 중견수, 우익수 세 명이에요. 뜬공을 잡고, 외야로 빠진 안타를 잡아 내야나 홈으로 던져 주자를 막아요.",
+   "example": "중견수가 뜬공을 잡은 뒤 홈으로 던져 태그업한 주자를 잡으려 했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 55. OUTFIELDER"
+    }
+   ],
+   "related": [
+    "term.infielder",
+    "term.fly_ball",
+    "rule.tag_up"
+   ],
+   "event_types": [],
+   "aliases": [
+    "좌익수",
+    "중견수",
+    "우익수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.overslide": {
+   "id": "term.overslide",
+   "kind": "term",
+   "title": "오버슬라이드",
+   "category": "주루",
+   "one_liner": "슬라이딩하다 여세로 베이스에서 떨어지는 거예요.",
+   "easy": "주자가 1루가 아닌 베이스로 슬라이딩하다가 그 여세로 베이스에서 떨어지면 오버슬라이드예요. 이때 수비가 태그하면 아웃이에요. 본루에서 1루로 갈 때 곧바로 돌아올 수 있는 슬라이딩은 오버슬라이드가 아니에요.",
+   "example": "2루로 슬라이딩한 주자의 발이 베이스를 지나쳐 떨어졌고, 유격수가 태그해 아웃이 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 56. OVERSLIDE"
+    }
+   ],
+   "related": [
+    "rule.tag",
+    "term.stolen_base",
+    "term.safe"
+   ],
+   "event_types": [],
+   "aliases": [
+    "오버슬라이딩",
+    "오버런"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.palmball": {
+   "id": "term.palmball",
+   "kind": "term",
+   "title": "팜볼",
+   "category": "투구·구종",
+   "one_liner": "손바닥 전체로 쥐고 느리게 던지는 체인지업 계열의 공이에요.",
+   "easy": "팜볼은 공을 손바닥에 깊이 쥐고 던지는 공이에요. 직구와 같은 팔 동작으로 던지지만 속도가 크게 느려서 타자의 타이밍을 뺏는 체인지업 계열이에요. 요즘은 던지는 투수가 많지 않아요.",
+   "example": "직구를 예상한 타자가 팜볼에 일찍 배트를 내밀어 헛스윙했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.changeup",
+    "term.fastball",
+    "term.forkball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "팜 볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.passed_ball": {
+   "id": "term.passed_ball",
+   "kind": "term",
+   "title": "포일",
+   "category": "수비",
+   "one_liner": "포수가 잡을 수 있던 공을 놓쳐 주자가 진루한 거예요.",
+   "easy": "평범하게 잡을 수 있는 투구를 포수가 놓쳐서 주자가 진루하면 포일이에요. 투수의 공이 너무 빗나가서 못 잡은 거면 포일이 아니라 폭투예요.",
+   "example": "2사 2루에서 포수가 정면으로 온 공을 놓쳐 2루 주자가 3루로 갔어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.13(b)"
+    }
+   ],
+   "related": [
+    "term.wild_pitch",
+    "term.catcher",
+    "rule.dropped_third_strike"
+   ],
+   "event_types": [
+    "PASSED_BALL"
+   ],
+   "aliases": [
+    "패스드볼",
+    "패스드 볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.per_nine": {
+   "id": "term.per_nine",
+   "kind": "term",
+   "title": "9이닝당 삼진·볼넷",
+   "category": "기록·통계",
+   "one_liner": "9이닝을 던진다고 가정했을 때의 삼진 수와 볼넷 수예요.",
+   "easy": "삼진 수나 볼넷 수에 9를 곱하고 던진 이닝으로 나눈 값이에요. K/9는 삼진, BB/9는 볼넷이고, 이닝 수가 다른 투수끼리 비교할 때 써요.",
+   "example": "60이닝 동안 삼진 70개를 잡으면 K/9는 70×9÷60 = 10.5예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.strikeout",
+    "term.innings_pitched",
+    "term.k_bb_ratio"
+   ],
+   "event_types": [],
+   "aliases": [
+    "9이닝당 삼진",
+    "9이닝당 볼넷",
+    "K/9",
+    "BB/9"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pickoff": {
+   "id": "term.pickoff",
+   "kind": "term",
+   "title": "견제",
+   "category": "수비",
+   "one_liner": "투수나 포수가 루에 있는 주자에게 공을 던져 아웃을 노리는 거예요.",
+   "easy": "주자가 다음 베이스로 가려고 베이스에서 멀리 떨어지면 투수나 포수가 그 베이스로 공을 던져 태그를 노려요. 견제로 아웃되면 견제사, 아웃은 안 돼도 주자가 도루하기 어렵게 만드는 효과가 있어요. 투수가 견제 동작을 잘못하면 보크가 될 수 있어요.",
+   "example": "1루 주자가 크게 떨어진 순간 투수가 1루로 던져 태그 아웃시켰어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "견제 동작의 규칙은 공식야구규칙 5.07(a), 6.02(a) 참고"
+    }
+   ],
+   "related": [
+    "rule.balk",
+    "term.stolen_base",
+    "rule.tag"
+   ],
+   "event_types": [
+    "PICKOFF"
+   ],
+   "aliases": [
+    "견제구",
+    "견제사",
+    "픽오프"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pinch_hit_avg": {
+   "id": "term.pinch_hit_avg",
+   "kind": "term",
+   "title": "대타 타율",
+   "category": "기록·통계",
+   "one_liner": "대타로 나왔을 때의 타율이에요.",
+   "easy": "PH-BA는 대타로 타석에 섰을 때의 안타 비율이에요. 벤치에서 나와 바로 쳐야 하는 상황이라 일반 타율과 따로 봐요.",
+   "example": "대타로 20타수 5안타면 대타 타율은 0.250이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.pinch_hitter",
+    "term.batting_average"
+   ],
+   "event_types": [],
+   "aliases": [
+    "PH-BA",
+    "대타타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pinch_hitter": {
+   "id": "term.pinch_hitter",
+   "kind": "term",
+   "title": "대타",
+   "category": "경기 운영",
+   "one_liner": "원래 타자 대신 타석에 들어서는 교체 선수예요.",
+   "easy": "중요한 순간에 원래 타자 대신 더 잘 칠 것 같은 선수를 타석에 세우는 교체예요. 교체돼 빠진 타자는 그 경기에 다시 나올 수 없어요.",
+   "example": "8회 2사 만루에서 감독이 왼손 투수에 강한 대타를 냈어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.10(e)(f)",
+     "note": "타순표에 올라 있지 않은 선수가 대신 타석에 서는 교체"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.pinch_runner",
+    "term.batting_order"
+   ],
+   "event_types": [],
+   "aliases": [
+    "핀치 히터",
+    "대타 작전"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pinch_runner": {
+   "id": "term.pinch_runner",
+   "kind": "term",
+   "title": "대주자",
+   "category": "주루",
+   "one_liner": "루에 나간 선수 대신 뛰는 교체 선수예요.",
+   "easy": "루에 나간 주자 대신 발이 빠른 선수를 넣어 뛰게 하는 교체예요. 교체돼 나간 선수는 그 경기에 다시 나올 수 없어요.",
+   "example": "9회말 동점 주자가 1루에 나가자 발 빠른 대주자로 바꿨어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.10(e)",
+     "note": "교체 선수는 타순표에 올라 있지 않은 선수 중에서"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.pinch_hitter",
+    "term.stolen_base"
+   ],
+   "event_types": [],
+   "aliases": [
+    "핀치 러너"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitch_count": {
+   "id": "term.pitch_count",
+   "kind": "term",
+   "title": "투구수",
+   "category": "투구·구종",
+   "one_liner": "투수가 한 경기에서 던진 공의 개수예요.",
+   "easy": "투구수는 투수가 던진 공의 총개수예요. 많이 던질수록 지쳐서, 감독이 보통 100개 안팎에서 투수 교체를 고민해요. 공 하나하나가 스트라이크인지 볼인지 센 것과는 별개로, 던진 횟수 자체를 셈해요.",
+   "example": "선발 투수가 6이닝 동안 투구수 98개를 기록하고 마운드를 내려갔어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.starting_pitcher",
+    "term.pitching_change",
+    "term.bullpen"
+   ],
+   "event_types": [],
+   "aliases": [
+    "투구 수",
+    "투구 개수",
+    "구수",
+    "투구수 제한"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitch_location": {
+   "id": "term.pitch_location",
+   "kind": "term",
+   "title": "투구 코스(몸쪽·바깥쪽)",
+   "category": "투구·구종",
+   "one_liner": "공이 홈플레이트 위를 지나는 위치를 부르는 말이에요.",
+   "easy": "몸쪽은 타자에 가까운 쪽, 바깥쪽은 타자에서 먼 쪽이에요. 높은 공은 하이, 낮은 공은 로우라고 불러요. 존 구석을 노리는 공은 코너워크라고 하고, 가운데로 들어가면 한가운데 공이라고 해요.",
+   "example": "투수가 몸쪽 높은 직구로 타자의 타이밍을 뺏은 뒤 바깥쪽 낮은 슬라이더로 삼진을 잡았어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "rule.strike_zone",
+    "term.strike",
+    "term.ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "몸쪽",
+    "바깥쪽",
+    "하이",
+    "로우",
+    "코너워크",
+    "한가운데",
+    "높은 공",
+    "낮은 공",
+    "몸쪽 공",
+    "바깥쪽 공"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitcher": {
+   "id": "term.pitcher",
+   "kind": "term",
+   "title": "투수",
+   "category": "수비",
+   "one_liner": "마운드에서 타자에게 공을 던지는 선수예요.",
+   "easy": "투수는 경기장 가운데 마운드에서 포수를 향해 공을 던져 타자를 상대해요. 처음 나오는 투수를 선발, 그 뒤에 나오는 투수를 불펜(구원 투수)이라고 해요.",
+   "example": "투수가 직구와 슬라이더를 섞어 던져 삼진을 잡았어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 60. PITCHER"
+    }
+   ],
+   "related": [
+    "term.catcher",
+    "term.starting_pitcher",
+    "term.bullpen"
+   ],
+   "event_types": [],
+   "aliases": [
+    "피처"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitcher_arm": {
+   "id": "term.pitcher_arm",
+   "kind": "term",
+   "title": "좌완·우완(사이드암·언더핸드)",
+   "category": "투구·구종",
+   "one_liner": "투수가 던지는 손과 팔을 내리는 높이를 부르는 말이에요.",
+   "easy": "좌완은 왼손으로, 우완은 오른손으로 던지는 투수예요. 팔을 어깨 위에서 내리면 오버핸드, 옆에서 내리면 사이드암, 아래에서 올리면 언더핸드라고 해요. 던지는 손과 팔 높이에 따라 공이 오는 각도가 달라져요.",
+   "example": "사이드암 우완 투수가 타자 몸쪽으로 낮게 던졌어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.pitcher",
+    "term.batter_hand",
+    "term.fastball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "좌투",
+    "우투",
+    "좌투수",
+    "우투수",
+    "좌완",
+    "우완",
+    "사이드암",
+    "언더핸드",
+    "오버핸드",
+    "좌완 투수",
+    "우완 투수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitches_per": {
+   "id": "term.pitches_per",
+   "kind": "term",
+   "title": "투구수 지표(P/PA·P/G·P/IP)",
+   "category": "기록·통계",
+   "one_liner": "투구수를 타석·경기·이닝으로 나눈 값이에요.",
+   "easy": "P/PA는 타석당 투구수로 타자가 얼마나 끈질긴지, 투수에게는 타자당 몇 개를 던지는지 보여줘요. P/G는 경기당, P/IP는 이닝당 투구수예요.",
+   "example": "6이닝에 90구를 던지면 P/IP는 15예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.pitch_count",
+    "term.plate_appearance",
+    "term.innings_pitched"
+   ],
+   "event_types": [],
+   "aliases": [
+    "P/PA",
+    "P/G",
+    "P/IP",
+    "타석당 투구수",
+    "이닝당 투구수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.pitching_change": {
+   "id": "term.pitching_change",
+   "kind": "term",
+   "title": "투수 교체",
+   "category": "경기 운영",
+   "one_liner": "던지던 투수를 내리고 다른 투수를 올리는 거예요.",
+   "easy": "감독이 투수가 지쳤거나 상대 타자와 맞지 않는다고 보면 다른 투수로 바꿔요. 교체되어 내려간 투수는 그 경기에 다시 던질 수 없어요.",
+   "example": "7회 무사 1·2루에 감독이 마운드에 올라가 불펜 투수로 바꿨어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.10 선수교체"
+    }
+   ],
+   "related": [
+    "rule.substitution",
+    "term.bullpen",
+    "term.starting_pitcher"
+   ],
+   "event_types": [
+    "PITCHING_CHANGE"
+   ],
+   "aliases": [
+    "투수교체",
+    "강판",
+    "마운드 교체"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.plate_appearance": {
+   "id": "term.plate_appearance",
+   "kind": "term",
+   "title": "타석",
+   "category": "기록·통계",
+   "one_liner": "타자가 타석에 선 횟수예요. 볼넷·희생타 등도 포함해요.",
+   "easy": "타석은 타수에 볼넷·몸에 맞는 공(4사구), 희생번트, 희생플라이, 방해나 주루방해로 나간 횟수를 모두 더한 숫자예요. 타수는 이 중 볼넷·희생타 등을 뺀 숫자예요. 규정타석은 이 타석 수로 따져요.",
+   "example": "타수 400, 볼넷 50, 몸에 맞는 공 5, 희생번트 3, 희생플라이 2라면 타석은 460이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.22(a)",
+     "note": "타석수 = 타수+4사구+희생번트+희생플라이+방해·주루방해 출루"
+    }
+   ],
+   "related": [
+    "term.at_bat",
+    "term.qualified",
+    "term.batting_average"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타석수",
+    "타석 수",
+    "플레이트 어피어런스",
+    "PA"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.position": {
+   "id": "term.position",
+   "kind": "term",
+   "title": "수비 포지션",
+   "category": "기록·통계",
+   "one_liner": "야수가 서는 수비 위치예요.",
+   "easy": "스코어 기록에서는 투수 1, 포수 2, 1루수 3, 2루수 4, 3루수 5, 유격수 6, 좌익수 7, 중견수 8, 우익수 9 번호를 써요. 6-4-3 병살은 유격수→2루수→1루수 순서로 던졌다는 뜻이에요.",
+   "example": "6-4-3은 유격수가 잡아 2루수에게, 다시 1루수에게 던진 병살이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.double_play",
+    "term.infielder",
+    "term.outfielder"
+   ],
+   "event_types": [],
+   "aliases": [
+    "POS",
+    "포지션",
+    "수비 위치"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.productive_out": {
+   "id": "term.productive_out",
+   "kind": "term",
+   "title": "진루타",
+   "category": "타격",
+   "one_liner": "타자는 아웃됐지만 주자를 다음 베이스로 보낸 타격이에요.",
+   "easy": "타자가 땅볼 등으로 아웃되면서 주자가 한 베이스 이상 나아가면 진루타라고 불러요. 공식 기록 이름은 아니지만 중계에서 자주 쓰는 말이에요.",
+   "example": "무사 2루에서 2루수 쪽 땅볼로 타자는 아웃됐지만 2루 주자는 3루로 갔어요.",
+   "source": [
+    {
+     "name": "팀 작성(중계 관용 표현)"
+    }
+   ],
+   "related": [
+    "term.ground_ball",
+    "term.sacrifice_bunt",
+    "term.out"
+   ],
+   "event_types": [
+    "GROUNDOUT"
+   ],
+   "aliases": [],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.putout": {
+   "id": "term.putout",
+   "kind": "term",
+   "title": "풋아웃",
+   "category": "기록·통계",
+   "one_liner": "아웃을 직접 완성한 수비수에게 주는 기록이에요.",
+   "easy": "공을 잡거나 태그하거나 베이스를 밟아 아웃을 직접 만든 수비수에게 풋아웃을 줘요. 삼진은 공을 잡은 포수가 풋아웃을 기록해요. 아웃을 도운 수비수에게는 어시스트를 줘요.",
+   "example": "유격수가 땅볼을 잡아 1루수에게 던져 아웃이 됐어요. 유격수는 어시스트, 1루수는 풋아웃을 기록해요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.09 풋아웃"
+    }
+   ],
+   "related": [
+    "term.assist",
+    "term.out",
+    "term.catcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "자살",
+    "아웃 실행"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.qualified": {
+   "id": "term.qualified",
+   "kind": "term",
+   "title": "규정타석·규정이닝",
+   "category": "기록·통계",
+   "one_liner": "타율왕·평균자책점왕 같은 개인 타이틀을 받으려면 채워야 하는 최소 기준이에요.",
+   "easy": "타자는 소속 팀이 한 시즌에 치른 경기 수의 3.1배 이상 타석에 서야 타율·장타율·출루율 타이틀 자격이 생겨요. 투수는 팀 경기 수와 같은 수 이상의 이닝을 던져야 평균자책점 타이틀 자격이 생겨요. 기준 이닝·타석에 조금 모자라는 경우의 예외도 있어요.",
+   "example": "팀이 144경기를 치르면 규정타석은 144×3.1 = 446타석(소수점 이하 버림)이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.22 개인상 결정의 최소 기준"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "KBO 표창규정 제10조",
+     "note": "규정투구횟수·규정타석수는 공식야구규칙에 따름"
+    }
+   ],
+   "related": [
+    "term.batting_average",
+    "term.era",
+    "term.at_bat"
+   ],
+   "event_types": [],
+   "aliases": [
+    "규정 타석",
+    "규정타석",
+    "규정 이닝",
+    "규정이닝",
+    "타이틀"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.quality_start": {
+   "id": "term.quality_start",
+   "kind": "term",
+   "title": "퀄리티스타트",
+   "category": "기록·통계",
+   "one_liner": "선발 투수가 6이닝 이상 던지고 3자책점 이하로 막은 경기예요.",
+   "easy": "퀄리티스타트는 선발 투수가 6이닝 이상 던지고 자책점을 3점 이하로 막은 경기예요. 승리 여부와 상관없이 선발 투수가 제 몫을 했는지 보는 기준이에요. 공식야구규칙과 연감에는 정의가 없는 기록이에요.",
+   "example": "선발 투수가 7이닝 2자책점으로 퀄리티스타트를 기록했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "2026 연감에는 정의가 없음"
+    }
+   ],
+   "related": [
+    "term.starting_pitcher",
+    "term.era",
+    "term.win"
+   ],
+   "event_types": [],
+   "aliases": [
+    "퀄리티 스타트",
+    "QS"
+   ],
+   "review_status": "draft",
+   "reviewer": "",
+   "more": [
+    "승패와 별개로, 던진 이닝과 자책점 두 조건만으로 정해요."
+   ]
+  },
+  "term.rbi": {
+   "id": "term.rbi",
+   "kind": "term",
+   "title": "타점",
+   "category": "기록·통계",
+   "one_liner": "타자의 타격 덕분에 주자가 홈에 들어와 낸 점수예요.",
+   "easy": "타점은 타자가 타격으로 주자를 홈에 들여보낸 점수예요. 안타, 희생번트, 희생플라이, 내야 땅볼 등으로 주자가 들어오거나, 만루에서 볼넷·몸에 맞는 공 같은 걸로 밀려 들어오면 타점이 생겨요. 홈런이면 타자 본인도 타점 1개를 더해요. 병살타나 수비 실책 때문에 들어온 점수에는 타점을 주지 않을 수 있어요.",
+   "example": "2사 2·3루에서 안타로 두 주자가 모두 들어와 타자는 2타점을 올렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.04 타점"
+    }
+   ],
+   "related": [
+    "term.home_run",
+    "term.sacrifice_fly",
+    "term.hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "타 점",
+    "적시타",
+    "적시 안타"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.risp": {
+   "id": "term.risp",
+   "kind": "term",
+   "title": "득점권 타율",
+   "category": "기록·통계",
+   "one_liner": "2루나 3루에 주자가 있을 때의 타율이에요.",
+   "easy": "득점권은 안타 하나로 점수가 날 수 있는 2루·3루에 주자가 있는 상황이에요. 이때의 타율이 득점권 타율이고, 찬스에 강한 타자인지 볼 때 써요. KBO 기록실 타자 세부 항목이에요.",
+   "example": "득점권에서 40타수 14안타면 득점권 타율은 0.350이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 타자 세부 항목(RISP). 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.batting_average",
+    "term.rbi"
+   ],
+   "event_types": [],
+   "aliases": [
+    "득점권",
+    "RISP",
+    "찬스 타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.run": {
+   "id": "term.run",
+   "kind": "term",
+   "title": "득점",
+   "category": "기록·통계",
+   "one_liner": "주자가 1루, 2루, 3루, 홈 순서로 모두 밟고 홈에 들어오면 얻는 점수예요.",
+   "easy": "타자가 주자가 되어 1루, 2루, 3루, 본루를 차례로 밟으면 1점이 나요. 3아웃이 되기 전에 홈을 밟아야 하고, 상황에 따라 인정되지 않을 수도 있어요.",
+   "example": "1사 3루에서 뜬공이 잡힌 뒤 3루 주자가 태그업해 홈을 밟아 1점이 났어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 66. RUN or SCORE, 5.08"
+    }
+   ],
+   "related": [
+    "rule.run_scoring",
+    "term.rbi",
+    "rule.tag_up"
+   ],
+   "event_types": [],
+   "aliases": [
+    "득점",
+    "점수",
+    "1점"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.run_down": {
+   "id": "term.run_down",
+   "kind": "term",
+   "title": "런다운",
+   "category": "수비",
+   "one_liner": "두 베이스 사이에 갇힌 주자를 아웃시키려는 수비 플레이예요.",
+   "easy": "주자가 두 베이스 사이에서 앞뒤로 막혀 도망 다니는 상황을 런다운(협살)이라고 해요. 수비가 공을 주고받으며 주자를 태그하려고 해요. 주자가 태그를 피하려고 베이스 라인에서 3피트 넘게 벗어나면 아웃이에요.",
+   "example": "1루와 2루 사이에서 협살에 걸린 주자가 유격수와 2루수 사이에서 태그당했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 67. RUN-DOWN"
+    }
+   ],
+   "related": [
+    "rule.baseline_leave",
+    "rule.tag",
+    "term.pickoff"
+   ],
+   "event_types": [],
+   "aliases": [
+    "협살",
+    "런다운 플레이"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.runner": {
+   "id": "term.runner",
+   "kind": "term",
+   "title": "주자",
+   "category": "주루",
+   "one_liner": "베이스를 점유하거나 달리는 공격 팀 선수예요.",
+   "easy": "주자는 베이스 사이를 달리거나 베이스에 서 있는 공격 팀 선수예요. 타자가 공을 치고 달리기 시작하면 '타자주자'라고 불러요.",
+   "example": "1루에 있는 주자가 투수의 공이 던져지는 순간 2루로 달렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 68. RUNNER, 용어의 정의 9. BATTER RUNNER"
+    }
+   ],
+   "related": [
+    "term.batter",
+    "term.base",
+    "term.stolen_base"
+   ],
+   "event_types": [],
+   "aliases": [
+    "러너",
+    "타자주자",
+    "루상 주자"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.runs_allowed": {
+   "id": "term.runs_allowed",
+   "kind": "term",
+   "title": "실점",
+   "category": "기록·통계",
+   "one_liner": "투수가 던지는 동안 상대에게 내준 점수예요.",
+   "easy": "실점은 투수가 마운드에 있는 동안 그 투수 책임으로 상대가 낸 점수의 합이에요. 그중 수비 실책 등을 빼고 투수에게 책임이 있다고 보는 것만 자책점이에요. 그래서 실점은 항상 자책점 이상이에요.",
+   "example": "실책으로 1점, 안타로 2점을 내줬다면 실점 3, 자책점 2일 수 있어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.16 자책점",
+     "note": "실점 중 투수 책임 몫이 자책점"
+    },
+    {
+     "name": "2026 KBO 연감 가이드북",
+     "note": "투수 기록표 '실점'"
+    }
+   ],
+   "related": [
+    "term.earned_run",
+    "term.era",
+    "term.error"
+   ],
+   "event_types": [],
+   "aliases": [
+    "내준 점수",
+    "비자책 실점"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.sacrifice_bunt": {
+   "id": "term.sacrifice_bunt",
+   "kind": "term",
+   "title": "희생번트",
+   "category": "타격",
+   "one_liner": "타자가 아웃되는 대신 번트로 주자를 다음 베이스로 보내는 거예요.",
+   "easy": "타자가 번트를 대서 자신은 1루에서 아웃되지만, 그 사이 주자는 한 베이스 진루해요. 점수를 낼 수 있는 2루나 3루로 주자를 보내려고 할 때 써요. 희생번트는 타율 계산에서 타수로 세지 않아요.",
+   "example": "무사 1루에서 번트로 타자는 아웃됐지만 1루 주자는 2루로 갔어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.08(a)~(c)"
+    }
+   ],
+   "related": [
+    "term.bunt",
+    "term.sacrifice_fly",
+    "term.squeeze"
+   ],
+   "event_types": [
+    "SAC_BUNT"
+   ],
+   "aliases": [
+    "희생 번트",
+    "보내기 번트"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.sacrifice_fly": {
+   "id": "term.sacrifice_fly",
+   "kind": "term",
+   "title": "희생플라이",
+   "category": "타격",
+   "one_liner": "뜬공으로 타자는 아웃되지만 3루 주자가 홈에 들어와 점수를 낸 거예요.",
+   "easy": "무사나 1사에 외야 뜬공이 잡히면 3루 주자가 태그업해서 홈으로 들어올 수 있어요. 이때 점수가 나면 타자의 뜬공을 희생플라이라고 하고 타점을 줘요. 희생플라이는 타율 계산에서 타수로 세지 않아요.",
+   "example": "1사 3루에서 중견수 뜬공이 잡히자 3루 주자가 홈에 들어와 1점이 났어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.08(e)"
+    }
+   ],
+   "related": [
+    "rule.tag_up",
+    "term.fly_ball",
+    "term.rbi"
+   ],
+   "event_types": [
+    "SAC_FLY"
+   ],
+   "aliases": [
+    "희생 플라이",
+    "희플"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.safe": {
+   "id": "term.safe",
+   "kind": "term",
+   "title": "세이프",
+   "category": "주루",
+   "one_liner": "주자가 베이스를 차지할 권리를 심판이 인정한 거예요.",
+   "easy": "심판이 주자가 베이스를 점유할 수 있다고 선언하면 세이프예요. 아웃되지 않았다는 뜻이에요. 비디오 판독으로 바뀔 수도 있어요.",
+   "example": "도루하던 주자가 2루에 먼저 닿아 심판이 세이프를 선언했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 69. SAFE"
+    }
+   ],
+   "related": [
+    "term.out",
+    "rule.tag",
+    "rule.video_review"
+   ],
+   "event_types": [],
+   "aliases": [
+    "세이프"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.save": {
+   "id": "term.save",
+   "kind": "term",
+   "title": "세이브",
+   "category": "기록·통계",
+   "one_liner": "이긴 경기를 끝까지 지켜낸 구원 투수에게 주는 기록이에요.",
+   "easy": "이긴 팀의 마지막 투수이고 승리투수가 아니어야 해요. 그리고 3점 이하 리드에서 올라와 1이닝 이상 던졌거나, 동점 주자가 루상·타석·다음 타석에 있는 상황에서 올라왔거나, 3이닝 이상 던졌어야 해요. 세이브는 한 경기에 한 명만 받아요.",
+   "example": "2점 앞선 9회에 나온 마무리 투수가 세 타자를 잡고 세이브를 올렸어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.19 구원투수의 세이브 결정"
+    }
+   ],
+   "related": [
+    "term.closer",
+    "term.hold",
+    "term.win"
+   ],
+   "event_types": [],
+   "aliases": [
+    "세이브 상황"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.save_opportunity": {
+   "id": "term.save_opportunity",
+   "kind": "term",
+   "title": "세이브 기회",
+   "category": "기록·통계",
+   "one_liner": "구원 투수가 세이브를 올릴 수 있는 상황에 등판한 횟수예요.",
+   "easy": "이기고 있는 팀의 구원 투수가 세이브 조건(9.19)에 맞는 상황에 올라오면 세이브 기회 1번이에요. 그중 성공하면 세이브, 실패하면 블론세이브예요.",
+   "example": "세이브 기회 30번 중 27번 성공하면 세이브 27개, 블론세이브 3개예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.19"
+    },
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 투수 세부 항목(세이브 기회)"
+    }
+   ],
+   "related": [
+    "term.save",
+    "term.blown_save"
+   ],
+   "event_types": [],
+   "aliases": [
+    "SVO",
+    "세이브 기회 횟수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.screwball": {
+   "id": "term.screwball",
+   "kind": "term",
+   "title": "스크루볼",
+   "category": "투구·구종",
+   "one_liner": "일반 변화구와 반대 방향으로 휘는 공이에요.",
+   "easy": "스크루볼은 보통 변화구(슬라이더 등)와 반대 방향으로 휘는 공이에요. 예를 들어 오른손 투수가 던지면 왼손 타자 쪽이 아닌 오른손 타자 쪽으로 휘며 떨어져요. 팔과 어깨에 부담이 커서 요즘은 거의 던지는 선수가 없어요.",
+   "example": "오래된 경기 영상에서 스크루볼이 타자 몸쪽으로 휘어 들어왔어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.changeup",
+    "term.slider",
+    "term.forkball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "스크류볼",
+    "스크루 볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.shutout": {
+   "id": "term.shutout",
+   "kind": "term",
+   "title": "완봉",
+   "category": "기록·통계",
+   "one_liner": "투수 한 명이 끝까지 던져 상대에게 점수를 하나도 주지 않은 거예요.",
+   "easy": "선발 투수가 경기 끝까지 혼자 던지면서 한 점도 내주지 않으면 완봉승이에요. 점수를 주더라도 끝까지 혼자 던지면 완투라고 해요.",
+   "example": "선발 투수가 9이닝을 혼자 던져 상대를 0점으로 막고 완봉승을 거뒀어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.18 셧아웃"
+    }
+   ],
+   "related": [
+    "term.no_hitter",
+    "term.starting_pitcher",
+    "term.era"
+   ],
+   "event_types": [],
+   "aliases": [
+    "완봉승",
+    "셧아웃"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.sinker": {
+   "id": "term.sinker",
+   "kind": "term",
+   "title": "싱커",
+   "category": "투구·구종",
+   "one_liner": "직구처럼 빠르게 오다 아래로 가라앉는 공이에요.",
+   "easy": "싱커는 직구와 비슷한 속도로 오다가 타자 앞에서 아래로 꺼지는 공이에요. 타자가 공 위쪽을 쳐서 땅볼이 되기 쉬워요. 투심과 비슷하지만 더 많이 가라앉는다고 말하는 경우가 많아요.",
+   "example": "싱커에 타자가 공 위를 때려 유격수 앞 땅볼이 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.twoseam",
+    "term.fastball",
+    "term.ground_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "싱킹 패스트볼",
+    "싱킹패스트볼",
+    "싱킹 볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.slider": {
+   "id": "term.slider",
+   "kind": "term",
+   "title": "슬라이더",
+   "category": "투구·구종",
+   "one_liner": "빠르게 오다가 옆으로 휘는 변화구예요.",
+   "easy": "슬라이더는 직구처럼 빠르게 오다가 타자 앞에서 옆(오른손 투수는 보통 바깥쪽)으로 휘는 공이에요. 직구와 비슷해 보여서 타자가 헛스윙하기 쉬워요.",
+   "example": "2스트라이크에서 바깥쪽으로 휘는 슬라이더에 타자가 헛스윙 삼진을 당했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.cutter",
+    "term.curveball",
+    "term.sweeper",
+    "term.slurve"
+   ],
+   "event_types": [],
+   "aliases": [],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.slugging": {
+   "id": "term.slugging",
+   "kind": "term",
+   "title": "장타율",
+   "category": "기록·통계",
+   "one_liner": "타자가 얼마나 멀리 가는 안타를 치는지 보여주는 비율이에요.",
+   "easy": "장타율은 루타 수(단타 1, 2루타 2, 3루타 3, 홈런 4)를 타수로 나눈 값이에요. 같은 안타 수라도 2루타나 홈런이 많으면 장타율이 높아져요. 출루율과 더하면 OPS예요.",
+   "example": "10타수에 단타 2개와 홈런 1개면 루타 수 6, 장타율은 0.600이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(c) 장타율"
+    }
+   ],
+   "related": [
+    "term.ops",
+    "term.batting_average",
+    "term.extra_base_hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "장타율"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.slurve": {
+   "id": "term.slurve",
+   "kind": "term",
+   "title": "슬러브",
+   "category": "투구·구종",
+   "one_liner": "슬라이더와 커브의 중간쯤 되는 공이에요.",
+   "easy": "슬러브(slurve)는 슬라이더(옆으로 휨)와 커브(아래로 떨어짐)의 특징을 섞은 공이에요. 옆으로 휘면서 아래로도 떨어져서, 둘 중 하나로 구분하기 애매할 때 슬러브라고 불러요.",
+   "example": "슬러브가 바깥쪽으로 휘며 떨어져 타자가 헛스윙했어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.slider",
+    "term.curveball",
+    "term.sweeper"
+   ],
+   "event_types": [],
+   "aliases": [
+    "슬러브볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.squeeze": {
+   "id": "term.squeeze",
+   "kind": "term",
+   "title": "스퀴즈",
+   "category": "주루",
+   "one_liner": "3루 주자를 홈에 들여보내려고 번트를 대는 작전이에요.",
+   "easy": "3루에 주자가 있을 때 타자가 번트를 대고, 3루 주자는 그 틈에 홈으로 뛰어 들어와요. 한 점이 꼭 필요한 접전 상황에서 많이 써요.",
+   "example": "1사 3루에서 타자가 번트를 대자 3루 주자가 홈으로 뛰어 1점을 냈어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 71. SQUEEZE PLAY"
+    }
+   ],
+   "related": [
+    "term.bunt",
+    "term.sacrifice_bunt",
+    "term.rbi"
+   ],
+   "event_types": [
+    "SAC_BUNT"
+   ],
+   "aliases": [
+    "스퀴즈 번트",
+    "스퀴즈번트",
+    "스퀴즈 플레이"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.starter_relief_win": {
+   "id": "term.starter_relief_win",
+   "kind": "term",
+   "title": "선발승·구원승",
+   "category": "기록·통계",
+   "one_liner": "선발 투수로 거둔 승리, 구원 투수로 거둔 승리예요.",
+   "easy": "승리 투수 중 선발로 나와 이기면 선발승(Wgs), 구원으로 나와 이기면 구원승(Wgr)이에요. 두 숫자를 더하면 시즌 승이 돼요.",
+   "example": "선발 12승, 구원 3승이면 시즌 15승이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 공식야구규칙 9장에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.win",
+    "term.starting_pitcher",
+    "term.bullpen"
+   ],
+   "event_types": [],
+   "aliases": [
+    "선발승",
+    "구원승",
+    "Wgs",
+    "Wgr"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.starting_pitcher": {
+   "id": "term.starting_pitcher",
+   "kind": "term",
+   "title": "선발 투수",
+   "category": "경기 운영",
+   "one_liner": "경기를 처음 시작하는 투수예요.",
+   "easy": "선발 투수는 1회부터 던지는 투수로, 보통 5~7이닝 정도를 책임져요. 한 번 던지면 며칠 쉬어야 해서 팀마다 선발 투수 여러 명이 돌아가며 나와요.",
+   "example": "선발 투수가 6이닝을 던지고 불펜에게 마운드를 넘겼어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.bullpen",
+    "term.quality_start",
+    "term.pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "선발투수",
+    "선발",
+    "선발 로테이션"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.stolen_base": {
+   "id": "term.stolen_base",
+   "kind": "term",
+   "title": "도루",
+   "category": "주루",
+   "one_liner": "투수가 공을 던지는 사이 주자가 다음 베이스로 뛰어 가는 거예요.",
+   "easy": "안타나 실책 없이, 투수가 타자에게 공을 던지는 틈을 타 주자가 다음 베이스로 뛰어 살면 도루예요. 포수가 공을 베이스로 던져 태그하면 주자는 아웃되고, 이를 도루 실패라고 해요.",
+   "example": "1사 1루에서 투수가 공을 던지자 1루 주자가 2루로 뛰어 세이프가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.07 도루"
+    }
+   ],
+   "related": [
+    "term.caught_stealing",
+    "rule.tag",
+    "term.pickoff"
+   ],
+   "event_types": [
+    "STOLEN_BASE"
+   ],
+   "aliases": [
+    "스틸",
+    "2루 도루",
+    "3루 도루",
+    "홈스틸"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.stolen_base_allowed": {
+   "id": "term.stolen_base_allowed",
+   "kind": "term",
+   "title": "도루 허용·도루 저지",
+   "category": "기록·통계",
+   "one_liner": "수비 쪽에서 본 도루 기록이에요.",
+   "easy": "수비(주로 포수) 입장에서 상대 도루를 막지 못한 게 도루 허용(SB)이고, 도루를 시도한 주자를 잡은 게 도루 저지(CS)예요. 저지 비율이 도루저지율이에요.",
+   "example": "도루 시도 10번 중 4번 잡으면 도루 저지 4, 도루 허용 6이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "공식야구규칙 9.07의 도루·도루 실패 정의를 수비 쪽에서 본 KBO 기록실 항목"
+    }
+   ],
+   "related": [
+    "term.stolen_base",
+    "term.caught_stealing",
+    "term.stolen_base_pct"
+   ],
+   "event_types": [],
+   "aliases": [
+    "도루허용",
+    "도루 허용",
+    "도루저지",
+    "도루 저지"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.stolen_base_attempt": {
+   "id": "term.stolen_base_attempt",
+   "kind": "term",
+   "title": "도루 시도·도루 성공",
+   "category": "기록·통계",
+   "one_liner": "도루를 시도한 횟수, 그중 성공한 횟수예요.",
+   "easy": "도루 시도(SBA)는 도루 성공과 도루 실패를 더한 횟수예요. 주루 기록에서 도루 성공(SB)을 시도로 나누면 도루 성공률이에요.",
+   "example": "도루 8번 성공, 2번 실패면 도루 시도 10번이에요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "공식야구규칙 9.07 기준 도루·도루 실패를 합친 KBO 기록실 항목"
+    }
+   ],
+   "related": [
+    "term.stolen_base",
+    "term.caught_stealing",
+    "term.stolen_base_pct"
+   ],
+   "event_types": [],
+   "aliases": [
+    "도루시도",
+    "도루 시도",
+    "SBA",
+    "도루성공",
+    "도루 성공"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.stolen_base_pct": {
+   "id": "term.stolen_base_pct",
+   "kind": "term",
+   "title": "도루 성공률·도루저지율",
+   "category": "기록·통계",
+   "one_liner": "도루를 시도해서 성공한 비율, 포수가 막은 비율이에요.",
+   "easy": "도루 성공률은 도루 성공을 (도루 성공 + 도루 실패)로 나눈 값이에요. 포수 입장에서는 도루를 시도한 주자 중 잡은 비율이 도루저지율이에요.",
+   "example": "도루를 10번 시도해 8번 성공하면 성공률은 80%예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 주루·수비 항목(SB%, CS%). 도루·도루 실패 정의는 공식야구규칙 9.07"
+    }
+   ],
+   "related": [
+    "term.stolen_base",
+    "term.caught_stealing"
+   ],
+   "event_types": [],
+   "aliases": [
+    "도루성공률",
+    "도루저지율",
+    "도루 저지율",
+    "도루 성공률"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.strike": {
+   "id": "term.strike",
+   "kind": "term",
+   "title": "스트라이크",
+   "category": "투구·구종",
+   "one_liner": "타자에게 불리한 투구 판정으로, 3개가 되면 삼진이에요.",
+   "easy": "투구가 스트라이크 존을 지나가거나, 타자가 헛스윙하거나, 2스트라이크 전 파울이 나오면 스트라이크예요. 스트라이크가 3개 쌓이면 타자는 삼진 아웃이에요.",
+   "example": "타자가 바깥쪽 공에 헛스윙해서 스트라이크가 하나 늘었어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 72. STRIKE"
+    }
+   ],
+   "related": [
+    "term.ball",
+    "rule.strike_zone",
+    "term.strikeout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "스트라익",
+    "헛스윙"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.strikeout": {
+   "id": "term.strikeout",
+   "kind": "term",
+   "title": "삼진",
+   "category": "타격",
+   "one_liner": "스트라이크 3개로 타자가 아웃되는 거예요.",
+   "easy": "타자가 스트라이크를 3개 받으면 삼진으로 아웃돼요. 공을 지켜보다 당하면 루킹 삼진, 헛스윙으로 당하면 헛스윙 삼진이라고 해요. 세 번째 스트라이크를 포수가 놓치면 낫아웃으로 1루에 뛸 수도 있어요.",
+   "example": "2스트라이크에서 바깥쪽 직구를 지켜봤는데 스트라이크가 선언돼 루킹 삼진이 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.15 스트라이크 아웃, 5.09(a)(2)(3)"
+    }
+   ],
+   "related": [
+    "term.strike",
+    "rule.dropped_third_strike",
+    "rule.strike_zone"
+   ],
+   "event_types": [
+    "STRIKEOUT"
+   ],
+   "aliases": [
+    "스트라이크아웃",
+    "루킹 삼진",
+    "헛스윙 삼진",
+    "탈삼진"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.sweeper": {
+   "id": "term.sweeper",
+   "kind": "term",
+   "title": "스위퍼",
+   "category": "투구·구종",
+   "one_liner": "옆으로 크게 휘는 슬라이더의 한 종류예요.",
+   "easy": "스위퍼는 슬라이더보다 좌우로 더 크게 휘는 공이에요. 직구와 비슷한 팔 동작으로 오다가 옆으로 크게 쓸고 지나가서(sweep) 타자의 배트가 헛돌기 쉬워요.",
+   "example": "바깥쪽으로 크게 휘는 스위퍼에 타자가 헛스윙해 삼진이 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.slider",
+    "term.slurve",
+    "term.strikeout"
+   ],
+   "event_types": [],
+   "aliases": [
+    "스윕퍼",
+    "스위핑 슬라이더"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.texas_hit": {
+   "id": "term.texas_hit",
+   "kind": "term",
+   "title": "텍사스 안타",
+   "category": "타격",
+   "one_liner": "내야수와 외야수 사이에 빗맞아 떨어진 안타예요.",
+   "easy": "텍사스 안타는 잘 맞지 않은 공이 내야 뒤, 외야 앞 빈 곳에 뚝 떨어져 안타가 된 거예요. 정타가 아니어도 수비 사이 빈 곳에 떨어지면 안타로 기록돼요.",
+   "example": "빗맞은 공이 유격수와 중견수 사이에 떨어져 텍사스 안타가 됐어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.fly_ball",
+    "term.infield_hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "빗맞은 안타",
+    "텍사스안타",
+    "행운의 안타",
+    "빗맞은 타구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.throw": {
+   "id": "term.throw",
+   "kind": "term",
+   "title": "송구",
+   "category": "수비",
+   "one_liner": "투수가 타자에게 던지는 투구를 뺀, 선수 사이에 던지는 모든 공이에요.",
+   "easy": "송구는 목표 지점을 향해 손과 팔로 공을 보내는 행위예요. 투수가 타자에게 던지는 공은 '투구'라고 하고, 그 밖에 선수가 다른 선수에게 던지는 건 모두 송구예요.",
+   "example": "유격수가 땅볼을 잡고 1루로 송구했어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 59. PITCH"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 76. THROW"
+    }
+   ],
+   "related": [
+    "term.pitcher",
+    "term.infielder",
+    "term.error"
+   ],
+   "event_types": [],
+   "aliases": [
+    "악송구",
+    "송구"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.tie_game": {
+   "id": "term.tie_game",
+   "kind": "term",
+   "title": "무승부",
+   "category": "경기 운영",
+   "one_liner": "정해진 연장 이닝까지 점수가 같아 승부가 나지 않은 경기예요.",
+   "easy": "KBO 정규시즌은 11회까지 해도 점수가 같으면 무승부로 끝나요. 포스트시즌은 15회까지 해요. 서스펜디드 경기가 아닌 우천 중단 등은 규정에 따라 처리돼요.",
+   "example": "연장 마지막 이닝까지 4대4로 끝나 무승부가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 77. TIE GAME"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제1조 2항"
+    }
+   ],
+   "related": [
+    "rule.extra_innings",
+    "term.inning",
+    "term.walk_off"
+   ],
+   "event_types": [],
+   "aliases": [
+    "동점 종료"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.total_bases": {
+   "id": "term.total_bases",
+   "kind": "term",
+   "title": "루타(루타수)",
+   "category": "기록·통계",
+   "one_liner": "안타로 나간 베이스 수를 점수처럼 합친 숫자예요.",
+   "easy": "단타는 1, 2루타는 2, 3루타는 3, 홈런은 4로 세어 더한 값이에요. 장타율은 이 루타수를 타수로 나눈 값이에요.",
+   "example": "단타 2개와 홈런 1개면 루타수는 2×1 + 4 = 6이에요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(c)",
+     "note": "장타율 = 루타수 ÷ 타수"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.06",
+     "note": "단타·장타의 결정"
+    }
+   ],
+   "related": [
+    "term.slugging",
+    "term.hit",
+    "term.extra_base_hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "루타",
+    "TB",
+    "루타수"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.tough_save": {
+   "id": "term.tough_save",
+   "kind": "term",
+   "title": "터프세이브",
+   "category": "기록·통계",
+   "one_liner": "어려운 상황에서 올린 세이브예요.",
+   "easy": "TS는 KBO 기록실 투수 항목이에요. 일반 세이브보다 위기 상황에서 올린 세이브를 따로 센 기록이에요. 정확한 인정 기준은 KBO 기록 규정에서 확인이 필요해요.",
+   "example": "주자가 많은 위기 상황에서 올라와 리드를 지키면 터프세이브 후보예요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 인정 기준 확인 필요"
+    }
+   ],
+   "related": [
+    "term.save",
+    "term.blown_save"
+   ],
+   "event_types": [],
+   "aliases": [
+    "TS",
+    "터프 세이브"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.triple": {
+   "id": "term.triple",
+   "kind": "term",
+   "title": "3루타",
+   "category": "타격",
+   "one_liner": "타자가 안타를 치고 3루까지 간 거예요.",
+   "easy": "타자가 친 공으로 수비 실수 없이 3루까지 가면 3루타예요. 공이 외야 구석으로 굴러가고 타자가 빨라야 나오기 때문에 홈런보다 드물어요.",
+   "example": "우익선상으로 굴러간 타구를 외야수가 쫓는 사이 타자가 3루까지 뛰었어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.06 단타·장타의 결정"
+    }
+   ],
+   "related": [
+    "term.hit",
+    "term.double",
+    "term.extra_base_hit"
+   ],
+   "event_types": [
+    "TRIPLE"
+   ],
+   "aliases": [
+    "삼루타",
+    "쓰리베이스"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.triple_play": {
+   "id": "term.triple_play",
+   "kind": "term",
+   "title": "삼중살",
+   "category": "수비",
+   "one_liner": "수비가 연속된 한 플레이로 아웃 3개를 잡는 거예요.",
+   "easy": "수비 팀이 이어진 동작으로 공격 선수 3명을 아웃시키면 삼중살(트리플 플레이)이에요. 아웃 사이에 실책이 끼면 삼중살이 아니에요. 매우 드물게 나오는 플레이예요.",
+   "example": "무사 1·2루에서 유격수 라인드라이브를 잡고 2루를 밟고 1루로 던져 한 번에 3명을 아웃시켰어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "용어의 정의 80. TRIPLE PLAY, 9.11"
+    }
+   ],
+   "related": [
+    "term.double_play",
+    "term.out",
+    "term.line_drive"
+   ],
+   "event_types": [
+    "DOUBLE_PLAY"
+   ],
+   "aliases": [
+    "트리플 플레이",
+    "트리플플레이",
+    "삼중살"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.twoseam": {
+   "id": "term.twoseam",
+   "kind": "term",
+   "title": "투심 패스트볼",
+   "category": "투구·구종",
+   "one_liner": "직구처럼 빠르지만 타자 몸쪽으로 살짝 휘며 가라앉는 공이에요.",
+   "easy": "투심은 직구와 거의 같은 속도로 오다가 같은 손 타자의 몸쪽으로 살짝 파고들며 가라앉아요. 배트 중심을 피해 땅볼을 많이 만들어요.",
+   "example": "몸쪽으로 파고드는 투심에 타자가 빗맞은 땅볼을 쳤어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)",
+     "note": "공식야구규칙에 구종 정의 없음"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.sinker",
+    "term.ground_ball"
+   ],
+   "event_types": [],
+   "aliases": [
+    "투심",
+    "투 심",
+    "투심패스트볼"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.velocity": {
+   "id": "term.velocity",
+   "kind": "term",
+   "title": "구속",
+   "category": "투구·구종",
+   "one_liner": "투수가 던진 공의 속도예요. 보통 시속 km로 말해요.",
+   "easy": "구속은 공이 투수 손을 떠난 직후의 빠르기예요. KBO 중계에서는 시속 km로 보여줘요. 같은 투수라도 직구와 변화구의 구속이 달라서, 구속 차이가 타자의 타이밍을 흔드는 데 쓰여요.",
+   "example": "직구는 시속 148km, 체인지업은 시속 130km로 구속 차이가 18km였어요.",
+   "source": [
+    {
+     "name": "팀 작성(일반 야구 용어)"
+    }
+   ],
+   "related": [
+    "term.fastball",
+    "term.changeup",
+    "term.pitcher"
+   ],
+   "event_types": [],
+   "aliases": [
+    "구속",
+    "시속",
+    "최고 구속",
+    "평균 구속",
+    "km/h"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.walk_off": {
+   "id": "term.walk_off",
+   "kind": "term",
+   "title": "끝내기",
+   "category": "타격",
+   "one_liner": "홈 팀이 마지막 공격에서 앞서는 점수를 내 경기가 바로 끝나는 거예요.",
+   "easy": "9회말이나 연장 말 공격에서 홈 팀이 앞서는 점수를 내면 그 순간 경기가 끝나요. 끝내기 안타, 끝내기 홈런, 끝내기 볼넷처럼 점수를 낸 방법을 붙여 불러요.",
+   "example": "9회말 2사 2루, 동점 상황에서 안타가 나와 2루 주자가 홈에 들어오며 끝내기가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "7.01(g)(3), 5.08(b)"
+    }
+   ],
+   "related": [
+    "term.inning",
+    "rule.extra_innings",
+    "term.hit"
+   ],
+   "event_types": [],
+   "aliases": [
+    "끝내기 안타",
+    "끝내기 홈런",
+    "워크오프"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.walks_hbp": {
+   "id": "term.walks_hbp",
+   "kind": "term",
+   "title": "사사구",
+   "category": "기록·통계",
+   "one_liner": "볼넷, 몸에 맞는 공, 고의4구를 묶어 부르는 말이에요.",
+   "easy": "사사구는 타자가 볼넷(4구), 몸에 맞는 공(사구), 고의4구로 1루에 나간 걸 합친 말이에요. 투수 쪽에서 보면 '내준 사사구'라서 제구가 얼마나 흔들렸는지 볼 때 써요. 연감 투수 기록표의 '볼넷'과는 구분해서 봐요.",
+   "example": "투수가 볼넷 3개와 몸에 맞는 공 1개를 내줬다면 사사구는 4개예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.14 4구",
+     "note": "볼넷·고의4구 기록"
+    },
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "5.05(b)(2)",
+     "note": "몸에 맞는 공"
+    }
+   ],
+   "related": [
+    "rule.base_on_balls",
+    "rule.hit_by_pitch",
+    "term.whip"
+   ],
+   "event_types": [],
+   "aliases": [
+    "4사구",
+    "사사구",
+    "볼넷 허용",
+    "고의4구 허용"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.whip": {
+   "id": "term.whip",
+   "kind": "term",
+   "title": "WHIP",
+   "category": "기록·통계",
+   "one_liner": "투수가 한 이닝에 안타와 볼넷을 몇 개 내줬는지 보여주는 기록이에요.",
+   "easy": "WHIP는 (피안타 + 볼넷)을 투구 이닝으로 나눈 값이에요. 이닝당 평균으로 주자를 몇 명 내보냈는지 보여줘요. 낮을수록 좋은 투수예요. 공식야구규칙에는 없고 연감에는 투수 기록표 항목으로 나와요.",
+   "example": "6이닝 동안 안타 5개, 볼넷 1개를 내주면 WHIP는 (5+1)÷6 = 1.00이에요.",
+   "source": [
+    {
+     "name": "팀 작성(세이버메트릭스 일반 정의)",
+     "note": "2026 KBO 연감 투수 기록표 항목, 공식야구규칙에는 정의 없음"
+    }
+   ],
+   "related": [
+    "term.era",
+    "term.hits_allowed",
+    "term.innings_pitched"
+   ],
+   "event_types": [],
+   "aliases": [
+    "이닝당 출루 허용률"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.wild_pitch": {
+   "id": "term.wild_pitch",
+   "kind": "term",
+   "title": "폭투",
+   "category": "투구·구종",
+   "one_liner": "투수가 포수가 잡기 어렵게 던져 주자가 진루한 투구예요.",
+   "easy": "투수의 공이 너무 높거나 낮아서 포수가 평범하게 잡을 수 없었고, 그 사이 주자가 진루하면 폭투예요. 포수가 잡을 수 있었던 공을 놓치면 폭투가 아니라 포일이에요.",
+   "example": "2사 3루에서 원바운드된 공이 포수 뒤로 빠져 3루 주자가 홈에 들어왔어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.13(a), 용어의 정의 81. WILD PITCH"
+    }
+   ],
+   "related": [
+    "term.passed_ball",
+    "rule.dropped_third_strike",
+    "term.catcher"
+   ],
+   "event_types": [
+    "WILD_PITCH"
+   ],
+   "aliases": [
+    "와일드 피치",
+    "와일드피치"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.win": {
+   "id": "term.win",
+   "kind": "term",
+   "title": "승리 투수",
+   "category": "기록·통계",
+   "one_liner": "팀이 이긴 경기에서 승리 기록을 받는 투수예요.",
+   "easy": "선발 투수는 5이닝 이상 던지고 내려갈 때 팀이 앞서 있고 그 리드가 경기 끝까지 이어지면 승리 투수가 돼요. 그 조건을 못 채우면 기록원이 구원투수 중 승리에 가장 효과적이었던 한 명에게 줘요. 상대 팀이 리드를 잡은 뒤 그 리드가 끝까지 이어지면, 리드를 내준 투수가 패전 투수가 돼요.",
+   "example": "선발 투수가 6이닝을 막고 팀이 끝까지 이겨서 승리 투수가 됐어요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.17 승리투수·패전투수"
+    }
+   ],
+   "related": [
+    "term.loss",
+    "term.save",
+    "term.starting_pitcher",
+    "term.hold"
+   ],
+   "event_types": [],
+   "aliases": [
+    "승리투수",
+    "승리 요건"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.win_pct": {
+   "id": "term.win_pct",
+   "kind": "term",
+   "title": "승률",
+   "category": "기록·통계",
+   "one_liner": "승수를 승수와 패수의 합으로 나눈 값이에요.",
+   "easy": "승률은 이긴 경기 수를 이긴 수와 진 수의 합으로 나눈 값이에요. 무승부는 계산에 넣지 않아요. 정규시즌 순위는 이 승률로 정해요.",
+   "example": "70승 5무 69패인 팀의 승률은 70÷139 = 약 0.504예요.",
+   "source": [
+    {
+     "name": "공식야구규칙 2026",
+     "ref": "9.21(a)"
+    },
+    {
+     "name": "KBO 리그 규정 2026",
+     "ref": "제2조 승률계산법",
+     "note": "승 ÷ (승 + 패)"
+    }
+   ],
+   "related": [
+    "term.win",
+    "term.tie_game",
+    "term.inning"
+   ],
+   "event_types": [],
+   "aliases": [
+    "승 률"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  },
+  "term.xr": {
+   "id": "term.xr",
+   "kind": "term",
+   "title": "추정득점",
+   "category": "기록·통계",
+   "one_liner": "타자의 기록으로 팀 득점에 얼마나 기여했는지 추정한 값이에요.",
+   "easy": "XR은 안타, 볼넷, 도루 같은 개별 기록에 가중치를 곱해 더해서 그 타자가 만든 점수를 추정한 지표예요. 계산 가중치는 KBO 기록실 기준을 확인해야 해요.",
+   "example": "추정득점이 높을수록 팀 득점 생산에 기여가 크다고 봐요.",
+   "source": [
+    {
+     "name": "팀 작성(KBO 기록실 항목)",
+     "note": "KBO 기록실 지표. 계산식 확인 필요"
+    }
+   ],
+   "related": [
+    "term.run",
+    "term.rbi",
+    "term.ops"
+   ],
+   "event_types": [],
+   "aliases": [
+    "XR",
+    "추정 득점"
+   ],
+   "review_status": "draft",
+   "reviewer": ""
+  }
+ },
+ "alias_index": {
+  "투구수지표(P/PA·P/G·P/IP)": "term.pitches_per",
+  "투구자세(와인드업·세트포지션)": "rule.pitching_position",
+  "좌완·우완(사이드암·언더핸드)": "term.pitcher_arm",
+  "BABIP(인플레이타구타율)": "term.babip",
+  "피출루율·피장타율·피OPS": "term.opp_obp_slg",
+  "투구코스(몸쪽·바깥쪽)": "term.pitch_location",
+  "떨어뜨린제3스트라이크": "rule.dropped_third_strike",
+  "3피트라인(주루레인)": "rule.three_foot_lane",
+  "도루성공률·도루저지율": "term.stolen_base_pct",
+  "타격방해(포수방해)": "rule.catcher_interference",
+  "방해(인터피어런스)": "rule.interference",
+  "선발등판(선발경기)": "term.games_started",
+  "ABS자동투구판정": "rule.abs",
+  "자동투구판정시스템": "rule.abs",
+  "경기(출장경기수)": "term.games_played",
+  "피출루율+피장타율": "term.opp_obp_slg",
+  "9이닝당삼진·볼넷": "term.per_nine",
+  "플레이트어피어런스": "term.plate_appearance",
+  "규정타석·규정이닝": "term.qualified",
+  "도루허용·도루저지": "term.stolen_base_allowed",
+  "도루시도·도루성공": "term.stolen_base_attempt",
+  "스트라이크낫아웃": "rule.dropped_third_strike",
+  "고의로공떨어뜨림": "rule.intentional_drop",
+  "병살방지슬라이딩": "rule.slide_rule",
+  "와일드카드결정전": "rule.wild_card_game",
+  "인플레이타구타율": "term.babip",
+  "스플리터패스트볼": "term.forkball",
+  "이닝당출루허용률": "term.whip",
+  "베이스라인이탈": "rule.baseline_leave",
+  "그라운드룰더블": "rule.ground_rule_double",
+  "홈충돌방지규칙": "rule.home_plate_collision",
+  "와인드업포지션": "rule.pitching_position",
+  "레귤레이션게임": "rule.regulation_game",
+  "수비시프트제한": "rule.shift_restriction",
+  "서스펜디드경기": "rule.suspended_game",
+  "서스펜디드게임": "rule.suspended_game",
+  "세타자상대규정": "rule.three_batter_minimum",
+  "3피트라인위반": "rule.three_foot_lane",
+  "와일드카드경기": "rule.wild_card_game",
+  "좌타자·우타자": "term.batter_hand",
+  "벤치(덕아웃)": "term.dugout",
+  "땅볼/뜬공비율": "term.go_ao",
+  "피안타·피홈런": "term.hits_allowed",
+  "삼진/볼넷비율": "term.k_bb_ratio",
+  "세이브기회횟수": "term.save_opportunity",
+  "선발승·구원승": "term.starter_relief_win",
+  "스트라이크아웃": "term.strikeout",
+  "스위핑슬라이더": "term.sweeper",
+  "루타(루타수)": "term.total_bases",
+  "밀어내기진루": "rule.award_bases",
+  "강우콜드게임": "rule.called_game",
+  "중도종료경기": "rule.called_game",
+  "체크스윙판독": "rule.check_swing",
+  "지명타자제도": "rule.designated_hitter",
+  "충돌방지규칙": "rule.home_plate_collision",
+  "인필드플라이": "rule.infield_fly",
+  "내야뜬공규칙": "rule.infield_fly",
+  "인터피어런스": "rule.interference",
+  "베이스안밟음": "rule.missed_base",
+  "오브스트럭션": "rule.obstruction",
+  "선행주자추월": "rule.runner_passing",
+  "슬라이딩규칙": "rule.slide_rule",
+  "슬라이딩방해": "rule.slide_rule",
+  "스트라이크존": "rule.strike_zone",
+  "일시정지경기": "rule.suspended_game",
+  "스리피트라인": "rule.three_foot_lane",
+  "타이브레이커": "rule.tiebreaker",
+  "타이브레이크": "rule.tiebreaker",
+  "타석에선선수": "term.batter",
+  "클린업트리오": "term.batting_order",
+  "서클체인지업": "term.changeup",
+  "포심패스트볼": "term.fastball",
+  "필더스초이스": "term.fielders_choice",
+  "종료(GF)": "term.games_finished",
+  "땅볼뜬공비율": "term.go_ao",
+  "그라운드홈런": "term.home_run",
+  "홈팀·원정팀": "term.home_team",
+  "스파이크커브": "term.knuckle_curve",
+  "라인드라이브": "term.line_drive",
+  "멀티히트경기": "term.multi_hit",
+  "오버슬라이드": "term.overslide",
+  "오버슬라이딩": "term.overslide",
+  "9이닝당삼진": "term.per_nine",
+  "9이닝당볼넷": "term.per_nine",
+  "타석당투구수": "term.pitches_per",
+  "이닝당투구수": "term.pitches_per",
+  "퀄리티스타트": "term.quality_start",
+  "런다운플레이": "term.run_down",
+  "싱킹패스트볼": "term.sinker",
+  "스퀴즈플레이": "term.squeeze",
+  "선발로테이션": "term.starting_pitcher",
+  "트리플플레이": "term.triple_play",
+  "투심패스트볼": "term.twoseam",
+  "고의4구허용": "term.walks_hbp",
+  "자동볼판정": "rule.abs",
+  "어필플레이": "rule.appeal_play",
+  "안전진루권": "rule.award_bases",
+  "3피트이탈": "rule.baseline_leave",
+  "부정위타자": "rule.batting_out_of_order",
+  "데드볼상태": "rule.dead_ball",
+  "포스플레이": "rule.force_play",
+  "인정2루타": "rule.ground_rule_double",
+  "몸에맞는공": "rule.hit_by_pitch",
+  "힛바이피치": "rule.hit_by_pitch",
+  "홈충돌방지": "rule.home_plate_collision",
+  "일리걸피치": "rule.illegal_pitch",
+  "퀵리턴피치": "rule.illegal_pitch",
+  "세트포지션": "rule.pitching_position",
+  "득점불인정": "rule.run_scoring",
+  "시프트제한": "rule.shift_restriction",
+  "수비시프트": "rule.shift_restriction",
+  "내야시프트": "rule.shift_restriction",
+  "시프트금지": "rule.shift_restriction",
+  "서스펜디드": "rule.suspended_game",
+  "3타자상대": "rule.three_batter_minimum",
+  "세타자규정": "rule.three_batter_minimum",
+  "최소3타자": "rule.three_batter_minimum",
+  "3피트레인": "rule.three_foot_lane",
+  "비디오판독": "rule.video_review",
+  "와일드카드": "rule.wild_card_game",
+  "WC결정전": "rule.wild_card_game",
+  "BABIP": "term.babip",
+  "홈플레이트": "term.base",
+  "베이스코치": "term.base_coach",
+  "베이스만루": "term.bases_loaded",
+  "스위치히터": "term.batter_hand",
+  "상대타자수": "term.batters_faced",
+  "배터리호흡": "term.battery",
+  "블론세이브": "term.blown_save",
+  "브레이킹볼": "term.breaking_ball",
+  "마무리투수": "term.closer",
+  "컷패스트볼": "term.cutter",
+  "대수비선수": "term.defensive_sub",
+  "더블플레이": "term.double_play",
+  "6-4-3": "term.double_play",
+  "평균자책점": "term.era",
+  "외야플라이": "term.fly_ball",
+  "플라이아웃": "term.fly_ball",
+  "GWRBI": "term.game_winning_rbi",
+  "경기마무리": "term.games_finished",
+  "출장경기수": "term.games_played",
+  "GO/AO": "term.go_ao",
+  "그랜드슬램": "term.grand_slam",
+  "그라운드볼": "term.ground_ball",
+  "히트앤드런": "term.hit_and_run",
+  "부상자명단": "term.injured_list",
+  "부상엔트리": "term.injured_list",
+  "순수장타율": "term.isop",
+  "삼진/볼넷": "term.k_bb_ratio",
+  "볼넷/삼진": "term.k_bb_ratio",
+  "너클커브볼": "term.knuckle_curve",
+  "리그·구단": "term.league",
+  "KBO리그": "term.league",
+  "퓨처스리그": "term.league",
+  "노히트노런": "term.no_hitter",
+  "퍼펙트게임": "term.no_hitter",
+  "공식기록원": "term.official_scorer",
+  "피안타비율": "term.opp_batting_avg",
+  "아웃카운트": "term.out",
+  "PH-BA": "term.pinch_hit_avg",
+  "투구수제한": "term.pitch_count",
+  "마운드교체": "term.pitching_change",
+  "수비포지션": "term.position",
+  "득점권타율": "term.risp",
+  "비자책실점": "term.runs_allowed",
+  "보내기번트": "term.sacrifice_bunt",
+  "희생플라이": "term.sacrifice_fly",
+  "세이브상황": "term.save",
+  "세이브기회": "term.save_opportunity",
+  "스퀴즈번트": "term.squeeze",
+  "도루성공률": "term.stolen_base_pct",
+  "도루저지율": "term.stolen_base_pct",
+  "스트라이크": "term.strike",
+  "헛스윙삼진": "term.strikeout",
+  "텍사스안타": "term.texas_hit",
+  "빗맞은안타": "term.texas_hit",
+  "행운의안타": "term.texas_hit",
+  "빗맞은타구": "term.texas_hit",
+  "터프세이브": "term.tough_save",
+  "쓰리베이스": "term.triple",
+  "끝내기안타": "term.walk_off",
+  "끝내기홈런": "term.walk_off",
+  "와일드피치": "term.wild_pitch",
+  "로봇심판": "rule.abs",
+  "고의4구": "rule.base_on_balls",
+  "고의사구": "rule.base_on_balls",
+  "밀어내기": "rule.base_on_balls",
+  "라인이탈": "rule.baseline_leave",
+  "타순착오": "rule.batting_out_of_order",
+  "콜드게임": "rule.called_game",
+  "강우콜드": "rule.called_game",
+  "포수방해": "rule.catcher_interference",
+  "타격방해": "rule.catcher_interference",
+  "체크스윙": "rule.check_swing",
+  "DH제도": "rule.designated_hitter",
+  "더블헤더": "rule.doubleheader",
+  "DH경기": "rule.doubleheader",
+  "연장승부": "rule.extra_innings",
+  "페어타구": "rule.fair_ball",
+  "포스아웃": "rule.force_play",
+  "강제진루": "rule.force_play",
+  "몰수경기": "rule.forfeit",
+  "몰수게임": "rule.forfeit",
+  "파울타구": "rule.foul_ball",
+  "몸맞는공": "rule.hit_by_pitch",
+  "몸맞는볼": "rule.hit_by_pitch",
+  "반칙투구": "rule.illegal_pitch",
+  "고의낙구": "rule.intentional_drop",
+  "수비방해": "rule.interference",
+  "누의공과": "rule.missed_base",
+  "누를공과": "rule.missed_base",
+  "주루방해": "rule.obstruction",
+  "피치클락": "rule.pitch_clock",
+  "와인드업": "rule.pitching_position",
+  "정식경기": "rule.regulation_game",
+  "5회성립": "rule.regulation_game",
+  "득점인정": "rule.run_scoring",
+  "득점무효": "rule.run_scoring",
+  "주자추월": "rule.runner_passing",
+  "앞지르기": "rule.runner_passing",
+  "선수교체": "rule.substitution",
+  "태그아웃": "rule.tag",
+  "3피트룰": "rule.three_foot_lane",
+  "승부치기": "rule.tiebreaker",
+  "리플레이": "rule.video_review",
+  "어시스트": "term.assist",
+  "아웃도움": "term.assist",
+  "3루코치": "term.base_coach",
+  "1루코치": "term.base_coach",
+  "주루코치": "term.base_coach",
+  "풀베이스": "term.bases_loaded",
+  "상대타자": "term.batters_faced",
+  "4번타자": "term.batting_order",
+  "리드오프": "term.batting_order",
+  "구원투수": "term.bullpen",
+  "중간계투": "term.bullpen",
+  "불펜투수": "term.bullpen",
+  "기습번트": "term.bunt",
+  "번트안타": "term.bunt",
+  "정규포구": "term.catch",
+  "도루실패": "term.caught_stealing",
+  "체인지업": "term.changeup",
+  "투수코치": "term.coach",
+  "타격코치": "term.coach",
+  "수석코치": "term.coach",
+  "볼카운트": "term.count",
+  "풀카운트": "term.count",
+  "슬로커브": "term.curveball",
+  "파워커브": "term.curveball",
+  "수비교체": "term.defensive_sub",
+  "지명타자": "term.designated_hitter",
+  "투베이스": "term.double",
+  "벤치대기": "term.dugout",
+  "비자책점": "term.earned_run",
+  "송구실책": "term.error",
+  "포구실책": "term.error",
+  "수비실책": "term.error",
+  "패스트볼": "term.fastball",
+  "야수선택": "term.fielders_choice",
+  "수비비율": "term.fielding_pct",
+  "플라이볼": "term.fly_ball",
+  "스플리터": "term.forkball",
+  "결승타점": "term.game_winning_rbi",
+  "경기종료": "term.games_finished",
+  "출장경기": "term.games_played",
+  "선발경기": "term.games_started",
+  "선발등판": "term.games_started",
+  "선발출장": "term.games_started",
+  "만루홈런": "term.grand_slam",
+  "내야땅볼": "term.ground_ball",
+  "땅볼아웃": "term.ground_ball",
+  "히트앤런": "term.hit_and_run",
+  "런앤히트": "term.hit_and_run",
+  "허용안타": "term.hits_allowed",
+  "솔로홈런": "term.home_run",
+  "장외홈런": "term.home_run",
+  "원정구단": "term.home_team",
+  "인제퍼디": "term.in_jeopardy",
+  "내야안타": "term.infield_hit",
+  "이닝교대": "term.inning",
+  "투구이닝": "term.innings_pitched",
+  "투구횟수": "term.innings_pitched",
+  "소화이닝": "term.innings_pitched",
+  "던진이닝": "term.innings_pitched",
+  "이닝소화": "term.innings_pitched",
+  "ISOP": "term.isop",
+  "K/BB": "term.k_bb_ratio",
+  "BB/K": "term.k_bb_ratio",
+  "너클커브": "term.knuckle_curve",
+  "정규시즌": "term.league",
+  "직선타구": "term.line_drive",
+  "패전투수": "term.loss",
+  "멀티히트": "term.multi_hit",
+  "기록위원": "term.official_scorer",
+  "스코어러": "term.official_scorer",
+  "피안타율": "term.opp_batting_avg",
+  "상대타율": "term.opp_batting_avg",
+  "피출루율": "term.opp_obp_slg",
+  "피장타율": "term.opp_obp_slg",
+  "피OPS": "term.opp_obp_slg",
+  "오피에스": "term.ops",
+  "주루아웃": "term.out_on_base",
+  "패스드볼": "term.passed_ball",
+  "BB/9": "term.per_nine",
+  "대타타율": "term.pinch_hit_avg",
+  "핀치히터": "term.pinch_hitter",
+  "대타작전": "term.pinch_hitter",
+  "핀치러너": "term.pinch_runner",
+  "투구개수": "term.pitch_count",
+  "코너워크": "term.pitch_location",
+  "한가운데": "term.pitch_location",
+  "바깥쪽공": "term.pitch_location",
+  "사이드암": "term.pitcher_arm",
+  "언더핸드": "term.pitcher_arm",
+  "오버핸드": "term.pitcher_arm",
+  "좌완투수": "term.pitcher_arm",
+  "우완투수": "term.pitcher_arm",
+  "P/PA": "term.pitches_per",
+  "P/IP": "term.pitches_per",
+  "투수교체": "term.pitching_change",
+  "수비위치": "term.position",
+  "아웃실행": "term.putout",
+  "규정타석": "term.qualified",
+  "규정이닝": "term.qualified",
+  "적시안타": "term.rbi",
+  "RISP": "term.risp",
+  "찬스타율": "term.risp",
+  "타자주자": "term.runner",
+  "루상주자": "term.runner",
+  "내준점수": "term.runs_allowed",
+  "희생번트": "term.sacrifice_bunt",
+  "스크루볼": "term.screwball",
+  "스크류볼": "term.screwball",
+  "슬라이더": "term.slider",
+  "슬러브볼": "term.slurve",
+  "선발투수": "term.starting_pitcher",
+  "2루도루": "term.stolen_base",
+  "3루도루": "term.stolen_base",
+  "도루허용": "term.stolen_base_allowed",
+  "도루저지": "term.stolen_base_allowed",
+  "도루시도": "term.stolen_base_attempt",
+  "도루성공": "term.stolen_base_attempt",
+  "스트라익": "term.strike",
+  "루킹삼진": "term.strikeout",
+  "동점종료": "term.tie_game",
+  "최고구속": "term.velocity",
+  "평균구속": "term.velocity",
+  "km/h": "term.velocity",
+  "워크오프": "term.walk_off",
+  "볼넷허용": "term.walks_hbp",
+  "WHIP": "term.whip",
+  "승리투수": "term.win",
+  "승리요건": "term.win",
+  "추정득점": "term.xr",
+  "ABS": "rule.abs",
+  "볼데드": "rule.dead_ball",
+  "낫아웃": "rule.dropped_third_strike",
+  "연장전": "rule.extra_innings",
+  "페어볼": "rule.fair_ball",
+  "몰수승": "rule.forfeit",
+  "몰수패": "rule.forfeit",
+  "파울볼": "rule.foul_ball",
+  "데드볼": "rule.hit_by_pitch",
+  "홈충돌": "rule.home_plate_collision",
+  "퀵리턴": "rule.illegal_pitch",
+  "누공과": "rule.missed_base",
+  "노게임": "rule.no_game",
+  "스트존": "rule.strike_zone",
+  "태그업": "rule.tag_up",
+  "리터치": "rule.tag_up",
+  "베이스": "term.base",
+  "코치석": "term.base_coach",
+  "좌타석": "term.batter_hand",
+  "우타석": "term.batter_hand",
+  "타자수": "term.batters_faced",
+  "TBF": "term.batters_faced",
+  "배터리": "term.battery",
+  "투포수": "term.battery",
+  "클린업": "term.batting_order",
+  "변화구": "term.breaking_ball",
+  "도루자": "term.caught_stealing",
+  "마무리": "term.closer",
+  "클로저": "term.closer",
+  "완투승": "term.complete_game",
+  "완투패": "term.complete_game",
+  "카운트": "term.count",
+  "커브볼": "term.curveball",
+  "대수비": "term.defensive_sub",
+  "2루타": "term.double",
+  "이루타": "term.double",
+  "병살타": "term.double_play",
+  "덕아웃": "term.dugout",
+  "자책점": "term.earned_run",
+  "비자책": "term.earned_run",
+  "방어율": "term.era",
+  "ERA": "term.era",
+  "장타력": "term.extra_base_hit",
+  "수비율": "term.fielding_pct",
+  "플라이": "term.fly_ball",
+  "포크볼": "term.forkball",
+  "파울팁": "term.foul_tip",
+  "결승타": "term.game_winning_rbi",
+  "경기수": "term.games_played",
+  "GPA": "term.gpa",
+  "만루포": "term.grand_slam",
+  "1루타": "term.hit",
+  "피안타": "term.hits_allowed",
+  "피홈런": "term.hits_allowed",
+  "쓰리런": "term.home_run",
+  "솔로포": "term.home_run",
+  "원정팀": "term.home_team",
+  "홈구단": "term.home_team",
+  "내야수": "term.infielder",
+  "1루수": "term.infielder",
+  "2루수": "term.infielder",
+  "3루수": "term.infielder",
+  "유격수": "term.infielder",
+  "ISO": "term.isop",
+  "너클볼": "term.knuckleball",
+  "퓨처스": "term.league",
+  "직선타": "term.line_drive",
+  "라이너": "term.line_drive",
+  "매니저": "term.manager",
+  "노히터": "term.no_hitter",
+  "기록원": "term.official_scorer",
+  "출루율": "term.on_base_percentage",
+  "OBP": "term.on_base_percentage",
+  "OPS": "term.ops",
+  "원아웃": "term.out",
+  "투아웃": "term.out",
+  "주루사": "term.out_on_base",
+  "외야수": "term.outfielder",
+  "좌익수": "term.outfielder",
+  "중견수": "term.outfielder",
+  "우익수": "term.outfielder",
+  "오버런": "term.overslide",
+  "K/9": "term.per_nine",
+  "견제구": "term.pickoff",
+  "견제사": "term.pickoff",
+  "픽오프": "term.pickoff",
+  "대주자": "term.pinch_runner",
+  "투구수": "term.pitch_count",
+  "바깥쪽": "term.pitch_location",
+  "높은공": "term.pitch_location",
+  "낮은공": "term.pitch_location",
+  "몸쪽공": "term.pitch_location",
+  "좌투수": "term.pitcher_arm",
+  "우투수": "term.pitcher_arm",
+  "P/G": "term.pitches_per",
+  "타석수": "term.plate_appearance",
+  "POS": "term.position",
+  "포지션": "term.position",
+  "진루타": "term.productive_out",
+  "풋아웃": "term.putout",
+  "타이틀": "term.qualified",
+  "적시타": "term.rbi",
+  "득점권": "term.risp",
+  "런다운": "term.run_down",
+  "세이프": "term.safe",
+  "세이브": "term.save",
+  "SVO": "term.save_opportunity",
+  "완봉승": "term.shutout",
+  "셧아웃": "term.shutout",
+  "싱킹볼": "term.sinker",
+  "장타율": "term.slugging",
+  "슬러브": "term.slurve",
+  "스퀴즈": "term.squeeze",
+  "선발승": "term.starter_relief_win",
+  "구원승": "term.starter_relief_win",
+  "Wgs": "term.starter_relief_win",
+  "Wgr": "term.starter_relief_win",
+  "홈스틸": "term.stolen_base",
+  "SBA": "term.stolen_base_attempt",
+  "헛스윙": "term.strike",
+  "탈삼진": "term.strikeout",
+  "스위퍼": "term.sweeper",
+  "스윕퍼": "term.sweeper",
+  "악송구": "term.throw",
+  "무승부": "term.tie_game",
+  "루타수": "term.total_bases",
+  "3루타": "term.triple",
+  "삼루타": "term.triple",
+  "삼중살": "term.triple_play",
+  "끝내기": "term.walk_off",
+  "사사구": "term.walks_hbp",
+  "4사구": "term.walks_hbp",
+  "어필": "rule.appeal_play",
+  "보크": "rule.balk",
+  "볼넷": "rule.base_on_balls",
+  "4구": "rule.base_on_balls",
+  "타임": "rule.dead_ball",
+  "연장": "rule.extra_innings",
+  "페어": "rule.fair_ball",
+  "파울": "rule.foul_ball",
+  "사구": "rule.hit_by_pitch",
+  "추월": "rule.runner_passing",
+  "교체": "rule.substitution",
+  "태그": "rule.tag",
+  "판독": "rule.video_review",
+  "보살": "term.assist",
+  "타수": "term.at_bat",
+  "1루": "term.base",
+  "2루": "term.base",
+  "3루": "term.base",
+  "본루": "term.base",
+  "만루": "term.bases_loaded",
+  "타자": "term.batter",
+  "배터": "term.batter",
+  "좌타": "term.batter_hand",
+  "우타": "term.batter_hand",
+  "타율": "term.batting_average",
+  "3할": "term.batting_average",
+  "타순": "term.batting_order",
+  "타선": "term.batting_order",
+  "블론": "term.blown_save",
+  "구종": "term.breaking_ball",
+  "불펜": "term.bullpen",
+  "계투": "term.bullpen",
+  "번트": "term.bunt",
+  "포구": "term.catch",
+  "캐치": "term.catch",
+  "포수": "term.catcher",
+  "캐처": "term.catcher",
+  "코치": "term.coach",
+  "완투": "term.complete_game",
+  "커브": "term.curveball",
+  "커터": "term.cutter",
+  "DH": "term.designated_hitter",
+  "병살": "term.double_play",
+  "자책": "term.earned_run",
+  "실책": "term.error",
+  "에러": "term.error",
+  "장타": "term.extra_base_hit",
+  "직구": "term.fastball",
+  "포심": "term.fastball",
+  "속구": "term.fastball",
+  "뜬공": "term.fly_ball",
+  "포크": "term.forkball",
+  "GF": "term.games_finished",
+  "출장": "term.games_played",
+  "등판": "term.games_played",
+  "GS": "term.games_started",
+  "땅볼": "term.ground_ball",
+  "안타": "term.hit",
+  "단타": "term.hit",
+  "히트": "term.hit",
+  "홀드": "term.hold",
+  "홈런": "term.home_run",
+  "투런": "term.home_run",
+  "홈팀": "term.home_team",
+  "후공": "term.home_team",
+  "선공": "term.home_team",
+  "IL": "term.injured_list",
+  "이닝": "term.inning",
+  "회초": "term.inning",
+  "회말": "term.inning",
+  "너클": "term.knuckleball",
+  "구단": "term.league",
+  "리그": "term.league",
+  "패전": "term.loss",
+  "1패": "term.loss",
+  "감독": "term.manager",
+  "벤치": "term.manager",
+  "아웃": "term.out",
+  "무사": "term.out",
+  "1사": "term.out",
+  "2사": "term.out",
+  "팜볼": "term.palmball",
+  "포일": "term.passed_ball",
+  "견제": "term.pickoff",
+  "대타": "term.pinch_hitter",
+  "구수": "term.pitch_count",
+  "몸쪽": "term.pitch_location",
+  "하이": "term.pitch_location",
+  "로우": "term.pitch_location",
+  "투수": "term.pitcher",
+  "피처": "term.pitcher",
+  "좌투": "term.pitcher_arm",
+  "우투": "term.pitcher_arm",
+  "좌완": "term.pitcher_arm",
+  "우완": "term.pitcher_arm",
+  "강판": "term.pitching_change",
+  "타석": "term.plate_appearance",
+  "PA": "term.plate_appearance",
+  "자살": "term.putout",
+  "QS": "term.quality_start",
+  "타점": "term.rbi",
+  "득점": "term.run",
+  "점수": "term.run",
+  "1점": "term.run",
+  "협살": "term.run_down",
+  "주자": "term.runner",
+  "러너": "term.runner",
+  "실점": "term.runs_allowed",
+  "희플": "term.sacrifice_fly",
+  "완봉": "term.shutout",
+  "싱커": "term.sinker",
+  "선발": "term.starting_pitcher",
+  "도루": "term.stolen_base",
+  "스틸": "term.stolen_base",
+  "삼진": "term.strikeout",
+  "송구": "term.throw",
+  "루타": "term.total_bases",
+  "TB": "term.total_bases",
+  "TS": "term.tough_save",
+  "투심": "term.twoseam",
+  "구속": "term.velocity",
+  "시속": "term.velocity",
+  "폭투": "term.wild_pitch",
+  "승률": "term.win_pct",
+  "XR": "term.xr",
+  "볼": "term.ball"
+ },
+ "event_index": {
+  "WALK": [
+   "rule.award_bases",
+   "rule.base_on_balls"
+  ],
+  "HIT_BY_PITCH": [
+   "rule.award_bases",
+   "rule.hit_by_pitch"
+  ],
+  "BALK": [
+   "rule.balk"
+  ],
+  "INTENTIONAL_WALK": [
+   "rule.base_on_balls"
+  ],
+  "INTERFERENCE": [
+   "rule.catcher_interference",
+   "rule.interference",
+   "rule.slide_rule",
+   "rule.three_foot_lane"
+  ],
+  "DROPPED_THIRD_STRIKE": [
+   "rule.dropped_third_strike"
+  ],
+  "FORCE_OUT": [
+   "rule.force_play"
+  ],
+  "DOUBLE_PLAY": [
+   "rule.force_play",
+   "rule.slide_rule",
+   "term.double_play",
+   "term.triple_play"
+  ],
+  "DOUBLE": [
+   "rule.ground_rule_double",
+   "term.double",
+   "term.extra_base_hit"
+  ],
+  "INFIELD_FLY": [
+   "rule.infield_fly"
+  ],
+  "OBSTRUCTION": [
+   "rule.obstruction"
+  ],
+  "PITCHING_CHANGE": [
+   "rule.substitution",
+   "rule.three_batter_minimum",
+   "term.pitching_change"
+  ],
+  "CAUGHT_STEALING": [
+   "rule.tag",
+   "term.caught_stealing"
+  ],
+  "PICKOFF": [
+   "rule.tag",
+   "term.pickoff"
+  ],
+  "TAG_UP": [
+   "rule.tag_up"
+  ],
+  "SAC_FLY": [
+   "rule.tag_up",
+   "term.sacrifice_fly"
+  ],
+  "VIDEO_REVIEW": [
+   "rule.video_review"
+  ],
+  "SAC_BUNT": [
+   "term.bunt",
+   "term.sacrifice_bunt",
+   "term.squeeze"
+  ],
+  "FLYOUT": [
+   "term.catch",
+   "term.fly_ball"
+  ],
+  "ERROR": [
+   "term.error"
+  ],
+  "TRIPLE": [
+   "term.extra_base_hit",
+   "term.triple"
+  ],
+  "HOME_RUN": [
+   "term.extra_base_hit",
+   "term.grand_slam",
+   "term.home_run"
+  ],
+  "FIELDERS_CHOICE": [
+   "term.fielders_choice"
+  ],
+  "STRIKEOUT": [
+   "term.foul_tip",
+   "term.strikeout"
+  ],
+  "GROUNDOUT": [
+   "term.ground_ball",
+   "term.productive_out"
+  ],
+  "SINGLE": [
+   "term.hit",
+   "term.infield_hit"
+  ],
+  "LINEOUT": [
+   "term.line_drive"
+  ],
+  "PASSED_BALL": [
+   "term.passed_ball"
+  ],
+  "STOLEN_BASE": [
+   "term.stolen_base"
+  ],
+  "WILD_PITCH": [
+   "term.wild_pitch"
+  ]
+ }
+}
