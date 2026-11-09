@@ -1,0 +1,1 @@
+{"qid": "Q01", "type": "규칙", "tags": ["복합상황"], "game_id": "20260912_LGDS", "question": "초보자가 물어볼 법한 질문", "raw_relay": ["문자중계 한 줄", "다음 줄", "그다음 줄"], "facts": [{"id": "F1", "text": "7회말, 1사 1,2루, 점수 3-2"}, {"id": "F2", "text": "타자 OOO, 결과: 인필드 플라이 아웃"}], "card_ids": ["rule.infield_fly"], "players": ["OOO", "XXX"]}

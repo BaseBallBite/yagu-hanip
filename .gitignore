@@ -7,3 +7,9 @@ dist/
 .DS_Store
 *.mp4
 data/raw/
+
+# ai/explain 실행 기록
+ai/explain/cache/
+ai/explain/logs/
+ai/explain/outputs/
+*.webm
