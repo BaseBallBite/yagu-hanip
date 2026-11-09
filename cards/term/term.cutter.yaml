@@ -3,14 +3,14 @@ kind: term
 title: 커터
 category: 투구·구종
 one_liner: 직구처럼 빠르지만 끝에서 살짝 휘는 공이에요.
-easy: '커터는 직구와 거의 같은 속도로 오다가 타자 앞에서 조금 옆으로 휘어요. 슬라이더보다 덜 휘고 더 빨라서, 배트 중심을 피해 약한 타구를 만들어요.
-
-  '
+easy: 커터는 직구보다 조금 느린 속도로 오다가 타자 앞에서 글러브 쪽으로 살짝 휘어요. 우완 투수의 커터는 우타자에게서 멀어지고 좌타자 몸쪽으로 들어가요. 슬라이더보다 덜 휘고 더 빨라서 배트 한가운데에 맞히기 어렵게 해요.
 example: '몸쪽으로 살짝 휘는 커터에 타자 배트가 부러지며 땅볼이 됐어요.
 
   '
 source:
 - name: 팀 작성(일반 야구 용어)
+- name: MLB.com Glossary - Cutter
+  url: https://www.mlb.com/glossary/pitch-types/cutter
 related:
 - term.fastball
 - term.slider
@@ -21,3 +21,5 @@ aliases:
 - 컷 패스트볼
 review_status: draft
 reviewer: ''
+image: images/pitch/term.cutter.anim.svg
+image_static: images/pitch/term.cutter.svg
