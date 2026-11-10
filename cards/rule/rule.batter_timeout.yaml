@@ -1,0 +1,26 @@
+id: rule.batter_timeout
+kind: rule
+title: 타자 타임 요청
+category: 특수 상황
+one_liner: 타자가 타임을 요청할 수 있는 횟수는 타석당 2회예요.
+easy: 타자가 타석에 선 뒤 타임을 요청할 수 있는 횟수는 타석당 2회로 제한돼요(퓨처스리그는 1회). 세 번째 타임을 요청하고 타석을 벗어나면 스트라이크가 선언돼요. 스윙을 했거나 몸쪽 공을 피했거나, 양 팀 벤치가 타임을 요청했거나 부상이 생긴 경우처럼 타석을 벗어나도 되는 경우는 따로 정해져 있어요.
+example: 타자가 세 번째 타임을 요청하고 타석을 벗어나자 스트라이크가 선언됐어요.
+when:
+  limit: 타석당 2회(퓨처스 1회)
+  penalty: 세 번째 요청 후 타석을 벗어나면 스트라이크
+  exception: 스윙, 몸쪽 공 피하기, 양 구단 벤치 타임, 부상 등
+source:
+- name: KBO 홈페이지 2026 주요 규정·규칙
+  ref: 피치클락 - 타자의 타임 요청
+  url: https://www.koreabaseball.com/Kbo/League/GameManage2026.aspx
+- name: KBO 리그 규정 2026
+  ref: 경기의 스피드업 5. 타자 ①
+related:
+- rule.pitch_clock
+- term.strike
+event_types: []
+aliases:
+- 타자 타임
+- 타임 요청
+review_status: draft
+reviewer: ''

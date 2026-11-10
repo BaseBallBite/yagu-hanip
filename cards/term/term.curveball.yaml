@@ -3,14 +3,15 @@ kind: term
 title: 커브
 category: 투구·구종
 one_liner: 느리게 크게 떨어지는 변화구예요.
-easy: '커브는 공이 위에서 아래로 크게 휘며 떨어지는 변화구예요. 직구보다 훨씬 느려서 타자의 타이밍을 빼앗는 데 써요.
-
-  '
+easy: 커브는 다른 공보다 움직임이 크고 속도가 느린 변화구예요. 위에서 아래로 곧장 떨어지는 커브도 있고, 옆으로 크게 휘는 커브도 있어요. 직구보다 훨씬 느려서 타자의 타이밍을 빼앗는 데 써요.
 example: '빠른 직구 다음에 느린 커브가 들어와 타자가 그대로 지켜봤고 스트라이크가 됐어요.
 
   '
 source:
 - name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Curveball
+  url: https://www.mlb.com/glossary/pitch-types/curveball
 related:
 - term.slider
 - term.changeup
@@ -24,3 +25,5 @@ aliases:
 - 파워 커브
 review_status: draft
 reviewer: ''
+image: images/pitch/term.curveball.anim.svg
+image_static: images/pitch/term.curveball.svg

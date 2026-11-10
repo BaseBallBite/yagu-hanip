@@ -1,0 +1,30 @@
+id: term.splitter
+kind: term
+title: 스플리터
+category: 투구·구종
+one_liner: 직구처럼 던지지만 타자 앞에서 아래로 뚝 떨어지는 공이에요.
+easy: 스플리터는 직구와 같은 힘으로 던지지만 타자 앞에서 아래로 급하게 떨어지는 느린 공이에요. 체인지업보다 약간 빠른 정도예요. 포크볼에서 나온 공이고, 포크볼보다 얕게 쥐어서 손목을 꺾지 않아도 던질 수 있어요.
+example: 직구처럼 날아오던 공이 스플리터라서 타자 앞에서 떨어졌고 타자가 헛스윙했어요.
+more:
+- 중계에서는 스플리터와 포크볼을 섞어 부르기도 해요. MLB 용어집은 둘을 따로 구분해요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Splitter
+  url: https://www.mlb.com/glossary/pitch-types/splitter
+related:
+- term.forkball
+- term.changeup
+- term.fastball
+- term.pitch_types
+- term.strikeout
+event_types: []
+aliases:
+- 스플리터
+- 스플리터 패스트볼
+- 스플릿 핑거 패스트볼
+- 스플릿핑거
+review_status: draft
+reviewer: ''
+image: images/pitch/term.splitter.anim.svg
+image_static: images/pitch/term.splitter.svg

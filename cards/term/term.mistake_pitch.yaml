@@ -1,0 +1,21 @@
+id: term.mistake_pitch
+kind: term
+title: 실투
+category: 투구·구종
+one_liner: 투수가 노린 곳을 벗어나 타자가 치기 좋게 들어간 공이에요.
+easy: 실투는 투수가 던지려던 코스에 못 넣어서 존 한가운데로 몰리거나 밋밋하게 들어간 공이에요. 타자가 치기 쉬워서 안타나 홈런으로 이어지는 경우가 많아요. 변화구가 덜 꺾이고 높게 들어올 때도 실투라고 해요.
+example: 바깥쪽으로 던지려던 슬라이더가 가운데로 몰려 실투가 됐고, 타자가 놓치지 않고 담장을 넘겼어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 정의 없음
+related:
+- term.pitch_location
+- term.lure_pitch
+- term.home_run
+event_types: []
+aliases:
+- 실투
+- 몰린 공
+- 한가운데 몰린 공
+review_status: draft
+reviewer: ''

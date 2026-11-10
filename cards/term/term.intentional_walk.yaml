@@ -1,0 +1,25 @@
+id: term.intentional_walk
+kind: term
+title: 고의4구
+category: 기록·통계
+one_liner: 수비 팀이 일부러 타자를 1루에 보내는 볼넷이에요.
+easy: 고의4구는 수비 팀이 타자를 상대하지 않으려고 일부러 1루에 보내는 볼넷이에요. 투수가 흔들려서 내준 볼넷과 달리 덕아웃에서 정한 작전이에요. KBO에서는 감독이 심판에게 고의4구 의사를 전하면 공을 던지지 않아도 볼넷이 돼요(자동 고의4구). 기록에서는 마운드에 있던 투수의 고의4구로 따로 세요.
+example: 1루가 비어 있는 9회 2사에서 수비 팀이 고의4구로 강타자를 1루에 보냈어요. 감독이 심판에게 의사를 전해서 공은 한 개도 던지지 않았어요.
+source:
+- name: 공식야구규칙 2026
+  ref: 9.14(c)
+  note: 감독이 고의4구 의사를 전하면 투구 없이도 고의4구로 기록
+- name: KBO 리그 규정 2026
+  ref: 규칙위원회 합의(2018.3.5)
+  note: 자동 고의4구
+related:
+- rule.base_on_balls
+- term.walks_hbp
+- term.manager
+event_types: []
+aliases:
+- 고의4구
+- 고의사구
+- 자동 고의4구
+review_status: draft
+reviewer: ''
