@@ -13,3 +13,8 @@ ai/explain/cache/
 ai/explain/logs/
 ai/explain/outputs/
 *.webm
+
+ai/highlight/frames/
+ai/highlight/*.mp4
+ai/highlight/*.webm
+ai/highlight/readings*.json
