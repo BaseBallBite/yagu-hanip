@@ -3,23 +3,25 @@ kind: term
 title: 체인지업
 category: 투구·구종
 one_liner: 직구처럼 던지지만 느리게 오는 변화구예요.
-easy: '체인지업은 직구와 같은 팔 동작으로 던지지만 공이 더 느리게 오고 살짝 떨어져요. 타자가 직구인 줄 알고 일찍 휘두르게 만드는 공이에요.
-
-  '
+easy: 체인지업은 직구와 같은 팔 동작으로 던지지만 훨씬 느리고, 던지는 팔 쪽으로 살짝 움직이며 떨어져요. 타자가 직구인 줄 알고 일찍 휘두르게 만드는 공이에요.
 example: '타자가 직구 타이밍으로 휘둘렀지만 체인지업이라 공이 늦게 와서 헛스윙했어요.
 
   '
 source:
 - name: 팀 작성(일반 야구 용어)
+- name: MLB.com Glossary - Changeup
+  url: https://www.mlb.com/glossary/pitch-types/changeup
 related:
 - term.fastball
 - term.forkball
 - term.curveball
-- term.palmball
 - term.screwball
+- term.eephus
 event_types: []
 aliases:
 - 체인지 업
 - 서클체인지업
 review_status: draft
 reviewer: ''
+image: images/pitch/term.changeup.anim.svg
+image_static: images/pitch/term.changeup.svg

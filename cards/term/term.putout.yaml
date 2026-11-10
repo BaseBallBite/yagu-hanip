@@ -14,7 +14,6 @@ related:
 - term.catcher
 event_types: []
 aliases:
-- 자살
 - 아웃 실행
 review_status: draft
 reviewer: ''

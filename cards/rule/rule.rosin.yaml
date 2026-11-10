@@ -1,0 +1,21 @@
+id: rule.rosin
+kind: rule
+title: 로진 사용 제한
+category: 수비 규칙
+one_liner: 투수가 로진을 과하게 쓰거나 몸에 묻히면 제재를 받아요.
+easy: 로진은 투수가 손이 미끄러지지 않게 쓰는 가루예요. 투수는 로진을 너무 많이 묻히거나 팔, 모자, 바지 같은 다른 곳에 묻히면 안 돼요. 로진을 집어 들고 털어내는 행동도 안 돼요. 어기면 첫 번째는 경고이고, 두 번째부터는 볼이 선언돼요.
+example: 투수가 모자에 로진을 묻히다가 두 번째 경고를 받아 볼이 선언됐어요.
+when:
+  forbidden: 과다 사용, 팔·모자·바지 등에 묻히기, 집어 들고 털어내기
+  penalty: 첫 번째 경고, 두 번째부터 볼
+source:
+- name: KBO 리그 규정 2026
+  ref: 경기의 스피드업 4. 투수 ⑥
+related:
+- term.pitcher
+- term.ball
+event_types: []
+aliases:
+- 로진
+review_status: draft
+reviewer: ''

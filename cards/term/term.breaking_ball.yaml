@@ -9,6 +9,7 @@ source:
 - name: 팀 작성(일반 야구 용어)
   note: 공식야구규칙에 구종 정의 없음
 related:
+- term.pitch_types
 - term.fastball
 - term.slider
 - term.curveball
@@ -17,6 +18,5 @@ aliases:
 - 브레이킹볼
 - 브레이킹 볼
 - 변화구
-- 구종
 review_status: draft
 reviewer: ''
