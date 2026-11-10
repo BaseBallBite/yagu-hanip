@@ -1,27 +1,112 @@
+
 @import "tailwindcss";
 
+/* 기본 테마: 야구한입 보라색 */
 :root {
-  --brand-primary: #4B1E8A;
-  --brand-primary-dark: #2F1259;
-  --brand-accent: #C9A45C;
-  --brand-tint: #F2EDFA;
+  --team-primary: #4B1E8A;
+  --team-dark: #2F1259;
+  --team-accent: #C9A45C;
+
+  --brand-primary: var(--team-primary);
+  --brand-primary-dark: var(--team-dark);
+  --brand-accent: var(--team-accent);
+  --brand-tint: color-mix(in srgb, var(--team-primary) 9%, white);
   --brand-text: #1A1426;
 }
 
-/* 야구한입 브랜드 보라 팔레트 */
-@theme {
-  --color-purple-50: #F6F2FB;
-  --color-purple-100: #EFE7F8;
-  --color-purple-200: #DDCFF0;
-  --color-purple-300: #C2A9E2;
-  --color-purple-400: #9A73CC;
-  --color-purple-500: #6F3FAA;
-  --color-purple-600: #4B1E8A;
-  --color-purple-700: #3B176E;
-  --color-purple-800: #2F1259;
-  --color-purple-900: #24103F;
+/* 10개 구단별 UI 테마 */
+
+/* KIA: 레드 + 차콜 */
+:root[data-team="kia"] {
+  --team-primary: #C8102E;
+  --team-dark: #921128;
+  --team-accent: #262626;
 }
 
+/* 삼성: 로열 블루 */
+:root[data-team="samsung"] {
+  --team-primary: #1261B1;
+  --team-dark: #08447E;
+  --team-accent: #A9BFD5;
+}
+
+/* LG: 와인 레드 + 블랙 */
+:root[data-team="lg"] {
+  --team-primary: #A50034;
+  --team-dark: #730025;
+  --team-accent: #27272A;
+}
+
+/* 두산: 딥 네이비 */
+:root[data-team="doosan"] {
+  --team-primary: #142F57;
+  --team-dark: #0C213C;
+  --team-accent: #C32639;
+}
+
+/* KT: 차콜 블랙 */
+:root[data-team="kt"] {
+  --team-primary: #28282B;
+  --team-dark: #141416;
+  --team-accent: #D51C35;
+}
+
+/* SSG: 레드 + 골드 */
+:root[data-team="ssg"] {
+  --team-primary: #D82332;
+  --team-dark: #A51727;
+  --team-accent: #C9A052;
+}
+
+/* 롯데: 네이비 블루 */
+:root[data-team="lotte"] {
+  --team-primary: #002F6C;
+  --team-dark: #001C43;
+  --team-accent: #D71939;
+}
+
+/* 한화: 오렌지 + 블랙 */
+:root[data-team="hanwha"] {
+  --team-primary: #C94B0D;
+  --team-dark: #953509;
+  --team-accent: #F37321;
+}
+
+/* NC: 블루 + 골드 */
+:root[data-team="nc"] {
+  --team-primary: #155B91;
+  --team-dark: #103F67;
+  --team-accent: #C9A052;
+}
+
+/* 키움: 버건디 */
+:root[data-team="kiwoom"] {
+  --team-primary: #820024;
+  --team-dark: #57001A;
+  --team-accent: #D5A0AC;
+}
+
+/*
+ * Tailwind 기존 purple-* 클래스를
+ * 현재 선택한 구단의 색상으로 자동 변환
+ *
+ * 예:
+ * bg-purple-600   → 구단 대표색 배경
+ * text-purple-700 → 구단별 진한 글씨
+ * border-purple-200 → 구단별 연한 테두리
+ */
+@theme inline {
+  --color-purple-50: color-mix(in srgb, var(--team-primary) 5%, white);
+  --color-purple-100: color-mix(in srgb, var(--team-primary) 11%, white);
+  --color-purple-200: color-mix(in srgb, var(--team-primary) 22%, white);
+  --color-purple-300: color-mix(in srgb, var(--team-primary) 38%, white);
+  --color-purple-400: color-mix(in srgb, var(--team-primary) 58%, white);
+  --color-purple-500: color-mix(in srgb, var(--team-primary) 80%, white);
+  --color-purple-600: var(--team-primary);
+  --color-purple-700: var(--team-dark);
+  --color-purple-800: color-mix(in srgb, var(--team-dark) 86%, black);
+  --color-purple-900: color-mix(in srgb, var(--team-dark) 70%, black);
+}
 
 @layer base {
   body {
@@ -31,6 +116,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* 기존 애니메이션 유지 */
 
 @keyframes pitchFlight {
   0% {

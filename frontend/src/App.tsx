@@ -37,22 +37,86 @@ export default function App() {
       }
     }
 
-    return '/';
+   return localStorage.getItem('yagu_onboarding_completed') === 'true'
+  ? '/game'
+  : '/';
   });
 
+  const [onboardingCompleted, setOnboardingCompleted] = useState<boolean>(
+  () => localStorage.getItem('yagu_onboarding_completed') === 'true'
+);
   const [isWhyActive, setIsWhyActive] = useState<boolean>(true);
+  
+  // 선택한 응원팀에 따라 전체 UI 테마 변경
+  useEffect(() => {
+    const applyTeamTheme = () => {
+      const favoriteTeam = localStorage.getItem('favoriteTeam');
 
-  const navigate = (path: string) => {
-    setCurrentPath(path);
+      // TeamSelectPage.tsx에서 저장하는 팀 이름과 연결
+      const teamMap: Record<string, string> = {
+        KIA: 'kia',
+        삼성: 'samsung',
+        LG: 'lg',
+        두산: 'doosan',
+        KT: 'kt',
+        SSG: 'ssg',
+        롯데: 'lotte',
+        한화: 'hanwha',
+        NC: 'nc',
+        키움: 'kiwoom',
+      };
 
-    if (typeof window !== 'undefined') {
-      window.history.pushState({}, '', path);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
-  };
+      const teamId = favoriteTeam
+        ? teamMap[favoriteTeam] ?? 'none'
+        : 'none';
+
+      // 응원팀 없음: 기본 보라색
+      if (teamId === 'none') {
+        document.documentElement.removeAttribute('data-team');
+      } else {
+        document.documentElement.setAttribute('data-team', teamId);
+      }
+    };
+
+    applyTeamTheme();
+
+    // 다른 탭에서 설정이 변경된 경우에도 반영
+    window.addEventListener('storage', applyTeamTheme);
+
+    return () => {
+      window.removeEventListener('storage', applyTeamTheme);
+    };
+  }, [currentPath]);
+
+
+ const navigate = (path: string) => {
+  if (path === '/' && localStorage.getItem('yagu_onboarding_completed') === 'true') {
+  path = '/game';
+}
+  // 온보딩을 마치고 경기 화면으로 이동하면 완료 상태 저장
+  const isOnboardingPage = [
+    '/onboarding',
+    '/onboarding/2',
+    '/team-select',
+  ].includes(currentPath);
+
+  if (isOnboardingPage && path === '/game') {
+    localStorage.setItem('yagu_onboarding_completed', 'true');
+    setOnboardingCompleted(true);
+  }
+
+  setCurrentPath(path);
+
+  window.history.pushState({}, '', path);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+const handleStart = () => {
+  navigate(onboardingCompleted ? '/game' : '/onboarding');
+};
 
   useEffect(() => {
     const handlePopState = () => {
@@ -191,7 +255,7 @@ export default function App() {
             {currentPath === '/' ? (
               <button
                 type="button"
-                onClick={() => navigate('/onboarding')}
+                onClick={handleStart}
                 className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm transition-all duration-200 shadow-sm shadow-purple-600/20 hover:shadow hover:shadow-purple-600/30 active:scale-95 cursor-pointer"
               >
                 시작하기
@@ -348,7 +412,7 @@ export default function App() {
                 <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4">
                   <button
                     type="button"
-                    onClick={() => navigate('/onboarding')}
+                    onClick={handleStart}
                     className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-purple-600 hover:bg-purple-700 active:bg-purple-800 text-white font-bold text-lg shadow-lg shadow-purple-600/25 hover:shadow-xl hover:shadow-purple-600/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3 group cursor-pointer"
                   >
                     <span>시작하기</span>
