@@ -30,6 +30,17 @@
       "pitch_type_raw": "체인지업",
       "speed_reported": 136.0,
       "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80100596 (2026-11-11 확인)"
+    },
+    {
+      "game_id": "20261003WOHH02026",
+      "play_id": "20261003WOHH02026:play:7795e46af2b0df8fbd33f4304709cc894544348232bca1d41c10d5421e713ccd",
+      "note": "3회말 정은원 2구. 네이버는 구종 없음·151km/h. 같은 3회말의 다른 투구 18개는 두 출처가 구종·구속·결과까지 모두 같아서, 이 줄만 네이버 값이 깨진 것으로 보고 다음 스포츠 값으로 바꾼다 (151은 타구 속도일 가능성)",
+      "override": true,
+      "result_text": "타격",
+      "pitch_type": "sweeper",
+      "pitch_type_raw": "스위퍼",
+      "speed_reported": 124.0,
+      "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80108829 (2026-11-11 확인)"
     }
   ]
 }

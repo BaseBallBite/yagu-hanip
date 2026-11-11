@@ -113,10 +113,18 @@ def _supplements(path: Path = SUPPLEMENT_PATH) -> dict[str, dict]:
 
 
 def _apply_supplement(p: dict) -> dict:
-    """원본에 빈 칸만 보완 값으로 채운다. 원본 값이 있으면 덮어쓰지 않는다."""
+    """보완 값을 덧입힌다.
+    - 기본: 원본의 빈 칸만 채운다.
+    - override: true 인 항목은 원본 값을 바꾼다 (원본 값은 supplement_replaced 에 남김).
+    결과(볼/스트라이크/타격)가 원본과 다르면 같은 공이라고 볼 수 없으니 쓰지 않는다.
+    """
     s = _supplements().get(p["play_id"])
     if not s or s.get("result_text", p.get("result_text")) != p.get("result_text"):
-        return p  # 결과가 다르면 같은 공이라고 볼 수 없으니 쓰지 않는다
+        return p
+    if s.get("override"):
+        changed = {k: s[k] for k in SUPPLEMENT_FIELDS if s.get(k) is not None and p.get(k) != s[k]}
+        replaced = {k: p.get(k) for k in changed}
+        return p | changed | {"supplement_source": s["source"], "supplement_replaced": replaced}
     filled = {k: s[k] for k in SUPPLEMENT_FIELDS if s.get(k) is not None and p.get(k) in (None, "")}
     return p | filled | {"supplement_source": s["source"]} if filled else p
 
@@ -224,7 +232,17 @@ def _pitch_text(p: dict) -> str:
              f"결과 {result}"]
     if p.get("supplement_source"):
         where = p["supplement_source"].split(" http")[0]
-        parts.append(f"(네이버 원본 누락, {where}로 보완)")
+        old = p.get("supplement_replaced")
+        if old is not None:
+            was = []
+            if "pitch_type_raw" in old:
+                was.append(f"구종 {old['pitch_type_raw'] or '없음'}")
+            if "speed_reported" in old:
+                was.append(f"{old['speed_reported']:g}km/h" if isinstance(old["speed_reported"], (int, float))
+                           else "구속 없음")
+            parts.append(f"(네이버 값 {'·'.join(was)}를 {where} 값으로 수정)")
+        else:
+            parts.append(f"(네이버 원본 누락, {where}로 보완)")
     return " ".join(parts)
 
 
