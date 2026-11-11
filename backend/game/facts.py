@@ -14,6 +14,7 @@ F 형식은 ai/explain 의 facts 입력과 같다: [{"id": "F1", "text": "..."}]
   B1 v2 정규화: data/raw/b1_v2/B1_corrected_v2/data/b1_normalized_v11/games/<id>/normalized_game.json
   B2 상태    : data/raw/b3_v2/b2_state/games/<id>.json
   B3 투구    : data/raw/b3_v2/games/<id>.json
+  보완 값    : data/supplements/pitch_supplements.json (네이버 원본 누락분, 출처 기록. 빈 칸만 채움)
 
 사용 예:
     .venv/bin/python -m backend.game.facts 20260328HTSK02026 11
@@ -23,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
@@ -33,6 +35,9 @@ ROOT = Path(__file__).resolve().parents[2]
 B1_DIR = ROOT / "data/raw/b1_v2/B1_corrected_v2/data/b1_normalized_v11/games"
 B2_DIR = ROOT / "data/raw/b3_v2/b2_state/games"
 B3_DIR = ROOT / "data/raw/b3_v2/games"
+# 네이버 원본에 없는 투구 정보를 다른 출처로 보완한 값 (git에 있음, 항목마다 출처 기록)
+SUPPLEMENT_PATH = ROOT / "data/supplements/pitch_supplements.json"
+SUPPLEMENT_FIELDS = ("pitch_type", "pitch_type_raw", "speed_reported")
 
 NO_RECORD = "기록 없음"
 
@@ -100,6 +105,22 @@ class Game:
     names: dict[str, str] = field(default_factory=dict)     # player_id → 이름 (같은 경기 안)
 
 
+@lru_cache(maxsize=1)
+def _supplements(path: Path = SUPPLEMENT_PATH) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    return {s["play_id"]: s for s in json.loads(path.read_text(encoding="utf-8"))["pitches"]}
+
+
+def _apply_supplement(p: dict) -> dict:
+    """원본에 빈 칸만 보완 값으로 채운다. 원본 값이 있으면 덮어쓰지 않는다."""
+    s = _supplements().get(p["play_id"])
+    if not s or s.get("result_text", p.get("result_text")) != p.get("result_text"):
+        return p  # 결과가 다르면 같은 공이라고 볼 수 없으니 쓰지 않는다
+    filled = {k: s[k] for k in SUPPLEMENT_FIELDS if s.get(k) is not None and p.get(k) in (None, "")}
+    return p | filled | {"supplement_source": s["source"]} if filled else p
+
+
 @lru_cache(maxsize=32)
 def load_game(game_id: str, b1_dir: Path = B1_DIR, b2_dir: Path = B2_DIR,
               b3_dir: Path = B3_DIR) -> Game:
@@ -109,7 +130,7 @@ def load_game(game_id: str, b1_dir: Path = B1_DIR, b2_dir: Path = B2_DIR,
     pitches = {}
     if b3_path.exists():
         b3 = json.loads(b3_path.read_text(encoding="utf-8"))
-        pitches = {p["play_id"]: p for p in b3.get("pitches", [])}
+        pitches = {p["play_id"]: _apply_supplement(p) for p in b3.get("pitches", [])}
     summary = b2.get("summary", {})
     # 원본 일부 줄은 선수 ID만 있고 이름이 비어 있다. 같은 경기에서 같은 ID의 이름을 쓴다.
     names = {}
@@ -194,14 +215,49 @@ def _pitch_text(p: dict) -> str:
     if p.get("is_physical_pitch") is False or "피치클락" in result:
         return f"{result} (실제 투구 아님)"
     num = f"{p.get('pitch_number')}구" if p.get("pitch_number") else "투구"
-    if p.get("pitch_record_kind") == "manual_reconstructed_pitch":
-        return f"{num} 결과 {result} (원본 누락으로 수동 복원, 구종·구속 원본 없음)"
-    parts = [num]
-    parts.append(p.get("pitch_type_raw") or f"구종 {NO_RECORD}")
     speed = p.get("speed_reported", p.get("speed_value"))
-    parts.append(f"{speed:g}km/h" if isinstance(speed, (int, float)) else f"구속 {NO_RECORD}")
-    parts.append(f"결과 {result}")
+    manual = p.get("pitch_record_kind") == "manual_reconstructed_pitch"
+    if manual and not p.get("pitch_type_raw") and speed is None:
+        return f"{num} 결과 {result} (원본 누락으로 수동 복원, 구종·구속 원본 없음)"
+    parts = [num, p.get("pitch_type_raw") or f"구종 {NO_RECORD}",
+             f"{speed:g}km/h" if isinstance(speed, (int, float)) else f"구속 {NO_RECORD}",
+             f"결과 {result}"]
+    if p.get("supplement_source"):
+        where = p["supplement_source"].split(" http")[0]
+        parts.append(f"(네이버 원본 누락, {where}로 보완)")
     return " ".join(parts)
+
+
+def _players(game: Game, idx: int) -> tuple[str | None, str | None]:
+    """idx 줄의 타자·투수 이름. 원본 칸이 비어 있으면 같은 기록 안에서 찾는다.
+    - 타자: 같은 타석의 'N번타자 이름' 줄, 또는 결과 줄 '이름 : …'
+    - 투수: 같은 반이닝에서 뒤 줄의 투수 (그 사이에 투수 교체가 없을 때만)
+    """
+    rows = game.rows
+    row = rows[idx]
+    play = game.plays.get(row["play_id"], {})
+    batter, pitcher = _name(game, play.get("batter")), _name(game, play.get("pitcher"))
+    same_half = lambda r: (r.get("inning"), r.get("inning_half")) == (row.get("inning"), row.get("inning_half"))
+    if not batter:
+        if row["event_type"] in BATTER_RESULTS and " : " in (row.get("description") or ""):
+            batter = row["description"].split(" : ")[0].strip()
+        else:
+            for r in reversed(rows[:idx + 1]):
+                if not same_half(r) or r["event_type"] == "inning_start":
+                    break
+                m = re.match(r"\d+번타자 (\S+)", r.get("description") or "")
+                if r["event_type"] == "batter_announcement" and m:
+                    batter = m.group(1)
+                    break
+    if not pitcher:
+        for r in rows[idx + 1:]:
+            if not same_half(r) or (r["event_type"] == "substitution"
+                                    and (r.get("description") or "").startswith("투수")):
+                break
+            pitcher = _name(game, game.plays.get(r["play_id"], {}).get("pitcher"))
+            if pitcher:
+                break
+    return batter, pitcher
 
 
 def _runs(before: dict | None, after: dict | None) -> tuple[int, int] | None:
@@ -274,7 +330,7 @@ def build_facts(game_id: str, seq: int, game: Game | None = None) -> dict:
 
     lines: list[str] = [_situation(game, row, before)]
 
-    batter, pitcher = _name(game, play.get("batter")), _name(game, play.get("pitcher"))
+    batter, pitcher = _players(game, idx)
     if et in BATTER_RESULTS or et == "pitch":
         lines.append(f"타자 {batter or NO_RECORD}, 투수 {pitcher or NO_RECORD}")
 

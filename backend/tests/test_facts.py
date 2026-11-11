@@ -58,9 +58,16 @@ class FactsTest(unittest.TestCase):
         # 피치클락 위반은 공을 던진 게 아니므로 '기록 없음'이 아니라 '실제 투구 아님'
         clock = build_facts("20260328KTLG02026", 474)
         self.assertIn("피치클락 투수위반 볼 (실제 투구 아님)", texts(clock))
-        # 4/15 키움–KIA 1회초 이주형 타석: 원본 누락, B3에서 수동 복원한 투구
+        # 4/15 키움–KIA 1회초 이주형 타석: 네이버 원본 누락 → B1 v2 수동 복원 행.
+        # 구종·구속은 data/supplements/pitch_supplements.json (다음 스포츠 중계)로 보완,
+        # 타자·투수 이름은 같은 반이닝 기록에서 채운다.
         restored = texts(build_facts("20260415WOHT02026", 3))
-        self.assertIn("1구 결과 스트라이크 (원본 누락으로 수동 복원, 구종·구속 원본 없음)", restored)
+        self.assertIn("타자 이주형, 투수 김태형", restored)
+        self.assertIn("1구 직구 150km/h 결과 스트라이크 (네이버 원본 누락, 다음 스포츠 문자중계로 보완)",
+                      restored)
+        single = texts(build_facts("20260415WOHT02026", 6))
+        self.assertIn("기록: 이주형 : 좌익수 앞 1루타", single)
+        self.assertFalse(any("기록 없음" in t for t in single))
 
     def test_substitution_says_reason_missing(self):
         game = load_game(GAME)
