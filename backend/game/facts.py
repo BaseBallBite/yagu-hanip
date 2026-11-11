@@ -188,11 +188,19 @@ def _name(game: Game, person: dict | None) -> str | None:
 
 
 def _pitch_text(p: dict) -> str:
-    parts = [f"{p.get('pitch_number')}구" if p.get("pitch_number") else "투구"]
+    result = p.get("result_text") or NO_RECORD
+    # 피치클락 위반·파울 플라이 포구 실책은 공을 던진 게 아니다 (B3 is_physical_pitch=False).
+    # 구종·구속이 "빠진" 게 아니므로 기록 없음 대신 실제 투구가 아니라고 적는다.
+    if p.get("is_physical_pitch") is False or "피치클락" in result:
+        return f"{result} (실제 투구 아님)"
+    num = f"{p.get('pitch_number')}구" if p.get("pitch_number") else "투구"
+    if p.get("pitch_record_kind") == "manual_reconstructed_pitch":
+        return f"{num} 결과 {result} (원본 누락으로 수동 복원, 구종·구속 원본 없음)"
+    parts = [num]
     parts.append(p.get("pitch_type_raw") or f"구종 {NO_RECORD}")
     speed = p.get("speed_reported", p.get("speed_value"))
     parts.append(f"{speed:g}km/h" if isinstance(speed, (int, float)) else f"구속 {NO_RECORD}")
-    parts.append(f"결과 {p.get('result_text') or NO_RECORD}")
+    parts.append(f"결과 {result}")
     return " ".join(parts)
 
 

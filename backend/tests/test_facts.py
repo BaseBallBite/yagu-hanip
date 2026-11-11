@@ -54,6 +54,14 @@ class FactsTest(unittest.TestCase):
         self.assertIn("타자 김호령, 투수 화이트", t)
         self.assertIn("1구 직구 151km/h 결과 볼", t)
 
+    def test_non_pitch_and_restored_pitch(self):
+        # 피치클락 위반은 공을 던진 게 아니므로 '기록 없음'이 아니라 '실제 투구 아님'
+        clock = build_facts("20260328KTLG02026", 474)
+        self.assertIn("피치클락 투수위반 볼 (실제 투구 아님)", texts(clock))
+        # 4/15 키움–KIA 1회초 이주형 타석: 원본 누락, B3에서 수동 복원한 투구
+        restored = texts(build_facts("20260415WOHT02026", 3))
+        self.assertIn("1구 결과 스트라이크 (원본 누락으로 수동 복원, 구종·구속 원본 없음)", restored)
+
     def test_substitution_says_reason_missing(self):
         game = load_game(GAME)
         seq = next(i for i, row in enumerate(game.rows, 1) if row["event_type"] == "substitution")
