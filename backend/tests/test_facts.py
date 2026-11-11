@@ -65,6 +65,10 @@ class FactsTest(unittest.TestCase):
         self.assertIn("타자 이주형, 투수 김태형", restored)
         self.assertIn("1구 직구 150km/h 결과 스트라이크 (네이버 원본 누락, 다음 스포츠 문자중계로 보완)",
                       restored)
+        # 10/3 키움–한화 3회말 정은원 2구: 네이버 값이 깨져 있어 다음 스포츠 값으로 수정 (override)
+        fixed = texts(build_facts("20261003WOHH02026", 162))
+        self.assertIn("2구 스위퍼 124km/h 결과 타격 (네이버 값 구종 없음·151km/h를 다음 스포츠 문자중계 값으로 수정)",
+                      fixed)
         single = texts(build_facts("20260415WOHT02026", 6))
         self.assertIn("기록: 이주형 : 좌익수 앞 1루타", single)
         self.assertFalse(any("기록 없음" in t for t in single))
