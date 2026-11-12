@@ -1,0 +1,46 @@
+{
+  "about": "네이버 원본에 없는 투구 정보를 다른 출처에서 확인해 보완한 값. B1·B3 원본 파일은 고치지 않고 facts.py가 이 파일을 덧입혀 쓴다. 각 항목에 출처를 적는다.",
+  "pitches": [
+    {
+      "game_id": "20260415WOHT02026",
+      "play_id": "20260415WOHT02026:play:7346952e62f2623c9d02ccf05f44a46364b00047a81d8650f3a23154a35151dc",
+      "note": "1회초 이주형 1구 (B1 v2 수동 복원 행)",
+      "result_text": "스트라이크",
+      "pitch_type": "fastball",
+      "pitch_type_raw": "직구",
+      "speed_reported": 150.0,
+      "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80100596 (2026-11-11 확인)"
+    },
+    {
+      "game_id": "20260415WOHT02026",
+      "play_id": "20260415WOHT02026:play:9cdc1739db392cd91561ffa03c9332123d9e80c85ccc384a10e07d64f0684817",
+      "note": "1회초 이주형 2구 (B1 v2 수동 복원 행)",
+      "result_text": "볼",
+      "pitch_type": "fastball",
+      "pitch_type_raw": "직구",
+      "speed_reported": 151.0,
+      "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80100596 (2026-11-11 확인)"
+    },
+    {
+      "game_id": "20260415WOHT02026",
+      "play_id": "20260415WOHT02026:play:8a3fe2ed1e033a27bd1607270da7a145422dd9ca2260c47004c318845746788d",
+      "note": "1회초 이주형 3구 (B1 v2 수동 복원 행)",
+      "result_text": "타격",
+      "pitch_type": "changeup",
+      "pitch_type_raw": "체인지업",
+      "speed_reported": 136.0,
+      "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80100596 (2026-11-11 확인)"
+    },
+    {
+      "game_id": "20261003WOHH02026",
+      "play_id": "20261003WOHH02026:play:7795e46af2b0df8fbd33f4304709cc894544348232bca1d41c10d5421e713ccd",
+      "note": "3회말 정은원 2구. 네이버는 구종 없음·151km/h. 같은 3회말의 다른 투구 18개는 두 출처가 구종·구속·결과까지 모두 같아서, 이 줄만 네이버 값이 깨진 것으로 보고 다음 스포츠 값으로 바꾼다 (151은 타구 속도일 가능성)",
+      "override": true,
+      "result_text": "타격",
+      "pitch_type": "sweeper",
+      "pitch_type_raw": "스위퍼",
+      "speed_reported": 124.0,
+      "source": "다음 스포츠 문자중계 https://sports.daum.net/match/80108829 (2026-11-11 확인)"
+    }
+  ]
+}
