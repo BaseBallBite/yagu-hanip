@@ -12,6 +12,8 @@
 | `gemini_client.py` | 캐시 → 속도 제한 → 호출 → 재시도 → `logs/usage.jsonl` 기록 |
 | `verifier.py` | B3 검증기: 근거 표시 / ID 존재 / 숫자 / 선수 이름 대조 |
 | `generate.py` | 실행 스크립트 → `outputs/<모델>_<프롬프트버전>/generations.jsonl` |
+| `build_testset.py` | BE 상태 복원 결과 + picks.csv → 테스트셋 (raw_relay·facts·players 자동) |
+| `check_testset.py` | 테스트셋 형식 검사 (무료) |
 | `estimate_cost.py` | 사용량 리포트 + 전체 실험 비용 + 유료 전환 판단 |
 | `data/` | 입력 형식 예시 (테스트셋, 카드) |
 
@@ -34,6 +36,7 @@ pip install -r requirements.txt
 export GEMINI_API_KEY=...          # Colab이면 userdata에서 읽어서 os.environ에 넣기
 
 python generate.py --dry-run       # API 안 쓰고 파이프라인 확인
+python build_testset.py build --restored ../../data/raw/b2_state_v2_all --picks data/picks.csv   # 테스트셋 반자동 생성
 python check_testset.py data/testset.jsonl --cards ../../cards   # 테스트셋 형식 검사 (무료)
 python generate.py --testset data/testset.jsonl --cards ../../cards
 python generate.py --limit 3       # 3문항만 실제 호출 → 실측 토큰 확보
