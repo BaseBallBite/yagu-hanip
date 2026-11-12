@@ -1,0 +1,2348 @@
+{
+  "review_version": "b1-review-1",
+  "required_schema_version": "b1-row-v1.1",
+  "scope": "eight_flagged_games_only",
+  "changes_normalized_data": false,
+  "games": [
+    {
+      "game_id": "20260404NCHT02026",
+      "source_text_sha256": "eff54667b6651967c103c8fb60b57aa6c197489b3303d486478f2bf99e507249",
+      "source_pitch_sha256": "0c2732a34e0b7f26e0b826f196f3fcfeea222551d1aff826f3de4fc98147609f",
+      "expected_text_rows": 594,
+      "expected_pitch_rows": 307,
+      "timeline_decision": "REPORTED_COLLISION_PATTERN_REVIEWED",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "승리투수 안내와 구분선이 같은 순번을 사용. 서로 다른 안내 행으로 보존.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260404NCHT02026:play:fa371be2610fdd7a9fdc2abeeb730e3cc6b72a7e1f4706e858768f168397689b",
+          "source_ref": "20260404NCHT02026/i09/b1/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260404NCHT02026:play:a162959fd46564fd0723324d715fe480f3c426215059e020022d9020d393a41a",
+          "source_ref": "20260404NCHT02026/i09/b1/t1",
+          "description": "승리투수: 테일러"
+        },
+        {
+          "play_id": "20260404NCHT02026:play:2f8b5bd0963e788de737f123c2ca94868ad0b73f500c82ae84294b3ecfe70064",
+          "source_ref": "20260404NCHT02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260404NCHT02026:play:66782b24b63fe3f9bedb2161940aaf06b79beaa14f01681395d012515d13f961",
+          "source_ref": "20260404NCHT02026/i09/b0/t1",
+          "description": "패전투수: 이의리"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260404NCHT02026",
+          "source_seqno": "589",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260404NCHT02026:play:a162959fd46564fd0723324d715fe480f3c426215059e020022d9020d393a41a",
+            "20260404NCHT02026:play:2f8b5bd0963e788de737f123c2ca94868ad0b73f500c82ae84294b3ecfe70064"
+          ],
+          "texts": [
+            "승리투수: 테일러",
+            "====================================="
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260513NCLT02026",
+      "source_text_sha256": "fca9defca02c9ac37c2a034930992689675e1505daabf40ac71988e69182dd7e",
+      "source_pitch_sha256": "396a2b084a06a8d6358eb52208d779e8b023645f28110b92cf371f558852b616",
+      "expected_text_rows": 652,
+      "expected_pitch_rows": 341,
+      "timeline_decision": "HOLD_GAME_FOR_CANONICAL_TIMELINE",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "8회말·9회초 반복 묶음 사이 교체 기록 및 안타/실책 상태가 다름. 최신 묶음이라고 단정해 삭제하지 않음.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260513NCLT02026:play:fa98e391fc00a90947b50be33103464ffea16e80ee92078561ccac28d944d90b",
+          "source_ref": "20260513NCLT02026/i09/b11/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260513NCLT02026:play:42a1f809c8fecb2685b934d507ff12d19bb762ea50cd67399e7581c171ad50f9",
+          "source_ref": "20260513NCLT02026/i09/b11/t1",
+          "description": "승리투수: 비슬리"
+        },
+        {
+          "play_id": "20260513NCLT02026:play:5af9009e5de1b63debafd8b124ee4b30fa6c41acf620d6dd7cd81ad12cde935c",
+          "source_ref": "20260513NCLT02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260513NCLT02026:play:2f9268391681e5c9def566819ea984b6801495a9b91fbddd9553234c74647435",
+          "source_ref": "20260513NCLT02026/i09/b0/t1",
+          "description": "승리투수: 비슬리"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "523",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:0253d69850dca7d08b50ed4d2af3625a5b3ba580a15fe38e7fb600abdd79333c",
+            "20260513NCLT02026:play:b4514e7488041e09426abc106a9183e89a811e7508302d53f09b361b4b6b957e"
+          ],
+          "texts": [
+            "1구 볼",
+            "1구 파울"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "524",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:cf4ce0ad93d0e8dcce92114fc14349ba213e22424af33d78f4efce3db832a7a1",
+            "20260513NCLT02026:play:4775a94dafd2b58701b73a76f442f7259b39d3f7ad72e9fbfd69b8d5c285e1c8"
+          ],
+          "texts": [
+            "2구 스트라이크",
+            "2구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "525",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:f355d8fdcc5849d2e6b74027ba1b8c20e2a66907d8277d373256940c6a3d84d3",
+            "20260513NCLT02026:play:502f99ac60ee1081a5113b6eae710ae3f8fefdbbd13d671b777315ef26b819c0"
+          ],
+          "texts": [
+            "3구 파울",
+            "3구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "526",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:290e3c333cd38d8a09b9b806063d81a7c8ba08e23579b1484acb73d62ff47042",
+            "20260513NCLT02026:play:99bbfed1d8247ea193d92f65c9ea50f1749d282877948487a54761807830c1e5"
+          ],
+          "texts": [
+            "4구 볼",
+            "4구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "527",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:6559ea0e2ccc34f0c695f5c65ec750012e549e6ca1ee80110a081f6740134f68",
+            "20260513NCLT02026:play:0ff0a97dcaf0b99ec90ef76a2d876259fe1ecdedac4f635e68a917d9ab2211e0"
+          ],
+          "texts": [
+            "5구 헛스윙",
+            "5구 파울"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "528",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:ec253a352e2f66622af73f0add10edfe30f6183d088432cbf33adf4ae40f478d",
+            "20260513NCLT02026:play:e8b512e67111b19988e5f32b47a88200e1f5f0c2a559abe670abd840eca33c7d"
+          ],
+          "texts": [
+            "이호준 : 삼진 아웃",
+            "6구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "529",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:125dcba984816f48ec9e67d9441441df6d7a079089f30c345a72b965f34f8230",
+            "20260513NCLT02026:play:d43e5e89a15c06059c019bd9e47b1c2e77ff1641e7370158d79fbf10aec9233e"
+          ],
+          "texts": [
+            "7구 볼",
+            "9회초 NC 공격"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "530",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:323167f3cbcfa0932fecad04430ca123c9e389629a42ac6628d9517b364a7c68",
+            "20260513NCLT02026:play:9b06f4e605d84a6446f40e19f0fb73bb54d1cb0a06481d42c641c721f79a62e0"
+          ],
+          "texts": [
+            "전민재 : 볼넷",
+            "8번타자 안중열"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "531",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:7f4d06e7bd6a91ba01b4937d43f2476fa07ff3aafaf3cff468cc289dc9098738",
+            "20260513NCLT02026:play:b9ac0ecd267b7f77ae6e8cf06eb5f2488d0f436183e22a0c5b24e03f229edc19"
+          ],
+          "texts": [
+            "1루주자 유강남 : 2루까지 진루",
+            "포수 손성빈 : 투수 김원중 (으)로 교체"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "533",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9ae5ee1e68d10cf6708843b88a72d50b74bbdb670e6a048a0f89012c693c8400",
+            "20260513NCLT02026:play:18196e278dd443459c1adff8957493ee301e0537385e920b840bacaf02f19a7a"
+          ],
+          "texts": [
+            "1루주자 전민재 : 대주자 김세민 (으)로 교체",
+            "대주자 김세민 : 유격수(으)로 수비위치 변경"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "535",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:928d0ce62a776e911ff58f558753aafe9a6c7b79030a0ecf64bad2efad8281e1",
+            "20260513NCLT02026:play:53a22dd3ea583889ac95e788c4c3bdaa7ed59b9f292869f172cfda7831f30b09"
+          ],
+          "texts": [
+            "1구 볼",
+            "1루수 고승민 : 1루수 박승욱 (으)로 교체"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "536",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9c6d26dcfd1b80f5f41faaa640f0b7167fb72c8a5f5f5afd90cf25bc6cdb6973",
+            "20260513NCLT02026:play:592939e6769a6b3eb3f94af854bb06a8d991bcf6734b62bd1716d7a97aa1e466"
+          ],
+          "texts": [
+            "2구 스트라이크",
+            "1구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "537",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:586695bc263610c1dbe2030bdd72b6be0ff6ea1c266cbf8165c2ecd36dbd459a",
+            "20260513NCLT02026:play:0433fda261435bef42da685f982475e929fa0b71671efe1c903e2ddb88fc85a5"
+          ],
+          "texts": [
+            "3구 파울",
+            "2구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "538",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:dd92126e9de078bc809d8a3cb6752f790dbc1cc4d6b7f939dda4dc49627aa6e1",
+            "20260513NCLT02026:play:0017a4a50ee10b18d42e7df114e37509c04cff2880d1f63c6e353797e4bb9f50"
+          ],
+          "texts": [
+            "4구 볼",
+            "3구 타격"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "539",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:8ac0807105551c346d51f91bf2cb46f9581068ad69d47669dbad73d9260455c5",
+            "20260513NCLT02026:play:18dd0e56667805af80317698c0b8b7ae28527c369877765f8d2e2da6e55d22ab"
+          ],
+          "texts": [
+            "5구 헛스윙",
+            "안중열 : 유격수 땅볼 아웃 (유격수->1루수 송구아웃)"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "540",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:5af3f9272fb31af02f6ad3377d75a3fee5276d3283dbf08548255f1899dab6d9",
+            "20260513NCLT02026:play:361a7b34a7d7f6e3e0a8286eef6bc28da16e92fce01b4d83970c94ef109f58f4"
+          ],
+          "texts": [
+            "이호준 : 삼진 아웃",
+            "9번타자 박시원"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "541",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:516b349f73e9f6ecd2b8e93f83751d6f4008ab2b258698ccf1a7842f76e499dc",
+            "20260513NCLT02026:play:2107e6691d114ed0e826d9a94c91e13610e001e375165b9d5f44c0b672184756"
+          ],
+          "texts": [
+            "1구 스트라이크",
+            "9회초 NC 공격"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "542",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:b7b70b213d8cdc5c823114090956e8190e060ad1d5b9325bce131dc6ab4e9012",
+            "20260513NCLT02026:play:17fe1a8ab5b64d3baeaec0d13ca292ab262b751934540c4af0f352ed41ceb1bf"
+          ],
+          "texts": [
+            "2구 헛스윙",
+            "8번타자 안중열"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "543",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:394b4c7f6db29326c0b160db111be6f893219df944b471ba0d0fc88f8996b313",
+            "20260513NCLT02026:play:82019f76caf7b4505450c5d818648542fcf85e18e8acfdee84d6239e617a97c0"
+          ],
+          "texts": [
+            "3구 볼",
+            "포수 손성빈 : 투수 김원중 (으)로 교체"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "544",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:2e53eacc4ceb0cf3bcdf0189af3fe86eafe95f9111acd586ab79ffbbf0a644fb",
+            "20260513NCLT02026:play:4368bab11a5958e3d66f3fd4e1bb0dd22c35b68d1a3cb86b57a9bf6e5736e577"
+          ],
+          "texts": [
+            "4구 헛스윙",
+            "대타 유강남 : 포수(으)로 수비위치 변경"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "545",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:3b50ed15c3fa7833b2ace5f6837ce2a3c216a66413cb31cbf93ab7d0747f68e7",
+            "20260513NCLT02026:play:4f69b5d40e21c641bfc4f880ceec7c595f7656f10857cea6874205faa0881a18"
+          ],
+          "texts": [
+            "박시원 : 삼진 아웃",
+            "대주자 김세민 : 유격수(으)로 수비위치 변경"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "547",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:ab26313940be21a9877c94828e5eae2327da90812ffaf82e40ec1885fef57fca",
+            "20260513NCLT02026:play:88ba6b16ab647a3fbf473b308c277b37fa2b7dc570d37b33cad458b328e2c304"
+          ],
+          "texts": [
+            "1구 스트라이크",
+            "1루수 고승민 : 1루수 박승욱 (으)로 교체"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "548",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9fcdc9411746b5124e2665cd3b81a680fff3bbdb5d55db60d1f184c211276ba5",
+            "20260513NCLT02026:play:0afb5c31b3d824836ab2c9aab461819b6e69d13858f10ca9a7499e6fafaa5b67"
+          ],
+          "texts": [
+            "2구 헛스윙",
+            "8번타자 안중열"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "549",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:2641db0c8a03930f5bde6f9883fbf30722f7dae9681c04b4e9a354e2f788bb0b",
+            "20260513NCLT02026:play:6c2de1b25ec9e73ab2b4cebd5b2e5ed5b2b3a988c96e965d8b2e231f798a2b0b"
+          ],
+          "texts": [
+            "3구 볼",
+            "1구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "550",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:1c0180683d256f5d6fcd3410db6ea1ae5a88a441ce7a15f240099ca040d71758",
+            "20260513NCLT02026:play:a17acc2d410b89e4ab84963ef2a57886e7194fd18136739737239b194d1601ce"
+          ],
+          "texts": [
+            "4구 파울",
+            "2구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "551",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:5989eda297cae0d147a27a24483135a934d393706fab5894e31668dfc39d9d80",
+            "20260513NCLT02026:play:ce5f1e571472943d62d4959cd00a709e0367fce36aba2c09bc42b0befda8e896"
+          ],
+          "texts": [
+            "5구 볼",
+            "3구 타격"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "552",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:67365250602aae516f65bc7ff523697f227163741aa487b1779ec1d883a75135",
+            "20260513NCLT02026:play:81879ce87cd48efcd5a3051fd65e1a18ccb95d6a3f7cfee24fc8ea7664a01140"
+          ],
+          "texts": [
+            "6구 볼",
+            "안중열 : 유격수 땅볼 아웃 (유격수->1루수 송구아웃)"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "553",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:3665ab8437ce62af6086ca68a175f7101241463c29424267015c718785795765",
+            "20260513NCLT02026:play:b7e6fe338e215c39b2c78b5e1327baacb3f0c75a6418fa2ffa268a55ef50cfa5"
+          ],
+          "texts": [
+            "7구 볼",
+            "9번타자 박시원"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "554",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:815c063efeb033bfcef4cc8d17a71cca1d3da1013e101e8996a7623ce58aa145",
+            "20260513NCLT02026:play:45c406dc3a11ba6e33cfed00f033496e0db24a508c78c91074f5125753ef004b"
+          ],
+          "texts": [
+            "도태훈 : 볼넷",
+            "1구 스트라이크"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "555",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:0d87bf30b78ce06cd3032f622d5b9c5cc2d05b7ec5ca6f221a53761c9fb305f6",
+            "20260513NCLT02026:play:eb45d0f4648ae89ddcea44dd1d3d4bb7473305401e15f083a2f711bafcf487ae"
+          ],
+          "texts": [
+            "2번타자 한석현",
+            "2구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "556",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:ecb5525251234de6b40686e30033777879b4745a74ba71c3e60c380976c40024",
+            "20260513NCLT02026:play:508639dff7ae85c7f31e12e9fc950a0b12ab606963cb0e0965303d305b4dfebf",
+            "20260513NCLT02026:play:ad6cc36b6f57abb6b3075daa712219876882c2666c909c2beffaa09899ddfb31"
+          ],
+          "texts": [
+            "2번타자 한석현 : 대타 최정원 (으)로 교체",
+            "대타 최정원",
+            "3구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "557",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:4ddad9c56e6ff02971ef0b538a1aabe5c99a510d8c7e13a53019f3a3d2e782ec",
+            "20260513NCLT02026:play:a87f876a5a5dc22a4219c513120aafc893c8c0c246c4c919edab9cbcef288bd6"
+          ],
+          "texts": [
+            "투수 투수판 이탈",
+            "4구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "558",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:32ca0df58eb1527fc85cf97be3d1596948b7f874eedfcfeca4e8b9ae8b56e84b",
+            "20260513NCLT02026:play:65c8d741e0e435e4e02bebda379e0f6b3c281527df20f4f851a840f346cd7aa9"
+          ],
+          "texts": [
+            "1구 볼",
+            "박시원 : 삼진 아웃"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "559",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:85bf97c92da68fcb8fb64bfc6ef9259b57bdcbebaf1bbe3c5348a5f32dcc4ac8",
+            "20260513NCLT02026:play:70b999bb00ade137effbbfb65529aa7eead0e6e72090a78669dae7427a17cecb"
+          ],
+          "texts": [
+            "2구 스트라이크",
+            "1번타자 도태훈"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "560",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9aae9165a8a1a303983f544bdcf7a4565c30c5b5694289c39d8c5662e8d71bd2",
+            "20260513NCLT02026:play:91bc261b54e5368e80c6848b098aa715ff8d0ca124eb95f7e26d40ba90173f2f"
+          ],
+          "texts": [
+            "3구 볼",
+            "1구 스트라이크"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "561",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:d492f7e46dc20c38bb31b478c61c2e345ef41a33e25325c7a60f755fb7063ba0",
+            "20260513NCLT02026:play:b463534be350e6c24c9b87629c1469a31e02a0349c524e1850125e60f2f6d873"
+          ],
+          "texts": [
+            "4구 타격",
+            "2구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "562",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:8d358cd7a0104430902c5be04ef1023240f8765eb50ceef4c602a577b73661ff",
+            "20260513NCLT02026:play:1d85def4bb879f628440799fe6332343080a4789613c1bd32faaa18a200d4928"
+          ],
+          "texts": [
+            "최정원 : 중견수 앞 1루타",
+            "3구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "563",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9a96e0fa29be5de31cb9a8e8d93ad8abc7bcc1c5acd0c7489d35d6d85301ab0f",
+            "20260513NCLT02026:play:674cd9653c1472c8c7150521d8920f22192f15b454a174625ac3bbde76609255"
+          ],
+          "texts": [
+            "1루주자 도태훈 : 2루까지 진루",
+            "4구 파울"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "564",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:9a70fa4942e62353b0f8528833fadfa88609fe052116a384ada4280dd9ce883c",
+            "20260513NCLT02026:play:fb0a3bc00ff1525a5f7541508aacf77af3e10c255d7c1f62dd618a4b8c195218"
+          ],
+          "texts": [
+            "3번타자 허윤",
+            "5구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "565",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:3ef481ba11accd7dee77674134ee359dce3f86c185f7428b82b275ec62715680",
+            "20260513NCLT02026:play:c69033cdec752a21640695abe425618d25ab59d3c9a84e6efe4a289248b166d3"
+          ],
+          "texts": [
+            "1구 볼",
+            "6구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "566",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:5cc001e4c4cc397bd41c8bc8222313f720cfabf5da4181814fb04ba633a4e2d4",
+            "20260513NCLT02026:play:f8c1dc337da0e0b5e87c053ad5dd60bcbfe5430997d5e714c4f21ce9244a156f"
+          ],
+          "texts": [
+            "2구 헛스윙",
+            "7구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "567",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:17de6fc5a4115bc05ed27f9f85b4ebb1ad121987675ecea56147e5d0875818c6",
+            "20260513NCLT02026:play:f583979c125e6bb44a1d0bf23ec825eff0b71d6bbe1a6197c383d059f0ade07d"
+          ],
+          "texts": [
+            "3구 타격",
+            "도태훈 : 볼넷"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "568",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:5c2c5b77847c0ada8523a5030471ea89d6135393911fbda1eeae1ef4c107f3ee",
+            "20260513NCLT02026:play:acf5d96d4d40d68c13f4afe6f26aaf89fad5a10ead46317adbc1f3863ecb8f26"
+          ],
+          "texts": [
+            "허윤 : 우익수 앞 1루타",
+            "2번타자 한석현"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "569",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:eca15eb5f615aa8e29818890752cde262287c530ac23bed61175b43131d6bb04",
+            "20260513NCLT02026:play:6d35e56939ec9a79fe0ca44fc72172ccde40c6e688e5c0c9fb7f6e6502117cdb",
+            "20260513NCLT02026:play:06e23d7600106e323b94002614b4c9b27bf0cabdb650146b3fa9da23abe55692"
+          ],
+          "texts": [
+            "1루주자 최정원 : 2루까지 진루",
+            "2번타자 한석현 : 대타 최정원 (으)로 교체",
+            "대타 최정원"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "570",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:bd0b5a53778724837e54281d1b2981148849d70e84eb60f3d3592366606e024b",
+            "20260513NCLT02026:play:7fa1aa8302003efbbcd31c9d55a6c37dafbb6cc73e8f537b597af4813e4a7d53"
+          ],
+          "texts": [
+            "2루주자 도태훈 : 홈인",
+            "투수 투수판 이탈"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "571",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:201e07b28908c4695d970634e9133fe4c830251fa96021b0cb16c95390c024ab",
+            "20260513NCLT02026:play:ba2dee5bd18a612403d4f2c127f369d9a003006c17115564fbe0b157ba578625"
+          ],
+          "texts": [
+            "4번타자 오영수",
+            "2번타자 최정원"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "572",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:5faa0a2298ee7545f3f97a1a652a78f2cd85f53e86fda01868c4c30f259f9050",
+            "20260513NCLT02026:play:82167ff822b37121a01017369c78be0b0fc8a6bb4e32a67fde8aa221d6f1ed04"
+          ],
+          "texts": [
+            "1구 파울",
+            "1구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "573",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:04089a06c24adda4ba90d9447f57d49799625bc4343b50a4f56eee469bac1eb0",
+            "20260513NCLT02026:play:91a4aeac852ee5461ee5822b5ea868e53a7a61e00b141170b48d2065b4ef4bc1"
+          ],
+          "texts": [
+            "2구 헛스윙",
+            "2구 스트라이크"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "574",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:4c5625f7b2cd427c83f3cb90c7e3b30092079702454c520e0543e5f2009141ff",
+            "20260513NCLT02026:play:4aa8cc93a77f844c58cbd7b561143cb617367bbd0a60b7977b16bf7a27a037f5"
+          ],
+          "texts": [
+            "3구 타격",
+            "3구 볼"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "575",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:8f6a76577d8f1185332a3e334920c4720eb20b45b59b4a64f79ac2ec9db04c94",
+            "20260513NCLT02026:play:7ea45c8e8260b5d05b35083bdc970569754bbbf5f62e940b22fe24cb6801329f"
+          ],
+          "texts": [
+            "오영수 : 1루수 땅볼 아웃 (1루수->투수 1루 터치아웃)",
+            "4구 타격"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "576",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:fa98e391fc00a90947b50be33103464ffea16e80ee92078561ccac28d944d90b",
+            "20260513NCLT02026:play:b83887b527e993bb3d7b7e1d6c4084a2dfb7de1fe318241b6de80ed79ef55a4d"
+          ],
+          "texts": [
+            "=====================================",
+            "최정원 : 중견수 앞 1루타"
+          ]
+        },
+        {
+          "game_id": "20260513NCLT02026",
+          "source_seqno": "577",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260513NCLT02026:play:42a1f809c8fecb2685b934d507ff12d19bb762ea50cd67399e7581c171ad50f9",
+            "20260513NCLT02026:play:96b965c5c7881d9ddafd25ed6c7ba3017079449337c367a1b073bfc05350c40a"
+          ],
+          "texts": [
+            "승리투수: 비슬리",
+            "1루주자 도태훈 : 2루까지 진루"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:2652ac05e51119373959e46cc67e32a225871f186adf49b4218eead199c95a17",
+          "source_pitch_id": "260513_211758",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:c389da142a2ef304b228afd65584548ad819ad120b86d54bf3e51c0dbf1cbe3a",
+            "20260513NCLT02026:play:b4514e7488041e09426abc106a9183e89a811e7508302d53f09b361b4b6b957e"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t1",
+            "20260513NCLT02026/i08/b2/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:bfe59c08efd4bfb39285991ee644673039c5c5e5dbb8a262720acc800b3835f6",
+          "source_pitch_id": "260513_211817",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:52f0381012646e80bf0b36fe055666ac51b8afb6c181befda871cb246870b22b",
+            "20260513NCLT02026:play:4775a94dafd2b58701b73a76f442f7259b39d3f7ad72e9fbfd69b8d5c285e1c8"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t2",
+            "20260513NCLT02026/i08/b2/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:9e01cd24f54dabe67be258bff4e80e16404475d265c5cc3ef459998c10c8e35a",
+          "source_pitch_id": "260513_211839",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:00f76a61c1bfa355e702f3bd09bb5c2fb027573d68e17cc85e2bb1afb1d764cb",
+            "20260513NCLT02026:play:502f99ac60ee1081a5113b6eae710ae3f8fefdbbd13d671b777315ef26b819c0"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t3",
+            "20260513NCLT02026/i08/b2/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:b92d96e9b9b70af0c6ff48b4fde0bfa73af69eacc7426ea8726d881f30b3364a",
+          "source_pitch_id": "260513_211858",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:1147678487d7089037f9ac8c383ef2d676673cc89ef55c62ee13d20beff79961",
+            "20260513NCLT02026:play:99bbfed1d8247ea193d92f65c9ea50f1749d282877948487a54761807830c1e5"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t4",
+            "20260513NCLT02026/i08/b2/t4"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:18bfc1a1129ac8b8d0cdd085b36ae0f456cd0ddfb2561b55d42c74964e485ac2",
+          "source_pitch_id": "260513_211925",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:cbadda05c5f97942a2ddf64231183b2a8a44902aad58f5272adde4b6820a77f8",
+            "20260513NCLT02026:play:0ff0a97dcaf0b99ec90ef76a2d876259fe1ecdedac4f635e68a917d9ab2211e0"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t5",
+            "20260513NCLT02026/i08/b2/t5"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:dcdc06c7d1b129628ae26c269710ef2ed0e5bb371240c2b9acabbfd379e11d51",
+          "source_pitch_id": "260513_211952",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:d7281157a361a5bf3f639ebdcba37560b2aa8de92cc649b2d24c7d2a96114c4f",
+            "20260513NCLT02026:play:e8b512e67111b19988e5f32b47a88200e1f5f0c2a559abe670abd840eca33c7d"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t6",
+            "20260513NCLT02026/i08/b2/t6"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:3ed1ab49eb94fca112a0fc2dd9d27b8b5970fb2431286898c4cfdbcba013494f",
+          "source_pitch_id": "260513_212016",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:b2cde49ee1aac221df8ec1cea946863c487b14b5a310dcfffecabbbf74adf0da",
+            "20260513NCLT02026:play:125dcba984816f48ec9e67d9441441df6d7a079089f30c345a72b965f34f8230"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b4/t7",
+            "20260513NCLT02026/i08/b2/t7"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:750e0d9c26542adeab8bd044a7abf6f410793c5f2c0166453823d6d6c5865e1f",
+          "source_pitch_id": "260513_212059",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:0253d69850dca7d08b50ed4d2af3625a5b3ba580a15fe38e7fb600abdd79333c",
+            "20260513NCLT02026:play:928d0ce62a776e911ff58f558753aafe9a6c7b79030a0ecf64bad2efad8281e1"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b3/t2",
+            "20260513NCLT02026/i08/b0/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:a82ac68035d4aba3f28fc6dc8071b00b0c0ba3e02b726a1bcab573331729d2ee",
+          "source_pitch_id": "260513_212121",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:cf4ce0ad93d0e8dcce92114fc14349ba213e22424af33d78f4efce3db832a7a1",
+            "20260513NCLT02026:play:9c6d26dcfd1b80f5f41faaa640f0b7167fb72c8a5f5f5afd90cf25bc6cdb6973"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b3/t3",
+            "20260513NCLT02026/i08/b0/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:3dc5f5a998b60652669f058129b973f0ee48c8ff9ee439788df537ad0fd11be8",
+          "source_pitch_id": "260513_212140",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:f355d8fdcc5849d2e6b74027ba1b8c20e2a66907d8277d373256940c6a3d84d3",
+            "20260513NCLT02026:play:586695bc263610c1dbe2030bdd72b6be0ff6ea1c266cbf8165c2ecd36dbd459a"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b3/t4",
+            "20260513NCLT02026/i08/b0/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:afead121c39f8d531627459a804311f8d2c7dff76f0853beaf20b06c440bb4d9",
+          "source_pitch_id": "260513_212207",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:290e3c333cd38d8a09b9b806063d81a7c8ba08e23579b1484acb73d62ff47042",
+            "20260513NCLT02026:play:dd92126e9de078bc809d8a3cb6752f790dbc1cc4d6b7f939dda4dc49627aa6e1"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b3/t5",
+            "20260513NCLT02026/i08/b0/t4"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:d559dfb4b2c5c2bfad7c4c65cd78e58b3da7b00d929f4c3d1580e371e181e6ae",
+          "source_pitch_id": "260513_212226",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:6559ea0e2ccc34f0c695f5c65ec750012e549e6ca1ee80110a081f6740134f68",
+            "20260513NCLT02026:play:8ac0807105551c346d51f91bf2cb46f9581068ad69d47669dbad73d9260455c5"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i08/b3/t6",
+            "20260513NCLT02026/i08/b0/t5"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:ce7d1036f25ae1d030d6d2f18b6c430af07bd8f66c723266cfce4fa4993a5d0d",
+          "source_pitch_id": "260513_212458",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:592939e6769a6b3eb3f94af854bb06a8d991bcf6734b62bd1716d7a97aa1e466",
+            "20260513NCLT02026:play:6c2de1b25ec9e73ab2b4cebd5b2e5ed5b2b3a988c96e965d8b2e231f798a2b0b"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b18/t6",
+            "20260513NCLT02026/i09/b8/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:83ec9a1290345db7323ca544f02f764fa45175e3dd0bdc450b7f8847f796beef",
+          "source_pitch_id": "260513_212516",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:0433fda261435bef42da685f982475e929fa0b71671efe1c903e2ddb88fc85a5",
+            "20260513NCLT02026:play:a17acc2d410b89e4ab84963ef2a57886e7194fd18136739737239b194d1601ce"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b18/t7",
+            "20260513NCLT02026/i09/b8/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:99acb6519945ad8b49832313850b850365528b4c792eb854a412c8e440f56822",
+          "source_pitch_id": "260513_212535",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:0017a4a50ee10b18d42e7df114e37509c04cff2880d1f63c6e353797e4bb9f50",
+            "20260513NCLT02026:play:ce5f1e571472943d62d4959cd00a709e0367fce36aba2c09bc42b0befda8e896"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b18/t8",
+            "20260513NCLT02026/i09/b8/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:adf0bfcf93184f7037e6fca5dd2596c6561de23fbd0c47e41f0e353f3c1691ff",
+          "source_pitch_id": "260513_212611",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:516b349f73e9f6ecd2b8e93f83751d6f4008ab2b258698ccf1a7842f76e499dc",
+            "20260513NCLT02026:play:45c406dc3a11ba6e33cfed00f033496e0db24a508c78c91074f5125753ef004b"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b17/t1",
+            "20260513NCLT02026/i09/b7/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:a6e2cba36968c27a901c5e83cc39f494e1007e01d6fd6995db35f8a23b9d8c37",
+          "source_pitch_id": "260513_212628",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:b7b70b213d8cdc5c823114090956e8190e060ad1d5b9325bce131dc6ab4e9012",
+            "20260513NCLT02026:play:eb45d0f4648ae89ddcea44dd1d3d4bb7473305401e15f083a2f711bafcf487ae"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b17/t2",
+            "20260513NCLT02026/i09/b7/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:6c2fba31100c57c8a85528e815d1047a9a33a4ad71e26fc27c573349cd843174",
+          "source_pitch_id": "260513_212648",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:394b4c7f6db29326c0b160db111be6f893219df944b471ba0d0fc88f8996b313",
+            "20260513NCLT02026:play:ad6cc36b6f57abb6b3075daa712219876882c2666c909c2beffaa09899ddfb31"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b17/t3",
+            "20260513NCLT02026/i09/b7/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:56a94451cd0d8a53306181b2e8fc2395bd6efb0f7b4f77b9058c42562f5b5765",
+          "source_pitch_id": "260513_212711",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:2e53eacc4ceb0cf3bcdf0189af3fe86eafe95f9111acd586ab79ffbbf0a644fb",
+            "20260513NCLT02026:play:a87f876a5a5dc22a4219c513120aafc893c8c0c246c4c919edab9cbcef288bd6"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b17/t4",
+            "20260513NCLT02026/i09/b7/t4"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:91fcdab56332ebcf701e15692bf8569754c72522b7838781c3522f7861786a5e",
+          "source_pitch_id": "260513_212743",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:ab26313940be21a9877c94828e5eae2327da90812ffaf82e40ec1885fef57fca",
+            "20260513NCLT02026:play:91bc261b54e5368e80c6848b098aa715ff8d0ca124eb95f7e26d40ba90173f2f"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t1",
+            "20260513NCLT02026/i09/b6/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:165d2475a46b170ab3ae30b89add76ad115f7ba368f90d4e8d847262af3fba42",
+          "source_pitch_id": "260513_212800",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:9fcdc9411746b5124e2665cd3b81a680fff3bbdb5d55db60d1f184c211276ba5",
+            "20260513NCLT02026:play:b463534be350e6c24c9b87629c1469a31e02a0349c524e1850125e60f2f6d873"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t2",
+            "20260513NCLT02026/i09/b6/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:0b16959b159c233fbe8a85c196a767afeb1756d4f6f136b56e5896381c6718de",
+          "source_pitch_id": "260513_212821",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:2641db0c8a03930f5bde6f9883fbf30722f7dae9681c04b4e9a354e2f788bb0b",
+            "20260513NCLT02026:play:1d85def4bb879f628440799fe6332343080a4789613c1bd32faaa18a200d4928"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t3",
+            "20260513NCLT02026/i09/b6/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:74a6c39c4ec314468c33120f750a39cb9d460b35a6d03ca7e26fbb48f1ab4aa4",
+          "source_pitch_id": "260513_212846",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:1c0180683d256f5d6fcd3410db6ea1ae5a88a441ce7a15f240099ca040d71758",
+            "20260513NCLT02026:play:674cd9653c1472c8c7150521d8920f22192f15b454a174625ac3bbde76609255"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t4",
+            "20260513NCLT02026/i09/b6/t4"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:cf5ffd2e3dce85fc4196349c72d3dcffcb2e90846527e87e450817b7905c87eb",
+          "source_pitch_id": "260513_212910",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:5989eda297cae0d147a27a24483135a934d393706fab5894e31668dfc39d9d80",
+            "20260513NCLT02026:play:fb0a3bc00ff1525a5f7541508aacf77af3e10c255d7c1f62dd618a4b8c195218"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t5",
+            "20260513NCLT02026/i09/b6/t5"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:115774bde18357751c7ff81cc8cf87d54b9ca3608c224c7a381871b30a4a0d6f",
+          "source_pitch_id": "260513_212938",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:67365250602aae516f65bc7ff523697f227163741aa487b1779ec1d883a75135",
+            "20260513NCLT02026:play:c69033cdec752a21640695abe425618d25ab59d3c9a84e6efe4a289248b166d3"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t6",
+            "20260513NCLT02026/i09/b6/t6"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:ef8d0087b476002672527a24fcfa72887a90c2950ef3537c69e89211b25ef80d",
+          "source_pitch_id": "260513_213000",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:3665ab8437ce62af6086ca68a175f7101241463c29424267015c718785795765",
+            "20260513NCLT02026:play:f8c1dc337da0e0b5e87c053ad5dd60bcbfe5430997d5e714c4f21ce9244a156f"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b16/t7",
+            "20260513NCLT02026/i09/b6/t7"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:796d7331b1d811e41501001659e6b5f1a389770075a5757ac9f9abd120570c2c",
+          "source_pitch_id": "260513_213053",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:32ca0df58eb1527fc85cf97be3d1596948b7f874eedfcfeca4e8b9ae8b56e84b",
+            "20260513NCLT02026:play:82167ff822b37121a01017369c78be0b0fc8a6bb4e32a67fde8aa221d6f1ed04"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b14/t2",
+            "20260513NCLT02026/i09/b3/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:723bb515e8fa0a8673ae6fb449b18387cdfcf9595fdfaa64c3ecdd368dc29410",
+          "source_pitch_id": "260513_213112",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:85bf97c92da68fcb8fb64bfc6ef9259b57bdcbebaf1bbe3c5348a5f32dcc4ac8",
+            "20260513NCLT02026:play:91a4aeac852ee5461ee5822b5ea868e53a7a61e00b141170b48d2065b4ef4bc1"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b14/t3",
+            "20260513NCLT02026/i09/b3/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:9b338d02a20164dc11769b3e84112f763431dc1f70f4a95afe7540c822701b66",
+          "source_pitch_id": "260513_213132",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:9aae9165a8a1a303983f544bdcf7a4565c30c5b5694289c39d8c5662e8d71bd2",
+            "20260513NCLT02026:play:4aa8cc93a77f844c58cbd7b561143cb617367bbd0a60b7977b16bf7a27a037f5"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b14/t4",
+            "20260513NCLT02026/i09/b3/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:b277e415b177e83473d854978e70a9a89e707cab54a5dcd7ad0bc2b9e521cf4f",
+          "source_pitch_id": "260513_213155",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:d492f7e46dc20c38bb31b478c61c2e345ef41a33e25325c7a60f755fb7063ba0",
+            "20260513NCLT02026:play:7ea45c8e8260b5d05b35083bdc970569754bbbf5f62e940b22fe24cb6801329f"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b14/t5",
+            "20260513NCLT02026/i09/b3/t4"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:fe174433124ce8dbb879d7e5790a6db04bf90460327347d8e09985aad244267d",
+          "source_pitch_id": "260513_213238",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:3ef481ba11accd7dee77674134ee359dce3f86c185f7428b82b275ec62715680",
+            "20260513NCLT02026:play:2f81af3c6f37e163c637140edb7922760c92e765df04a2df755f9b87ff4ce384"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b13/t1",
+            "20260513NCLT02026/i09/b2/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:e49c3983ae4e496e36207fcf27cf14f35d8a8db95bc0c91371a798fab2775d1e",
+          "source_pitch_id": "260513_213258",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:5cc001e4c4cc397bd41c8bc8222313f720cfabf5da4181814fb04ba633a4e2d4",
+            "20260513NCLT02026:play:e3b9aa1da14131a9ebc582b8c69cb74cba860f47902c25088c81878412f24285"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b13/t2",
+            "20260513NCLT02026/i09/b2/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:a5a25f78dac49c9d4bb980d5ad1cf28bcff9490a263b772073f92d2aa0b37d6f",
+          "source_pitch_id": "260513_213323",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:17de6fc5a4115bc05ed27f9f85b4ebb1ad121987675ecea56147e5d0875818c6",
+            "20260513NCLT02026:play:c02b2de7ed9de9d23f0cafb6845b8dad554615f117f6b893982f14c2a957ff43"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b13/t3",
+            "20260513NCLT02026/i09/b2/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "currentPlayersInfo",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:01ee44b8606f92fa218f5f083c83cb1cf23da12225569804c3406e8bb99f735f",
+          "source_pitch_id": "260513_213426",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:5faa0a2298ee7545f3f97a1a652a78f2cd85f53e86fda01868c4c30f259f9050",
+            "20260513NCLT02026:play:5be82e1f87584ed75224218d7fa19fdee80388f01d0d5298779fe3129b93175b"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b12/t1",
+            "20260513NCLT02026/i09/b1/t1"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:af96b60821265e3d111b6a2f4179ee10cf1613308d9c0c00e6ad535a157dd382",
+          "source_pitch_id": "260513_213446",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:04089a06c24adda4ba90d9447f57d49799625bc4343b50a4f56eee469bac1eb0",
+            "20260513NCLT02026:play:1c2ee50ae2508a82998323079650b7d32ef13124f0e0add363da66b9576d1cb7"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b12/t2",
+            "20260513NCLT02026/i09/b1/t2"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        },
+        {
+          "group_id": "20260513NCLT02026:repeat_candidate:8894b6dca92c20d4686ea003e4fcba5656304670f87c335616087a31de32b37d",
+          "source_pitch_id": "260513_213507",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260513NCLT02026:play:4c5625f7b2cd427c83f3cb90c7e3b30092079702454c520e0543e5f2009141ff",
+            "20260513NCLT02026:play:2d44d4396f7f24fe8ce18033b9e4c48f7a0194060f4517de7a2dd56ee3a62cbb"
+          ],
+          "source_refs": [
+            "20260513NCLT02026/i09/b12/t3",
+            "20260513NCLT02026/i09/b1/t3"
+          ],
+          "differing_raw_fields": [
+            "currentGameState",
+            "seqno"
+          ],
+          "differing_state_fields": [
+            "awayError",
+            "homeHit"
+          ]
+        }
+      ],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260526LGLT02026",
+      "source_text_sha256": "18265dd787df38f9085d863a6396231fe092e5c41a261a56a2cc091490d9bd03",
+      "source_pitch_sha256": "17f511e3b126c56233e42c43554cfcbfccb7ddb78dc04c8c5548a26244f53d4e",
+      "expected_text_rows": 365,
+      "expected_pitch_rows": 206,
+      "timeline_decision": "HOLD_GAME_FOR_CANONICAL_TIMELINE",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "7회말·8회초 모두 중단/콜드 안내. 제공된 8회초 문자행에 투구 없음. 종료 이닝/타석 인정 여부 확정 보류.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260526LGLT02026:play:23fb3e4629530419ab79f23d965160bb1d95bfdf3a9b38f290fe6450f38ce368",
+          "source_ref": "20260526LGLT02026/i07/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260526LGLT02026:play:b99895968c60a9490946e4d24bac0bf4e7936618803a668ead46b27d1b17d51c",
+          "source_ref": "20260526LGLT02026/i07/b0/t1",
+          "description": "승리투수: 톨허스트"
+        },
+        {
+          "play_id": "20260526LGLT02026:play:1f7a89044d8b1f7c87b351fe4473f6c3d531f72372604987fac67c8229329d31",
+          "source_ref": "20260526LGLT02026/i08/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260526LGLT02026:play:5db0dd72ead7a3a7e581c01c176f40f88558d74c38252afaf14c339ba196b4e2",
+          "source_ref": "20260526LGLT02026/i08/b0/t1",
+          "description": "승리투수: 톨허스트"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260526LGLT02026",
+          "source_seqno": "356",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260526LGLT02026:play:a9d743e75c73270982226341e728a9daa3bc2d6aa2ea36f3e26106f5f3d2c601",
+            "20260526LGLT02026:play:20a9b8397c9a4d4c02a6d3c072da2591dc23749eaa4a3e1468ce2858b57a4d9b"
+          ],
+          "texts": [
+            "7회말 1번타순 2구 후 강우 콜드게임 선언",
+            "8번타자 구본혁"
+          ]
+        },
+        {
+          "game_id": "20260526LGLT02026",
+          "source_seqno": "357",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260526LGLT02026:play:23fb3e4629530419ab79f23d965160bb1d95bfdf3a9b38f290fe6450f38ce368",
+            "20260526LGLT02026:play:ce58a721dde249126c463015b0ed66a48d54a026fba55c9fe0fb0008842579f0"
+          ],
+          "texts": [
+            "=====================================",
+            "8회초 8번타순 초구 전 20:30~21:16 (46분간) 우천 관련(으)로 경기 중단"
+          ]
+        },
+        {
+          "game_id": "20260526LGLT02026",
+          "source_seqno": "358",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260526LGLT02026:play:b99895968c60a9490946e4d24bac0bf4e7936618803a668ead46b27d1b17d51c",
+            "20260526LGLT02026:play:b396d6b3c3fe4ba54f44befab968339f1e91df0b55b7d572e07babbe1e337474"
+          ],
+          "texts": [
+            "승리투수: 톨허스트",
+            "8회초 8번타순 초구 전 강우 콜드게임 선언"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260612LTLG02026",
+      "source_text_sha256": "5be99974b0c3cccdd0dcdb064c36c9163c32be993779f546f95da28fae604a55",
+      "source_pitch_sha256": "3bcd537a3d27d5705545031aee52998e98d21cd983ee201b072f3a1f0da13c52",
+      "expected_text_rows": 665,
+      "expected_pitch_rows": 367,
+      "timeline_decision": "REPORTED_COLLISION_PATTERN_REVIEWED",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "마지막 아웃·판독 뒤 종료 안내 묶음 반복. 판독은 보존하고 종료 안내는 플레이 누적에서 제외.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260612LTLG02026:play:95f87d0ab6d0fb4260792a4165ef6b6d1e963c4a4e684f4e5839e924b19f19eb",
+          "source_ref": "20260612LTLG02026/i09/b1/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260612LTLG02026:play:64c3d1db3887e70fd2619d0d0852158b2cec128e0968a4546d62b8b37dde2f0c",
+          "source_ref": "20260612LTLG02026/i09/b1/t1",
+          "description": "승리투수: 로드리게스"
+        },
+        {
+          "play_id": "20260612LTLG02026:play:c2fadea3cd8d66036d1afade45ef6633def3b544b4e10aac17ea9bf927862bd8",
+          "source_ref": "20260612LTLG02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260612LTLG02026:play:05c0a9a4d94ebd843090bda8991c3f1d85e3977bbb726f1d0782e54887e4f1d3",
+          "source_ref": "20260612LTLG02026/i09/b0/t1",
+          "description": "승리투수: 로드리게스"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260612LTLG02026",
+          "source_seqno": "658",
+          "classification": "correction_candidate",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612LTLG02026:play:a3b1b9cbfcff78c2b20dfccc29ebcec25a9bde7b8a1cf2c1cae6bba7faa98b8f",
+            "20260612LTLG02026:play:c2fadea3cd8d66036d1afade45ef6633def3b544b4e10aac17ea9bf927862bd8"
+          ],
+          "texts": [
+            "9회말 6번타순 4구 후 22:08 ~ 22:09 (1분간) LG요청 비디오 판독: 문성주 포스아웃 관련 아웃→아웃",
+            "====================================="
+          ]
+        },
+        {
+          "game_id": "20260612LTLG02026",
+          "source_seqno": "659",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612LTLG02026:play:95f87d0ab6d0fb4260792a4165ef6b6d1e963c4a4e684f4e5839e924b19f19eb",
+            "20260612LTLG02026:play:05c0a9a4d94ebd843090bda8991c3f1d85e3977bbb726f1d0782e54887e4f1d3"
+          ],
+          "texts": [
+            "=====================================",
+            "승리투수: 로드리게스"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260612SKSS02026",
+      "source_text_sha256": "f92c4ef3a5c689a58ca92503d2ae4f53d6af69f6b9157a94ef618af225e91efe",
+      "source_pitch_sha256": "31fd1877b18ad219ddea09d91be0fd7170c77032b1704a1ad46eab5f061cfad8",
+      "expected_text_rows": 543,
+      "expected_pitch_rows": 286,
+      "timeline_decision": "HOLD_GAME_FOR_CANONICAL_TIMELINE",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "9회말 마지막 타석과 종료 안내 반복. 실제 고유 타석과 원본 상태 시점의 선택을 보류.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260612SKSS02026:play:7f24be7a1f83ea486bf5277079c5e9c647ff3937787afd156b194ed40ebe3b75",
+          "source_ref": "20260612SKSS02026/i09/b2/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260612SKSS02026:play:919b828509db5ab79f2857e0cab92229d2505349bc73f3b7401ec306c59ee328",
+          "source_ref": "20260612SKSS02026/i09/b2/t1",
+          "description": "승리투수: 이로운"
+        },
+        {
+          "play_id": "20260612SKSS02026:play:0ebaaf43408feffd744deae67a7f481fcbd20932a0334687344b67b139839c97",
+          "source_ref": "20260612SKSS02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260612SKSS02026:play:07df8827cb6814ccca7f53fa4127329c3e5a2811583d3c101013d694ca2da542",
+          "source_ref": "20260612SKSS02026/i09/b0/t1",
+          "description": "승리투수: 이로운"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "521",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:416c220c23d2f38e49f1e22549724f8fd8efa397933e1762459b8032c9ccf66c",
+            "20260612SKSS02026:play:7ba22074d643bcbfa402d0ebe6c6f07f088c51d823b1605bab910f9c795587c7"
+          ],
+          "texts": [
+            "4번타자 박계범",
+            "4번타자 박계범"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "522",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:af81228ef66d652ee755c892583805439a53f5d26ab3622e6c27a82681051080",
+            "20260612SKSS02026:play:cbeb2ccd6d0f559d010274b70ab030060f20592d00f88384295bb8b47bc16165"
+          ],
+          "texts": [
+            "포수 마운드 방문",
+            "포수 마운드 방문"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "523",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:a2551496d5353c69dff0cbc7f9c473130fe2ff0a4fd5a018e46fff9f939ec21c",
+            "20260612SKSS02026:play:2cab019068f383a5b697d16e0e84d09e8566fc9b191cb6c5ae81a6a0c54dce7e"
+          ],
+          "texts": [
+            "1구 스트라이크",
+            "1구 스트라이크"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "524",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:12522229f1bbe88fbd1fea7f988f89903960614cec8cf3f6f3880b93da9eb252",
+            "20260612SKSS02026:play:e3a5d641d3083285f5b17573923ffdc613737f4714a2a1ac3c140dac9fe16338"
+          ],
+          "texts": [
+            "2구 볼",
+            "2구 볼"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "525",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:f99f374ee26ea27a7e6da91b4b2600305a71c0492124241fe8a1ed1ddf52ba4c",
+            "20260612SKSS02026:play:b18d31e8ce44e43ecd91c506456cc43d0748327f9771cf838857b8a8fecdbd8f"
+          ],
+          "texts": [
+            "3구 헛스윙",
+            "3구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "526",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:d2d739b47d2ce81971ed3266f2f5917875495d2480c5b7e7265caf9f1376cd59",
+            "20260612SKSS02026:play:f94f705de808b28499dc317b53ac84574314825778d1e43f115267fa90b6b3bb"
+          ],
+          "texts": [
+            "4구 헛스윙",
+            "4구 헛스윙"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "527",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:24ae1336d6437a009eca99ce29c778213343ca3dc3f91364fb57902320ae08e5",
+            "20260612SKSS02026:play:3ac49607e167714baf7051472fc3b95e4c148050b6aedc77772c79e15729f94f"
+          ],
+          "texts": [
+            "박계범 : 삼진 아웃",
+            "박계범 : 삼진 아웃"
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "528",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:7f24be7a1f83ea486bf5277079c5e9c647ff3937787afd156b194ed40ebe3b75",
+            "20260612SKSS02026:play:0ebaaf43408feffd744deae67a7f481fcbd20932a0334687344b67b139839c97"
+          ],
+          "texts": [
+            "=====================================",
+            "====================================="
+          ]
+        },
+        {
+          "game_id": "20260612SKSS02026",
+          "source_seqno": "529",
+          "classification": "same_text_different_payload",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260612SKSS02026:play:919b828509db5ab79f2857e0cab92229d2505349bc73f3b7401ec306c59ee328",
+            "20260612SKSS02026:play:07df8827cb6814ccca7f53fa4127329c3e5a2811583d3c101013d694ca2da542"
+          ],
+          "texts": [
+            "승리투수: 이로운",
+            "승리투수: 이로운"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [
+        {
+          "group_id": "20260612SKSS02026:repeat_candidate:ccb55d2e0457ba5992d220237d5e635e4aca9f6fb02e923bdf6affa1c8965924",
+          "source_pitch_id": "260612_213016",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260612SKSS02026:play:a2551496d5353c69dff0cbc7f9c473130fe2ff0a4fd5a018e46fff9f939ec21c",
+            "20260612SKSS02026:play:2cab019068f383a5b697d16e0e84d09e8566fc9b191cb6c5ae81a6a0c54dce7e"
+          ],
+          "source_refs": [
+            "20260612SKSS02026/i09/b3/t2",
+            "20260612SKSS02026/i09/b1/t2"
+          ],
+          "differing_raw_fields": [
+            "currentPlayersInfo"
+          ],
+          "differing_state_fields": []
+        },
+        {
+          "group_id": "20260612SKSS02026:repeat_candidate:aaaf4ab5db63823f0631a10f2f238fb0f71c44cbc62d14b2ae012b92e250ddd8",
+          "source_pitch_id": "260612_213033",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260612SKSS02026:play:12522229f1bbe88fbd1fea7f988f89903960614cec8cf3f6f3880b93da9eb252",
+            "20260612SKSS02026:play:e3a5d641d3083285f5b17573923ffdc613737f4714a2a1ac3c140dac9fe16338"
+          ],
+          "source_refs": [
+            "20260612SKSS02026/i09/b3/t3",
+            "20260612SKSS02026/i09/b1/t3"
+          ],
+          "differing_raw_fields": [
+            "currentPlayersInfo"
+          ],
+          "differing_state_fields": []
+        },
+        {
+          "group_id": "20260612SKSS02026:repeat_candidate:2083a2cfe16d907757b1d32c20e47834c6a5757fa5425efd86eb2991e1a51bef",
+          "source_pitch_id": "260612_213050",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260612SKSS02026:play:f99f374ee26ea27a7e6da91b4b2600305a71c0492124241fe8a1ed1ddf52ba4c",
+            "20260612SKSS02026:play:b18d31e8ce44e43ecd91c506456cc43d0748327f9771cf838857b8a8fecdbd8f"
+          ],
+          "source_refs": [
+            "20260612SKSS02026/i09/b3/t4",
+            "20260612SKSS02026/i09/b1/t4"
+          ],
+          "differing_raw_fields": [
+            "currentPlayersInfo"
+          ],
+          "differing_state_fields": []
+        },
+        {
+          "group_id": "20260612SKSS02026:repeat_candidate:1b25261aa62b44fae5580d8224154916a0aba6d36fdcad6fbbea7037a0e2fd71",
+          "source_pitch_id": "260612_213110",
+          "classification": "repeated_pitch_id_candidate",
+          "action": "keep_all_pending_review",
+          "canonical_play_id": null,
+          "play_ids": [
+            "20260612SKSS02026:play:d2d739b47d2ce81971ed3266f2f5917875495d2480c5b7e7265caf9f1376cd59",
+            "20260612SKSS02026:play:f94f705de808b28499dc317b53ac84574314825778d1e43f115267fa90b6b3bb"
+          ],
+          "source_refs": [
+            "20260612SKSS02026/i09/b3/t5",
+            "20260612SKSS02026/i09/b1/t5"
+          ],
+          "differing_raw_fields": [
+            "currentPlayersInfo"
+          ],
+          "differing_state_fields": []
+        }
+      ],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260613LTLG02026",
+      "source_text_sha256": "87d0d1175d5755203e8f487f001fc8024b8482f2f145157bc0636fb727420f50",
+      "source_pitch_sha256": "33611377e7b1fab3d6372127663687b445c23091ffa48a4f2db3ff850d688830",
+      "expected_text_rows": 488,
+      "expected_pitch_rows": 280,
+      "timeline_decision": "REPORTED_COLLISION_PATTERN_REVIEWED",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "마지막 아웃 뒤 종료 안내 반복. 아웃을 보존하고 안내는 플레이 누적에서 제외.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260613LTLG02026:play:41e1baf5255778d5459d584097bb374d9935eb9e51714f79fb6de19f92730c00",
+          "source_ref": "20260613LTLG02026/i09/b1/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260613LTLG02026:play:88a017a9fa6fd1842788ef71901ff6f56c5c7d8f73bcc385941f7789a9cc1f68",
+          "source_ref": "20260613LTLG02026/i09/b1/t1",
+          "description": "승리투수: 김진성"
+        },
+        {
+          "play_id": "20260613LTLG02026:play:5aa8519c787a7ac8eb83d32349c98aab830cb6a9a35ed0a3a7c1011563293c30",
+          "source_ref": "20260613LTLG02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260613LTLG02026:play:192e475dd86f42ee165dbc64831ea4e069a455c22acbdecebff9d0aa39f1b0fa",
+          "source_ref": "20260613LTLG02026/i09/b0/t1",
+          "description": "승리투수: 김진성"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260613LTLG02026",
+          "source_seqno": "483",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260613LTLG02026:play:aad6807fc20b780cee137da5669dd4d44715ed72a2d3b89fdd508552e581fdcf",
+            "20260613LTLG02026:play:5aa8519c787a7ac8eb83d32349c98aab830cb6a9a35ed0a3a7c1011563293c30"
+          ],
+          "texts": [
+            "유강남 : 3루수 땅볼 아웃 (3루수->1루수 송구아웃)",
+            "====================================="
+          ]
+        },
+        {
+          "game_id": "20260613LTLG02026",
+          "source_seqno": "484",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260613LTLG02026:play:41e1baf5255778d5459d584097bb374d9935eb9e51714f79fb6de19f92730c00",
+            "20260613LTLG02026:play:192e475dd86f42ee165dbc64831ea4e069a455c22acbdecebff9d0aa39f1b0fa"
+          ],
+          "texts": [
+            "=====================================",
+            "승리투수: 김진성"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260822HTWO02026",
+      "source_text_sha256": "b747e4233631b65a20f857bb97aa556b6c7243a5efa465a9e548812b0253813b",
+      "source_pitch_sha256": "843dc37cdc33ba9354937bf1256270d62dc3b4c72626199600014ab2125c84a1",
+      "expected_text_rows": 480,
+      "expected_pitch_rows": 278,
+      "timeline_decision": "REPORTED_COLLISION_PATTERN_REVIEWED",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "반이닝 마지막 아웃과 다음 반이닝 시작 안내의 순번 충돌. 둘 다 보존, 현재 입력 순서 유지.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260822HTWO02026:play:d532ae29a73b4e803280541b88ef867772c7faecb475d01a43e79464277ff693",
+          "source_ref": "20260822HTWO02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260822HTWO02026:play:e17c25f1accef7c71d222fab7d550c35483d146d79df9491882e2f365743bdcb",
+          "source_ref": "20260822HTWO02026/i09/b0/t1",
+          "description": "승리투수: 안우진"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260822HTWO02026",
+          "source_seqno": "375",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260822HTWO02026:play:9d71e3822eb90a976ef0948e5042aa1ddbab68e23df00578cfb56c0b0821dfcd",
+            "20260822HTWO02026:play:a97fc0eb2277a70494bacc3ebac519eb515971a01b11aafecddcac274dd87a45"
+          ],
+          "texts": [
+            "추재현 : 2루수 땅볼 아웃 (2루수->1루수 송구아웃)",
+            "8회초 KIA 공격"
+          ]
+        },
+        {
+          "game_id": "20260822HTWO02026",
+          "source_seqno": "398",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260822HTWO02026:play:662532187a2e31bed2a026ea2bfb2ed5dbecabd486700468e4e13f1629f15523",
+            "20260822HTWO02026:play:3170de4f5d2e33b66be3d3db1b18c86aa406e8c1bdf8e70912202469506de948"
+          ],
+          "texts": [
+            "박정우 : 2루수 땅볼 아웃 (2루수->1루수 송구아웃)",
+            "8회말 키움 공격"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    },
+    {
+      "game_id": "20260918LGKT02026",
+      "source_text_sha256": "01e22cf62f14649978b76e20d8d7dd1621e7ae14ede946238c7fef9e8b73c5e8",
+      "source_pitch_sha256": "20311fa22848004f2d64d9314e80a253ff7335c3d982cbc57f37562051eee923",
+      "expected_text_rows": 629,
+      "expected_pitch_rows": 357,
+      "timeline_decision": "REPORTED_COLLISION_PATTERN_REVIEWED",
+      "semantic_review_complete": false,
+      "state_reconstruction_complete": false,
+      "reason": "마지막 아웃 뒤 종료 안내 반복. 아웃을 보존하고 안내는 플레이 누적에서 제외.",
+      "source_action": "KEEP_ALL",
+      "order_action": "PRESERVE_INPUT_ORDER",
+      "administrative_rows_not_for_play_accumulation": [
+        {
+          "play_id": "20260918LGKT02026:play:23f8e2eac4169ce0d9f2ceaed3b62d608a621850447187337675fa32356279a5",
+          "source_ref": "20260918LGKT02026/i09/b1/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260918LGKT02026:play:963ba987bc79b83031c18a999e1aa7b4f45c6358a7f5824311fdc585e4ec210b",
+          "source_ref": "20260918LGKT02026/i09/b1/t1",
+          "description": "승리투수: 톨허스트"
+        },
+        {
+          "play_id": "20260918LGKT02026:play:e70d80c507ebe2de4c768dc8a13e5598be03dd2d7d2a508247af5d273910714b",
+          "source_ref": "20260918LGKT02026/i09/b0/t0",
+          "description": "====================================="
+        },
+        {
+          "play_id": "20260918LGKT02026:play:3aa62a4f8f62cf5d12c2f6cab81769acb3515b80cd201fac8d8942d6c53b82a7",
+          "source_ref": "20260918LGKT02026/i09/b0/t1",
+          "description": "승리투수: 톨허스트"
+        }
+      ],
+      "reviewed_collision_groups": [
+        {
+          "game_id": "20260918LGKT02026",
+          "source_seqno": "619",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260918LGKT02026:play:6c71b441ab7e632e31cef3daef29d33f4bff297dc70d4f6c9496e051ff16e4ab",
+            "20260918LGKT02026:play:e70d80c507ebe2de4c768dc8a13e5598be03dd2d7d2a508247af5d273910714b"
+          ],
+          "texts": [
+            "손민석 : 2루수 플라이 아웃",
+            "====================================="
+          ]
+        },
+        {
+          "game_id": "20260918LGKT02026",
+          "source_seqno": "620",
+          "classification": "different_text_unresolved",
+          "review_required": true,
+          "action": "keep_all",
+          "play_ids": [
+            "20260918LGKT02026:play:23f8e2eac4169ce0d9f2ceaed3b62d608a621850447187337675fa32356279a5",
+            "20260918LGKT02026:play:3aa62a4f8f62cf5d12c2f6cab81769acb3515b80cd201fac8d8942d6c53b82a7"
+          ],
+          "texts": [
+            "=====================================",
+            "승리투수: 톨허스트"
+          ]
+        }
+      ],
+      "repeat_candidate_groups": [],
+      "remaining_policy": "출루 원인 미확정, 판독 및 상태 판정은 기존 검토 목록 유지. 이 파일은 전체 경기 검증 완료 표시가 아님."
+    }
+  ]
+}
