@@ -18,3 +18,4 @@ ai/highlight/frames/
 ai/highlight/*.mp4
 ai/highlight/*.webm
 ai/highlight/readings*.json
+ai/highlight/score_detail.csv
