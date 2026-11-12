@@ -26,7 +26,7 @@ import time
 
 MODEL = "gemini-3.8-flash"
 
-PROMPT = """너는 KBO 야구 중계 화면의 전광판(스코어보드 그래픽)을 읽는 역할이다.
+PROMPT_V1 = """너는 KBO 야구 중계 화면의 전광판(스코어보드 그래픽)을 읽는 역할이다.
 화면에 실제로 보이는 것만 읽어라. 보이지 않거나 확실하지 않은 칸은 반드시 null 로 둬라. 추측 금지.
 
 - teams: 전광판에 적힌 두 팀 이름(약칭 그대로)과 점수. 전광판에 위/왼쪽에 있는 팀을 먼저.
@@ -39,6 +39,32 @@ PROMPT = """너는 KBO 야구 중계 화면의 전광판(스코어보드 그래�
 - is_scoreboard_visible: 전광판 그래픽이 화면에 있으면 true
 - is_replay: 리플레이/느린 화면으로 보이면 true
 """
+
+# v2: v1 오류 분석 결과 반영 (타자 줄을 못 읽음, 다이아몬드 루 위치를 헷갈림)
+PROMPT_V2 = """너는 KBO 야구 중계 화면의 전광판(스코어보드 그래픽)을 읽는 역할이다.
+화면에 실제로 보이는 것만 읽어라. 보이지 않거나 확실하지 않은 칸은 반드시 null 로 둬라. 추측 금지.
+
+[전광판 구조] 보통 화면 왼쪽 위에 있는 작은 박스다.
+- 왼쪽 팀 칸: 원정팀 이름과 점수 / 오른쪽 팀 칸: 홈팀 이름과 점수
+- 가운데 위: 작은 마름모 3개 = 베이스. 위치로 루를 판단한다.
+    오른쪽 아래 마름모 = 1루, 맨 위 마름모 = 2루, 왼쪽 아래 마름모 = 3루
+    노란색(색칠된) 마름모 = 주자 있음, 흰색/빈 마름모 = 주자 없음
+- 가운데: 숫자와 화살표 = 이닝. ▲ 는 초(top), ▼ 는 말(bottom)
+- 그 아래 "숫자-숫자" = 볼-스트라이크 카운트 (앞이 볼, 뒤가 스트라이크)
+- 카운트 옆 작은 동그라미 2개 = 아웃. 빨간색으로 켜진 동그라미 개수가 아웃 수 (0~2)
+- 아래 줄 "P 이름" = 투수. 이건 타자가 아니다
+- 아래 줄 "숫자. 이름  N타수 N안타" 형태 = 현재 타자. 앞의 숫자(타순)는 빼고 이름만 batter 에 넣어라
+- 타자 줄이 없으면 batter 는 null
+
+[읽을 항목]
+- is_scoreboard_visible: 위 전광판 박스가 화면에 있으면 true (점수만 나오는 큰 자막은 false)
+- teams: [왼쪽 팀, 오른쪽 팀] 순서로 이름(약칭 그대로)과 점수
+- inning, half, outs, bases([1루, 2루, 3루]), balls, strikes, batter
+- is_replay: 리플레이/느린 화면으로 보이면 true
+"""
+
+PROMPTS = {"v1": PROMPT_V1, "v2": PROMPT_V2}
+PROMPT = PROMPT_V1
 
 SCHEMA = {
     "type": "OBJECT",
@@ -113,7 +139,7 @@ def grab_frames(video, every_sec, start_sec=0, end_sec=None, out_dir="frames"):
 
 # ---------------------------------------------------------------- Gemini
 
-def read_frame(client, path, max_retries=4):
+def read_frame(client, path, prompt=None, max_retries=4):
     from google.genai import types
     from PIL import Image
     img = Image.open(path)
@@ -122,10 +148,12 @@ def read_frame(client, path, max_retries=4):
         thinking_config=types.ThinkingConfig(thinking_level="low"))
     for attempt in range(max_retries):
         try:
-            resp = client.models.generate_content(model=MODEL, contents=[img, PROMPT], config=config)
+            resp = client.models.generate_content(model=MODEL, contents=[img, prompt or PROMPT], config=config)
             return json.loads(resp.text)
         except Exception as e:
             msg = str(e)
+            if "401" in msg or "403" in msg or "API key not valid" in msg:
+                sys.exit("API 키가 틀렸거나 삭제된 키임. export GEMINI_API_KEY=\"새 키\" 로 다시 설정하고 실행하면 이어서 함")
             if "PerDay" in msg:
                 sys.exit("하루 사용량 초과. 내일 다시 실행하면 이어서 함 (이미 읽은 프레임은 건너뜀)")
             if "429" in msg or "503" in msg:
@@ -185,6 +213,7 @@ def main():
     ap.add_argument("--end", type=float, default=None)
     ap.add_argument("--out", default="readings.json")
     ap.add_argument("--game", help="경기 상태 파일(b2-state-v1). 주면 매칭까지 함")
+    ap.add_argument("--prompt", choices=list(PROMPTS), default="v1", help="전광판 읽기 프롬프트 버전")
     ap.add_argument("--away", help="--game 없이 돌릴 때 원정팀 (예: KIA)")
     ap.add_argument("--home", help="--game 없이 돌릴 때 홈팀 (예: SSG)")
     args = ap.parse_args()
@@ -206,7 +235,9 @@ def main():
     # 이미 읽은 프레임은 다시 안 읽음 (중간에 끊겨도 이어서 가능)
     done = {}
     if os.path.exists(args.out):
-        done = {r["frame"]: r for r in json.load(open(args.out, encoding="utf-8"))}
+        # 읽기에 실패했던 프레임(raw 가 비어 있음)은 다시 읽음
+        done = {r["frame"]: r for r in json.load(open(args.out, encoding="utf-8"))
+                if r.get("raw") is not None}
 
     from google import genai
     client = genai.Client(api_key=key)
@@ -215,8 +246,8 @@ def main():
         if f["frame"] in done:
             results.append(done[f["frame"]])
             continue
-        raw = read_frame(client, f["frame"])
-        rec = {**f, **to_reading(raw, away, home), "raw": raw}
+        raw = read_frame(client, f["frame"], PROMPTS[args.prompt])
+        rec = {**f, **to_reading(raw, away, home), "raw": raw, "prompt": args.prompt}
         results.append(rec)
         json.dump(results, open(args.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print(f'{f["time_sec"]:>6}s  {rec["inning"]}회 {rec["half"]}  {rec["outs"]}사  '
