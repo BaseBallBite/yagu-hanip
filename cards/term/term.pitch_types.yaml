@@ -1,0 +1,41 @@
+id: term.pitch_types
+kind: term
+title: 구종
+category: 투구·구종
+one_liner: 투수가 던지는 공의 종류예요. 직구와 여러 변화구가 있어요.
+easy: 구종은 투수가 던지는 공의 종류를 부르는 말이에요. 크게 가장 빠르고 곧게 오는 직구 계열과, 휘거나 떨어지거나 느리게 오는 변화구로 나눠요. 투수는 여러 구종을 섞어 던져서 타자의 타이밍을 흔들어요.
+example: 이 투수는 직구, 슬라이더, 체인지업 세 가지 구종을 던져요.
+more:
+- 직구 계열 - 직구(포심), 싱커(투심), 커터
+- 옆으로 휘는 공 - 슬라이더, 스위퍼, 슬러브
+- 아래로 떨어지는 공 - 커브, 너클커브, 포크볼, 스플리터
+- 느리게 오는 공 - 체인지업, 이퓨스
+- 그 밖의 공 - 스크루볼, 너클볼
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Pitch Types
+  url: https://www.mlb.com/glossary/pitch-types
+related:
+- term.fastball
+- term.breaking_ball
+- term.sinker
+- term.cutter
+- term.slider
+- term.sweeper
+- term.slurve
+- term.curveball
+- term.knuckle_curve
+- term.forkball
+- term.splitter
+- term.changeup
+- term.screwball
+- term.knuckleball
+- term.eephus
+event_types: []
+aliases:
+- 구종
+- 투구 종류
+- 던진 구종
+review_status: draft
+reviewer: ''

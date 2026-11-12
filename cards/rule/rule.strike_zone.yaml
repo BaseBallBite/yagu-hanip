@@ -10,19 +10,22 @@ example: '타자가 가만히 서 있었는데 공이 무릎 높이로 존 안�
 
   '
 when:
-  height: 타자 키의 27.04% ~ 55.75% (2025년 이후 ABS 기준)
+  height: 지면에서 타자 키의 27.04% ~ 55.75% (2026 KBO 공식 안내 기준)
   width: 홈플레이트 43.18cm + 양옆 2cm씩 = 47.18cm
   depth: 홈플레이트 중간면과 끝면 모두 상하 기준을 충족해야 스트라이크
 more:
 - 규칙집의 정의(용어의 정의 73)는 사람 심판 시절 기준(어깨와 바지 윗부분 중간 ~ 무릎 아랫부분)이에요. ABS 수치는 KBO 리그 규정에 있어요.
 - 해설은 기록된 판정 결과를 근거로 하고, 좌표로 판정을 다시 계산해 단정하지 않아요.
-- ABS 존의 정확한 비율(키 대비 %)은 2026 연감에 없어요. 연감에는 '존 기준은 실행위원회가 정한다'고만 나와 있고, 위 수치는 KBO 웹사이트 자료예요.
+- ABS 존의 정확한 비율(키 대비 %)은 2026 연감에 없어요. 연감에는 '존 기준은 실행위원회가 정한다'고만 나와 있고, 위 수치는 KBO 홈페이지 2026 주요 규정·규칙 안내에서 확인했어요.
 source:
 - name: 공식야구규칙 2026
   ref: 용어의 정의 73. STRIKE ZONE
   note: 규칙집의 정의는 어깨와 바지 윗부분 중간~무릎 아랫부분. ABS 기준은 KBO 리그 규정
 - name: KBO 리그 규정 2026
   ref: 자동 투구 판정 시스템(ABS) 규정
+- name: KBO 홈페이지 2026 주요 규정·규칙
+  ref: ABS
+  url: https://www.koreabaseball.com/Kbo/League/GameManage2026.aspx
 related:
 - term.strike
 - term.ball
@@ -33,3 +36,5 @@ aliases:
 - 스트존
 review_status: draft
 reviewer: ''
+image: images/rules/rule.strike_zone.svg
+image_static: images/rules/rule.strike_zone.svg

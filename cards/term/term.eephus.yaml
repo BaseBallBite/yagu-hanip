@@ -1,0 +1,24 @@
+id: term.eephus
+kind: term
+title: 이퓨스
+category: 투구·구종
+one_liner: 아주 느리게 높이 떴다가 떨어지는, 가장 드문 공이에요.
+easy: 이퓨스는 속도가 매우 느리고 공을 아주 높이 띄워 던지는 공이에요. 슬로피치 소프트볼처럼 포물선을 그리며 들어와요. 타자는 보통 훨씬 빠른 직구를 예상하기 때문에 너무 일찍 크게 휘두르기 쉬워요.
+example: 높이 떴다가 천천히 떨어지는 이퓨스에 타자가 일찍 배트를 돌려 헛스윙했어요.
+source:
+- name: 팀 작성(일반 야구 용어)
+  note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Eephus
+  url: https://www.mlb.com/glossary/pitch-types/eephus
+related:
+- term.changeup
+- term.pitch_types
+- term.fastball
+event_types: []
+aliases:
+- 이퓨스
+- 에퓨스
+review_status: draft
+reviewer: ''
+image: images/pitch/term.eephus.anim.svg
+image_static: images/pitch/term.eephus.svg

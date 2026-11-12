@@ -9,12 +9,12 @@ source:
 - name: 공식야구규칙 2026
   ref: 용어의 정의 56. OVERSLIDE
 related:
+- term.overrun
 - rule.tag
 - term.stolen_base
 - term.safe
 event_types: []
 aliases:
 - 오버슬라이딩
-- 오버런
 review_status: draft
 reviewer: ''

@@ -22,3 +22,5 @@ aliases:
 - 체크스윙 판독
 review_status: draft
 reviewer: ''
+image: images/rules/rule.check_swing.anim.svg
+image_static: images/rules/rule.check_swing.svg

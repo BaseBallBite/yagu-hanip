@@ -3,11 +3,13 @@ kind: term
 title: 너클볼
 category: 투구·구종
 one_liner: 회전을 거의 주지 않아 불규칙하게 흔들리며 오는 느린 공이에요.
-easy: 너클볼은 손가락 끝으로 공을 밀어 던져 회전이 거의 없어요. 회전이 없어서 공이 불규칙하게 흔들리고, 타자도 포수도 어디로 갈지 예측하기 어려워요. 던지는 투수가 매우 드물어요.
+easy: 너클볼은 회전을 거의 없애서 공이 불규칙하게 흔들리며 오는 느린 공이에요. 어디로 흔들릴지 몰라서 타자도 포수도 다루기 어려워요. 던지는 투수가 아주 드물어요.
 example: 너클볼이 타자 앞에서 흔들리며 떨어져 헛스윙이 나왔어요.
 source:
 - name: 팀 작성(일반 야구 용어)
   note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Knuckleball
+  url: https://www.mlb.com/glossary/pitch-types/knuckleball
 related:
 - term.fastball
 - term.knuckle_curve
@@ -18,3 +20,5 @@ aliases:
 - 너클 볼
 review_status: draft
 reviewer: ''
+image: images/pitch/term.knuckleball.anim.svg
+image_static: images/pitch/term.knuckleball.svg

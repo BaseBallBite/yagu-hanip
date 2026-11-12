@@ -103,7 +103,7 @@ def fmt_when(w):
 def build_csv(cards, dst):
     titles = {c["id"]: c["title"] for c in cards}
     head = ["카드 ID", "구분", "제목", "카테고리", "한 줄 설명", "쉬운 설명", "예시",
-            "적용 조건", "출처", "인용", "관련 카드", "경기 이벤트", "별칭"]
+            "적용 조건", "출처", "인용", "관련 카드", "경기 이벤트", "별칭", "그림"]
     with open(dst, "w", encoding="utf-8-sig", newline="") as f:  # BOM 포함, 엑셀에서 한글 안 깨짐
         w = csv.writer(f)
         w.writerow(head)
@@ -115,6 +115,7 @@ def build_csv(cards, dst):
                 ", ".join(titles.get(r, r) for r in c.get("related") or []),
                 ", ".join(c.get("event_types") or []),
                 ", ".join(map(str, c.get("aliases") or [])),
+                c.get("image", "") or "",
             ])
 
 
