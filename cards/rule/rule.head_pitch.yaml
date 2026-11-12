@@ -1,0 +1,23 @@
+id: rule.head_pitch
+kind: rule
+title: 머리 쪽 투구
+category: 수비 규칙
+one_liner: 공이 타자 머리 쪽으로 오면 경고, 머리에 맞으면 투수가 퇴장이에요.
+easy: 직구가 타자의 머리 쪽으로 날아오면 맞지 않아도 심판이 먼저 경고해요. 공이 머리에 맞거나 스치면 고의가 아니어도 투수는 퇴장이에요. 타자의 안전을 지키려는 규정이에요.
+example: 직구가 타자 머리 위로 지나가 심판이 경고했어요. 다음 투구가 머리를 스치자 투수는 바로 퇴장당했어요.
+when:
+  warning: 머리 쪽으로 날아왔을 때(맞지 않아도) 1차 경고
+  ejection: 맞거나 스쳤을 때 고의 여부와 상관없이 퇴장
+source:
+- name: KBO 리그 규정 2026
+  ref: 경기의 스피드업 4. 투수 ⑦
+related:
+- rule.hit_by_pitch
+- term.pitcher
+event_types:
+- HIT_BY_PITCH
+aliases:
+- 머리 쪽 투구
+- 헤드샷
+review_status: draft
+reviewer: ''

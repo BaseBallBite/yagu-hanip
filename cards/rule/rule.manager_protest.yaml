@@ -1,0 +1,24 @@
+id: rule.manager_protest
+kind: rule
+title: 감독 항의
+category: 특수 상황
+one_liner: 판정에 대한 항의는 감독만 할 수 있고 시간이 정해져 있어요.
+easy: 심판의 판단에 대한 재정에는 이의를 제기할 수 없어요. 경기 중 어필은 감독만 할 수 있고, 코치는 함께 나갈 수 없어요. 항의가 3분 이상 이어지면 감독에게 경고하고, 4분이 지나면 퇴장이에요. 항의하다가 선수단을 그라운드에서 일부라도 철수시키면 감독은 바로 퇴장이에요.
+example: 감독이 항의를 4분 넘게 이어가자 심판이 퇴장을 선언했어요.
+when:
+  who: 감독만 어필 가능, 코치 동행 금지
+  warning: 항의 3분 이상이면 감독 1차 경고
+  ejection: 4분 경과 시 감독 퇴장, 선수단 철수 시 즉시 퇴장
+source:
+- name: KBO 리그 규정 2026
+  ref: 경기의 스피드업 1. 구단 ①~④
+related:
+- rule.appeal_play
+- term.manager
+- rule.video_review
+event_types: []
+aliases:
+- 감독 항의
+- 감독 어필
+review_status: draft
+reviewer: ''

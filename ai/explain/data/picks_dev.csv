@@ -1,0 +1,4 @@
+qid,type,tags,game_id,play_id,question,card_ids,extra_facts
+D01,규칙,복합상황,20260328HTSK02026,2d77fc57,땅볼 쳤는데 왜 타자는 살고 1루 주자가 아웃됐어요?,term.fielders_choice|rule.force_play,
+D02,규칙,,20260328HTSK02026,82c5d00a,공을 안 쳤는데 왜 주자들이 뛰고 점수가 났어요?,term.passed_ball,
+D03,상황,지연·누락기록,20260328HTSK02026,776dd65a,왜 여기서 투수를 바꿨어요?,term.pitching_change|term.bases_loaded,교체 사유 기록 없음

@@ -20,6 +20,8 @@ source:
   ref: 5.07(c)
   note: 투구 지연
 related:
+- rule.mound_visit
+- rule.batter_timeout
 - term.ball
 - term.strike
 - term.count
@@ -27,6 +29,10 @@ related:
 event_types: []
 aliases:
 - 피치 클락
+more:
+- KBO 리그는 투수판 이탈 횟수 제한이 없어요. 투수판 이탈에 해당하는 행동을 하면 피치클락이 다시 시작돼요. 퓨처스리그는 투수판 이탈 3회, 타자 타임 1회, 타석 간 30초로 따로 정해져 있어요.
+- 포수는 주자가 있고 피치클락이 9초 이상 남았을 때 포수석을 벗어나 수비 사인을 낼 수 있어요.
+- 이닝 교대나 투수 교체 때는 33초가 남았을 때까지 마지막 연습투구에 들어가야 해요. 심판은 피치클락 시작·종료·재설정에 대한 최종 권한이 있고, 부상이나 장비 고장 같은 상황에서는 조정할 수 있어요.
 review_status: draft
 reviewer: ''
 more:

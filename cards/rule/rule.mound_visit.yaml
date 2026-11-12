@@ -1,0 +1,29 @@
+id: rule.mound_visit
+kind: rule
+title: 마운드 방문
+category: 특수 상황
+one_liner: 감독·코치·포수가 투수에게 가는 횟수와 시간이 정해져 있어요.
+easy: 마운드 방문은 감독, 코치, 포수가 경기 중 투수에게 가서 이야기하는 걸 말하고, 시간은 30초예요. 투수를 바꾸지 않으면 시간이 다 되기 전에 마운드를 떠나야 해요. 감독과 코치는 투수교체를 빼고 2회까지 올라갈 수 있고, 같은 투수에게 두 번 올라가면 투수를 바꿔야 해요. 포수는 정규이닝 기준 한 경기 2회까지 갈 수 있고, 연장전에는 1회 더 갈 수 있어요.
+example: 6회에 감독이 투수에게 두 번째로 올라가자 투수교체가 이루어졌어요.
+when:
+  time: 30초(피치클락)
+  manager_coach: 투수교체 제외 2회, 위반 시 투수교체
+  catcher: 정규이닝 2회, 연장 1회 추가, 위반 시 포수 교체
+  exception: 투수가 타구에 맞거나 부상을 입었을 때는 횟수에 포함하지 않음
+source:
+- name: KBO 리그 규정 2026
+  ref: 경기의 스피드업 3. 투수교체 ③④
+- name: KBO 홈페이지 2026 주요 규정·규칙
+  ref: 피치클락
+  url: https://www.koreabaseball.com/Kbo/League/GameManage2026.aspx
+related:
+- rule.pitch_clock
+- term.pitching_change
+- term.catcher
+event_types:
+- PITCHING_CHANGE
+aliases:
+- 마운드 방문
+- 마운드 방문 횟수
+review_status: draft
+reviewer: ''

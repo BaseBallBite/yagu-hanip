@@ -1,5 +1,33 @@
 # 테스트셋 작성법
 
+## 추천: 반자동으로 만들기 (BE 상태 복원 결과 사용)
+
+`backend/game/restore_state.py` 결과가 있으면 사람은 **장면·질문·카드만** 고르면 됨.
+문자중계(raw_relay), 이닝·아웃·주자·점수(facts), 선수 목록(players)은 자동으로 채워짐.
+
+1. 복원 결과 만들기 (BE 쪽 명령, 레포 맨 위에서):
+   ```
+   python backend/game/restore_state.py --data <B1 데이터 경로> --out data/raw/b2_state_v2_all --game <경기ID>
+   ```
+2. 장면 찾기 → 맨 앞 8글자 id 확인 (`⚠` 표시 줄 근처는 피하기). `--no-pitches`를 붙이면 "1구 볼" 같은 투구 줄을 숨김:
+   ```
+   python build_testset.py list --restored ../../data/raw/b2_state_v2_all --game <경기ID> --inning 7 --no-pitches
+   ```
+   - 장면은 **결과가 나온 줄**로 고르기 (예: `조형우 : 2루수 앞 땅볼로 출루`, `1루주자 조형우 : 포일로 2루까지 진루`). "5구 타격" 같은 투구 줄 말고
+3. `picks_template.csv`를 `picks.csv`로 복사해서 한 줄에 한 문항씩 채움 (엑셀·구글시트 가능)
+   - `play_id`에는 list에 나온 8글자 id만 쓰면 됨 (예: `2d77fc57`)
+   - `tags`, `card_ids`가 여러 개면 `|`로 구분: `rule.infield_fly|term.out`
+   - `extra_facts`: 기록에 없는 사실을 따로 적을 때만 (예: `교체 사유 기록 없음`)
+4. 생성 → 검사:
+   ```
+   python build_testset.py build --restored ../../data/raw/b2_state_v2_all --picks data/picks.csv --out data/testset.jsonl
+   python check_testset.py data/testset.jsonl --cards ../../cards
+   ```
+5. `[주의] 네이버 상태와 불일치`가 뜬 문항은 facts를 원본과 직접 대조하거나 다른 장면으로 바꾸기
+6. `players`는 문자중계에 이름이 나온 선수만 모은 것. 출전했지만 한 번도 언급 안 된 선수는 빠질 수 있음
+
+## 직접 쓰기 (복원 결과가 없을 때)
+
 `testset_template.jsonl`을 복사해서 `testset.jsonl`로 이름 바꾸고 채우면 됨.
 **한 줄 = 한 문항.** 줄 중간에 엔터 치면 안 됨. 30문항이면 30줄.
 

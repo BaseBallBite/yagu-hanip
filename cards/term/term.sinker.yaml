@@ -1,21 +1,30 @@
 id: term.sinker
 kind: term
-title: 싱커
+title: 싱커(투심 패스트볼)
 category: 투구·구종
-one_liner: 직구처럼 빠르게 오다 아래로 가라앉는 공이에요.
-easy: 싱커는 직구와 비슷한 속도로 오다가 타자 앞에서 아래로 꺼지는 공이에요. 타자가 공 위쪽을 쳐서 땅볼이 되기 쉬워요. 투심과 비슷하지만 더 많이 가라앉는다고 말하는 경우가 많아요.
-example: 싱커에 타자가 공 위를 때려 유격수 앞 땅볼이 됐어요.
+one_liner: 직구처럼 빠르지만 던지는 팔 쪽으로 움직이며 가라앉는 공이에요.
+easy: 싱커는 직구와 비슷한 속도로 오면서 던지는 팔 쪽으로 움직이거나 아래로 가라앉는 공이에요. 투심 패스트볼이라고도 불러요. 우완 투수의 싱커는 우타자 몸쪽으로 파고들어요. 타자가 공 위쪽을 맞히게 만들어서 땅볼이 많이 나와요.
+example: 몸쪽으로 파고드는 싱커에 타자가 빗맞은 땅볼을 쳐서 유격수 앞으로 굴러갔어요.
 source:
 - name: 팀 작성(일반 야구 용어)
   note: 공식야구규칙에 구종 정의 없음
+- name: MLB.com Glossary - Sinker
+  url: https://www.mlb.com/glossary/pitch-types/sinker
 related:
-- term.twoseam
 - term.fastball
+- term.pitch_types
 - term.ground_ball
+- term.cutter
 event_types: []
 aliases:
 - 싱킹 패스트볼
 - 싱킹패스트볼
 - 싱킹 볼
+- 투심
+- 투 심
+- 투심패스트볼
+- 투심 패스트볼
 review_status: draft
 reviewer: ''
+image: images/pitch/term.sinker.anim.svg
+image_static: images/pitch/term.sinker.svg
