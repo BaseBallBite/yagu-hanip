@@ -1,0 +1,1679 @@
+{
+ "game_id": "20260723SSWO02026",
+ "video_id": "GtIwCm74qcg",
+ "away": "삼성",
+ "home": "키움",
+ "frame_interval_sec": 5,
+ "carry_sec": 0,
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 45.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 45.0,
+   "end": 50.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "김성윤",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 1사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 김성윤",
+    "이 타석 결과: 김성윤 : 볼넷",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 50.0,
+   "end": 60.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "구자욱",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 김성윤 ← 김성윤 : 볼넷",
+    "타자: 구자욱",
+    "이 타석 결과: 구자욱 : 좌익수 앞 1루타 / 1루주자 김성윤 : 2루까지 진루",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 60.0,
+   "end": 70.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "최형우",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 구자욱 ← 구자욱 : 좌익수 앞 1루타",
+    "2루 주자 김성윤 ← 김성윤 : 볼넷",
+    "타자: 최형우",
+    "이 타석 결과: 최형우 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 70.0,
+   "end": 75.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 75.0,
+   "end": 80.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "디아즈",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 구자욱 ← 구자욱 : 좌익수 앞 1루타",
+    "2루 주자 김성윤 ← 김성윤 : 볼넷",
+    "타자: 디아즈",
+    "이 타석 결과: 디아즈 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 80.0,
+   "end": 90.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 90.0,
+   "end": 105.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "김지찬",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 김지찬",
+    "이 타석 결과: 김지찬 : 중견수 왼쪽 1루타",
+    "타석 후: 0사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 105.0,
+   "end": 115.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "김성윤",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "1루 주자 김지찬 ← 김지찬 : 중견수 왼쪽 1루타",
+    "타자: 김성윤",
+    "이 타석 결과: 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책) / 1루주자 김지찬 : 2루까지 진루",
+    "타석 후: 0사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 115.0,
+   "end": 125.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 125.0,
+   "end": 135.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "구자욱",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "1루 주자 김성윤 ← 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책)",
+    "2루 주자 김지찬 ← 김지찬 : 중견수 왼쪽 1루타",
+    "타자: 구자욱",
+    "이 타석 결과: 구자욱 : 포수 희생번트 아웃 (포수->1루수 송구아웃) / 1루주자 김성윤 : 2루까지 진루 / 2루주자 김지찬 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 135.0,
+   "end": 140.0,
+   "status": "확정",
+   "confidence": "낮음",
+   "inning": 3,
+   "half": "초",
+   "batter": "최형우",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     true,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 1사, 점수 원정 0 : 홈 0",
+    "2루 주자 김성윤 ← 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책)",
+    "3루 주자 김지찬 ← 김지찬 : 중견수 왼쪽 1루타",
+    "타자: 최형우",
+    "이 타석 결과: 최형우 : 몸에 맞는 볼",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 140.0,
+   "end": 145.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 145.0,
+   "end": 155.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "최형우",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     true,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 1사, 점수 원정 0 : 홈 0",
+    "2루 주자 김성윤 ← 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책)",
+    "3루 주자 김지찬 ← 김지찬 : 중견수 왼쪽 1루타",
+    "타자: 최형우",
+    "이 타석 결과: 최형우 : 몸에 맞는 볼",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 155.0,
+   "end": 165.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "디아즈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     true,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 최형우 ← 최형우 : 몸에 맞는 볼",
+    "2루 주자 김성윤 ← 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책)",
+    "3루 주자 김지찬 ← 김지찬 : 중견수 왼쪽 1루타",
+    "타자: 디아즈",
+    "이 타석 결과: 디아즈 : 좌익수 희생플라이 아웃 / 3루주자 김지찬 : 홈인",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 165.0,
+   "end": 190.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 190.0,
+   "end": 195.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "류지혁",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 최형우 ← 최형우 : 몸에 맞는 볼",
+    "2루 주자 김성윤 ← 김성윤 : 2루수 희생번트 실책으로 출루 (투수->2루수 포구 실책)",
+    "이번 이닝 앞선 득점: 3루주자 김지찬 : 홈인",
+    "타자: 류지혁",
+    "이 타석 결과: 류지혁 : 2루수 땅볼 아웃 (2루수->1루수 송구아웃)",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 195.0,
+   "end": 205.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 205.0,
+   "end": 215.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "초",
+   "batter": "이재현",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회초, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 이재현",
+    "이 타석 결과: 이재현 : 유격수 라인드라이브 아웃",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 215.0,
+   "end": 220.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 220.0,
+   "end": 235.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "초",
+   "batter": "김영웅",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회초, 1사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 김영웅",
+    "이 타석 결과: 김영웅 : 우익수 오른쪽 뒤 1루타",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 235.0,
+   "end": 240.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "초",
+   "batter": "강민호",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회초, 1사, 점수 원정 1 : 홈 0",
+    "1루 주자 김영웅 ← 김영웅 : 우익수 오른쪽 뒤 1루타",
+    "타자: 강민호",
+    "이 타석 결과: 강민호 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 240.0,
+   "end": 245.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 245.0,
+   "end": 255.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "초",
+   "batter": "김지찬",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회초, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 김영웅 ← 김영웅 : 우익수 오른쪽 뒤 1루타",
+    "타자: 김지찬",
+    "이 타석 결과: 김지찬 : 우익수 플라이 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 255.0,
+   "end": 260.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 260.0,
+   "end": 265.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "데이비슨",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 데이비슨",
+    "이 타석 결과: 데이비슨 : 좌익수 앞 1루타",
+    "타석 후: 0사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 265.0,
+   "end": 275.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "히우라",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 0사, 점수 원정 1 : 홈 0",
+    "1루 주자 데이비슨 ← 데이비슨 : 좌익수 앞 1루타",
+    "타자: 히우라",
+    "이 타석 결과: 히우라 : 3루수 앞 땅볼로 출루 / 1루주자 데이비슨 : 포스아웃 (3루수->2루수 2루 터치아웃)",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 275.0,
+   "end": 285.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "김웅빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 1사, 점수 원정 1 : 홈 0",
+    "1루 주자 히우라 ← 히우라 : 3루수 앞 땅볼로 출루",
+    "타자: 김웅빈",
+    "이 타석 결과: 김웅빈 : 3루수 파울플라이 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 285.0,
+   "end": 300.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "안치홍",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 히우라 ← 히우라 : 3루수 앞 땅볼로 출루",
+    "타자: 안치홍",
+    "이 타석 결과: 안치홍 : 투수 맞고 2루수 내야안타 / 1루주자 히우라 : 2루까지 진루",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 300.0,
+   "end": 305.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "임병욱",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 안치홍 ← 안치홍 : 투수 맞고 2루수 내야안타",
+    "2루 주자 히우라 ← 히우라 : 3루수 앞 땅볼로 출루",
+    "타자: 임병욱",
+    "이 타석 결과: 임병욱 : 1루수 앞 내야안타 / 1루주자 안치홍 : 2루까지 진루 / 2루주자 히우라 : 3루까지 진루",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 305.0,
+   "end": 320.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 320.0,
+   "end": 330.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "임병욱",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 안치홍 ← 안치홍 : 투수 맞고 2루수 내야안타",
+    "2루 주자 히우라 ← 히우라 : 3루수 앞 땅볼로 출루",
+    "타자: 임병욱",
+    "이 타석 결과: 임병욱 : 1루수 앞 내야안타 / 1루주자 안치홍 : 2루까지 진루 / 2루주자 히우라 : 3루까지 진루",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 330.0,
+   "end": 340.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 340.0,
+   "end": 355.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "김동헌",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 임병욱 ← 임병욱 : 1루수 앞 내야안타",
+    "2루 주자 안치홍 ← 안치홍 : 투수 맞고 2루수 내야안타",
+    "3루 주자 히우라 ← 히우라 : 3루수 앞 땅볼로 출루",
+    "타자: 김동헌",
+    "이 타석 결과: 김동헌 : 3루수 땅볼 아웃 (3루수->1루수 송구아웃)",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 355.0,
+   "end": 360.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 360.0,
+   "end": 375.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 5,
+   "half": "초",
+   "batter": "김성윤",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "5회초, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 김성윤",
+    "이 타석 결과: 김성윤 : 우중간 2루타",
+    "타석 후: 0사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 375.0,
+   "end": 385.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 5,
+   "half": "초",
+   "batter": "구자욱",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "5회초, 0사, 점수 원정 1 : 홈 0",
+    "2루 주자 김성윤 ← 김성윤 : 우중간 2루타",
+    "타자: 구자욱",
+    "이 타석 결과: 구자욱 : 1루수 땅볼 아웃 (1루수 1루 터치아웃) / 2루주자 김성윤 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 385.0,
+   "end": 395.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 5,
+   "half": "초",
+   "batter": "최형우",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "5회초, 1사, 점수 원정 1 : 홈 0",
+    "3루 주자 김성윤 ← 김성윤 : 우중간 2루타",
+    "타자: 최형우",
+    "이 타석 결과: 최형우 : 1루수 라인드라이브 아웃 / 3루주자 김성윤 : 포스아웃 (1루수->3루수 3루 터치아웃)",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 395.0,
+   "end": 410.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 410.0,
+   "end": 415.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "류지혁",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 1사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 류지혁",
+    "이 타석 결과: 류지혁 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 415.0,
+   "end": 420.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 420.0,
+   "end": 430.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "이재현",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 이재현",
+    "이 타석 결과: 이재현 : 좌익수 플라이 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 430.0,
+   "end": 445.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 445.0,
+   "end": 450.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "데이비슨",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 데이비슨",
+    "이 타석 결과: 데이비슨 : 삼진 아웃",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 450.0,
+   "end": 455.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 455.0,
+   "end": 465.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "히우라",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 1사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 히우라",
+    "이 타석 결과: 히우라 : 좌익수 앞 1루타",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 465.0,
+   "end": 470.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "김웅빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 1사, 점수 원정 1 : 홈 0",
+    "1루 주자 히우라 ← 히우라 : 좌익수 앞 1루타",
+    "타자: 김웅빈",
+    "이 타석 결과: 김웅빈 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 470.0,
+   "end": 480.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 480.0,
+   "end": 485.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "안치홍",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 히우라 ← 히우라 : 좌익수 앞 1루타",
+    "타자: 안치홍",
+    "이 타석 결과: 안치홍 : 투수 땅볼 아웃 (투수->1루수 송구아웃)",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 485.0,
+   "end": 495.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 495.0,
+   "end": 500.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "초",
+   "batter": "김현준",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "7회초, 1사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 김현준",
+    "이 타석 결과: 김현준 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 500.0,
+   "end": 510.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 510.0,
+   "end": 520.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "초",
+   "batter": "김지찬",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "7회초, 2사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 김지찬",
+    "이 타석 결과: 김지찬 : 유격수 땅볼 아웃 (유격수->1루수 송구아웃)",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 520.0,
+   "end": 530.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 530.0,
+   "end": 540.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "말",
+   "batter": "권혁빈",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "7회말, 2사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 권혁빈",
+    "이 타석 결과: 권혁빈 : 중견수 앞 1루타",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 540.0,
+   "end": 545.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 545.0,
+   "end": 555.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "말",
+   "batter": "서건창",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "7회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 권혁빈 ← 권혁빈 : 중견수 앞 1루타",
+    "타자: 서건창",
+    "이 타석 결과: 서건창 : 좌익수 앞 1루타 / 1루주자 권혁빈 : 2루까지 진루",
+    "타석 후: 2사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 555.0,
+   "end": 560.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 560.0,
+   "end": 570.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "말",
+   "batter": "이형종",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "7회말, 2사, 점수 원정 1 : 홈 0",
+    "1루 주자 서건창 ← 서건창 : 좌익수 앞 1루타",
+    "2루 주자 권혁빈 ← 권혁빈 : 중견수 앞 1루타",
+    "타자: 이형종",
+    "이 타석 결과: 이형종 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 570.0,
+   "end": 580.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 580.0,
+   "end": 595.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 8,
+   "half": "초",
+   "batter": "김성윤",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "8회초, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 김성윤",
+    "이 타석 결과: 김성윤 : 우익수 오른쪽 2루타",
+    "타석 후: 0사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 595.0,
+   "end": 615.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 8,
+   "half": "초",
+   "batter": "구자욱",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "8회초, 0사, 점수 원정 1 : 홈 0",
+    "2루 주자 김성윤 ← 김성윤 : 우익수 오른쪽 2루타",
+    "타자: 구자욱",
+    "이 타석 결과: 구자욱 : 좌익수 플라이 아웃 / 2루주자 김성윤 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 615.0,
+   "end": 620.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 8,
+   "half": "초",
+   "batter": "디아즈",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "8회초, 2사, 점수 원정 1 : 홈 0",
+    "3루 주자 김성윤 ← 김성윤 : 우익수 오른쪽 2루타",
+    "타자: 디아즈",
+    "이 타석 결과: 디아즈 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 0"
+   ]
+  },
+  {
+   "start": 620.0,
+   "end": 635.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 635.0,
+   "end": 650.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 8,
+   "half": "말",
+   "batter": "데이비슨",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 0
+   },
+   "restore": [
+    "8회말, 0사, 점수 원정 1 : 홈 0",
+    "주자 없음",
+    "타자: 데이비슨",
+    "이 타석 결과: 데이비슨 : 좌익수 뒤 홈런 (홈런거리:135M)",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 650.0,
+   "end": 670.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 670.0,
+   "end": 675.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 8,
+   "half": "말",
+   "batter": "히우라",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "8회말, 0사, 점수 원정 1 : 홈 1",
+    "주자 없음",
+    "타자: 히우라",
+    "이 타석 결과: 히우라 : 좌익수 플라이 아웃",
+    "타석 후: 1사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 675.0,
+   "end": 690.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 690.0,
+   "end": 700.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "임병욱",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 0사, 점수 원정 1 : 홈 1",
+    "주자 없음",
+    "타자: 임병욱",
+    "이 타석 결과: 임병욱 : 우익수 앞 1루타",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 700.0,
+   "end": 705.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "김동헌",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 0사, 점수 원정 1 : 홈 1",
+    "1루 주자 임병욱 ← 임병욱 : 우익수 앞 1루타",
+    "타자: 김동헌",
+    "이 타석 결과: 김동헌 : 볼넷 / 1루주자 임병욱 : 2루까지 진루",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 705.0,
+   "end": 720.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "권혁빈",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 0사, 점수 원정 1 : 홈 1",
+    "1루 주자 김동헌 ← 김동헌 : 볼넷",
+    "2루 주자 임병욱 ← 임병욱 : 우익수 앞 1루타",
+    "타자: 권혁빈",
+    "이 타석 결과: 권혁빈 : 포수 희생번트 아웃 (포수->2루수 1루 터치아웃) / 1루주자 김동헌 : 2루까지 진루 / 2루주자 임병욱 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 720.0,
+   "end": 725.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 725.0,
+   "end": 745.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "최주환",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     true,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 1사, 점수 원정 1 : 홈 1",
+    "1루 주자 서건창 ← 서건창 : 자동 고의4구",
+    "2루 주자 김동헌 ← 김동헌 : 볼넷",
+    "3루 주자 임병욱 ← 임병욱 : 우익수 앞 1루타",
+    "타자: 최주환",
+    "이 타석 결과: 최주환 : 중견수 플라이 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 745.0,
+   "end": 760.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "데이비슨",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 2사, 점수 원정 1 : 홈 1",
+    "1루 주자 서건창 ← 서건창 : 자동 고의4구",
+    "2루 주자 김동헌 ← 김동헌 : 볼넷",
+    "3루 주자 임병욱 ← 임병욱 : 우익수 앞 1루타",
+    "타자: 데이비슨",
+    "이 타석 결과: 데이비슨 : 3루수 플라이 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 760.0,
+   "end": 775.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 775.0,
+   "end": 785.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 10,
+   "half": "초",
+   "batter": "전병우",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "10회초, 0사, 점수 원정 1 : 홈 1",
+    "주자 없음",
+    "타자: 전병우",
+    "이 타석 결과: 전병우 : 몸에 맞는 볼",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 785.0,
+   "end": 800.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 10,
+   "half": "초",
+   "batter": "김지찬",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "10회초, 0사, 점수 원정 1 : 홈 1",
+    "1루 주자 전병우 ← 전병우 : 몸에 맞는 볼",
+    "타자: 김지찬",
+    "이 타석 결과: 김지찬 : 3루수 땅볼 아웃 (3루수->1루수 송구아웃) / 1루주자 심재훈 : 2루까지 진루",
+    "타석 후: 1사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 800.0,
+   "end": 810.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 10,
+   "half": "초",
+   "batter": "김성윤",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "10회초, 1사, 점수 원정 1 : 홈 1",
+    "2루 주자 심재훈 (대주자, 원래 주자 전병우) ← 전병우 : 몸에 맞는 볼",
+    "타자: 김성윤",
+    "이 타석 결과: 김성윤 : 투수 플라이 아웃",
+    "타석 후: 2사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 810.0,
+   "end": 825.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 10,
+   "half": "초",
+   "batter": "구자욱",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "10회초, 2사, 점수 원정 1 : 홈 1",
+    "2루 주자 심재훈 (대주자, 원래 주자 전병우) ← 전병우 : 몸에 맞는 볼",
+    "타자: 구자욱",
+    "이 타석 결과: 구자욱 : 좌익수 플라이 아웃",
+    "타석 후: 3사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 825.0,
+   "end": 850.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 850.0,
+   "end": 870.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "초",
+   "batter": "최형우",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "11회초, 0사, 점수 원정 1 : 홈 1",
+    "주자 없음",
+    "타자: 최형우",
+    "이 타석 결과: 최형우 : 우익수 왼쪽 1루타",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 870.0,
+   "end": 880.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "초",
+   "batter": "디아즈",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "11회초, 0사, 점수 원정 1 : 홈 1",
+    "1루 주자 최형우 ← 최형우 : 우익수 왼쪽 1루타",
+    "타자: 디아즈",
+    "이 타석 결과: 디아즈 : 볼넷 / 1루주자 양우현 : 2루까지 진루",
+    "타석 후: 0사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 880.0,
+   "end": 890.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "초",
+   "batter": "류지혁",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "11회초, 0사, 점수 원정 1 : 홈 1",
+    "1루 주자 디아즈 ← 디아즈 : 볼넷",
+    "2루 주자 양우현 (대주자, 원래 주자 최형우) ← 최형우 : 우익수 왼쪽 1루타",
+    "타자: 류지혁",
+    "이 타석 결과: 류지혁 : 1루수 희생번트 아웃 (1루수->2루수 1루 터치아웃) / 1루주자 디아즈 : 2루까지 진루 / 2루주자 양우현 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 1 : 홈 1"
+   ]
+  },
+  {
+   "start": 890.0,
+   "end": 900.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "초",
+   "batter": "이재현",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     true,
+     true
+    ],
+    "score_away": 1,
+    "score_home": 1
+   },
+   "restore": [
+    "11회초, 1사, 점수 원정 1 : 홈 1",
+    "2루 주자 디아즈 ← 디아즈 : 볼넷",
+    "3루 주자 양우현 (대주자, 원래 주자 최형우) ← 최형우 : 우익수 왼쪽 1루타",
+    "타자: 이재현",
+    "이 타석 결과: 이재현 : 우익수 희생플라이 아웃 / 3루주자 양우현 : 홈인",
+    "타석 후: 2사, 점수 원정 2 : 홈 1"
+   ]
+  },
+  {
+   "start": 900.0,
+   "end": 910.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 910.0,
+   "end": 920.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "초",
+   "batter": "김영웅",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 2,
+    "score_home": 1
+   },
+   "restore": [
+    "11회초, 2사, 점수 원정 2 : 홈 1",
+    "2루 주자 디아즈 ← 디아즈 : 볼넷",
+    "이번 이닝 앞선 득점: 3루주자 양우현 : 홈인",
+    "타자: 김영웅",
+    "이 타석 결과: 김영웅 : 중견수 앞 1루타 / 1루주자 김영웅 : 유격수 실책으로 2루까지 진루 (중견수->유격수 송구 실책->포수) / 2루주자 디아즈 : 홈인",
+    "타석 후: 2사, 점수 원정 3 : 홈 1"
+   ]
+  },
+  {
+   "start": 920.0,
+   "end": 950.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 950.0,
+   "end": 960.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "말",
+   "batter": "서건창",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 3,
+    "score_home": 1
+   },
+   "restore": [
+    "11회말, 2사, 점수 원정 3 : 홈 1",
+    "주자 없음",
+    "타자: 서건창",
+    "이 타석 결과: 서건창 : 우익수 오른쪽 1루타",
+    "타석 후: 2사, 점수 원정 3 : 홈 1"
+   ]
+  },
+  {
+   "start": 960.0,
+   "end": 965.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 11,
+   "half": "말",
+   "batter": "박찬혁",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 3,
+    "score_home": 1
+   },
+   "restore": [
+    "11회말, 2사, 점수 원정 3 : 홈 1",
+    "1루 주자 서건창 ← 서건창 : 우익수 오른쪽 1루타",
+    "타자: 박찬혁",
+    "이 타석 결과: 박찬혁 : 유격수 앞 땅볼로 출루 / 1루주자 서건창 : 포스아웃 (유격수->2루수 2루 터치아웃)",
+    "타석 후: 3사, 점수 원정 3 : 홈 1"
+   ]
+  },
+  {
+   "start": 965.0,
+   "end": 990.0,
+   "status": "확인 불가"
+  }
+ ]
+}

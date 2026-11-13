@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import {
   Sparkles,
@@ -16,43 +17,59 @@ import { RankingPage } from './components/ranking/RankingPage';
 import { DictionaryPage } from './components/dictionary/DictionaryPage';
 import { MyPage } from './components/my/MyPage';
 
+const LOGO_PATH = '/images/yagu-hanip-logo.png';
+
+const KNOWN_PATHS = [
+  '/guide',
+  '/onboarding',
+  '/onboarding/2',
+  '/team-select',
+  '/game',
+  '/highlights',
+  '/ranking',
+  '/dictionary',
+  '/my',
+];
+
+function BrandLogo({ size = 'sm' }: { size?: 'sm' | 'md' }) {
+  return (
+    <img
+      src={LOGO_PATH}
+      alt=""
+      aria-hidden="true"
+      className={`inline-block shrink-0 rounded-full object-cover ${
+        size === 'md' ? 'w-7 h-7' : 'w-5 h-5'
+      }`}
+    />
+  );
+}
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
+    const path = window.location.pathname;
+    if (KNOWN_PATHS.includes(path)) return path;
 
-      if (
-        [
-          '/onboarding',
-          '/onboarding/2',
-          '/team-select',
-          '/game',
-          '/highlights',
-          '/ranking',
-          '/dictionary',
-          '/my',
-        ].includes(path)
-      ) {
-        return path;
-      }
-    }
-
-   return localStorage.getItem('yagu_onboarding_completed') === 'true'
-  ? '/game'
-  : '/';
+    return localStorage.getItem('yagu_onboarding_completed') === 'true'
+      ? '/game'
+      : '/';
   });
 
-  const [onboardingCompleted, setOnboardingCompleted] = useState<boolean>(
-  () => localStorage.getItem('yagu_onboarding_completed') === 'true'
-);
+  const [onboardingCompleted, setOnboardingCompleted] =
+    useState<boolean>(
+      () => localStorage.getItem('yagu_onboarding_completed') === 'true'
+    );
+
   const [isWhyActive, setIsWhyActive] = useState<boolean>(true);
-  
-  // 선택한 응원팀에 따라 전체 UI 테마 변경
+
+  const [isGuideReplay, setIsGuideReplay] = useState<boolean>(
+    () => window.location.pathname === '/guide'
+  );
+
+  // 선택한 응원팀에 따라 전체 UI 테마 적용
   useEffect(() => {
     const applyTeamTheme = () => {
       const favoriteTeam = localStorage.getItem('favoriteTeam');
 
-      // TeamSelectPage.tsx에서 저장하는 팀 이름과 연결
       const teamMap: Record<string, string> = {
         KIA: 'kia',
         삼성: 'samsung',
@@ -70,7 +87,6 @@ export default function App() {
         ? teamMap[favoriteTeam] ?? 'none'
         : 'none';
 
-      // 응원팀 없음: 기본 보라색
       if (teamId === 'none') {
         document.documentElement.removeAttribute('data-team');
       } else {
@@ -79,8 +95,6 @@ export default function App() {
     };
 
     applyTeamTheme();
-
-    // 다른 탭에서 설정이 변경된 경우에도 반영
     window.addEventListener('storage', applyTeamTheme);
 
     return () => {
@@ -88,39 +102,65 @@ export default function App() {
     };
   }, [currentPath]);
 
+  // 페이지 이동
+  const navigate = (path: string) => {
+    let nextPath = path;
 
- const navigate = (path: string) => {
-  if (path === '/' && localStorage.getItem('yagu_onboarding_completed') === 'true') {
-  path = '/game';
-}
-  // 온보딩을 마치고 경기 화면으로 이동하면 완료 상태 저장
-  const isOnboardingPage = [
-    '/onboarding',
-    '/onboarding/2',
-    '/team-select',
-  ].includes(currentPath);
+    // MY에서 이용 가이드 다시 보기
+    if (nextPath === '/guide') {
+      setIsGuideReplay(true);
+    }
 
-  if (isOnboardingPage && path === '/game') {
-    localStorage.setItem('yagu_onboarding_completed', 'true');
-    setOnboardingCompleted(true);
-  }
+    // 가이드 다시 보기 중에는 랜딩으로 이동
+    if (nextPath === '/' && isGuideReplay) {
+      nextPath = '/guide';
+    } else if (
+      nextPath === '/' &&
+      localStorage.getItem('yagu_onboarding_completed') === 'true'
+    ) {
+      nextPath = '/game';
+    }
 
-  setCurrentPath(path);
+    const isOnboardingPage = [
+      '/onboarding',
+      '/onboarding/2',
+      '/team-select',
+    ].includes(currentPath);
 
-  window.history.pushState({}, '', path);
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
+    // 온보딩을 마치면 완료 상태 저장
+    if (isOnboardingPage && nextPath === '/game') {
+      localStorage.setItem('yagu_onboarding_completed', 'true');
+      setOnboardingCompleted(true);
+    }
 
-const handleStart = () => {
-  navigate(onboardingCompleted ? '/game' : '/onboarding');
-};
+    // 경기 화면 진입 시 가이드 다시 보기 종료
+    if (nextPath === '/game') {
+      setIsGuideReplay(false);
+    }
 
+    setCurrentPath(nextPath);
+    window.history.pushState({}, '', nextPath);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleStart = () => {
+    navigate(
+      isGuideReplay || !onboardingCompleted
+        ? '/onboarding'
+        : '/game'
+    );
+  };
+
+  // 브라우저 뒤로가기 / 앞으로가기
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      const path = window.location.pathname || '/';
+      setCurrentPath(path);
+      setIsGuideReplay(path === '/guide');
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -134,13 +174,24 @@ const handleStart = () => {
     setIsWhyActive((prev) => !prev);
   };
 
+  // 상단 메뉴
+  const navItems = [
+    { label: '경기', path: '/game' },
+    { label: '하이라이트', path: '/highlights' },
+    { label: '순위', path: '/ranking' },
+    { label: '야구사전', path: '/dictionary' },
+    { label: 'MY', path: '/my' },
+  ];
+
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-[#1E232A] flex flex-col selection:bg-purple-100 selection:text-purple-900">
+
       {/* =========================
           COMMON HEADER
       ========================== */}
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-colors">
         <div className="max-w-[1350px] mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+
           {/* Logo / Service Name */}
           <button
             type="button"
@@ -150,7 +201,7 @@ const handleStart = () => {
           >
             <div className="w-10 h-10 rounded-2xl overflow-hidden transition-transform group-hover:scale-105 shrink-0">
               <img
-                src="/images/yagu-hanip-logo.png"
+                src={LOGO_PATH}
                 alt="야구한입 로고"
                 className="w-full h-full object-cover"
               />
@@ -169,90 +220,29 @@ const handleStart = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <button
-              type="button"
-              onClick={() => navigate('/game')}
-              className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
-                currentPath === '/game'
-                  ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                  : 'text-gray-600 hover:text-purple-600'
-              }`}
-            >
-              <span>경기</span>
+            {navItems.map((item) => (
+              <button
+                key={item.path}
+                type="button"
+                onClick={() => navigate(item.path)}
+                className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
+                  currentPath === item.path
+                    ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
+                    : 'text-gray-600 hover:text-purple-600'
+                }`}
+              >
+                <span>{item.label}</span>
 
-              {currentPath === '/game' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/highlights')}
-              className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
-                currentPath === '/highlights'
-                  ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                  : 'text-gray-600 hover:text-purple-600'
-              }`}
-            >
-              <span>하이라이트</span>
-
-              {currentPath === '/highlights' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/ranking')}
-              className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
-                currentPath === '/ranking'
-                  ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                  : 'text-gray-600 hover:text-purple-600'
-              }`}
-            >
-              <span>순위</span>
-
-              {currentPath === '/ranking' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/dictionary')}
-              className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
-                currentPath === '/dictionary'
-                  ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                  : 'text-gray-600 hover:text-purple-600'
-              }`}
-            >
-              <span>야구사전</span>
-
-              {currentPath === '/dictionary' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/my')}
-              className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
-                currentPath === '/my'
-                  ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                  : 'text-gray-600 hover:text-purple-600'
-              }`}
-            >
-              <span>MY</span>
-
-              {currentPath === '/my' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-              )}
-            </button>
+                {currentPath === item.path && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
+                )}
+              </button>
+            ))}
           </nav>
 
           {/* Header CTA */}
           <div className="flex items-center gap-3">
-            {currentPath === '/' ? (
+            {currentPath === '/' || currentPath === '/guide' ? (
               <button
                 type="button"
                 onClick={handleStart}
@@ -310,14 +300,17 @@ const handleStart = () => {
           <MyPage onNavigate={navigate} />
         </main>
       ) : (
+
         /* =========================
             LANDING PAGE
         ========================== */
         <main className="flex-1 flex flex-col justify-center py-10 lg:py-16">
           <div className="max-w-[1200px] w-full mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+
               {/* LEFT */}
               <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left">
+
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
                   <Sparkles className="w-4 h-4 text-purple-600 animate-pulse" />
@@ -332,9 +325,11 @@ const handleStart = () => {
                 {/* Main Copy */}
                 <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-gray-900 leading-[1.38] tracking-tight mb-5 whitespace-pre-line">
                   야구를 하나도 몰라도,{"\n"}
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-lg bg-purple-100/80 text-purple-900 mx-1">
-                    🤔 왜?
+
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-purple-100/80 text-purple-900 mx-1 align-middle">
+                    <span>한입만!</span>
                   </span>{' '}
+
                   한 번으로 방금 장면을 이해해요
                 </h2>
 
@@ -349,6 +344,7 @@ const handleStart = () => {
 
                 {/* Feature List */}
                 <div className="w-full space-y-3 mb-9">
+
                   {/* Feature 1 */}
                   <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:border-purple-200 hover:shadow-md transition-all duration-200 flex items-start gap-4">
                     <div className="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 font-bold flex items-center justify-center shrink-0 text-sm mt-0.5">
@@ -356,12 +352,15 @@ const handleStart = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-gray-900 text-[15px] sm:text-base flex items-center gap-1.5">
-                        경기 중{' '}
-                        <span className="text-purple-600 font-black">
-                          🤔 왜?
-                        </span>{' '}
-                        버튼을 누르면 방금 플레이를 쉽게 설명
+                      <h3 className="font-bold text-gray-900 text-[15px] sm:text-base flex items-center gap-1.5 flex-wrap">
+                        <span>경기 중</span>
+
+                        <span className="inline-flex items-center gap-1 text-purple-600 font-black">
+                          <BrandLogo />
+                          한입만!
+                        </span>
+
+                        <span>버튼을 누르면 방금 플레이를 쉽게 설명</span>
                       </h3>
 
                       <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
@@ -401,8 +400,8 @@ const handleStart = () => {
                       </h3>
 
                       <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                        투수의 구종, 볼카운트, 주자 위치를 반영해 ‘지금 왜
-                        중요한 순간인지’ 알려줘요.
+                        투수의 구종, 볼카운트, 주자 위치를 반영해
+                        지금 중요한 순간인 이유를 알려줘요.
                       </p>
                     </div>
                   </div>
@@ -429,11 +428,13 @@ const handleStart = () => {
               {/* RIGHT */}
               <div className="lg:col-span-6 xl:col-span-6">
                 <div className="relative group">
+
                   {/* Backdrop */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-200/50 via-purple-100/40 to-pink-100/40 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-500" />
 
                   {/* Preview Card */}
                   <div className="relative bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-xl shadow-gray-200/60 hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-300">
+
                     {/* Card Header */}
                     <div className="flex items-center justify-between pb-5 border-b border-gray-100">
                       <div className="flex items-center gap-2">
@@ -455,6 +456,7 @@ const handleStart = () => {
                     {/* Scoreboard */}
                     <div className="mt-5 bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-4 sm:p-5 border border-gray-100">
                       <div className="flex items-center justify-between">
+
                         {/* KT */}
                         <div className="flex items-center gap-3">
                           <div className="w-11 h-11 rounded-2xl bg-black text-white font-black text-sm flex items-center justify-center shadow-xs">
@@ -465,7 +467,6 @@ const handleStart = () => {
                             <div className="text-xs font-medium text-gray-500">
                               홈
                             </div>
-
                             <div className="text-lg font-black text-gray-900">
                               KT
                             </div>
@@ -497,7 +498,6 @@ const handleStart = () => {
                             <div className="text-xs font-medium text-gray-500">
                               원정
                             </div>
-
                             <div className="text-lg font-black text-gray-900">
                               KIA
                             </div>
@@ -535,23 +535,17 @@ const handleStart = () => {
                         <div className="flex items-center gap-2 font-mono">
                           <span className="text-[11px]">
                             B{' '}
-                            <span className="text-emerald-600 font-bold">
-                              2
-                            </span>
+                            <span className="text-emerald-600 font-bold">2</span>
                           </span>
 
                           <span className="text-[11px]">
                             S{' '}
-                            <span className="text-amber-500 font-bold">
-                              2
-                            </span>
+                            <span className="text-amber-500 font-bold">2</span>
                           </span>
 
                           <span className="text-[11px]">
                             O{' '}
-                            <span className="text-red-500 font-bold">
-                              0
-                            </span>
+                            <span className="text-red-500 font-bold">0</span>
                           </span>
                         </div>
                       </div>
@@ -622,8 +616,8 @@ const handleStart = () => {
                       </div>
                     </div>
 
-                    {/* WHY Button */}
-                    <div className="mt-5 flex items-center justify-between">
+                    {/* 한입만! Button */}
+                    <div className="mt-5 flex items-center justify-between gap-3">
                       <div className="text-xs font-medium text-gray-500 flex items-center gap-1">
                         <Info className="w-3.5 h-3.5 text-purple-500" />
                         <span>궁금한 순간 언제든 눌러보세요</span>
@@ -637,9 +631,10 @@ const handleStart = () => {
                             ? 'bg-purple-600 text-white shadow-purple-500/20 ring-2 ring-purple-300'
                             : 'bg-gray-100 hover:bg-purple-100 text-gray-700 hover:text-purple-700'
                         }`}
-                        title="클릭하여 AI 설명 켜기/끄기"
+                        title="클릭하여 AI 해설 보기 또는 접기"
                       >
-                        <span>🤔 왜?</span>
+                        
+                        <span>한입만!</span>
 
                         <span className="text-[11px] font-normal opacity-90">
                           {isWhyActive ? '설명 접기' : '해설 보기'}
@@ -721,9 +716,7 @@ const handleStart = () => {
           </div>
 
           <div className="flex items-center gap-4 text-gray-400">
-            <span>
-              © 2026 야구한입. All rights reserved.
-            </span>
+            <span>© 2026 야구한입. All rights reserved.</span>
           </div>
         </div>
       </footer>

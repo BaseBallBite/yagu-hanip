@@ -72,7 +72,7 @@ export function MySettingsCard({
               </span>
             </div>
             <p className="text-xs text-gray-500 mb-3">
-              '🤔 왜?' 해설 버튼을 눌렀을 때 생성되는 AI 답변의 깊이를 조절합니다.
+              '한입만!' 버튼을 눌렀을 때 제공되는 AI 해설의 깊이를 조절합니다.
             </p>
 
             {/* Segmented Select buttons */}
@@ -110,6 +110,31 @@ export function MySettingsCard({
         </div>
       </div>
 
+      {/* Service Guide Replay */}
+      <button
+        type="button"
+        onClick={() => onNavigate('/guide')}
+        className="w-full bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md hover:border-purple-200 transition-all flex items-center justify-between gap-3 text-left cursor-pointer group"
+      >
+        <div className="flex items-center gap-3">
+          <span className="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+            <HelpCircle className="w-4 h-4 text-purple-600" />
+          </span>
+
+          <div>
+            <p className="text-sm font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+              서비스 이용 가이드 다시 보기
+            </p>
+            <p className="text-xs text-gray-500 mt-0.5">
+              야구한입 사용 방법을 처음부터 확인해요
+            </p>
+          </div>
+        </div>
+
+        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-purple-600 shrink-0" />
+      </button>
+
+      
       {/* Personalization Info Guidance Box */}
       <div className="rounded-2xl p-4 bg-gradient-to-r from-purple-50/70 via-indigo-50/40 to-purple-50/70 border border-purple-100/80 text-xs text-purple-900 flex items-start gap-3 shadow-xs">
         <Lightbulb className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />

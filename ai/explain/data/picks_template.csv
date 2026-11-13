@@ -1,0 +1,3 @@
+qid,type,tags,game_id,play_id,question,card_ids,extra_facts
+Q01,규칙,복합상황,20260328HTSK02026,2d77fc57,땅볼 쳤는데 타자는 살고 1루 주자가 아웃된 거예요?,term.fielders_choice|term.out_on_base,
+Q02,규칙,,20260328HTSK02026,82c5d00a,공을 안 쳤는데 주자가 왜 뛰어서 점수가 났어요?,term.passed_ball,
