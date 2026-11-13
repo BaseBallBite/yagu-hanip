@@ -79,13 +79,16 @@ def apply_carry(segs, carry):
     return segs
 
 
-def build(game_path, readings_path, video_id, every=5, carry=0):
+def build(game_path, readings_path, video_id, every=5, carry=0, order=False):
     game = json.load(open(game_path, encoding="utf-8"))
     rows = game["rows"]
     pas = match.build_plate_appearances(rows)
     readings = json.load(open(readings_path, encoding="utf-8"))
 
-    segs = apply_carry(group(frame_labels(readings, pas), every), carry)
+    labels = frame_labels(readings, pas)
+    if order:
+        labels = match.order_filter(labels, pas)
+    segs = apply_carry(group(labels, every), carry)
 
     scenes, max_pa = [], -1
     for seg in segs:
@@ -117,7 +120,7 @@ def build(game_path, readings_path, video_id, every=5, carry=0):
     summ = game.get("summary", {})
     return {"game_id": summ.get("game_id"), "video_id": video_id,
             "away": summ.get("away"), "home": summ.get("home"),
-            "frame_interval_sec": every, "carry_sec": carry, "scenes": scenes}
+            "frame_interval_sec": every, "carry_sec": carry, "order_rule": order, "scenes": scenes}
 
 
 def main():
@@ -128,9 +131,10 @@ def main():
     ap.add_argument("--out", default=None)
     ap.add_argument("--every", type=float, default=5)
     ap.add_argument("--carry", type=float, default=0, help="추정 처리할 최대 길이(초). 0이면 안 씀")
+    ap.add_argument("--order", action="store_true", help="순서 규칙 적용 (같은 반이닝에서 이전 타석으로 되돌아가면 확정 안 함)")
     args = ap.parse_args()
 
-    table = build(args.game, args.readings, args.video_id, args.every, args.carry)
+    table = build(args.game, args.readings, args.video_id, args.every, args.carry, args.order)
     out = args.out or f'scenes_{table["game_id"]}.json'
     json.dump(table, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 

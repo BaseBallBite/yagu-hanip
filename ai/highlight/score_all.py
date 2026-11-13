@@ -27,7 +27,8 @@ import score  # noqa: E402
 
 GAMES_DIR = os.path.join(HERE, "..", "..", "data", "raw", "b2_state_v2_all", "games")
 HALF_KO = {"top": "초", "bottom": "말"}
-METHODS = [("그대로 믿기", "strict", 0), ("기록 대조", "soft", 0), ("기록 대조 + 10초 이어받기", "soft", 10)]
+METHODS = [("그대로 믿기", "strict", 0, False), ("기록 대조", "soft", 0, False),
+           ("기록 대조 + 순서 규칙", "soft", 0, True), ("기록 대조 + 10초 이어받기", "soft", 10, False)]
 
 
 def check_truth(truth, pas, rows):
@@ -71,7 +72,7 @@ def main():
     if not args:
         sys.exit(__doc__)
 
-    totals = {name: [] for name, _, _ in METHODS}
+    totals = {name: [] for name, _, _, _ in METHODS}
     per_game = []
     all_warns = []
 
@@ -93,8 +94,8 @@ def main():
             all_warns.append((gid, t, msg))
 
         row = {"game": gid, "n": len(truth)}
-        for name, mode, carry in METHODS:
-            g = score.grade(truth, score.predict(readings, pas, mode, carry))
+        for name, mode, carry, order in METHODS:
+            g = score.grade(truth, score.predict(readings, pas, mode, carry, order))
             totals[name].extend(g)
             row[name] = g
         per_game.append(row)
@@ -120,11 +121,11 @@ def main():
     def pct(a, b):
         return f"{a/b:.0%}" if b else "-"
 
-    lines = ["# 하이라이트 연결 평가 결과 (v2 프롬프트)", "",
+    lines = ["# 하이라이트 연결 평가 결과", "",
              f"평가 경기 {len(per_game)}개, 정답 장면 {sum(r['n'] for r in per_game)}개", ""]
 
     lines += ["## 전체", "", "| 방식 | 맞게 찾은 비율 | 확정한 것 중 맞은 비율 | 틀린 연결 |", "|---|---|---|---|"]
-    for name, _, _ in METHODS:
+    for name, _, _, _ in METHODS:
         h, n, lh, ln, w = stats(totals[name])
         lines.append(f"| {name} | {pct(h, n)} ({h}/{n}) | {pct(lh, ln)} ({lh}/{ln}) | {w}개 |")
 
