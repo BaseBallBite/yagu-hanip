@@ -41,19 +41,27 @@ import scene_table  # noqa: E402
 GAMES_DIR = os.path.join(HERE, "..", "..", "data", "raw", "b2_state_v2_all", "games")
 
 
+def save_json(obj, path):
+    """중간에 Ctrl+C로 끊겨도 파일이 깨지지 않게, 임시 파일에 다 쓴 다음 바꿔치기함."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, path)
+
+
 def video_id_of(url):
     m = re.search(r"(?:youtu\.be/|v=|shorts/)([\w-]{11})", url)
     return m.group(1) if m else None
 
 
-def read_game(client, game_id, url, game_path, every, prompt):
+def read_game(client, game_id, url, game_path, every, prompt, suffix=""):
     summ = json.load(open(game_path, encoding="utf-8"))["summary"]
     away, home = summ["away"], summ["home"]
 
     video = sr.download(url, out_base=os.path.join(HERE, f"highlight_{game_id}"))
     frames = sr.grab_frames(video, every, out_dir=os.path.join(HERE, "frames", game_id))
 
-    out = os.path.join(HERE, f"readings_{game_id}.json")
+    out = os.path.join(HERE, f"readings_{game_id}{suffix}.json")
     done = {}
     if os.path.exists(out):
         done = {r["frame"]: r for r in json.load(open(out, encoding="utf-8")) if r.get("raw") is not None}
@@ -66,10 +74,10 @@ def read_game(client, game_id, url, game_path, every, prompt):
         raw = sr.read_frame(client, f["frame"], sr.PROMPTS[prompt])
         results.append({**f, **sr.to_reading(raw, away, home), "raw": raw, "prompt": prompt})
         if i % 20 == 0 or i == len(frames):
-            json.dump(results, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            save_json(results, out)
             print(f"  {i}/{len(frames)}장 읽음")
         time.sleep(1)
-    json.dump(results, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    save_json(results, out)
     return out
 
 
@@ -97,6 +105,8 @@ def main():
     ap.add_argument("--prompt", default="v2", choices=list(sr.PROMPTS))
     ap.add_argument("--carry", type=float, default=0, help="장면 표 추정 처리(초). 0이면 안 씀")
     ap.add_argument("--eval-every", type=float, default=30, help="빈 정답표 간격(초)")
+    ap.add_argument("--order", action="store_true", help="장면 표에 순서 규칙 적용")
+    ap.add_argument("--suffix", default="", help="결과 파일 이름 뒤에 붙일 말 (예: _v3). 기존 결과를 덮어쓰지 않게")
     args = ap.parse_args()
 
     key = os.environ.get("GEMINI_API_KEY")
@@ -120,11 +130,11 @@ def main():
             print(f"  유튜브 링크에서 영상 ID를 못 찾음 → 건너뜀: {url}")
             continue
 
-        scenes_path = os.path.join(HERE, "output", f"scenes_{gid}.json")
-        readings = read_game(client, gid, url, game_path, args.every, args.prompt)
+        scenes_path = os.path.join(HERE, "output", f"scenes_{gid}{args.suffix}.json")
+        readings = read_game(client, gid, url, game_path, args.every, args.prompt, args.suffix)
 
-        table = scene_table.build(game_path, readings, vid, args.every, args.carry)
-        json.dump(table, open(scenes_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        table = scene_table.build(game_path, readings, vid, args.every, args.carry, args.order)
+        save_json(table, scenes_path)
         n = len(table["scenes"])
         ok = sum(1 for s in table["scenes"] if s["status"] == "확정")
         print(f"  장면 표: {n}개 구간 (확정 {ok}) → {scenes_path}")

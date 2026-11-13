@@ -63,7 +63,34 @@ PROMPT_V2 = """너는 KBO 야구 중계 화면의 전광판(스코어보드 그�
 - is_replay: 리플레이/느린 화면으로 보이면 true
 """
 
-PROMPTS = {"v1": PROMPT_V1, "v2": PROMPT_V2}
+# v3: 시연용 경기(MBC SPORTS+)에서 발견한 오류 반영
+#  - 방송사마다 중계표 모양이 다름 (왼쪽 위 박스 / 화면 아래 가로 띠)
+#  - 중계표에 타자 이름이 없는데 화면 속 선수를 보고 타자 이름을 지어냄
+PROMPT_V3 = """너는 KBO 야구 중계 화면의 중계표(스코어보드 그래픽)를 읽는 역할이다.
+화면에 글자나 그림으로 실제로 보이는 것만 읽어라. 보이지 않거나 확실하지 않은 칸은 반드시 null 로 둬라. 추측 금지.
+
+[중계표 모양] 방송사마다 다르다. 둘 중 하나인 경우가 많다.
+(A) 화면 왼쪽 위 박스: 팀 이름과 점수가 양옆에 있고, 가운데에 베이스 마름모와 이닝, 그 아래 카운트와 아웃,
+    맨 아래 줄에 "P 이름"(투수)과 "숫자. 이름 N타수 N안타"(현재 타자)가 있다.
+(B) 화면 아래 가로 띠: "4▼  NC 2 ◇ 0 LG  0-0 ●  P48" 처럼 이닝, 팀과 점수, 베이스 마름모, 카운트, 아웃 점,
+    투구 수가 한 줄로 이어진다. 이 모양은 타자 이름이 없는 경우가 많다.
+
+[공통 규칙]
+- 이닝: 숫자 옆 ▲ 는 초(top), ▼ 는 말(bottom)
+- 베이스 마름모 3개: 오른쪽 = 1루, 위 = 2루, 왼쪽 = 3루. 색칠된(노란색 등) 마름모 = 주자 있음
+- "숫자-숫자" = 볼-스트라이크 카운트 (앞이 볼)
+- 아웃: 켜진(빨간색 등) 점의 개수 (0~2)
+- teams: 중계표에 적힌 순서대로 [먼저 나온 팀, 나중 팀] 이름(약칭 그대로)과 점수
+- 점수만 크게 나오는 득점 자막, 경기 시작/종료 그래픽은 중계표가 아니다 (is_scoreboard_visible=false)
+
+[타자 이름 — 가장 중요]
+- batter 는 중계표 안에 "숫자. 이름" 처럼 현재 타자로 글자가 적혀 있을 때만 그 이름을 넣는다.
+- 화면에 보이는 선수의 얼굴, 유니폼 이름, 등번호, "1루주자 OOO" 같은 주자 자막, 해설 자막으로 타자를 추측하지 마라.
+- "P 이름" 은 투수다. 타자가 아니다.
+- 중계표에 타자 줄이 없으면 batter 는 null, batter_in_scoreboard 는 false.
+"""
+
+PROMPTS = {"v1": PROMPT_V1, "v2": PROMPT_V2, "v3": PROMPT_V3}
 PROMPT = PROMPT_V1
 
 SCHEMA = {
@@ -85,6 +112,7 @@ SCHEMA = {
         "balls": {"type": "INTEGER", "nullable": True},
         "strikes": {"type": "INTEGER", "nullable": True},
         "batter": {"type": "STRING", "nullable": True},
+        "batter_in_scoreboard": {"type": "BOOLEAN", "nullable": True},
     },
     "required": ["is_scoreboard_visible", "teams", "inning", "half", "outs",
                  "bases", "balls", "strikes", "batter", "is_replay"],
@@ -185,6 +213,9 @@ def to_reading(raw, away, home):
         return r
     for k in ("inning", "half", "outs", "balls", "strikes", "batter", "is_replay"):
         r[k] = raw.get(k)
+    # v3: 중계표 안에 타자 줄이 없다고 답했으면 타자 이름은 버림 (화면 보고 지어낸 이름 방지)
+    if raw.get("batter_in_scoreboard") is False:
+        r["batter"] = None
     b = raw.get("bases")
     r["bases"] = b if isinstance(b, list) and len(b) == 3 else None
     for t in raw.get("teams") or []:
