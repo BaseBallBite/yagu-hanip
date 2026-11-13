@@ -219,6 +219,26 @@ def _match_soft(reading, pas):
     return {"status": "확인 불가", "reason": f"후보 타석 {len(ranked)}개가 비슷해서 못 좁힘", "candidates": cand}
 
 
+def order_filter(labels, pas):
+    """
+    순서 규칙: 하이라이트는 경기 순서대로 편집되므로, 같은 반이닝 안에서
+    바로 앞에 확정한 타석보다 '이전' 타석이 나오면 확정하지 않음 (None 으로 바꿈).
+    labels: 시간순 [(time, pa_id 또는 None, ...), ...]
+    """
+    out, last = [], None
+    for item in labels:
+        t, pa_id = item[0], item[1]
+        if pa_id is not None and last is not None:
+            same_half = (pas[pa_id]["inning"], pas[pa_id]["half"]) == (pas[last]["inning"], pas[last]["half"])
+            if same_half and pa_id < last:
+                out.append((t, None) + tuple(item[2:]))
+                continue
+        if pa_id is not None:
+            last = pa_id
+        out.append(item)
+    return out
+
+
 # ---------------------------------------------------------------- 복원
 
 def restore(pa, rows):

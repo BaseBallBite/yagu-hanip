@@ -43,13 +43,17 @@ def load_truth(path):
     return rows
 
 
-def predict(readings, pas, mode, carry=0):
-    out, last = {}, None
+def predict(readings, pas, mode, carry=0, order=False):
+    labels = []
     for rd in sorted(readings, key=lambda r: r["time_sec"]):
         res = match.match_scene(rd, pas, mode)
-        t = float(rd["time_sec"])
-        if res["status"] == "확정":
-            p = pas[res["pa_id"]]
+        labels.append((float(rd["time_sec"]), res["pa_id"] if res["status"] == "확정" else None))
+    if order:
+        labels = match.order_filter(labels, pas)
+    out, last = {}, None
+    for t, pa_id in labels:
+        if pa_id is not None:
+            p = pas[pa_id]
             pred = (p["inning"], p["half"], p["batter"])
             last = (t, pred)
         elif carry and last and t - last[0] <= carry:
