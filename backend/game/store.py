@@ -9,7 +9,8 @@ DB 파일은 용량이 커서 git에 올리지 않는다(data/db/). 각자 아�
 표
   games   경기 1행: 날짜, 원정/홈 팀, 최종 점수, B2 점수 일치 여부
   plays   플레이 1행 (game_id, seq 로 조회): 이닝, 유형, 원문, 타자/투수, 상태 전/후, 유형 태그, F 목록
-  pitches 투구 1행 (B3): 구종, 구속, 결과, 존 위치, 궤적, 시각화 가능 여부
+  pitches 투구 1행 (B3): 구종, 구속, 결과, 존 위치, 궤적, 시각화 가능 여부,
+          던지기 전/후 볼·스트라이크 카운트 (count.py 규칙, 네이버 원본과 99.99% 일치)
 
 플레이 순번(seq)은 facts.py 와 같다: B2 상태 rows 순서, 1부터.
 사전 카드는 여기 넣지 않는다 (data/dict/dict.json 을 B7 API가 그대로 읽는다).
@@ -24,11 +25,12 @@ import sqlite3
 import time
 from pathlib import Path
 
+from backend.game.count import compute_counts
 from backend.game.facts import B1_DIR, B2_DIR, ROOT, build_facts, load_game
 from backend.game.facts import _players as players  # F와 같은 규칙으로 빈 타자·투수 이름을 채움
 
 DB_PATH = Path(os.environ.get("YAGU_DB", ROOT / "data/db/yagu.sqlite"))
-VERSION = "b4-store-v1"
+VERSION = "b4-store-v2"  # v2: 투구별 볼·스트라이크 카운트
 
 SCHEMA = """
 CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -78,7 +80,11 @@ CREATE TABLE pitches (
     visualization_status TEXT,
     zone TEXT,
     trajectory TEXT,
-    supplement_source TEXT  -- 네이버 원본 누락·오류를 다른 출처로 보완한 경우 그 출처
+    supplement_source TEXT,  -- 네이버 원본 누락·오류를 다른 출처로 보완한 경우 그 출처
+    balls_before INTEGER,
+    strikes_before INTEGER,
+    balls_after INTEGER,
+    strikes_after INTEGER
 );
 CREATE INDEX pitches_game ON pitches(game_id, seq);
 """
@@ -118,6 +124,7 @@ def build(db_path: Path = DB_PATH, limit: int | None = None,
              int(bool(summary.get("final_score_match"))), len(game.rows)),
         )
         play_rows, pitch_rows = [], []
+        counts = compute_counts(game)
         for seq, row in enumerate(game.rows, 1):
             f = build_facts(gid, seq, game)
             batter, pitcher = players(game, seq - 1)
@@ -129,6 +136,7 @@ def build(db_path: Path = DB_PATH, limit: int | None = None,
             ))
             p = game.pitches.get(row["play_id"])
             if p:
+                c = counts.get(row["play_id"], {})
                 pitch_rows.append((
                     row["play_id"], gid, seq, p.get("plate_appearance_id"), p.get("pitch_number"),
                     p.get("pitch_type"), p.get("pitch_type_raw"), p.get("speed_reported"),
@@ -136,9 +144,11 @@ def build(db_path: Path = DB_PATH, limit: int | None = None,
                     None if p.get("is_physical_pitch") is None else int(p["is_physical_pitch"]),
                     p.get("visualization_status"), _j(p.get("zone")), _j(p.get("trajectory")),
                     p.get("supplement_source"),
+                    c.get("balls_before"), c.get("strikes_before"),
+                    c.get("balls_after"), c.get("strikes_after"),
                 ))
         con.executemany("INSERT INTO plays VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", play_rows)
-        con.executemany("INSERT INTO pitches VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", pitch_rows)
+        con.executemany("INSERT INTO pitches VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", pitch_rows)
         n_plays += len(play_rows)
         n_pitches += len(pitch_rows)
         load_game.cache_clear()
@@ -178,6 +188,7 @@ def _play(r: sqlite3.Row, with_facts: bool = True) -> dict:
 
 def _pitch(r: sqlite3.Row) -> dict:
     return {
+        "plate_appearance_id": r["plate_appearance_id"],  # 같은 타석의 공끼리 묶을 때 사용
         "pitch_number": r["pitch_number"], "pitch_type": r["pitch_type"],
         "pitch_type_raw": r["pitch_type_raw"], "speed": r["speed"],
         "result_text": r["result_text"], "result_code": r["result_code"],
@@ -185,6 +196,9 @@ def _pitch(r: sqlite3.Row) -> dict:
         "zone": json.loads(r["zone"]) if r["zone"] else None,
         "trajectory": json.loads(r["trajectory"]) if r["trajectory"] else None,
         "supplement_source": r["supplement_source"],
+        # 볼·스트라이크 카운트: 이 공을 던지기 전 / 던진 후
+        "count_before": {"balls": r["balls_before"], "strikes": r["strikes_before"]},
+        "count_after": {"balls": r["balls_after"], "strikes": r["strikes_after"]},
     }
 
 

@@ -34,7 +34,7 @@
 | `limit` | 전체 | 최대 개수 (최대 2000) |
 | `event_type` | 전체 | 쉼표 구분: `single,double,home_run` |
 | `facts` | false | F 목록 포함 |
-| `pitch` | false | 투구 정보 포함 (구종, 구속, 존, 궤적) |
+| `pitch` | false | 투구 정보 포함 (구종, 구속, 존, 궤적, 볼·스트라이크 카운트) |
 
 경기 하나 전체(약 600줄)는 옵션 없이 약 320KB, `facts=true&pitch=true` 면 약 600KB.
 
@@ -54,6 +54,12 @@
 - `event_type` 목록: `pitch`, `batter_announcement`, `substitution`, `inning_start`, `single`, `double`, `triple`, `home_run`, `walk`, `strikeout`, `flyout`, `groundout`, `runner_advance`, `run_scored`, `runner_out`, `steal` 등.
 - 투구 `zone` 단위는 피트(ft). `x_ft` 는 홈플레이트 가운데 기준 좌우, `height_ft` 는 높이, `top_ft`/`bottom_ft` 는 그 타자의 스트라이크존 위·아래. 존 좌우 끝은 약 ±0.83ft. `visualization_status` 가 `available` 인 공만 그리면 된다.
 - `speed` 는 중계 화면 표기 그대로(km/h).
+- 투구의 `plate_appearance_id` 가 같으면 같은 타석이다. 타석별 투구 목록은 이 값으로 묶는다.
+- **볼·스트라이크 카운트**: 투구의 `count_before` 는 이 공을 던지기 전, `count_after` 는 던진 후 (`{"balls": 1, "strikes": 2}`). 화면의 "현재 카운트"는 마지막 공의 `count_after` 를 쓰면 된다. 볼넷·삼진이 된 공은 `count_after` 가 4볼 / 3스트라이크로 나온다. 타석 결과 줄(예: `single`)에는 투구가 없으니 그 타석 마지막 공의 `count_after` 를 쓴다.
+  - 계산 규칙: 볼 +1, 스트라이크·헛스윙 +1, 파울은 2스트라이크 전까지만 +1, 번트파울은 항상 +1, 타격은 그대로. "포수 파울 플라이 포구 실책" 같은 줄은 앞 파울 공의 설명이라 카운트를 바꾸지 않는다.
+  - 네이버 원본의 줄별 카운트와 대조: 221,661개 공 중 221,626개 일치. 다른 26개 중 24개는 5/13 NC–롯데 경기로, 원본 카운트가 투구 결과와 맞지 않고 한두 줄씩 밀려 있다. 이 경우 계산 값이 투구 결과와 맞다. 다시 확인: `.venv/bin/python -m backend.game.count verify`
+- 경기의 `status` 는 "종료"가 아니라 **경기가 끝난 이닝**(예: `9회말`, `11회말`)이다. 720경기 모두 끝난 경기다.
+- DB를 다시 만들면(`store build`) API 서버도 재시작해야 새 DB를 읽는다.
 
 ## 응답 예시
 
@@ -78,6 +84,8 @@
   "type_tags": [],
   "pitch": {"pitch_number": 3, "pitch_type": "fastball", "pitch_type_raw": "직구", "speed": 150.0,
             "result_text": "타격", "result_code": "H", "visualization_status": "available",
+            "plate_appearance_id": "20260328HTSK02026:pa:…",
+            "count_before": {"balls": 1, "strikes": 1}, "count_after": {"balls": 1, "strikes": 1},
             "zone": {"x_ft": 0.797228, "height_ft": 2.711197, "top_ft": 3.344, "bottom_ft": 1.622},
             "trajectory": {"duration_s": 0.3806, "release_ft": [-1.65, 50.0, 5.93],
                            "velocity_ft_s": [9.16, -135.5, -6.10], "acceleration_ft_s2": [-14.3, 31.4, -12.4]}}}
