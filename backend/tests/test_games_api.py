@@ -76,6 +76,10 @@ class GamesApiTest(unittest.TestCase):
                              params={"event_type": "pitch", "limit": 5, "pitch": "true"}).json()["plays"]
         self.assertEqual(len(pitches), 5)
         self.assertEqual(pitches[0]["pitch"]["pitch_type_raw"], "직구")
+        # 같은 타석의 공은 plate_appearance_id 가 같다
+        self.assertTrue(pitches[0]["pitch"]["plate_appearance_id"])
+        self.assertEqual(pitches[0]["pitch"]["plate_appearance_id"],
+                         pitches[1]["pitch"]["plate_appearance_id"])
 
     def test_single_play(self):
         p = client.get(f"/games/{GAME}/plays/3").json()
@@ -94,6 +98,20 @@ class GamesApiTest(unittest.TestCase):
         self.assertEqual((q["pitch"]["pitch_type_raw"], q["pitch"]["speed"]), ("스위퍼", 124.0))
         # 보완하지 않은 공은 출처 칸이 비어 있다
         self.assertIsNone(client.get(f"/games/{GAME}/plays/3").json()["pitch"]["supplement_source"])
+
+    def test_pitch_count(self):
+        pitches = [p["pitch"] for p in client.get(f"/games/{GAME}/plays",
+                   params={"event_type": "pitch", "limit": 6, "pitch": "true"}).json()["plays"]]
+        # 첫 공은 0-0 에서 시작하고, 앞 공의 '던진 후' 가 다음 공의 '던지기 전' 이다
+        self.assertEqual(pitches[0]["count_before"], {"balls": 0, "strikes": 0})
+        for a, b in zip(pitches, pitches[1:]):
+            if a["plate_appearance_id"] == b["plate_appearance_id"]:
+                self.assertEqual(a["count_after"], b["count_before"])
+        # 4/15 '포수 파울 플라이 포구 실책' 줄은 앞 파울과 같은 공이라 카운트가 그대로다
+        plays = client.get(f"/games/{RESTORED}/plays",
+                           params={"event_type": "pitch", "pitch": "true"}).json()["plays"]
+        i = next(i for i, p in enumerate(plays) if "파울 플라이 포구 실책" in p["description"])
+        self.assertEqual(plays[i]["pitch"]["count_after"], plays[i - 1]["pitch"]["count_after"])
 
     def test_not_found(self):
         self.assertEqual(client.get("/games/NOPE").status_code, 404)
