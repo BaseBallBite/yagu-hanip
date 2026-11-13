@@ -32,11 +32,11 @@ def load_truth(path):
         note = r.get("비고", "") or ""
         batter = (r.get("정답_타자") or "").strip()
         kind = "전광판 없음" if "전광판 없음" in note else ("타자 줄 없음" if "타자 줄 없음" in note else "전광판 있음")
-        if not batter or batter == "확인 불가":
-            kind = "경기 화면 아님"
+        if not batter or batter in ("확인 불가", "없음"):
+            kind = "타석 없음"
         rows.append({
             "time": float(r["time_sec"]),
-            "truth": None if not batter or batter == "확인 불가" else
+            "truth": None if not batter or batter in ("확인 불가", "없음") else
                      (int(r["정답_회"]), HALF.get(r["정답_초말"].strip()), batter),
             "kind": kind, "note": note,
         })
@@ -90,7 +90,7 @@ def summarize(name, graded):
     print(f"  연결 재현율      {len(hit)}/{len(has_truth)} = {len(hit)/len(has_truth):.0%}  (정답 타석이 있는 장면 중 맞게 찾은 비율)")
     print(f"  연결 정밀도      {sum(1 for g in linked if g['grade']=='맞음')}/{len(linked)} = {prec:.0%}  (확정한 것 중 맞은 비율)")
     print(f"  틀린 연결        {len(wrong)}개")
-    for kind in ("전광판 있음", "타자 줄 없음", "전광판 없음", "경기 화면 아님"):
+    for kind in ("전광판 있음", "타자 줄 없음", "전광판 없음", "타석 없음"):
         sub = [g for g in graded if g["kind"] == kind]
         if sub:
             c = Counter(g["grade"] for g in sub)
