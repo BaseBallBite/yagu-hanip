@@ -1,0 +1,1190 @@
+{
+ "game_id": "20261011LTHT02026",
+ "video_id": "hxrULVRHCjY",
+ "away": "롯데",
+ "home": "KIA",
+ "frame_interval_sec": 5,
+ "carry_sec": 0,
+ "scenes": [
+  {
+   "start": 0.0,
+   "end": 75.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 75.0,
+   "end": 95.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "레이예스",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 0사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 레이예스",
+    "이 타석 결과: 레이예스 : 좌익수 왼쪽 2루타",
+    "타석 후: 0사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 95.0,
+   "end": 110.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 110.0,
+   "end": 120.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "나승엽",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 0사, 점수 원정 0 : 홈 0",
+    "2루 주자 레이예스 ← 레이예스 : 좌익수 왼쪽 2루타",
+    "타자: 나승엽",
+    "이 타석 결과: 나승엽 : 1루수 땅볼 아웃 (1루수 1루 터치아웃) / 2루주자 레이예스 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 120.0,
+   "end": 125.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "고승민",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 1사, 점수 원정 0 : 홈 0",
+    "3루 주자 레이예스 ← 레이예스 : 좌익수 왼쪽 2루타",
+    "타자: 고승민",
+    "이 타석 결과: 고승민 : 볼넷",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 125.0,
+   "end": 130.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 130.0,
+   "end": 140.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "초",
+   "batter": "한동희",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회초, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 고승민 ← 고승민 : 볼넷",
+    "3루 주자 레이예스 ← 레이예스 : 좌익수 왼쪽 2루타",
+    "타자: 한동희",
+    "이 타석 결과: 한동희 : 2루수 병살타 아웃 (2루수->유격수->1루수 송구아웃) / 1루주자 고승민 : 포스아웃 (2루수->유격수 2루 터치아웃)",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 140.0,
+   "end": 150.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "말",
+   "batter": "한준수",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회말, 1사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 한준수",
+    "이 타석 결과: 한준수 : 볼넷",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 150.0,
+   "end": 160.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "말",
+   "batter": "김도영",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회말, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 한준수 ← 한준수 : 볼넷",
+    "타자: 김도영",
+    "이 타석 결과: 김도영 : 중견수 플라이 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 160.0,
+   "end": 170.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "말",
+   "batter": "카스트로",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회말, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 한준수 ← 한준수 : 볼넷",
+    "타자: 카스트로",
+    "이 타석 결과: 카스트로 : 좌중간 1루타 / 1루주자 한준수 : 3루까지 진루",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 170.0,
+   "end": 175.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 175.0,
+   "end": 185.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 1,
+   "half": "말",
+   "batter": "나성범",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "1회말, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 카스트로 ← 카스트로 : 좌중간 1루타",
+    "3루 주자 한준수 ← 한준수 : 볼넷",
+    "타자: 나성범",
+    "이 타석 결과: 나성범 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 185.0,
+   "end": 205.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 205.0,
+   "end": 210.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 2,
+   "half": "초",
+   "batter": "손성빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "2회초, 1사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 손성빈",
+    "이 타석 결과: 손성빈 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 210.0,
+   "end": 215.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 215.0,
+   "end": 225.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "장두성",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 장두성",
+    "이 타석 결과: 장두성 : 우익수 앞 1루타",
+    "타석 후: 0사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 225.0,
+   "end": 235.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "조세진",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "1루 주자 장두성 ← 장두성 : 우익수 앞 1루타",
+    "타자: 조세진",
+    "이 타석 결과: 1루주자 장두성 : 도루실패아웃 (포수->2루수 태그아웃) / 조세진 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 235.0,
+   "end": 245.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 245.0,
+   "end": 250.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "조세진",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 0사, 점수 원정 0 : 홈 0",
+    "1루 주자 장두성 ← 장두성 : 우익수 앞 1루타",
+    "타자: 조세진",
+    "이 타석 결과: 1루주자 장두성 : 도루실패아웃 (포수->2루수 태그아웃) / 조세진 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 250.0,
+   "end": 255.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 255.0,
+   "end": 270.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 3,
+   "half": "초",
+   "batter": "레이예스",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "3회초, 2사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 레이예스",
+    "이 타석 결과: 레이예스 : 투수 땅볼 아웃 (투수 태그아웃)",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 270.0,
+   "end": 285.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "초",
+   "batter": "나승엽",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회초, 0사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 나승엽",
+    "이 타석 결과: 나승엽 : 중견수 플라이 아웃",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 285.0,
+   "end": 295.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 295.0,
+   "end": 305.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "카스트로",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 0사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 카스트로",
+    "이 타석 결과: 카스트로 : 2루수 땅볼 아웃 (2루수->1루수 송구아웃)",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 305.0,
+   "end": 315.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 315.0,
+   "end": 325.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "나성범",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 1사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 나성범",
+    "이 타석 결과: 나성범 : 중견수 앞 1루타",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 325.0,
+   "end": 330.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "김선빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 나성범 ← 나성범 : 중견수 앞 1루타",
+    "타자: 김선빈",
+    "이 타석 결과: 김선빈 : 몸에 맞는 볼 / 1루주자 나성범 : 2루까지 진루",
+    "타석 후: 1사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 330.0,
+   "end": 335.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 335.0,
+   "end": 350.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "김호령",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 1사, 점수 원정 0 : 홈 0",
+    "1루 주자 김선빈 ← 김선빈 : 몸에 맞는 볼",
+    "2루 주자 나성범 ← 나성범 : 중견수 앞 1루타",
+    "타자: 김호령",
+    "이 타석 결과: 김호령 : 3루수 앞 땅볼로 출루 / 1루주자 김선빈 : 포스아웃 (3루수->2루수 2루 터치아웃) / 2루주자 나성범 : 3루까지 진루",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 350.0,
+   "end": 365.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 365.0,
+   "end": 375.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 4,
+   "half": "말",
+   "batter": "김태군",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "4회말, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 김호령 ← 김호령 : 3루수 앞 땅볼로 출루",
+    "3루 주자 나성범 ← 나성범 : 중견수 앞 1루타",
+    "타자: 김태군",
+    "이 타석 결과: 1루주자 김호령 : 이중도루 실패시 2루까지 진루 / 3루주자 나성범 : 도루실패아웃 (포수->투수->포수->3루수 태그아웃)",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 375.0,
+   "end": 395.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 395.0,
+   "end": 400.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 5,
+   "half": "말",
+   "batter": "박민",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "5회말, 1사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 박민",
+    "이 타석 결과: 박민 : 삼진 아웃",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 400.0,
+   "end": 410.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 410.0,
+   "end": 415.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 5,
+   "half": "말",
+   "batter": "박재현",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "5회말, 2사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 박재현",
+    "이 타석 결과: 박재현 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 415.0,
+   "end": 430.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "레이예스",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 0 : 홈 0",
+    "주자 없음",
+    "타자: 레이예스",
+    "이 타석 결과: 레이예스 : 좌중간 1루타",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 430.0,
+   "end": 440.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "나승엽",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 레이예스 ← 레이예스 : 좌중간 1루타",
+    "타자: 나승엽",
+    "이 타석 결과: 나승엽 : 2루수 오른쪽 내야안타 / 1루주자 레이예스 : 2루까지 진루",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 440.0,
+   "end": 445.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 445.0,
+   "end": 460.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "나승엽",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     false,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 레이예스 ← 레이예스 : 좌중간 1루타",
+    "타자: 나승엽",
+    "이 타석 결과: 나승엽 : 2루수 오른쪽 내야안타 / 1루주자 레이예스 : 2루까지 진루",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 460.0,
+   "end": 470.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 470.0,
+   "end": 475.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "고승민",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     false
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 나승엽 ← 나승엽 : 2루수 오른쪽 내야안타",
+    "2루 주자 레이예스 ← 레이예스 : 좌중간 1루타",
+    "타자: 고승민",
+    "이 타석 결과: 고승민 : 볼넷 / 1루주자 나승엽 : 2루까지 진루 / 2루주자 레이예스 : 3루까지 진루",
+    "타석 후: 2사, 점수 원정 0 : 홈 0"
+   ]
+  },
+  {
+   "start": 475.0,
+   "end": 490.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "한동희",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     true,
+     true,
+     true
+    ],
+    "score_away": 0,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 0 : 홈 0",
+    "1루 주자 고승민 ← 고승민 : 볼넷",
+    "2루 주자 나승엽 ← 나승엽 : 2루수 오른쪽 내야안타",
+    "3루 주자 레이예스 ← 레이예스 : 좌중간 1루타",
+    "타자: 한동희",
+    "이 타석 결과: 한동희 : 중견수 뒤 홈런 (홈런거리:125M) / 1루주자 고승민 : 홈인 / 2루주자 나승엽 : 홈인 / 3루주자 레이예스 : 홈인",
+    "타석 후: 2사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 490.0,
+   "end": 510.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 510.0,
+   "end": 525.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "초",
+   "batter": "전민재",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "6회초, 2사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "이번 이닝 앞선 득점: 1루주자 고승민 : 홈인 / 2루주자 나승엽 : 홈인 / 3루주자 레이예스 : 홈인",
+    "타자: 전민재",
+    "이 타석 결과: 전민재 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 525.0,
+   "end": 530.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 530.0,
+   "end": 535.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "한준수",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 0사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 한준수",
+    "이 타석 결과: 한준수 : 삼진 아웃",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 535.0,
+   "end": 540.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 540.0,
+   "end": 550.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "김도영",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 1사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 김도영",
+    "이 타석 결과: 김도영 : 우익수 플라이 아웃",
+    "타석 후: 2사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 550.0,
+   "end": 565.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "카스트로",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 2사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 카스트로",
+    "이 타석 결과: 카스트로 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 565.0,
+   "end": 570.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 570.0,
+   "end": 575.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 6,
+   "half": "말",
+   "batter": "카스트로",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "6회말, 2사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 카스트로",
+    "이 타석 결과: 카스트로 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 575.0,
+   "end": 580.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "초",
+   "batter": "손성빈",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "7회초, 0사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 손성빈",
+    "이 타석 결과: 손성빈 : 삼진 아웃",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 580.0,
+   "end": 585.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 585.0,
+   "end": 595.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "초",
+   "batter": "장두성",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "7회초, 2사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 장두성",
+    "이 타석 결과: 장두성 : 삼진 아웃",
+    "타석 후: 3사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 595.0,
+   "end": 605.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 605.0,
+   "end": 615.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "말",
+   "batter": "나성범",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "7회말, 0사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 나성범",
+    "이 타석 결과: 나성범 : 1루수 라인드라이브 아웃",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 615.0,
+   "end": 625.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 625.0,
+   "end": 640.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 7,
+   "half": "말",
+   "batter": "김선빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "7회말, 1사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 김선빈",
+    "이 타석 결과: 김선빈 : 유격수 땅볼 아웃 (유격수->1루수 송구아웃)",
+    "타석 후: 2사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 640.0,
+   "end": 655.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 655.0,
+   "end": 670.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "김도영",
+   "situation": {
+    "outs": 0,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "9회말, 0사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 김도영",
+    "이 타석 결과: 김도영 : 삼진 아웃",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 670.0,
+   "end": 685.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "카스트로",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     false,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "9회말, 1사, 점수 원정 4 : 홈 0",
+    "주자 없음",
+    "타자: 카스트로",
+    "이 타석 결과: 카스트로 : 중견수 뒤 2루타",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 685.0,
+   "end": 700.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "나성범",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "9회말, 1사, 점수 원정 4 : 홈 0",
+    "2루 주자 카스트로 ← 카스트로 : 중견수 뒤 2루타",
+    "타자: 나성범",
+    "이 타석 결과: 나성범 : 우익수 앞 1루타 / 2루주자 카스트로 : 3루까지 진루",
+    "타석 후: 1사, 점수 원정 4 : 홈 0"
+   ]
+  },
+  {
+   "start": 700.0,
+   "end": 710.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "김선빈",
+   "situation": {
+    "outs": 1,
+    "bases": [
+     true,
+     false,
+     true
+    ],
+    "score_away": 4,
+    "score_home": 0
+   },
+   "restore": [
+    "9회말, 1사, 점수 원정 4 : 홈 0",
+    "1루 주자 나성범 ← 나성범 : 우익수 앞 1루타",
+    "3루 주자 카스트로 ← 카스트로 : 중견수 뒤 2루타",
+    "타자: 김선빈",
+    "이 타석 결과: 김선빈 : 2루수 땅볼 아웃 (2루수->1루수 송구아웃) / 1루주자 나성범 : 2루까지 진루 / 3루주자 카스트로 : 홈인",
+    "타석 후: 2사, 점수 원정 4 : 홈 1"
+   ]
+  },
+  {
+   "start": 710.0,
+   "end": 715.0,
+   "status": "확인 불가"
+  },
+  {
+   "start": 715.0,
+   "end": 725.0,
+   "status": "확정",
+   "confidence": "높음",
+   "inning": 9,
+   "half": "말",
+   "batter": "김호령",
+   "situation": {
+    "outs": 2,
+    "bases": [
+     false,
+     true,
+     false
+    ],
+    "score_away": 4,
+    "score_home": 1
+   },
+   "restore": [
+    "9회말, 2사, 점수 원정 4 : 홈 1",
+    "2루 주자 나성범 ← 나성범 : 우익수 앞 1루타",
+    "이번 이닝 앞선 득점: 3루주자 카스트로 : 홈인",
+    "타자: 김호령",
+    "이 타석 결과: 김호령 : 유격수 땅볼 아웃 (유격수->1루수 송구아웃)",
+    "타석 후: 3사, 점수 원정 4 : 홈 1"
+   ]
+  },
+  {
+   "start": 725.0,
+   "end": 745.0,
+   "status": "확인 불가"
+  }
+ ]
+}
