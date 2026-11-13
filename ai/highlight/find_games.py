@@ -9,7 +9,7 @@
   접전     : 최종 점수 차 1~2점
 
 시연용 경기
-20260825NCLG2026 NC 4:5 LG (LG 연장 끝내기 승) https://youtu.be/B6yzhRSspSg?si=CYZpf9mc_TLzeCWi
+20261007OBLG02026 두산 vs LG (10/7) https://youtu.be/YQD3hMI2LPo
 20260516LTOB02026 롯데 9:10 두산 (두산 연장 끝내기 승) https://youtu.be/FaJDs51xcTU?si=yJX9La2_debQxuww
 20260904KTHT02026 KT 3:4 KIA (KIA 연장 끝내기 승) https://youtu.be/zqPWIKkZLF0?si=IEGZHRgCcuQ2C8Rc
 
