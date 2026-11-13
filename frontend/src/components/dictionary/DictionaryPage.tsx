@@ -3,13 +3,27 @@ import { useState, useEffect } from 'react';
 import {
   DICTIONARY_CARDS,
   getTermDetailOrDefault,
-  searchDictionary,
 } from '../../data/mockDictionaryData';
+import type {
+  TermDetail,
+  RAGSource,
+} from '../../data/mockDictionaryData';
+
 import { DictionarySearchBar } from './DictionarySearchBar';
 import { CategoryTermsNav } from './CategoryTermsNav';
 import { TermDetailPanel } from './TermDetailPanel';
-import { Sparkles, AlertCircle } from 'lucide-react';
+
+import {
+  Sparkles,
+  AlertCircle,
+  LoaderCircle,
+} from 'lucide-react';
+
 import type { RecentSearchTerm } from '../../data/mockMyData';
+
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  'http://localhost:8000';
 
 const RECENT_TERMS_KEY = 'yagu_recent_terms';
 const DICTIONARY_TARGET_KEY = 'yagu_dictionary_target';
@@ -19,68 +33,357 @@ const initialCardId = DICTIONARY_CARDS['term.double_play']
   ? 'term.double_play'
   : Object.keys(DICTIONARY_CARDS)[0] ?? '';
 
-function saveRecentTerm(id: string) {
-  const card = DICTIONARY_CARDS[id];
-  if (!card) return;
+type ApiObject = Record<string, unknown>;
 
-  const detail = getTermDetailOrDefault(id);
+function asObject(value: unknown): ApiObject | null {
+  return value !== null &&
+    typeof value === 'object' &&
+    !Array.isArray(value)
+    ? (value as ApiObject)
+    : null;
+}
 
-  const newTerm: RecentSearchTerm = {
+function asString(value: unknown): string {
+  return typeof value === 'string' ? value : '';
+}
+
+function asStringArray(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+
+  return value
+    .map((item) => {
+      if (typeof item === 'string') return item;
+
+      const obj = asObject(item);
+      return obj ? asString(obj.id) : '';
+    })
+    .filter(Boolean);
+}
+
+function convertSources(value: unknown): RAGSource[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.map((item) => {
+    const source = asObject(item);
+
+    if (!source) {
+      return {
+        title: String(item),
+        sourceType: '참고자료',
+      };
+    }
+
+    return {
+      title:
+        [
+          asString(source.name),
+          asString(source.ref),
+        ]
+          .filter(Boolean)
+          .join(' · ') ||
+        asString(source.title) ||
+        '출처 정보',
+
+      sourceType:
+        asString(source.note) ||
+        asString(source.sourceType) ||
+        '참고자료',
+
+      referenceUrl:
+        asString(source.url) ||
+        asString(source.referenceUrl) ||
+        undefined,
+    };
+  });
+}
+
+function convertApiCard(
+  response: unknown,
+  cardId: string
+): TermDetail | null {
+  const outer = asObject(response);
+  if (!outer) return null;
+
+  const card =
+    asObject(outer.card) ||
+    asObject(outer.item) ||
+    outer;
+
+  const id = asString(card.id) || cardId;
+  const local = getTermDetailOrDefault(id);
+
+  const title =
+    asString(card.title) ||
+    asString(card.name) ||
+    local?.name ||
+    '';
+
+  if (!title) return null;
+
+  const kind =
+    card.kind === 'rule' || card.kind === 'term'
+      ? card.kind
+      : local?.kind || 'term';
+
+  const related = asStringArray(
+    card.related ?? card.relatedTerms
+  );
+
+  const image =
+    asString(card.image) ||
+    local?.image ||
+    null;
+
+  const imageStatic =
+    asString(card.image_static) ||
+    local?.image_static ||
+    null;
+
+  return {
     id,
-    name: String(card.title ?? id),
-    category: String(card.category ?? ''),
-    description: String(detail?.description ?? ''),
+    kind,
+    name: title,
+
+    englishName:
+      asString(card.englishName) ||
+      local?.englishName ||
+      '',
+
+    category:
+      asString(card.category) ||
+      local?.category ||
+      '',
+
+    oneLineSummary:
+      asString(card.one_liner) ||
+      asString(card.oneLineSummary) ||
+      local?.oneLineSummary ||
+      '',
+
+    beginnerExplanation:
+      asString(card.easy) ||
+      asString(card.beginnerExplanation) ||
+      local?.beginnerExplanation ||
+      '',
+
+    example:
+      asString(card.example) ||
+      local?.example,
+
+    more: Array.isArray(card.more)
+      ? asStringArray(card.more)
+      : local?.more || [],
+
+    gameFlow: local?.gameFlow || [],
+
+    relatedTerms: related.length
+      ? related.filter((relatedId) =>
+          Boolean(DICTIONARY_CARDS[relatedId])
+        )
+      : local?.relatedTerms || [],
+
+    sources:
+      card.source !== undefined
+        ? convertSources(card.source)
+        : card.sources !== undefined
+          ? convertSources(card.sources)
+          : local?.sources || [],
+
+    reviewStatus:
+      asString(card.review_status) ||
+      asString(card.reviewStatus) ||
+      local?.reviewStatus ||
+      'draft',
+
+    image,
+    image_static: imageStatic,
+  };
+}
+
+function extractSearchId(response: unknown): string | null {
+  if (Array.isArray(response)) {
+    for (const item of response) {
+      const id = extractSearchId(item);
+      if (id) return id;
+    }
+    return null;
+  }
+
+  const obj = asObject(response);
+  if (!obj) return null;
+
+  if (typeof obj.id === 'string') {
+    return obj.id;
+  }
+
+  if (typeof obj.card_id === 'string') {
+    return obj.card_id;
+  }
+
+  for (const key of ['items', 'results', 'cards', 'matches']) {
+    const collection = obj[key];
+
+    if (collection !== undefined) {
+      return extractSearchId(collection);
+    }
+  }
+
+  return null;
+}
+
+async function fetchApi(
+  path: string,
+  signal?: AbortSignal
+): Promise<unknown> {
+  const response = await fetch(`${API_BASE}${path}`, {
+    signal,
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `사전 API 요청 실패 (HTTP ${response.status})`
+    );
+  }
+
+  return response.json();
+}
+
+function saveRecentTerm(detail: TermDetail) {
+  const newTerm: RecentSearchTerm = {
+    id: detail.id,
+    name: detail.name,
+    category: detail.category,
+    description: detail.oneLineSummary,
   };
 
   try {
     const stored = localStorage.getItem(RECENT_TERMS_KEY);
     const parsed: unknown = stored ? JSON.parse(stored) : [];
+
     const previous: RecentSearchTerm[] = Array.isArray(parsed)
       ? parsed
       : [];
 
-    // 같은 용어가 있으면 중복 제거 후 맨 앞으로 이동
     const updated = [
       newTerm,
-      ...previous.filter((term) => term.id !== id),
+      ...previous.filter(
+        (term) => term.id !== detail.id
+      ),
     ].slice(0, MAX_RECENT_TERMS);
 
-    localStorage.setItem(RECENT_TERMS_KEY, JSON.stringify(updated));
-    window.dispatchEvent(new Event('yagu-recent-terms-updated'));
+    localStorage.setItem(
+      RECENT_TERMS_KEY,
+      JSON.stringify(updated)
+    );
+
+    window.dispatchEvent(
+      new Event('yagu-recent-terms-updated')
+    );
   } catch (error) {
     console.error('최근 야구 용어 저장 실패:', error);
   }
 }
 
 export function DictionaryPage() {
-  const [selectedTermId, setSelectedTermId] = useState(initialCardId);
+  const [selectedTermId, setSelectedTermId] =
+    useState(initialCardId);
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchNotFoundTerm, setSearchNotFoundTerm] = useState<string | null>(null);
 
-  const currentTermDetail = getTermDetailOrDefault(selectedTermId);
+  const [searchNotFoundTerm, setSearchNotFoundTerm] =
+    useState<string | null>(null);
 
-  const handleSelectTerm = (id: string) => {
-    if (!DICTIONARY_CARDS[id]) return;
+  const [currentTermDetail, setCurrentTermDetail] =
+    useState<TermDetail | null>(null);
 
-    setSelectedTermId(id);
-    setSearchNotFoundTerm(null);
-    saveRecentTerm(id);
-  };
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
+  const [error, setError] = useState('');
 
-  // MY에서 최근 용어를 클릭해 이동한 경우 해당 카드 열기
+  // B7 카드 상세 API
   useEffect(() => {
-    const targetId = sessionStorage.getItem(DICTIONARY_TARGET_KEY);
+    if (!selectedTermId) {
+      setIsLoading(false);
+      return;
+    }
+
+    const controller = new AbortController();
+    let active = true;
+
+    async function loadDetail() {
+      setIsLoading(true);
+      setError('');
+      setCurrentTermDetail(null);
+
+      try {
+        const response = await fetchApi(
+          `/dict/cards/${encodeURIComponent(selectedTermId)}`,
+          controller.signal
+        );
+
+        if (!active) return;
+
+        const detail = convertApiCard(
+          response,
+          selectedTermId
+        );
+
+        if (!detail) {
+          throw new Error(
+            '카드 상세 응답 형식을 확인할 수 없어요.'
+          );
+        }
+
+        setCurrentTermDetail(detail);
+        saveRecentTerm(detail);
+      } catch (err) {
+        if (!active || controller.signal.aborted) return;
+
+        setError(
+          err instanceof Error
+            ? err.message
+            : '사전 카드 정보를 불러오지 못했어요.'
+        );
+      } finally {
+        if (active) setIsLoading(false);
+      }
+    }
+
+    loadDetail();
+
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, [selectedTermId]);
+
+  // MY에서 최근 검색한 용어 클릭 시 해당 카드 열기
+  useEffect(() => {
+    const targetId = sessionStorage.getItem(
+      DICTIONARY_TARGET_KEY
+    );
 
     if (targetId) {
-      sessionStorage.removeItem(DICTIONARY_TARGET_KEY);
+      sessionStorage.removeItem(
+        DICTIONARY_TARGET_KEY
+      );
 
       if (DICTIONARY_CARDS[targetId]) {
-        handleSelectTerm(targetId);
+        setSelectedTermId(targetId);
       }
     }
   }, []);
 
-  const handleSearchSubmit = (query: string) => {
+  const handleSelectTerm = (id: string) => {
+    if (!DICTIONARY_CARDS[id]) return;
+
+    setSearchNotFoundTerm(null);
+    setSelectedTermId(id);
+    setError('');
+  };
+
+  // B7 검색 API
+  const handleSearchSubmit = async (query: string) => {
     const trimmed = query.trim();
 
     if (!trimmed) {
@@ -88,12 +391,30 @@ export function DictionaryPage() {
       return;
     }
 
-    const matchedId = searchDictionary(trimmed);
+    setIsSearching(true);
+    setError('');
+    setSearchNotFoundTerm(null);
 
-    if (matchedId) {
-      handleSelectTerm(matchedId);
-    } else {
-      setSearchNotFoundTerm(trimmed);
+    try {
+      const response = await fetchApi(
+        `/dict/search?q=${encodeURIComponent(trimmed)}`
+      );
+
+      const matchedId = extractSearchId(response);
+
+      if (matchedId && DICTIONARY_CARDS[matchedId]) {
+        handleSelectTerm(matchedId);
+      } else {
+        setSearchNotFoundTerm(trimmed);
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : '사전 검색에 실패했어요.'
+      );
+    } finally {
+      setIsSearching(false);
     }
   };
 
@@ -112,7 +433,8 @@ export function DictionaryPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-gray-500 mt-1.5 mb-6">
-            모르는 야구 용어와 규칙을 초보자 눈높이로 쉽게 확인해보세요.
+            모르는 야구 용어와 규칙을 초보자 눈높이로
+            쉽게 확인해보세요.
           </p>
 
           <DictionarySearchBar
@@ -120,6 +442,12 @@ export function DictionaryPage() {
             onSearchChange={setSearchQuery}
             onSearchSubmit={handleSearchSubmit}
           />
+
+          {isSearching && (
+            <p className="mt-2 text-xs text-purple-600">
+              용어 검색 중...
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -132,8 +460,21 @@ export function DictionaryPage() {
           </div>
 
           <div className="lg:col-span-7 w-full">
-            {searchNotFoundTerm ? (
-              <div className="w-full bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 shadow-xl shadow-purple-950/5 flex flex-col items-center justify-center text-center">
+            {error ? (
+              <div className="w-full bg-white rounded-3xl p-10 border border-red-100 flex flex-col items-center text-center">
+                <AlertCircle className="w-9 h-9 text-red-500 mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">
+                  사전 데이터를 불러오지 못했어요.
+                </h3>
+                <p className="text-sm text-gray-500">
+                  {error}
+                </p>
+                <p className="text-xs text-gray-400 mt-3">
+                  백엔드 서버(localhost:8000)를 확인해 주세요.
+                </p>
+              </div>
+            ) : searchNotFoundTerm ? (
+              <div className="w-full bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 shadow-xl shadow-purple-950/5 flex flex-col items-center text-center">
                 <AlertCircle className="w-10 h-10 text-amber-600 mb-4" />
 
                 <h3 className="text-xl font-black text-gray-900 mb-2">
@@ -141,9 +482,15 @@ export function DictionaryPage() {
                 </h3>
 
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  '{searchNotFoundTerm}'에 해당하는 등록 용어나 규칙이 없어요.
-                  <br />
-                  다른 이름이나 줄임말로 검색해 보세요.
+                  '{searchNotFoundTerm}'에 해당하는
+                  등록 용어나 규칙이 없어요.
+                </p>
+              </div>
+            ) : isLoading ? (
+              <div className="w-full min-h-[300px] bg-white rounded-3xl p-10 border border-gray-100 flex flex-col items-center justify-center gap-3">
+                <LoaderCircle className="w-7 h-7 text-purple-600 animate-spin" />
+                <p className="text-sm text-gray-500">
+                  사전 카드 불러오는 중...
                 </p>
               </div>
             ) : currentTermDetail ? (
@@ -153,10 +500,11 @@ export function DictionaryPage() {
                 onSelectRelatedTerm={handleSelectTerm}
               />
             ) : (
-              <p>사전 데이터를 찾을 수 없어요.</p>
+              <p className="text-sm text-gray-500">
+                사전 데이터를 찾을 수 없어요.
+              </p>
             )}
           </div>
-
         </div>
       </div>
     </div>
