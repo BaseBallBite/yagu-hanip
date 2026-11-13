@@ -1,0 +1,661 @@
+{
+  "version": "b1-selection-rules-1",
+  "required_schema_version": "b1-row-v1.1",
+  "games": [
+    {
+      "game_id": "20260404NCHT02026",
+      "source_text_sha256": "eff54667b6651967c103c8fb60b57aa6c197489b3303d486478f2bf99e507249",
+      "source_pitch_sha256": "0c2732a34e0b7f26e0b826f196f3fcfeea222551d1aff826f3de4fc98147609f",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "Reported seqno conflicts concern end notices or distinct inning-boundary events. Keep actual outs/reviews/inning starts; exclude separator/result notices from event accumulation."
+        }
+      ]
+    },
+    {
+      "game_id": "20260513NCLT02026",
+      "source_text_sha256": "fca9defca02c9ac37c2a034930992689675e1505daabf40ac71988e69182dd7e",
+      "source_pitch_sha256": "396a2b084a06a8d6358eb52208d779e8b023645f28110b92cf371f558852b616",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t6",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t7",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t7",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t8",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t8",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b4/t9",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b2/t9",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b1/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b1/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i08/b3/t7",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i08/b0/t6",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b19/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b10/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b9/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b8/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t7",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b8/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t8",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b8/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b18/t9",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b8/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b17/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b7/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t6",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t7",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t7",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b16/t8",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b6/t8",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b15/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b5/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b15/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b5/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b4/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b4/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b14/t7",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b3/t6",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t5",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t5",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b13/t6",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b2/t6",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b12/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b1/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b12/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b1/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b12/t2",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b1/t2",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b12/t3",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b1/t3",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b12/t4",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b1/t4",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b11/t0",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b0/t0",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        },
+        {
+          "source_ref": "20260513NCLT02026/i09/b11/t1",
+          "action": "superseded_in_event_sequence",
+          "replacement_source_ref": "20260513NCLT02026/i09/b0/t1",
+          "reason": "Reviewed text/pitch-ID subsequence; select one richer source sequence, not latest-raw-state certification"
+        }
+      ],
+      "warnings": [
+        "Sequence choice only. Do not treat raw homeHit/awayError snapshots or conflicting playerChange as validated facts.",
+        "All currentPlayersInfo/batterRecord stats excluded from automatic AI facts; B2 state semantics remain unverified."
+      ],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "old 68 rows is text+pitchId subsequence of new 71; same 36 pitch IDs in order; 3 extra batter announcements; all old substitution text retained"
+        },
+        {
+          "kind": "external_support_not_full_validation",
+          "url": "https://www.edaily.co.kr/News/Read?newsId=07891686645448592",
+          "detail": "Article supports final 10-5 and Lotte 12 hits, not every state snapshot or substitution metadata."
+        }
+      ],
+      "field_conflicts": [
+        "currentGameState.homeHit",
+        "currentGameState.awayError",
+        "playerChange"
+      ]
+    },
+    {
+      "game_id": "20260526LGLT02026",
+      "source_text_sha256": "18265dd787df38f9085d863a6396231fe092e5c41a261a56a2cc091490d9bd03",
+      "source_pitch_sha256": "17f511e3b126c56233e42c43554cfcbfccb7ddb78dc04c8c5548a26244f53d4e",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [
+        {
+          "source_ref": "20260526LGLT02026/i08/b1/t0",
+          "action": "post_finish_notice",
+          "replacement_source_ref": null,
+          "reason": "7-inning rain-shortened finish; no actual inning-8 pitch in source"
+        },
+        {
+          "source_ref": "20260526LGLT02026/i08/b1/t1",
+          "action": "post_finish_notice",
+          "replacement_source_ref": null,
+          "reason": "7-inning rain-shortened finish; no actual inning-8 pitch in source"
+        },
+        {
+          "source_ref": "20260526LGLT02026/i08/b1/t2",
+          "action": "post_finish_notice",
+          "replacement_source_ref": null,
+          "reason": "7-inning rain-shortened finish; no actual inning-8 pitch in source"
+        },
+        {
+          "source_ref": "20260526LGLT02026/i08/b0/t0",
+          "action": "post_finish_notice",
+          "replacement_source_ref": null,
+          "reason": "7-inning rain-shortened finish; no actual inning-8 pitch in source"
+        },
+        {
+          "source_ref": "20260526LGLT02026/i08/b0/t1",
+          "action": "post_finish_notice",
+          "replacement_source_ref": null,
+          "reason": "7-inning rain-shortened finish; no actual inning-8 pitch in source"
+        }
+      ],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "KBO_hosted_news_not_scorecard",
+          "url": "https://www.koreabaseball.com/MediaNews/News/BreakingNews/View.aspx?bdSe=61221",
+          "detail": "7-inning 2-1 LG victory; rain stoppage after bottom 7."
+        }
+      ]
+    },
+    {
+      "game_id": "20260612LTLG02026",
+      "source_text_sha256": "5be99974b0c3cccdd0dcdb064c36c9163c32be993779f546f95da28fae604a55",
+      "source_pitch_sha256": "3bcd537a3d27d5705545031aee52998e98d21cd983ee201b072f3a1f0da13c52",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "Reported seqno conflicts concern end notices or distinct inning-boundary events. Keep actual outs/reviews/inning starts; exclude separator/result notices from event accumulation."
+        }
+      ]
+    },
+    {
+      "game_id": "20260612SKSS02026",
+      "source_text_sha256": "f92c4ef3a5c689a58ca92503d2ae4f53d6af69f6b9157a94ef618af225e91efe",
+      "source_pitch_sha256": "31fd1877b18ad219ddea09d91be0fd7170c77032b1704a1ad46eab5f061cfad8",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t0",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t0",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t1",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t1",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t2",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t2",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t3",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t3",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t4",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t4",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t5",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t5",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b1/t6",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b3/t6",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b0/t0",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b2/t0",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        },
+        {
+          "source_ref": "20260612SKSS02026/i09/b0/t1",
+          "action": "equivalent_event_copy",
+          "replacement_source_ref": "20260612SKSS02026/i09/b2/t1",
+          "reason": "All raw fields except currentPlayersInfo identical; first instance retained for event sequence"
+        }
+      ],
+      "warnings": [
+        "Only currentPlayersInfo differs; neither snapshot is certified for AI use."
+      ],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "9 raw pairs identical after excluding currentPlayersInfo; same 4 pitch IDs and state fields."
+        }
+      ]
+    },
+    {
+      "game_id": "20260613LTLG02026",
+      "source_text_sha256": "87d0d1175d5755203e8f487f001fc8024b8482f2f145157bc0636fb727420f50",
+      "source_pitch_sha256": "33611377e7b1fab3d6372127663687b445c23091ffa48a4f2db3ff850d688830",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "Reported seqno conflicts concern end notices or distinct inning-boundary events. Keep actual outs/reviews/inning starts; exclude separator/result notices from event accumulation."
+        }
+      ]
+    },
+    {
+      "game_id": "20260822HTWO02026",
+      "source_text_sha256": "b747e4233631b65a20f857bb97aa556b6c7243a5efa465a9e548812b0253813b",
+      "source_pitch_sha256": "843dc37cdc33ba9354937bf1256270d62dc3b4c72626199600014ab2125c84a1",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "Reported seqno conflicts concern end notices or distinct inning-boundary events. Keep actual outs/reviews/inning starts; exclude separator/result notices from event accumulation."
+        }
+      ]
+    },
+    {
+      "game_id": "20260918LGKT02026",
+      "source_text_sha256": "01e22cf62f14649978b76e20d8d7dd1621e7ae14ede946238c7fef9e8b73c5e8",
+      "source_pitch_sha256": "20311fa22848004f2d64d9314e80a253ff7335c3d982cbc57f37562051eee923",
+      "resolves_codes": [
+        "seqno_collision_review",
+        "source_order_decrease",
+        "repeated_pitch_id_review"
+      ],
+      "decisions": [],
+      "warnings": [],
+      "evidence": [
+        {
+          "kind": "local_comparison",
+          "detail": "Reported seqno conflicts concern end notices or distinct inning-boundary events. Keep actual outs/reviews/inning starts; exclude separator/result notices from event accumulation."
+        }
+      ]
+    }
+  ]
+}

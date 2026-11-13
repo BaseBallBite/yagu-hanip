@@ -1,0 +1,74 @@
+{
+  "schema_version": "b1-manual-corrections-v1",
+  "raw_files_modified": false,
+  "cases": [
+    {
+      "game_id": "20260415WOHT02026",
+      "inning": 1,
+      "half": "top",
+      "action": "insert_before",
+      "anchor_seqno": 6,
+      "anchor_text": "2번타자 안치홍",
+      "records": [
+        "1회초 키움 공격",
+        "1번타자 이주형",
+        "1구 스트라이크",
+        "2구 볼",
+        "3구 타격",
+        "이주형 : 좌익수 앞 1루타"
+      ],
+      "evidence": {
+        "source_gap": "네이버 API 및 앱에서 누락 확인",
+        "hit": "경기 기사 및 중계 화면 대조",
+        "pitch_sequence": "팀원 중계 영상 확인",
+        "original_pitch_ids_available": false
+      },
+      "create_original_seqno": false
+    },
+    {
+      "game_id": "20260401HTLG02026",
+      "inning": 5,
+      "half": "bottom",
+      "action": "exclude",
+      "target_seqno": 328,
+      "target_text": "2루주자 문성주 : 3루까지 진루",
+      "expected_state_after_327": {
+        "outs": 2,
+        "first": null,
+        "second": "문성주",
+        "third": "박동원"
+      },
+      "note": "원본 seqno 327의 주자 상태도 오류이므로 B2 수정 필요",
+      "evidence": "경기 중계 영상 및 5회말 무득점 확인"
+    },
+    {
+      "game_id": "20260415SSHH02026",
+      "inning": 8,
+      "half": "top",
+      "action": "insert_after",
+      "anchor_seqno": 597,
+      "anchor_text": "류지혁 : 볼넷",
+      "records": [
+        "1루주자 김재상 : 2루까지 진루"
+      ],
+      "expected_state_after_597": {
+        "outs": 2,
+        "first": "류지혁",
+        "second": "김재상",
+        "third": "박승규"
+      },
+      "create_original_seqno": false,
+      "evidence": "볼넷에 따른 강제 진루 및 경기 기록 대조"
+    },
+    {
+      "game_id": "20260822HTWO02026",
+      "inning": 8,
+      "action": "preserve_original",
+      "colliding_seqnos": [
+        375,
+        398
+      ],
+      "note": "이닝 경계의 번호 중복. 누락 플레이 확인되지 않음"
+    }
+  ]
+}

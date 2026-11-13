@@ -1,0 +1,40 @@
+{
+  "status": "B3_V2_REBUILD_STRUCTURAL_PASS",
+  "version": "b3-pitches-on-b1-v2-b2-v2",
+  "built_at_utc": "2026-11-10T01:29:06.116827+00:00",
+  "input_file_hashes": {
+    "B1_corrected_v2.zip_sha256": "4c34981cf2d97e695d9bcee448a04b14593697b6eb2c3336cb924d4166094ecb",
+    "b2_state_v2_all.zip_sha256": "4752e8dade589718ec31cebccc1fea2d364544bd3d374748d55cf22379b13355"
+  },
+  "input_b1": "B1_corrected_v2.zip",
+  "input_b2": "b2_state_v2_all.zip",
+  "game_count": 720,
+  "full_720_run": true,
+  "counts": {
+    "pitch_related_rows": 221661,
+    "kind_physical_pitch": 221527,
+    "visualization_available": 218232,
+    "tracking_matched": 221440,
+    "physical_pitch_rows": 221530,
+    "source_pitch_rows": 221658,
+    "manual_pitch_rows": 3,
+    "b2_joined_rows": 221661,
+    "zone_available": 218232,
+    "trajectory_available": 218232,
+    "visualization_model_below_ground": 3208,
+    "visualization_tracking_id_missing": 87,
+    "tracking_source_id_missing": 221,
+    "kind_pitch_clock_violation": 116,
+    "visualization_not_a_physical_pitch": 131,
+    "kind_foul_fly_error_notice": 15,
+    "kind_manual_reconstructed_pitch": 3,
+    "visualization_manual_no_tracking": 3
+  },
+  "notes": [
+    "Original source pitch data is preserved; 3 manual pitches have no source tracking or speed.",
+    "B2 states joined strictly via selected play_id and ordered_play_ids.",
+    "Naver currentGameState errors are not automatically overwritten.",
+    "Zone/trajectory are model-derived display values, not independently verified coordinates.",
+    "Use is_physical_pitch and visualization_status for frontend display."
+  ]
+}
