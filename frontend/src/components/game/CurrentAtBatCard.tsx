@@ -169,7 +169,7 @@ export function CurrentAtBatCard({
           <span>{showPitchDetail ? '투구 접기' : '투구 자세히'}</span>
         </button>
 
-        {/* Primary CTA: 🤔 왜? (Most noticeable button) */}
+        {/* Primary CTA: 한입만 🍙 */}
         <button
           type="button"
           onClick={onAskWhy}
@@ -179,11 +179,11 @@ export function CurrentAtBatCard({
               : 'bg-purple-600 hover:bg-purple-700 text-white shadow-purple-600/30 animate-gentle-pulse hover:scale-[1.01]'
           }`}
         >
-          <span className="text-xl">🤔</span>
-          <span>왜?</span>
-          <span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-white/20 ml-1">
-            이 장면 AI에게 물어보기
-          </span>
+
+<span>한입만!</span>
+<span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-white/20 ml-1">
+  이 장면 쉽게 이해하기
+</span>
           <Sparkles className="w-4 h-4 ml-auto text-yellow-300 animate-pulse" />
         </button>
       </div>

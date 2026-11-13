@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
 import {
   Heart,
   ArrowRight,
@@ -12,8 +11,9 @@ import {
   Trophy,
   Calendar,
   TrendingUp,
-  Compass
+  Compass,
 } from 'lucide-react';
+
 import { TeamStanding } from '../../data/mockRankingData';
 
 interface MyTeamCardProps {
@@ -21,13 +21,77 @@ interface MyTeamCardProps {
   onNavigate: (path: string) => void;
 }
 
-export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
-  const [logoError, setLogoError] = useState(false);
+// 온보딩에서 확정한 10개 구단 UI 색상과 통일
+const TEAM_BADGE_COLORS: Record<
+  string,
+  {
+    background: string;
+    text: string;
+    lightBg: string;
+  }
+> = {
+  kia: {
+    background: '#D71920',
+    text: '#FFFFFF',
+    lightBg: '#FFF1F2',
+  },
+  samsung: {
+    background: '#0066B3',
+    text: '#FFFFFF',
+    lightBg: '#EFF6FF',
+  },
+  lg: {
+    background: '#D41470',
+    text: '#FFFFFF',
+    lightBg: '#FFF0F7',
+  },
+  doosan: {
+    background: '#171735',
+    text: '#FFFFFF',
+    lightBg: '#F1F5F9',
+  },
+  kt: {
+    background: '#333333',
+    text: '#FFFFFF',
+    lightBg: '#F5F5F5',
+  },
+  ssg: {
+    background: '#F04E5E',
+    text: '#FFFFFF',
+    lightBg: '#FFF1F3',
+  },
+  lotte: {
+    background: '#285477',
+    text: '#FFFFFF',
+    lightBg: '#EFF6FA',
+  },
+  hanwha: {
+    background: '#FF6B00',
+    text: '#FFFFFF',
+    lightBg: '#FFF4E8',
+  },
+  nc: {
+    background: '#C9A34E',
+    text: '#172033',
+    lightBg: '#FFFBEB',
+  },
+  kiwoom: {
+    background: '#760D35',
+    text: '#FFFFFF',
+    lightBg: '#FFF1F5',
+  },
+};
+
+export function MyTeamCard({
+  team,
+  onNavigate,
+}: MyTeamCardProps) {
 
   // 응원팀이 선택되지 않았을 때
   if (!team) {
     return (
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+
         <div className="absolute -top-12 -right-12 w-40 h-40 bg-purple-50 rounded-full blur-2xl pointer-events-none" />
 
         <div className="flex items-center justify-between mb-6">
@@ -35,10 +99,12 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
             <span className="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-base shadow-xs">
               ⚾
             </span>
+
             <h2 className="text-xl font-bold text-gray-900 tracking-tight">
               나의 팀
             </h2>
           </div>
+
           <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-500">
             미설정
           </span>
@@ -72,10 +138,12 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
     );
   }
 
-  // KIA·SSG는 빨간색 로고와 배경이 겹치므로
-  // 로고 배경만 흰색으로 변경
-  const needsWhiteLogoBackground =
-    team.id === 'kia' || team.id === 'ssg';
+  // 팀 ID를 기준으로 구단별 배지 색상 선택
+  const teamColors = TEAM_BADGE_COLORS[team.id.toLowerCase()] ?? {
+    background: team.primaryColor || '#64748B',
+    text: '#FFFFFF',
+    lightBg: team.lightBg || '#F8FAFC',
+  };
 
   return (
     <div className="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
@@ -86,6 +154,7 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
           <span className="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-base shadow-xs">
             ⚾
           </span>
+
           <h2 className="text-xl font-bold text-gray-900 tracking-tight">
             나의 팀
           </h2>
@@ -101,38 +170,23 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
       <div
         className="rounded-2xl p-5 mb-6 relative overflow-hidden border transition-transform"
         style={{
-          backgroundColor: team.lightBg || '#FFF1F2',
-          borderColor: `${team.primaryColor}25`
+          backgroundColor: teamColors.lightBg,
+          borderColor: `${teamColors.background}25`,
         }}
       >
         <div className="flex items-center gap-4">
 
-          {/* Logo / Badge */}
+          {/* 구단 PNG 대신 구단명 텍스트 배지 */}
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm font-black text-base select-none transition-transform hover:scale-105"
             style={{
-              backgroundColor: needsWhiteLogoBackground
-                ? '#FFFFFF'
-                : team.primaryColor,
-              color: needsWhiteLogoBackground
-                ? team.primaryColor
-                : '#FFFFFF',
-              border: needsWhiteLogoBackground
-                ? `1px solid ${team.primaryColor}30`
-                : '1px solid transparent'
+              backgroundColor: teamColors.background,
+              color: teamColors.text,
+              border: '1px solid transparent',
             }}
+            aria-label={`${team.fullName} 응원팀`}
           >
-            {!logoError ? (
-              <img
-                key={team.id}
-                src={team.logo}
-                alt={team.fullName}
-                className="w-12 h-12 object-contain"
-                onError={() => setLogoError(true)}
-              />
-            ) : (
-              <span>{team.initial || team.name}</span>
-            )}
+            <span>{team.initial || team.name}</span>
           </div>
 
           <div className="flex-1 min-w-0">
@@ -167,6 +221,7 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
             <span className="text-xl font-black text-gray-900">
               {team.rank}위
             </span>
+
             <span className="text-[11px] text-gray-400 font-medium">
               ({team.gamesBehind === '-'
                 ? '선두'
@@ -217,6 +272,7 @@ export function MyTeamCard({ team, onNavigate }: MyTeamCardProps) {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-3">
+
         <button
           type="button"
           onClick={() => onNavigate('/game')}
