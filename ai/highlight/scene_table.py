@@ -110,6 +110,9 @@ def build(game_path, readings_path, video_id, every=5, carry=0, order=False):
             "situation": {"outs": st["outs"], "bases": match.bases_of(st),
                           "score_away": st["score"]["away"], "score_home": st["score"]["home"]},
             "restore": match.restore(pa, rows),
+            # 하이라이트는 플레이 '직후' 화면이 길게 나와서, 방금 일어난 플레이를 같이 보여줌
+            "prev_play": (lambda q: match.short_result(q, rows) if q else None)(match.prev_pa(pa, pas, rows)),
+            "result": match.short_result(pa, rows),
         }
         # 하이라이트는 경기 순서대로 편집되므로, 앞 장면보다 이전 타석이면 의심 표시
         if pa_id < max_pa:

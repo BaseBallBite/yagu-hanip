@@ -241,6 +241,55 @@ def order_filter(labels, pas):
 
 # ---------------------------------------------------------------- 복원
 
+def _clean(desc):
+    desc = re.sub(r"\s*\([^)]*\)", "", desc)          # (우익수->포수) 같은 괄호 설명 제거
+    return re.sub(r"\s+", " ", desc).strip()
+
+
+def short_result(pa, rows):
+    """타석 결과를 한 줄로: '김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)'"""
+    plays = [rows[i] for i in pa["rows"] if rows[i]["event_type"] not in PLAY_SKIP | {"pitch"}]
+    if not plays:
+        return None
+    main = next((r for r in plays if r["description"].startswith(pa["batter"])), None)
+    if main is None:   # 타자 결과가 없는 타석 (폭투·도루 등) → 득점 기록이 있으면 그걸 대표로
+        main = next((r for r in plays if r["event_type"] == "run_scored"), plays[0])
+    text = _clean(main["description"])
+    scored = []
+    for r in plays:
+        if r["event_type"] == "run_scored" and r is not main:
+            m = re.match(r"^\d루주자\s*(\S+)", r["description"])
+            if m:
+                scored.append(m.group(1))
+    if scored:
+        text += " → " + "·".join(scored) + " 홈인"
+    # 실책 정보는 괄호 안에 있어서 지워지므로 따로 살림: "(3루수 송구 실책->1루수)" → "3루수 송구 실책"
+    errs = []
+    for r in plays:
+        for m in re.finditer(r"\(([^)]*실책[^)]*)\)", r["description"]):
+            e = m.group(1).split("->")[0].strip()
+            if e not in errs:
+                errs.append(e)
+    if errs:
+        text += " [" + ", ".join(errs) + "]"
+    b = rows[pa["rows"][0]]["state_before"]["score"]
+    a = rows[pa["rows"][-1]]["state_after"]["score"]
+    if (b["away"], b["home"]) != (a["away"], a["home"]):
+        text += f' ({b["away"]}:{b["home"]} → {a["away"]}:{a["home"]})'
+    return text
+
+
+def prev_pa(pa, pas, rows):
+    """같은 반이닝에서 바로 앞 타석 (플레이가 있었던 것만)"""
+    for k in range(pa["pa_id"] - 1, -1, -1):
+        q = pas[k]
+        if (q["inning"], q["half"]) != (pa["inning"], pa["half"]):
+            return None
+        if short_result(q, rows):
+            return q
+    return None
+
+
 def restore(pa, rows):
     start = rows[pa["start_row"]]["state_before"]
     half = f'{pa["inning"]}회{HALF_KO[pa["half"]]}'
