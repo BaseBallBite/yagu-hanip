@@ -60,6 +60,12 @@
   - 네이버 원본의 줄별 카운트와 대조: 221,661개 공 중 221,626개 일치. 다른 26개 중 24개는 5/13 NC–롯데 경기로, 원본 카운트가 투구 결과와 맞지 않고 한두 줄씩 밀려 있다. 이 경우 계산 값이 투구 결과와 맞다. 다시 확인: `.venv/bin/python -m backend.game.count verify`
 - 경기의 `status` 는 "종료"가 아니라 **경기가 끝난 이닝**(예: `9회말`, `11회말`)이다. 720경기 모두 끝난 경기다.
 - DB를 다시 만들면(`store build`) API 서버도 재시작해야 새 DB를 읽는다.
+- **`type_tags`** (유형 태그): 이 플레이에 해당하는 경기 이벤트 유형. 이름은 `tools/event_types.txt` 60개(설명 `docs/event_types.md`)이고, 사전 API `/dict/events/{태그}` 로 그 장면의 카드를 바로 찾을 수 있다.
+  - 타석 결과 줄은 뒤따르는 주자 줄의 유형까지 모은다. 예: 1루타 뒤 2루주자 진루·3루주자 홈인 → `["SINGLE", "ADVANCE", "SCORE"]`.
+  - 주자 줄은 원인 하나만 붙는다: 폭투로 진루 → `WILD_PITCH`, 주자의 재치로 → `ADVANCE_ON_THROW`, 원인 없는 진루·득점 → `ADVANCE`·`SCORE`.
+  - 교체 줄은 `PITCHING_CHANGE`, `PINCH_HITTER`, `PINCH_RUNNER`, `DEFENSIVE_SUB`, `POSITION_CHANGE` 중 하나. 마운드 방문 `MOUND_VISIT`, 체크스윙 판정 `CHECK_SWING_CALL`, 투수판 이탈 `PITCHER_STEP_OFF`, 피치클락 위반 투구 `PITCH_CLOCK_VIOLATION` 등 상황 메모에도 붙는다.
+  - `TAG_UP` 은 원문 문구가 없어서, 희생플라이·플라이 아웃 뒤에 주자 진루·득점이 있으면 계산으로 붙인다.
+  - 투구, 타자 소개, 이닝 시작 줄은 유형이 아니라서 빈 목록이다.
 
 ## 응답 예시
 
@@ -99,7 +105,7 @@
  "description": "나성범 : 우익수 앞 1루타", "batter": "나성범", "pitcher": "화이트",
  "state_before": {"outs": 1, "runners": {"1": null, "2": "카스트로", "3": "김호령"}, "score": {"away": 0, "home": 0}, "…": "…"},
  "state_after":  {"outs": 1, "runners": {"1": "나성범", "2": "카스트로", "3": "김호령"}, "score": {"away": 0, "home": 0}, "…": "…"},
- "type_tags": ["SINGLE"],
+ "type_tags": ["SINGLE", "ADVANCE", "SCORE"],
  "facts": [
   {"id": "F1", "text": "1회초, 1사, 2,3루 (2루 카스트로, 3루 김호령), 점수 KIA 0-0 SSG"},
   {"id": "F2", "text": "타자 나성범, 투수 화이트"},
