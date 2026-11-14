@@ -17,7 +17,8 @@ related:
 - rule.substitution
 - term.pinch_runner
 - term.batting_order
-event_types: []
+event_types:
+- PINCH_HITTER
 aliases:
 - 핀치 히터
 - 대타 작전
