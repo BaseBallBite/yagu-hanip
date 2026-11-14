@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.dictionary import router as dictionary_router
 from backend.api.games import router as games_router
+from backend.api.highlights import router as highlights_router
 
 app = FastAPI(title="야구한입 API", version="0.1.0")
 
@@ -29,6 +30,7 @@ app.add_middleware(
 
 app.include_router(dictionary_router)
 app.include_router(games_router)
+app.include_router(highlights_router)
 
 
 @app.get("/health")
