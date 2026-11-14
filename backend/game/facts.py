@@ -29,7 +29,7 @@ from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 
-VERSION = "b3-facts-v1"
+VERSION = "b3-facts-v2"  # v2: 유형 태그 60개 기준 (docs/event_types.md)
 
 ROOT = Path(__file__).resolve().parents[2]
 B1_DIR = ROOT / "data/raw/b1_v2/B1_corrected_v2/data/b1_normalized_v11/games"
@@ -74,7 +74,57 @@ EVENT_TAG = {
     "steal": "STOLEN_BASE",
     "caught_stealing": "CAUGHT_STEALING",
     "pickoff_out": "PICKOFF",
+    # 60개 확정(docs/event_types.md) 때 추가
+    "triple_play": "TRIPLE_PLAY",
+    "bunt_out": "BUNT_OUT",
+    "batted_ball_out": "BATTED_BALL_HIT_RUNNER",
+    "reach_unspecified": "FIELDERS_CHOICE",   # "N루수 앞 땅볼로 출루"
+    "mound_visit": "MOUND_VISIT",
+    "check_swing_notice": "CHECK_SWING_CALL",
+    "pitcher_disengagement": "PITCHER_STEP_OFF",
+    "ejection_notice": "EJECTION",
+    "abs_notice": "ABS_STATUS",
+    "break_notice": "GAME_STOPPAGE",          # 폭염 쿨링 브레이크, 클리닝 타임
 }
+# 주자 줄: 원인 문구 → 유형 (위에서부터 처음 맞는 것 하나). 괄호 안 수비 경로는 보지 않는다.
+# 원인이 없는 "N루까지 진루" / "홈인" 은 ADVANCE / SCORE.
+RUNNER_EVENTS = {"runner_advance", "run_scored", "runner_out", "steal", "caught_stealing", "pickoff_out"}
+RUNNER_TEXT = [
+    ("무관심도루", "UNCONTESTED_ADVANCE"),
+    ("이중도루 실패시", "DOUBLE_STEAL_ADVANCE"),  # 아웃 아님
+    ("진루실패아웃", "OUT_ON_ADVANCE"),           # 폭투·포일 사이 진루 실패
+    ("타구맞음", "BATTED_BALL_HIT_RUNNER"),
+    ("주자의 재치로", "ADVANCE_ON_THROW"),
+    ("다른주자수비하는 사이", "ADVANCE_ON_PLAY"),
+    ("주루방해", "OBSTRUCTION"),
+    ("폭투", "WILD_PITCH"),
+    ("포일", "PASSED_BALL"),
+    ("보크", "BALK"),
+    ("실책", "ERROR"),
+    ("견제사", "PICKOFF"),
+    ("도루실패", "CAUGHT_STEALING"),
+    ("도루", "STOLEN_BASE"),                     # 도루로, 이중도루로 진루·홈인
+    ("포스아웃", "FORCE_OUT"),
+    ("태그아웃", "TAG_OUT"),
+]
+RUNNER_DEFAULT = {"runner_advance": "ADVANCE", "run_scored": "SCORE"}
+# 공지 줄(경기 중단, 판독, 퇴장 등): 맞는 것을 모두 붙인다
+NOTICE_EVENTS = {"play_notice", "game_status_notice", "break_notice", "video_review", "ejection_notice"}
+NOTICE_TEXT = [
+    ("콜드게임", "GAME_CALLED"),
+    ("퇴장", "EJECTION"),
+    ("경고", "WARNING"),
+    ("고의낙구", "INTENTIONAL_DROP"),
+    ("심(으)로 교체", "UMPIRE_CHANGE"),     # 대기심이 주심/3루심으로 교체
+    ("중단", "GAME_STOPPAGE"),
+    ("지연", "GAME_STOPPAGE"),
+    ("굴절", "RULING_NOTE"),
+    ("인정 안됨", "RULING_NOTE"),
+    ("수비 방해", "INTERFERENCE"),
+    ("피트 라인", "INTERFERENCE"),            # 3피트 라인 이탈
+    ("피트라인", "INTERFERENCE"),
+    ("코치와", "INTERFERENCE"),               # 주루코치 접촉
+]
 # B1 event_tags → 유형 태그
 B1_TAG = {
     "wild_pitch": "WILD_PITCH",
@@ -91,7 +141,60 @@ TEXT_TAG = [
     ("주루방해", "OBSTRUCTION"),
     ("수비방해", "INTERFERENCE"),
     ("타격방해", "INTERFERENCE"),
+    ("피치클락", "PITCH_CLOCK_VIOLATION"),   # 투구 줄 "피치클락 투수위반 볼"
 ]
+# 희생플라이·플라이 아웃 뒤 주자 진루·득점이 있으면 태그업으로 계산 (원문 문구 없음)
+TAG_UP_FROM = {"flyout", "sacrifice_fly"}
+
+
+def _substitution_tag(text: str) -> str:
+    if ": 대타 " in text:
+        return "PINCH_HITTER"
+    if ": 대주자 " in text:
+        return "PINCH_RUNNER"
+    if "수비위치 변경" in text:
+        return "POSITION_CHANGE"
+    if text.startswith("투수"):
+        return "PITCHING_CHANGE"
+    return "DEFENSIVE_SUB"
+
+
+def _runner_tag(et: str, text: str) -> str | None:
+    main = text.split(" : ", 1)[-1].split(" (")[0]
+    for word, tag in RUNNER_TEXT:
+        if word in main:
+            return tag
+    return RUNNER_DEFAULT.get(et) or EVENT_TAG.get(et)
+
+
+def row_tags(et: str, text: str, b1_tags: list[str] | None = None) -> list[str]:
+    """줄 하나 → 유형 태그 목록."""
+    tags: list[str] = []
+
+    def add(t: str | None) -> None:
+        if t and t not in tags:
+            tags.append(t)
+
+    if et == "video_review" and "판독 불가" in text:
+        add("ADMIN_NOTE")  # 중계 시스템 오류로 판독 불가 안내 (판독 자체가 아님)
+    elif et == "substitution":
+        add(_substitution_tag(text))
+    elif et in RUNNER_EVENTS:
+        add(_runner_tag(et, text))
+    else:
+        add(EVENT_TAG.get(et))
+    if et in NOTICE_EVENTS:
+        for word, t in NOTICE_TEXT:
+            if word in text:
+                add(t)
+        if et == "play_notice" and not tags:
+            add("RULING_NOTE")  # 그 밖의 판정 메모 (타구가 심판·천장에 맞음 등)
+    for t in b1_tags or []:
+        add(B1_TAG.get(t))
+    for word, t in TEXT_TAG:
+        if word in text:
+            add(t)
+    return tags
 
 
 @dataclass
@@ -318,16 +421,11 @@ def _tags(game: Game, group: list[dict]) -> list[str]:
 
     for r in group:
         p = game.plays.get(r["play_id"], {})
-        et = r["event_type"]
-        add(EVENT_TAG.get(et))
-        if et == "substitution" and (r.get("description") or "").startswith("투수"):
-            add("PITCHING_CHANGE")
-        for t in p.get("event_tags") or []:
-            add(B1_TAG.get(t))
-        text = r.get("description") or ""
-        for word, t in TEXT_TAG:
-            if word in text:
-                add(t)
+        for t in row_tags(r["event_type"], r.get("description") or "", p.get("event_tags")):
+            add(t)
+    ets = {r["event_type"] for r in group}
+    if ets & TAG_UP_FROM and ets & {"runner_advance", "run_scored"}:
+        add("TAG_UP")
     return tags
 
 
