@@ -26,7 +26,8 @@ related:
 - term.strike
 - term.count
 - rule.abs
-event_types: []
+event_types:
+- PITCH_CLOCK_VIOLATION
 aliases:
 - 피치 클락
 more:

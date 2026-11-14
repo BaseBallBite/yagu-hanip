@@ -21,7 +21,8 @@ related:
 - rule.force_play
 - rule.tag
 - term.out
-event_types: []
+event_types:
+- SCORE
 aliases:
 - 득점 불인정
 - 득점 무효

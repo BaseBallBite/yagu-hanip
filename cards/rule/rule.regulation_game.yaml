@@ -18,7 +18,8 @@ related:
 - rule.called_game
 - rule.no_game
 - rule.suspended_game
-event_types: []
+event_types:
+- GAME_CALLED
 aliases:
 - 레귤레이션 게임
 - 5회 성립

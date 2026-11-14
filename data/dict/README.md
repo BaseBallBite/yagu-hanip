@@ -47,7 +47,7 @@ python3 data/dict/build_dict.py cards data/dict
 - source: 출처. 규칙 카드는 규칙 번호가 들어감
 - quote: 규칙집 원문 인용, 40자 이내(6장에만 있음)
 - related: 관련 카드 id
-- event_types: 이 카드가 설명하는 경기 이벤트(48장에 있음)
+- event_types: 이 카드가 설명하는 경기 이벤트(63장에 있음). 이름은 tools/event_types.txt, 설명은 docs/event_types.md
 - image, image_static: 그림 파일 경로(data/dict 기준 상대 경로). 구종 카드와 체크스윙, 스트라이크 존에만 있음(16장)
 - aliases: 해설 문장에서 밑줄을 칠 단어들(193장에 있음)
 - review_status, reviewer: 검수 상태와 검수자
@@ -55,14 +55,14 @@ python3 data/dict/build_dict.py cards data/dict
 dict.json 구성
 - cards: id 를 키로 한 카드 전체
 - alias_index: 공백 뺀 표기에서 카드 id 로 가는 표. 밑줄 칠 때 긴 표기부터 맞추도록 길이순으로 정렬됨(630개)
-- event_index: 경기 이벤트에서 카드 id 목록으로 가는 표(30종)
+- event_index: 경기 이벤트에서 카드 id 목록으로 가는 표(60종 중 48종 연결)
 
 출처 분포(출처 항목 수 기준)
 - 공식야구규칙 2026 159, KBO 리그 규정 2026 35, 2026 KBO 연감 가이드북 4, KBO 홈페이지 3, MLB.com 용어집 14
 - 팀 작성 67(일반 야구 용어 40, KBO 기록실 항목 23, 세이버메트릭스 일반 정의 2, 중계 관용 표현 2). 팀이 직접 쓴 카드라 사람 검수가 필요함
 
 주의
-- event_types 이름은 초안이라 백엔드에서 확정하는 값과 맞춰야 event_index 가 동작함
+- event_index 에 없는 유형은 카드 0장으로 나옴. 연결 안 된 12종: ADVANCE, ADVANCE_ON_PLAY, ADVANCE_ON_THROW, UNCONTESTED_ADVANCE, BATTED_BALL_HIT_RUNNER, GAME_STOPPAGE, UMPIRE_CHANGE, RULING_NOTE(맞는 카드 없음), PITCHER_STEP_OFF, ADMIN_NOTE, SEPARATOR, GAME_RESULT_NOTICE(해설 대상 아님)
 - 카드 검사: python3 tools/validate_cards.py cards --strict
 - 그림은 tools/diagrams/ 의 스크립트로 만듦
 - 카드 설명은 쉬운 말투(~예요)로 쓰여 있음
