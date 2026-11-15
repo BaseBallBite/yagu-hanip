@@ -16,7 +16,8 @@ related:
 - rule.base_on_balls
 - term.walks_hbp
 - term.manager
-event_types: []
+event_types:
+- INTENTIONAL_WALK
 aliases:
 - 고의4구
 - 고의사구

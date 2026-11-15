@@ -16,7 +16,9 @@ related:
 - rule.appeal_play
 - term.manager
 - rule.video_review
-event_types: []
+event_types:
+- EJECTION
+- WARNING
 aliases:
 - 감독 항의
 - 감독 어필

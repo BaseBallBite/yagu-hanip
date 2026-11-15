@@ -17,7 +17,8 @@ related:
 - rule.substitution
 - term.pinch_hitter
 - term.stolen_base
-event_types: []
+event_types:
+- PINCH_RUNNER
 aliases:
 - 핀치 러너
 review_status: draft

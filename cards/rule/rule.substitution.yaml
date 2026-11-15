@@ -22,6 +22,9 @@ related:
 - term.pitching_change
 event_types:
 - PITCHING_CHANGE
+- PINCH_HITTER
+- PINCH_RUNNER
+- DEFENSIVE_SUB
 aliases:
 - 교체
 - 선수교체
