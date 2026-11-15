@@ -16,7 +16,8 @@ related:
 - term.strike
 - rule.video_review
 - term.strikeout
-event_types: []
+event_types:
+- CHECK_SWING_CALL
 aliases:
 - 체크 스윙
 - 체크스윙 판독

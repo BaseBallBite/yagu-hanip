@@ -18,7 +18,8 @@ related:
 - rule.strike_zone
 - term.strike
 - term.ball
-event_types: []
+event_types:
+- ABS_STATUS
 aliases:
 - ABS
 - 자동 볼 판정

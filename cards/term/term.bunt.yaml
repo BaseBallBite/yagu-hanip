@@ -18,6 +18,7 @@ related:
 - rule.foul_ball
 event_types:
 - SAC_BUNT
+- BUNT_OUT
 aliases:
 - 기습번트
 - 기습 번트

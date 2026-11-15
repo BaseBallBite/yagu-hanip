@@ -18,6 +18,7 @@ related:
 - term.pickoff
 event_types:
 - STOLEN_BASE
+- DOUBLE_STEAL_ADVANCE
 aliases:
 - 스틸
 - 2루 도루

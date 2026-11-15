@@ -11,7 +11,8 @@ related:
 - rule.substitution
 - term.pinch_hitter
 - term.pinch_runner
-event_types: []
+event_types:
+- DEFENSIVE_SUB
 aliases:
 - 대수비 선수
 - 수비 교체

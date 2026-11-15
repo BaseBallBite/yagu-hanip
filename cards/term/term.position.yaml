@@ -12,7 +12,8 @@ related:
 - term.double_play
 - term.infielder
 - term.outfielder
-event_types: []
+event_types:
+- POSITION_CHANGE
 aliases:
 - POS
 - 포지션
