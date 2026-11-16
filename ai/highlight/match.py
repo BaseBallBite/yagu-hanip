@@ -246,6 +246,15 @@ def _clean(desc):
     return re.sub(r"\s+", " ", desc).strip()
 
 
+def main_row(pa, rows):
+    """타석을 대표하는 기록 줄 (타자 본인 결과, 없으면 득점 줄, 없으면 첫 플레이)"""
+    plays = [rows[i] for i in pa["rows"] if rows[i]["event_type"] not in PLAY_SKIP | {"pitch"}]
+    if not plays:
+        return None
+    m = next((r for r in plays if r["description"].startswith(pa["batter"])), None)
+    return m or next((r for r in plays if r["event_type"] == "run_scored"), plays[0])
+
+
 def short_result(pa, rows):
     """타석 결과를 한 줄로: '김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)'"""
     plays = [rows[i] for i in pa["rows"] if rows[i]["event_type"] not in PLAY_SKIP | {"pitch"}]
