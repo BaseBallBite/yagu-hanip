@@ -5,6 +5,7 @@
   python generate.py --limit 3                      # 3문항만 실제 호출 → usage로 단가 측정
   python generate.py                                # 전체 (R, B0, B1, B2, B3)
   python generate.py --conditions B2,B3 --qids Q01,Q07
+  python generate.py --verifier v2 ...               # 고친 검증기 (본 평가는 기본값 v1 유지)
 
 중간에 끊겨도 다시 돌리면 캐시된 건 건너뛰고 이어서 함 (캐시 히트는 비용 0).
 """
@@ -38,6 +39,8 @@ def main():
     ap.add_argument("--model", default=config.MODEL)
     ap.add_argument("--run-name", default="")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--verifier", default="v1", choices=["v1", "v2"],
+                    help="B3 검증기 버전. 본 평가는 v1 고정, v2는 '모름' 문장 유지·위치 숫자 제외")
     args = ap.parse_args()
 
     items = load_jsonl(args.testset)
@@ -89,9 +92,9 @@ def main():
             if "B3" in conds:
                 out, meta = b2_out
                 pool = evidence_pool(item, cards, "B2")
-                v = verify(out, pool, players)
+                v = verify(out, pool, players, args.verifier)
                 rows.append({"qid": qid, "condition": "B3", **v,
-                             "meta": {**meta, "from": "B2+verifier"}})
+                             "meta": {**meta, "from": f"B2+verifier_{args.verifier}"}})
             print(f"{qid} 완료")
     except DailyQuotaExceeded as e:
         stopped = True
