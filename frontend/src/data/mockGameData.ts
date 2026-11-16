@@ -77,7 +77,7 @@ export const MOCK_RECENT_GAMES: RecentGameItem[] = [
     awayTeam: 'KIA',
     awayScore: 2,
     date: '09/30',
-    status: '9회말 진행중',
+    status: '9회초 진행중',
     isCurrentGame: true,
   },
   {
@@ -106,8 +106,8 @@ export const MOCK_GAME_SUMMARY: CurrentGameSummary = {
   homeScore: 3,
   awayTeam: 'KIA',
   awayScore: 2,
-  inning: '9회말',
-  outsCount: 2, // ● ● ○ (2 outs)
+  inning: '9회초',
+  outsCount: 1, // 해당 타석의 삼진 직후 1아웃
   runners: {
     first: true, // 1루 주자 있음
     second: false,
@@ -119,7 +119,7 @@ export const MOCK_GAME_SUMMARY: CurrentGameSummary = {
   strikes: 3,
 };
 
-// 9회말 KIA 공격 At-Bats
+// 9회초 KIA 공격 At-Bats (시연용 Mock, 실제 경기 API와 별개)
 export const MOCK_AT_BATS: AtBatPlay[] = [
   {
     id: 'atbat-1',

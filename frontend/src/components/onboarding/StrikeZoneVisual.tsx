@@ -112,12 +112,12 @@ export function StrikeZoneVisual({ className = '' }: StrikeZoneVisualProps) {
             </div>
             {pitchType === 'strike' && (
               <span className="absolute -top-6 -right-2 px-1.5 py-0.5 rounded bg-purple-600 text-white text-[10px] font-bold shadow-xs whitespace-nowrap animate-bounce">
-                IN!
+                STRIKE!
               </span>
             )}
             {pitchType === 'ball' && (
               <span className="absolute -top-6 -right-2 px-1.5 py-0.5 rounded bg-gray-600 text-white text-[10px] font-bold shadow-xs whitespace-nowrap">
-                OUT!
+                BALL!
               </span>
             )}
           </div>

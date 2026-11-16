@@ -58,7 +58,7 @@ export function OnboardingStep2({ onNavigate }: OnboardingStep2Props) {
 
           {/* Big Title */}
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mb-4 leading-snug">
-            모르는 장면은{"\n"}
+            모르는 장면은<br />
             <span className="text-purple-600">
               <HanipLabel />
             </span>{' '}
@@ -67,12 +67,12 @@ export function OnboardingStep2({ onNavigate }: OnboardingStep2Props) {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mb-8 whitespace-pre-line">
-            경기를 보다 이해되지 않는 상황이 나오면{"\n"}
+            경기를 보다가 모르는 장면이 나오면<br />
             <span className="font-semibold text-purple-700">
               <HanipLabel />
             </span>{' '}
-            버튼을 눌러보세요.{"\n\n"}
-            AI가 현재 경기 기록과 야구 규칙을 바탕으로{"\n"}
+            버튼을 눌러보세요.<br />
+            AI가 경기 기록과 야구 규칙을 바탕으로<br />
             <span className="font-semibold text-gray-900">
               초보자도 이해하기 쉬운 말
             </span>

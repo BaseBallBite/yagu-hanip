@@ -27,7 +27,7 @@ export function GameSituationPreview() {
         </span>
 
         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
-          실제 중계 상황 예시
+          시연용 가상 경기 예시
         </span>
       </div>
 
@@ -51,7 +51,7 @@ export function GameSituationPreview() {
               <span className="text-purple-600">3</span> : <span>2</span>
             </div>
             <div className="text-[11px] font-bold text-purple-800 bg-purple-100/80 px-2 py-0.5 rounded-full mt-0.5">
-              9회말 · 0아웃
+              9회초 · 투구 전 0아웃
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export function GameSituationPreview() {
           </div>
 
           <div className="px-3 py-1.5 rounded-xl bg-white border border-purple-200 text-purple-700 font-black text-sm shadow-xs">
-            → 삼진 아웃
+            → 삼진 아웃 · 1아웃
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ export function GameSituationPreview() {
           <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-white/15">
             <div className="flex items-center gap-1.5 text-xs font-bold text-purple-100">
               <Sparkles className="w-4 h-4 text-yellow-300" />
-              <span>야구한입 AI 실시간 해설</span>
+              <span>해설 예시</span>
             </div>
 
             <span className="text-[10px] font-semibold text-purple-200 bg-white/15 px-2 py-0.5 rounded-full">
