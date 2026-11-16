@@ -1,6 +1,12 @@
 
 @import "tailwindcss";
 
+/* 페이지별 스크롤 길이가 달라도 상단 헤더가 좌우로 이동하지 않도록 공간 확보 */
+html {
+  scrollbar-gutter: stable;
+}
+
+
 /* 기본 테마: 야구한입 보라색 */
 :root {
   --team-primary: #4B1E8A;
@@ -18,14 +24,14 @@
 
 /* KIA: 레드 + 차콜 */
 :root[data-team="kia"] {
-  --team-primary: #C8102E;
+  --team-primary: #EA0029;
   --team-dark: #921128;
   --team-accent: #262626;
 }
 
 /* 삼성: 로열 블루 */
 :root[data-team="samsung"] {
-  --team-primary: #1261B1;
+  --team-primary: #074CA1;
   --team-dark: #08447E;
   --team-accent: #A9BFD5;
 }
@@ -39,49 +45,49 @@
 
 /* 두산: 딥 네이비 */
 :root[data-team="doosan"] {
-  --team-primary: #142F57;
+  --team-primary: #1A1748;
   --team-dark: #0C213C;
   --team-accent: #C32639;
 }
 
 /* KT: 차콜 블랙 */
 :root[data-team="kt"] {
-  --team-primary: #28282B;
+  --team-primary: #000000;
   --team-dark: #141416;
   --team-accent: #D51C35;
 }
 
 /* SSG: 레드 + 골드 */
 :root[data-team="ssg"] {
-  --team-primary: #D82332;
+  --team-primary: #CE0E2D;
   --team-dark: #A51727;
   --team-accent: #C9A052;
 }
 
 /* 롯데: 네이비 블루 */
 :root[data-team="lotte"] {
-  --team-primary: #002F6C;
+  --team-primary: #6CACE4;
   --team-dark: #001C43;
   --team-accent: #D71939;
 }
 
 /* 한화: 오렌지 + 블랙 */
 :root[data-team="hanwha"] {
-  --team-primary: #C94B0D;
+  --team-primary: #FC4E00;
   --team-dark: #953509;
   --team-accent: #F37321;
 }
 
 /* NC: 블루 + 골드 */
 :root[data-team="nc"] {
-  --team-primary: #155B91;
+  --team-primary: #4AC7D5;
   --team-dark: #103F67;
   --team-accent: #C9A052;
 }
 
 /* 키움: 버건디 */
 :root[data-team="kiwoom"] {
-  --team-primary: #820024;
+  --team-primary: #570514;
   --team-dark: #57001A;
   --team-accent: #D5A0AC;
 }

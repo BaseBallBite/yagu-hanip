@@ -59,7 +59,7 @@ export default function App() {
       () => localStorage.getItem('yagu_onboarding_completed') === 'true'
     );
 
-  const [isWhyActive, setIsWhyActive] = useState<boolean>(true);
+  const [isWhyActive, setIsWhyActive] = useState<boolean>(false);
 
   const [isGuideReplay, setIsGuideReplay] = useState<boolean>(
     () => window.location.pathname === '/guide'
@@ -143,7 +143,7 @@ export default function App() {
 
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'auto',
     });
   };
 
@@ -189,8 +189,8 @@ export default function App() {
       {/* =========================
           COMMON HEADER
       ========================== */}
-      <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-colors">
-        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+      <header className="sticky top-0 z-30 w-full shrink-0 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
 
           {/* Logo / Service Name */}
           <button
@@ -219,23 +219,24 @@ export default function App() {
           </button>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-3 lg:gap-5 text-sm font-medium">
             {navItems.map((item) => (
               <button
                 key={item.path}
                 type="button"
                 onClick={() => navigate(item.path)}
-                className={`flex items-center gap-1.5 transition-all cursor-pointer font-bold ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border transition-colors cursor-pointer font-bold whitespace-nowrap ${
                   currentPath === item.path
-                    ? 'text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200/80 shadow-xs'
-                    : 'text-gray-600 hover:text-purple-600'
+                    ? 'text-purple-600 bg-purple-50 border-purple-200/80 shadow-xs'
+                    : 'text-gray-600 border-transparent hover:text-purple-600 hover:bg-purple-50/60'
                 }`}
               >
                 <span>{item.label}</span>
 
-                {currentPath === item.path && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
-                )}
+                <span
+                  aria-hidden="true"
+                  className={`w-1.5 h-1.5 shrink-0 rounded-full ${currentPath === item.path ? 'bg-purple-600' : 'bg-transparent'}`}
+                />
               </button>
             ))}
           </nav>
@@ -335,11 +336,11 @@ export default function App() {
 
                 {/* Description */}
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mb-8 max-w-xl">
-                  경기를 보다가 이해하기 어려운 순간을{"\n"}
+                  경기를 보다 이해하기 어려운 장면을 만나면,<br className="hidden sm:block" />
                   <span className="font-semibold text-gray-800">
                     AI가 쉽고 빠르게 설명
                   </span>
-                  해주는 야구 초보자용 경기 해설 서비스
+                  해줘요.
                 </p>
 
                 {/* Feature List */}
@@ -444,12 +445,12 @@ export default function App() {
                         </span>
 
                         <span className="text-xs font-bold text-red-600 tracking-wider">
-                          LIVE 해설 중
+                          경기 화면 미리보기
                         </span>
                       </div>
 
                       <div className="text-xs font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-700">
-                        수원 KT위즈파크
+                        시연용 가상 상황
                       </div>
                     </div>
 
@@ -482,9 +483,9 @@ export default function App() {
                           </div>
 
                           <div className="mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 text-xs font-bold">
-                            <span>9회말</span>
+                            <span>9회초</span>
                             <span>·</span>
-                            <span>0아웃</span>
+                            <span>투구 전 · 0아웃</span>
                           </div>
                         </div>
 
@@ -528,7 +529,7 @@ export default function App() {
                           </div>
 
                           <span className="text-[11px] text-purple-700 font-semibold ml-1">
-                            1루 주자 주루 중
+                            1루에 주자 있음
                           </span>
                         </div>
 
@@ -557,7 +558,7 @@ export default function App() {
                         <span>현재 타석</span>
 
                         <span className="text-purple-600 font-medium text-[11px]">
-                          결정구 맞대결
+                          2볼 2스트라이크
                         </span>
                       </div>
 
@@ -611,7 +612,7 @@ export default function App() {
                         </div>
 
                         <div className="inline-flex items-center gap-1 text-sm sm:text-base font-black text-purple-700 bg-white px-3 py-1.5 rounded-xl border border-purple-200 shadow-xs self-start sm:self-auto">
-                          <span>→ 삼진 아웃</span>
+                          <span>→ 삼진 아웃 · 1아웃</span>
                         </div>
                       </div>
                     </div>
@@ -625,6 +626,8 @@ export default function App() {
 
                       <button
                         type="button"
+                        aria-expanded={isWhyActive}
+                        aria-controls="landing-explanation"
                         onClick={handleWhyClick}
                         className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer shadow-xs ${
                           isWhyActive
@@ -644,11 +647,11 @@ export default function App() {
 
                     {/* AI Explanation */}
                     {isWhyActive && (
-                      <div className="mt-3.5 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-700 text-white shadow-lg shadow-purple-900/15 transition-all duration-300">
+                      <div id="landing-explanation" className="mt-3.5 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-700 text-white shadow-lg shadow-purple-900/15 transition-all duration-300">
                         <div className="flex items-center justify-between mb-2.5">
                           <div className="flex items-center gap-1.5 text-xs font-bold text-purple-100">
                             <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
-                            <span>야구한입 AI 실시간 해설</span>
+                            <span>해설 예시</span>
                           </div>
 
                           <span className="text-[10px] text-purple-200 bg-white/10 px-2 py-0.5 rounded-full">
@@ -684,7 +687,7 @@ export default function App() {
 
                     {/* Note */}
                     <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                      <span>KBO 실시간 중계 데이터 연동 예시</span>
+                      <span>서비스 기능 설명을 위한 가상 경기 예시</span>
 
                       <span className="font-semibold text-purple-600">
                         야구한입 프리뷰
@@ -711,7 +714,7 @@ export default function App() {
             <span>·</span>
 
             <span>
-              야구 초보자를 위한 생성형 AI 경기 해설 서비스
+              야구 초보자를 위한 AI 경기 해설 서비스
             </span>
           </div>
 
