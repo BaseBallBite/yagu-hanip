@@ -31,52 +31,52 @@ const TEAM_BADGE_COLORS: Record<
   }
 > = {
   kia: {
-    background: '#D71920',
+    background: '#EA0029',
     text: '#FFFFFF',
     lightBg: '#FFF1F2',
   },
   samsung: {
-    background: '#0066B3',
+    background: '#074CA1',
     text: '#FFFFFF',
     lightBg: '#EFF6FF',
   },
   lg: {
-    background: '#D41470',
+    background: '#A50034',
     text: '#FFFFFF',
     lightBg: '#FFF0F7',
   },
   doosan: {
-    background: '#171735',
+    background: '#1A1748',
     text: '#FFFFFF',
     lightBg: '#F1F5F9',
   },
   kt: {
-    background: '#333333',
+    background: '#000000',
     text: '#FFFFFF',
     lightBg: '#F5F5F5',
   },
   ssg: {
-    background: '#F04E5E',
+    background: '#CE0E2D',
     text: '#FFFFFF',
     lightBg: '#FFF1F3',
   },
   lotte: {
-    background: '#285477',
-    text: '#FFFFFF',
+    background: '#6CACE4',
+    text: '#172033',
     lightBg: '#EFF6FA',
   },
   hanwha: {
-    background: '#FF6B00',
+    background: '#FC4E00',
     text: '#FFFFFF',
     lightBg: '#FFF4E8',
   },
   nc: {
-    background: '#C9A34E',
+    background: '#4AC7D5',
     text: '#172033',
     lightBg: '#FFFBEB',
   },
   kiwoom: {
-    background: '#760D35',
+    background: '#570514',
     text: '#FFFFFF',
     lightBg: '#FFF1F5',
   },

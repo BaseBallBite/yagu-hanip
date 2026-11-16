@@ -44,7 +44,7 @@ export function OnboardingLayout({
         <div className="flex items-center justify-between pb-6 mb-2">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-100">
-              입문 온보딩 {currentStep}/{totalSteps}
+              야구한입 입문 가이드 {currentStep}/{totalSteps}
             </span>
           </div>
 
