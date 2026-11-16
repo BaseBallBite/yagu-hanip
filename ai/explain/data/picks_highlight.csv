@@ -1,0 +1,4 @@
+qid,type,tags,game_id,play_id,question,card_ids,extra_facts
+H01,규칙,복합상황,20261007OBLG02026,2bcc236e,안타 쳤는데 왜 실책으로 점수가 났어요?,term.error|term.infield_hit,
+H02,상황,영상판단,20261007OBLG02026,2bcc236e,1루수가 놓친 거 아니에요?,term.error,
+H03,상황,답불가,20261007OBLG02026,2bcc236e,3루수가 왜 송구를 잘못했어요?,term.error,
