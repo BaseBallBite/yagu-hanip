@@ -7,7 +7,6 @@
 import React, { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
 import {
-  ExplanationLevel,
   MOCK_RECENT_GAMES,
   MOCK_RECENT_TERMS,
   getFavoriteTeamInfo,
@@ -43,22 +42,6 @@ export function MyPage({ onNavigate }: MyPageProps) {
     () => localStorage.getItem('favoriteTeam')
   );
 
-  // AI explanation level
-  const [explanationLevel, setExplanationLevel] =
-    useState<ExplanationLevel>(() => {
-      const stored = localStorage.getItem('explanationLevel');
-
-      if (
-        stored === 'beginner' ||
-        stored === 'standard' ||
-        stored === 'detailed'
-      ) {
-        return stored;
-      }
-
-      return 'beginner';
-    });
-
   // Recent dictionary activity: no initial mock records
   const [recentTerms, setRecentTerms] =
     useState<typeof MOCK_RECENT_TERMS>(loadRecentTerms);
@@ -85,11 +68,6 @@ export function MyPage({ onNavigate }: MyPageProps) {
       );
     };
   }, []);
-
-  const handleChangeLevel = (level: ExplanationLevel) => {
-    setExplanationLevel(level);
-    localStorage.setItem('explanationLevel', level);
-  };
 
   const favoriteTeamInfo = getFavoriteTeamInfo(favoriteTeamName);
 
@@ -124,11 +102,7 @@ export function MyPage({ onNavigate }: MyPageProps) {
               onNavigate={onNavigate}
             />
 
-            <MySettingsCard
-              explanationLevel={explanationLevel}
-              onChangeLevel={handleChangeLevel}
-              onNavigate={onNavigate}
-            />
+            <MySettingsCard onNavigate={onNavigate} />
           </div>
 
           {/* Right column */}
