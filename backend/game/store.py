@@ -30,7 +30,7 @@ from backend.game.facts import B1_DIR, B2_DIR, ROOT, build_facts, load_game
 from backend.game.facts import _players as players  # F와 같은 규칙으로 빈 타자·투수 이름을 채움
 
 DB_PATH = Path(os.environ.get("YAGU_DB", ROOT / "data/db/yagu.sqlite"))
-VERSION = "b4-store-v2"  # v2: 투구별 볼·스트라이크 카운트
+VERSION = "b4-store-v3"  # v2: 투구별 볼·스트라이크 카운트, v3: 유형 태그 60개 기준
 
 SCHEMA = """
 CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
