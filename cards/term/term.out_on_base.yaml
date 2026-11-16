@@ -15,7 +15,9 @@ related:
 - rule.tag
 - term.out
 - term.caught_stealing
-event_types: []
+event_types:
+- TAG_OUT
+- OUT_ON_ADVANCE
 aliases:
 - 주루 아웃
 review_status: draft

@@ -21,7 +21,7 @@ related:
 - term.pitching_change
 - term.catcher
 event_types:
-- PITCHING_CHANGE
+- MOUND_VISIT
 aliases:
 - 마운드 방문
 - 마운드 방문 횟수

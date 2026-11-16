@@ -27,7 +27,9 @@
     "term.strike",
     "term.ball"
    ],
-   "event_types": [],
+   "event_types": [
+    "ABS_STATUS"
+   ],
    "aliases": [
     "ABS",
     "자동 볼 판정",
@@ -336,7 +338,9 @@
     "rule.no_game",
     "rule.suspended_game"
    ],
-   "event_types": [],
+   "event_types": [
+    "GAME_CALLED"
+   ],
    "aliases": [
     "콜드 게임",
     "강우 콜드",
@@ -415,7 +419,9 @@
     "rule.video_review",
     "term.strikeout"
    ],
-   "event_types": [],
+   "event_types": [
+    "CHECK_SWING_CALL"
+   ],
    "aliases": [
     "체크 스윙",
     "체크스윙 판독"
@@ -822,7 +828,9 @@
     "term.pitcher"
    ],
    "event_types": [
-    "HIT_BY_PITCH"
+    "HIT_BY_PITCH",
+    "EJECTION",
+    "WARNING"
    ],
    "aliases": [
     "머리 쪽 투구",
@@ -1021,7 +1029,9 @@
     "rule.force_play",
     "term.fly_ball"
    ],
-   "event_types": [],
+   "event_types": [
+    "INTENTIONAL_DROP"
+   ],
    "aliases": [
     "고의 낙구",
     "고의로 공 떨어뜨림"
@@ -1096,7 +1106,10 @@
     "term.manager",
     "rule.video_review"
    ],
-   "event_types": [],
+   "event_types": [
+    "EJECTION",
+    "WARNING"
+   ],
    "aliases": [
     "감독 항의",
     "감독 어필"
@@ -1174,7 +1187,7 @@
     "term.catcher"
    ],
    "event_types": [
-    "PITCHING_CHANGE"
+    "MOUND_VISIT"
    ],
    "aliases": [
     "마운드 방문",
@@ -1284,7 +1297,9 @@
     "term.count",
     "rule.abs"
    ],
-   "event_types": [],
+   "event_types": [
+    "PITCH_CLOCK_VIOLATION"
+   ],
    "aliases": [
     "피치 클락"
    ],
@@ -1362,7 +1377,9 @@
     "rule.no_game",
     "rule.suspended_game"
    ],
-   "event_types": [],
+   "event_types": [
+    "GAME_CALLED"
+   ],
    "aliases": [
     "레귤레이션 게임",
     "5회 성립"
@@ -1431,7 +1448,9 @@
     "rule.tag",
     "term.out"
    ],
-   "event_types": [],
+   "event_types": [
+    "SCORE"
+   ],
    "aliases": [
     "득점 불인정",
     "득점 무효"
@@ -1624,7 +1643,10 @@
     "term.pitching_change"
    ],
    "event_types": [
-    "PITCHING_CHANGE"
+    "PITCHING_CHANGE",
+    "PINCH_HITTER",
+    "PINCH_RUNNER",
+    "DEFENSIVE_SUB"
    ],
    "aliases": [
     "교체",
@@ -1692,7 +1714,8 @@
    ],
    "event_types": [
     "CAUGHT_STEALING",
-    "PICKOFF"
+    "PICKOFF",
+    "TAG_OUT"
    ],
    "aliases": [
     "태그 아웃",
@@ -2423,7 +2446,8 @@
     "rule.foul_ball"
    ],
    "event_types": [
-    "SAC_BUNT"
+    "SAC_BUNT",
+    "BUNT_OUT"
    ],
    "aliases": [
     "기습번트",
@@ -2754,7 +2778,9 @@
     "term.pinch_hitter",
     "term.pinch_runner"
    ],
-   "event_types": [],
+   "event_types": [
+    "DEFENSIVE_SUB"
+   ],
    "aliases": [
     "대수비 선수",
     "수비 교체"
@@ -3827,7 +3853,9 @@
     "term.walks_hbp",
     "term.manager"
    ],
-   "event_types": [],
+   "event_types": [
+    "INTENTIONAL_WALK"
+   ],
    "aliases": [
     "고의4구",
     "고의사구",
@@ -4394,7 +4422,10 @@
     "term.out",
     "term.caught_stealing"
    ],
-   "event_types": [],
+   "event_types": [
+    "TAG_OUT",
+    "OUT_ON_ADVANCE"
+   ],
    "aliases": [
     "주루 아웃"
    ],
@@ -4617,7 +4648,9 @@
     "term.pinch_runner",
     "term.batting_order"
    ],
-   "event_types": [],
+   "event_types": [
+    "PINCH_HITTER"
+   ],
    "aliases": [
     "핀치 히터",
     "대타 작전"
@@ -4645,7 +4678,9 @@
     "term.pinch_hitter",
     "term.stolen_base"
    ],
-   "event_types": [],
+   "event_types": [
+    "PINCH_RUNNER"
+   ],
    "aliases": [
     "핀치 러너"
    ],
@@ -4940,7 +4975,9 @@
     "term.infielder",
     "term.outfielder"
    ],
-   "event_types": [],
+   "event_types": [
+    "POSITION_CHANGE"
+   ],
    "aliases": [
     "POS",
     "포지션",
@@ -5139,7 +5176,9 @@
     "term.rbi",
     "rule.tag_up"
    ],
-   "event_types": [],
+   "event_types": [
+    "SCORE"
+   ],
    "aliases": [
     "득점",
     "점수",
@@ -5710,7 +5749,8 @@
     "term.pickoff"
    ],
    "event_types": [
-    "STOLEN_BASE"
+    "STOLEN_BASE",
+    "DOUBLE_STEAL_ADVANCE"
    ],
    "aliases": [
     "스틸",
@@ -6103,7 +6143,7 @@
     "term.line_drive"
    ],
    "event_types": [
-    "DOUBLE_PLAY"
+    "TRIPLE_PLAY"
    ],
    "aliases": [
     "트리플 플레이",
@@ -6957,6 +6997,9 @@
   "볼": "term.ball"
  },
  "event_index": {
+  "ABS_STATUS": [
+   "rule.abs"
+  ],
   "WALK": [
    "rule.award_bases",
    "rule.base_on_balls"
@@ -6970,13 +7013,21 @@
    "rule.balk"
   ],
   "INTENTIONAL_WALK": [
-   "rule.base_on_balls"
+   "rule.base_on_balls",
+   "term.intentional_walk"
+  ],
+  "GAME_CALLED": [
+   "rule.called_game",
+   "rule.regulation_game"
   ],
   "INTERFERENCE": [
    "rule.catcher_interference",
    "rule.interference",
    "rule.slide_rule",
    "rule.three_foot_lane"
+  ],
+  "CHECK_SWING_CALL": [
+   "rule.check_swing"
   ],
   "DROPPED_THIRD_STRIKE": [
    "rule.dropped_third_strike"
@@ -6987,25 +7038,56 @@
   "DOUBLE_PLAY": [
    "rule.force_play",
    "rule.slide_rule",
-   "term.double_play",
-   "term.triple_play"
+   "term.double_play"
   ],
   "DOUBLE": [
    "rule.ground_rule_double",
    "term.double",
    "term.extra_base_hit"
   ],
+  "EJECTION": [
+   "rule.head_pitch",
+   "rule.manager_protest"
+  ],
+  "WARNING": [
+   "rule.head_pitch",
+   "rule.manager_protest"
+  ],
   "INFIELD_FLY": [
    "rule.infield_fly"
   ],
+  "INTENTIONAL_DROP": [
+   "rule.intentional_drop"
+  ],
+  "MOUND_VISIT": [
+   "rule.mound_visit"
+  ],
+  "OBSTRUCTION": [
+   "rule.obstruction"
+  ],
+  "PITCH_CLOCK_VIOLATION": [
+   "rule.pitch_clock"
+  ],
+  "SCORE": [
+   "rule.run_scoring",
+   "term.run"
+  ],
   "PITCHING_CHANGE": [
-   "rule.mound_visit",
    "rule.substitution",
    "rule.three_batter_minimum",
    "term.pitching_change"
   ],
-  "OBSTRUCTION": [
-   "rule.obstruction"
+  "PINCH_HITTER": [
+   "rule.substitution",
+   "term.pinch_hitter"
+  ],
+  "PINCH_RUNNER": [
+   "rule.substitution",
+   "term.pinch_runner"
+  ],
+  "DEFENSIVE_SUB": [
+   "rule.substitution",
+   "term.defensive_sub"
   ],
   "CAUGHT_STEALING": [
    "rule.tag",
@@ -7014,6 +7096,10 @@
   "PICKOFF": [
    "rule.tag",
    "term.pickoff"
+  ],
+  "TAG_OUT": [
+   "rule.tag",
+   "term.out_on_base"
   ],
   "TAG_UP": [
    "rule.tag_up"
@@ -7029,6 +7115,9 @@
    "term.bunt",
    "term.sacrifice_bunt",
    "term.squeeze"
+  ],
+  "BUNT_OUT": [
+   "term.bunt"
   ],
   "FLYOUT": [
    "term.catch",
@@ -7064,11 +7153,23 @@
   "LINEOUT": [
    "term.line_drive"
   ],
+  "OUT_ON_ADVANCE": [
+   "term.out_on_base"
+  ],
   "PASSED_BALL": [
    "term.passed_ball"
   ],
+  "POSITION_CHANGE": [
+   "term.position"
+  ],
   "STOLEN_BASE": [
    "term.stolen_base"
+  ],
+  "DOUBLE_STEAL_ADVANCE": [
+   "term.stolen_base"
+  ],
+  "TRIPLE_PLAY": [
+   "term.triple_play"
   ],
   "WILD_PITCH": [
    "term.wild_pitch"
