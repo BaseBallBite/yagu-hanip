@@ -38,7 +38,12 @@
     "타석 후: 1사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": null,
-   "result": "양의지 : 삼진 아웃"
+   "result": "양의지 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:37f8cd31a097939f6d5265c6837b1e7881ea43f42f292395500c5dafa1392662",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:37f8cd31a097939f6d5265c6837b1e7881ea43f42f292395500c5dafa1392662"
+   ]
   },
   {
    "start": 205.0,
@@ -71,7 +76,12 @@
     "타석 후: 2사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "김민석 : 삼진 아웃",
-   "result": "강승호 : 중견수 앞 1루타"
+   "result": "강승호 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:e5036647902612302820ec4a2ef450bf671674678fd7de056fa1a7b366d3503a",
+   "prev_play_id": "20261007OBLG02026:play:73aafbe4a3090473d641031acf93d9fc11d3f0062fe717d1157db54f6adc2006",
+   "play_ids": [
+    "20261007OBLG02026:play:e5036647902612302820ec4a2ef450bf671674678fd7de056fa1a7b366d3503a"
+   ]
   },
   {
    "start": 235.0,
@@ -99,7 +109,13 @@
     "타석 후: 3사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "강승호 : 중견수 앞 1루타",
-   "result": "양석환 : 3루수 라인드라이브 아웃"
+   "result": "양석환 : 3루수 라인드라이브 아웃",
+   "play_id": "20261007OBLG02026:play:6840c1104ce1a6215142ec5147baaf7aff418258f9390d8a44bdb42c6bbb56ec",
+   "prev_play_id": "20261007OBLG02026:play:e5036647902612302820ec4a2ef450bf671674678fd7de056fa1a7b366d3503a",
+   "play_ids": [
+    "20261007OBLG02026:play:6077554ad98fa9eb70e243e983087dcc42e49b4b0e8091a1f97a577ee8b6921e",
+    "20261007OBLG02026:play:6840c1104ce1a6215142ec5147baaf7aff418258f9390d8a44bdb42c6bbb56ec"
+   ]
   },
   {
    "start": 250.0,
@@ -127,7 +143,13 @@
     "타석 후: 3사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "강승호 : 중견수 앞 1루타",
-   "result": "양석환 : 3루수 라인드라이브 아웃"
+   "result": "양석환 : 3루수 라인드라이브 아웃",
+   "play_id": "20261007OBLG02026:play:6840c1104ce1a6215142ec5147baaf7aff418258f9390d8a44bdb42c6bbb56ec",
+   "prev_play_id": "20261007OBLG02026:play:e5036647902612302820ec4a2ef450bf671674678fd7de056fa1a7b366d3503a",
+   "play_ids": [
+    "20261007OBLG02026:play:6077554ad98fa9eb70e243e983087dcc42e49b4b0e8091a1f97a577ee8b6921e",
+    "20261007OBLG02026:play:6840c1104ce1a6215142ec5147baaf7aff418258f9390d8a44bdb42c6bbb56ec"
+   ]
   },
   {
    "start": 260.0,
@@ -155,7 +177,12 @@
     "타석 후: 0사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": null,
-   "result": "문정빈 : 중견수 왼쪽 1루타"
+   "result": "문정빈 : 중견수 왼쪽 1루타",
+   "play_id": "20261007OBLG02026:play:d04b5dde81cf4356784f58b534647e1c8342489093abe98b194b7cf3487647a1",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:d04b5dde81cf4356784f58b534647e1c8342489093abe98b194b7cf3487647a1"
+   ]
   },
   {
    "start": 270.0,
@@ -183,7 +210,13 @@
     "타석 후: 0사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "문정빈 : 중견수 왼쪽 1루타",
-   "result": "문보경 : 중견수 앞 1루타"
+   "result": "문보경 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "prev_play_id": "20261007OBLG02026:play:d04b5dde81cf4356784f58b534647e1c8342489093abe98b194b7cf3487647a1",
+   "play_ids": [
+    "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+    "20261007OBLG02026:play:9e8b94e674d87b226cc4633912b36d8b50d377fb942fc3679d3d1bf04cc8c4ad"
+   ]
   },
   {
    "start": 275.0,
@@ -211,7 +244,13 @@
     "타석 후: 0사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "문정빈 : 중견수 왼쪽 1루타",
-   "result": "문보경 : 중견수 앞 1루타"
+   "result": "문보경 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "prev_play_id": "20261007OBLG02026:play:d04b5dde81cf4356784f58b534647e1c8342489093abe98b194b7cf3487647a1",
+   "play_ids": [
+    "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+    "20261007OBLG02026:play:9e8b94e674d87b226cc4633912b36d8b50d377fb942fc3679d3d1bf04cc8c4ad"
+   ]
   },
   {
    "start": 280.0,
@@ -239,7 +278,13 @@
     "타석 후: 0사, 점수 원정 0 : 홈 0"
    ],
    "prev_play": "문정빈 : 중견수 왼쪽 1루타",
-   "result": "문보경 : 중견수 앞 1루타"
+   "result": "문보경 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "prev_play_id": "20261007OBLG02026:play:d04b5dde81cf4356784f58b534647e1c8342489093abe98b194b7cf3487647a1",
+   "play_ids": [
+    "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+    "20261007OBLG02026:play:9e8b94e674d87b226cc4633912b36d8b50d377fb942fc3679d3d1bf04cc8c4ad"
+   ]
   },
   {
    "start": 285.0,
@@ -268,7 +313,14 @@
     "타석 후: 0사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)"
+   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)",
+   "play_id": "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+   "prev_play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "play_ids": [
+    "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+    "20261007OBLG02026:play:39de2967aa7349d44422cc576c5ef5af267b24fb8caefa0896a6314ac4cec38b",
+    "20261007OBLG02026:play:28670a06f8b5c027358883ee772da08775473dc1718ed37d0be4a13fca364d9a"
+   ]
   },
   {
    "start": 290.0,
@@ -297,7 +349,14 @@
     "타석 후: 0사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)"
+   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)",
+   "play_id": "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+   "prev_play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "play_ids": [
+    "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+    "20261007OBLG02026:play:39de2967aa7349d44422cc576c5ef5af267b24fb8caefa0896a6314ac4cec38b",
+    "20261007OBLG02026:play:28670a06f8b5c027358883ee772da08775473dc1718ed37d0be4a13fca364d9a"
+   ]
   },
   {
    "start": 295.0,
@@ -326,7 +385,14 @@
     "타석 후: 0사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)"
+   "result": "이재원 : 중견수 뒤 홈런 → 문보경·문정빈 홈인 (0:0 → 0:3)",
+   "play_id": "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+   "prev_play_id": "20261007OBLG02026:play:ab071c2e59322aca84685a692408b60309633d008020af1d3378fbd0490eb673",
+   "play_ids": [
+    "20261007OBLG02026:play:95b2fc948e7b23894fede26377598fb0ffe4f2295c95a4cdbedf1886b5937147",
+    "20261007OBLG02026:play:39de2967aa7349d44422cc576c5ef5af267b24fb8caefa0896a6314ac4cec38b",
+    "20261007OBLG02026:play:28670a06f8b5c027358883ee772da08775473dc1718ed37d0be4a13fca364d9a"
+   ]
   },
   {
    "start": 310.0,
@@ -359,7 +425,12 @@
     "타석 후: 1사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "조수행 : 1루수 땅볼 아웃",
-   "result": "정수빈 : 우중간 1루타"
+   "result": "정수빈 : 우중간 1루타",
+   "play_id": "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2",
+   "prev_play_id": "20261007OBLG02026:play:9a1828c1446eb26ee5724b72fe209f0726109d72851e88d99bbfc469b7504b0d",
+   "play_ids": [
+    "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2"
+   ]
   },
   {
    "start": 355.0,
@@ -387,7 +458,12 @@
     "타석 후: 2사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "정수빈 : 우중간 1루타",
-   "result": "박찬호 : 삼진 아웃"
+   "result": "박찬호 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f",
+   "prev_play_id": "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2",
+   "play_ids": [
+    "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f"
+   ]
   },
   {
    "start": 360.0,
@@ -415,7 +491,12 @@
     "타석 후: 2사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "정수빈 : 우중간 1루타",
-   "result": "박찬호 : 삼진 아웃"
+   "result": "박찬호 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f",
+   "prev_play_id": "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2",
+   "play_ids": [
+    "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f"
+   ]
   },
   {
    "start": 365.0,
@@ -443,7 +524,12 @@
     "타석 후: 2사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "정수빈 : 우중간 1루타",
-   "result": "박찬호 : 삼진 아웃"
+   "result": "박찬호 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f",
+   "prev_play_id": "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2",
+   "play_ids": [
+    "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f"
+   ]
   },
   {
    "start": 370.0,
@@ -471,7 +557,12 @@
     "타석 후: 2사, 점수 원정 0 : 홈 3"
    ],
    "prev_play": "정수빈 : 우중간 1루타",
-   "result": "박찬호 : 삼진 아웃"
+   "result": "박찬호 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f",
+   "prev_play_id": "20261007OBLG02026:play:1c50e97bfb58ea604f4a89c6e22739aa9b9cc37b7f313844a9e464b835e5fcb2",
+   "play_ids": [
+    "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f"
+   ]
   },
   {
    "start": 375.0,
@@ -499,7 +590,14 @@
     "타석 후: 2사, 점수 원정 1 : 홈 3"
    ],
    "prev_play": "박찬호 : 삼진 아웃",
-   "result": "안재석 : 좌익수 앞 1루타 → 정수빈 홈인 (0:3 → 1:3)"
+   "result": "안재석 : 좌익수 앞 1루타 → 정수빈 홈인 (0:3 → 1:3)",
+   "play_id": "20261007OBLG02026:play:ad9087444e2055cad061db56f2eb32460970f232705817cd51da4d417898d325",
+   "prev_play_id": "20261007OBLG02026:play:82e29afe1a7ff8366ebcb420787e6ce27e76ba702352531e6c2f4a3d27d9859f",
+   "play_ids": [
+    "20261007OBLG02026:play:d5b9b84c4936b3eaf67d149c3df59190304ee2859d236b167e13500461617281",
+    "20261007OBLG02026:play:ad9087444e2055cad061db56f2eb32460970f232705817cd51da4d417898d325",
+    "20261007OBLG02026:play:c3545a99771462cb88316921a59abc637fb621c2465d9b24fa9b630b7cc4d621"
+   ]
   },
   {
    "start": 395.0,
@@ -533,7 +631,13 @@
     "타석 후: 2사, 점수 원정 1 : 홈 3"
    ],
    "prev_play": "안재석 : 좌익수 앞 1루타 → 정수빈 홈인 (0:3 → 1:3)",
-   "result": "세베리노 : 중견수 앞 1루타"
+   "result": "세베리노 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:e1dd47e7cc06ec6e6fa0fe41ba70a1ade577a86455b59b6f2782748236cc6310",
+   "prev_play_id": "20261007OBLG02026:play:ad9087444e2055cad061db56f2eb32460970f232705817cd51da4d417898d325",
+   "play_ids": [
+    "20261007OBLG02026:play:e1dd47e7cc06ec6e6fa0fe41ba70a1ade577a86455b59b6f2782748236cc6310",
+    "20261007OBLG02026:play:343d3b53cd2563d1c8ae408ee7549674e9d2e64eb2b48e16b5f534d8f5a44e77"
+   ]
   },
   {
    "start": 420.0,
@@ -563,7 +667,13 @@
     "타석 후: 2사, 점수 원정 1 : 홈 3"
    ],
    "prev_play": "세베리노 : 중견수 앞 1루타",
-   "result": "양의지 : 몸에 맞는 볼"
+   "result": "양의지 : 몸에 맞는 볼",
+   "play_id": "20261007OBLG02026:play:ab9229a2cf6e25e57209a1b215085aa132cd2b02c0353047c491bf17ebff526b",
+   "prev_play_id": "20261007OBLG02026:play:e1dd47e7cc06ec6e6fa0fe41ba70a1ade577a86455b59b6f2782748236cc6310",
+   "play_ids": [
+    "20261007OBLG02026:play:ab9229a2cf6e25e57209a1b215085aa132cd2b02c0353047c491bf17ebff526b",
+    "20261007OBLG02026:play:17a1b485d6f8798cdeea50c1aa7554f03555c6b09ace8eac74257bd0dea64a17"
+   ]
   },
   {
    "start": 430.0,
@@ -594,7 +704,17 @@
     "타석 후: 2사, 점수 원정 3 : 홈 3"
    ],
    "prev_play": "양의지 : 몸에 맞는 볼",
-   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)"
+   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
+   "play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "prev_play_id": "20261007OBLG02026:play:ab9229a2cf6e25e57209a1b215085aa132cd2b02c0353047c491bf17ebff526b",
+   "play_ids": [
+    "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+    "20261007OBLG02026:play:72c830390242dad4565e0f46e616c9e8ce5759991147f18754b8bd60741667e1",
+    "20261007OBLG02026:play:931779fefcd74a61c8af050ef25991c84058dee5ecfc4a0e95558784bccd52f8",
+    "20261007OBLG02026:play:81b02382eeda9432b35bccb2b96a069729faa2c6ff2042a29e702106c43d3c88",
+    "20261007OBLG02026:play:9eb49197427bfb2e2e31c0916c3fcaf8a3be6167d08b420883b00d2ebedad9a8",
+    "20261007OBLG02026:play:f3511d7f3275434e6cbd4922aba395c6119b9f2744ff98b4d248cc20b78fa5a8"
+   ]
   },
   {
    "start": 440.0,
@@ -630,7 +750,17 @@
     "타석 후: 2사, 점수 원정 3 : 홈 3"
    ],
    "prev_play": "양의지 : 몸에 맞는 볼",
-   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)"
+   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
+   "play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "prev_play_id": "20261007OBLG02026:play:ab9229a2cf6e25e57209a1b215085aa132cd2b02c0353047c491bf17ebff526b",
+   "play_ids": [
+    "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+    "20261007OBLG02026:play:72c830390242dad4565e0f46e616c9e8ce5759991147f18754b8bd60741667e1",
+    "20261007OBLG02026:play:931779fefcd74a61c8af050ef25991c84058dee5ecfc4a0e95558784bccd52f8",
+    "20261007OBLG02026:play:81b02382eeda9432b35bccb2b96a069729faa2c6ff2042a29e702106c43d3c88",
+    "20261007OBLG02026:play:9eb49197427bfb2e2e31c0916c3fcaf8a3be6167d08b420883b00d2ebedad9a8",
+    "20261007OBLG02026:play:f3511d7f3275434e6cbd4922aba395c6119b9f2744ff98b4d248cc20b78fa5a8"
+   ]
   },
   {
    "start": 465.0,
@@ -661,7 +791,17 @@
     "타석 후: 2사, 점수 원정 3 : 홈 3"
    ],
    "prev_play": "양의지 : 몸에 맞는 볼",
-   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)"
+   "result": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
+   "play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "prev_play_id": "20261007OBLG02026:play:ab9229a2cf6e25e57209a1b215085aa132cd2b02c0353047c491bf17ebff526b",
+   "play_ids": [
+    "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+    "20261007OBLG02026:play:72c830390242dad4565e0f46e616c9e8ce5759991147f18754b8bd60741667e1",
+    "20261007OBLG02026:play:931779fefcd74a61c8af050ef25991c84058dee5ecfc4a0e95558784bccd52f8",
+    "20261007OBLG02026:play:81b02382eeda9432b35bccb2b96a069729faa2c6ff2042a29e702106c43d3c88",
+    "20261007OBLG02026:play:9eb49197427bfb2e2e31c0916c3fcaf8a3be6167d08b420883b00d2ebedad9a8",
+    "20261007OBLG02026:play:f3511d7f3275434e6cbd4922aba395c6119b9f2744ff98b4d248cc20b78fa5a8"
+   ]
   },
   {
    "start": 475.0,
@@ -691,7 +831,14 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
-   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)"
+   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
+   "play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "prev_play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "play_ids": [
+    "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+    "20261007OBLG02026:play:85e6d694316234c483520ce3cf3ed5787cab20c0ddfccdd9a25a71b6b3f61089",
+    "20261007OBLG02026:play:e7da3e717e3075aaaf4e3e3906068dcfb7ef6bc288c340053e038a9e7d5c8c0f"
+   ]
   },
   {
    "start": 480.0,
@@ -721,7 +868,14 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
-   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)"
+   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
+   "play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "prev_play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "play_ids": [
+    "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+    "20261007OBLG02026:play:85e6d694316234c483520ce3cf3ed5787cab20c0ddfccdd9a25a71b6b3f61089",
+    "20261007OBLG02026:play:e7da3e717e3075aaaf4e3e3906068dcfb7ef6bc288c340053e038a9e7d5c8c0f"
+   ]
   },
   {
    "start": 485.0,
@@ -751,7 +905,14 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "김민석 : 우익수 앞 1루타 → 세베리노·안재석 홈인 (1:3 → 3:3)",
-   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)"
+   "result": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
+   "play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "prev_play_id": "20261007OBLG02026:play:9c13500ce87c76dc7438ceb58e69d4e8eebd038219d9afd822d3352dc3943355",
+   "play_ids": [
+    "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+    "20261007OBLG02026:play:85e6d694316234c483520ce3cf3ed5787cab20c0ddfccdd9a25a71b6b3f61089",
+    "20261007OBLG02026:play:e7da3e717e3075aaaf4e3e3906068dcfb7ef6bc288c340053e038a9e7d5c8c0f"
+   ]
   },
   {
    "start": 500.0,
@@ -780,7 +941,13 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
-   "result": "양석환 : 볼넷"
+   "result": "양석환 : 볼넷",
+   "play_id": "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d",
+   "prev_play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "play_ids": [
+    "20261007OBLG02026:play:c5fc8147ec304bbc3b03652b61a52e996526cc408067f3914527031796725b93",
+    "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d"
+   ]
   },
   {
    "start": 505.0,
@@ -809,7 +976,13 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
-   "result": "양석환 : 볼넷"
+   "result": "양석환 : 볼넷",
+   "play_id": "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d",
+   "prev_play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "play_ids": [
+    "20261007OBLG02026:play:c5fc8147ec304bbc3b03652b61a52e996526cc408067f3914527031796725b93",
+    "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d"
+   ]
   },
   {
    "start": 515.0,
@@ -838,7 +1011,13 @@
     "타석 후: 2사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "강승호 : 중견수 오른쪽 1루타 → 김민석·양의지 홈인 (3:3 → 5:3)",
-   "result": "양석환 : 볼넷"
+   "result": "양석환 : 볼넷",
+   "play_id": "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d",
+   "prev_play_id": "20261007OBLG02026:play:3d92c6e940b98a0f961098130eb76ba8601e3e64656537ad240218bf93b818a4",
+   "play_ids": [
+    "20261007OBLG02026:play:c5fc8147ec304bbc3b03652b61a52e996526cc408067f3914527031796725b93",
+    "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d"
+   ]
   },
   {
    "start": 530.0,
@@ -868,7 +1047,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "양석환 : 볼넷",
-   "result": "조수행 : 중견수 플라이 아웃"
+   "result": "조수행 : 중견수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:a407ea79b8bfbccae2736fe8afc39091c1923106ac3b9a8ec47f67b65016d9d2",
+   "prev_play_id": "20261007OBLG02026:play:ded62c58a605235686e94e7344a16fd412feb55f5267fe0d1b160468c7e11e8d",
+   "play_ids": [
+    "20261007OBLG02026:play:a407ea79b8bfbccae2736fe8afc39091c1923106ac3b9a8ec47f67b65016d9d2"
+   ]
   },
   {
    "start": 540.0,
@@ -901,7 +1085,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": null,
-   "result": "박해민 : 좌익수 파울플라이 아웃"
+   "result": "박해민 : 좌익수 파울플라이 아웃",
+   "play_id": "20261007OBLG02026:play:6a5397801c299d9b358161f9bdd6153faffb06d927223e7c8f17ded21f43ad4a",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:6a5397801c299d9b358161f9bdd6153faffb06d927223e7c8f17ded21f43ad4a"
+   ]
   },
   {
    "start": 575.0,
@@ -929,7 +1118,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": null,
-   "result": "박해민 : 좌익수 파울플라이 아웃"
+   "result": "박해민 : 좌익수 파울플라이 아웃",
+   "play_id": "20261007OBLG02026:play:6a5397801c299d9b358161f9bdd6153faffb06d927223e7c8f17ded21f43ad4a",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:6a5397801c299d9b358161f9bdd6153faffb06d927223e7c8f17ded21f43ad4a"
+   ]
   },
   {
    "start": 580.0,
@@ -957,7 +1151,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "박해민 : 좌익수 파울플라이 아웃",
-   "result": "송찬의 : 중견수 앞 1루타"
+   "result": "송찬의 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:42abaadc496934dda2faa9e87b4846a5bcd4847891d0960bfa0dd312f1761e93",
+   "prev_play_id": "20261007OBLG02026:play:6a5397801c299d9b358161f9bdd6153faffb06d927223e7c8f17ded21f43ad4a",
+   "play_ids": [
+    "20261007OBLG02026:play:42abaadc496934dda2faa9e87b4846a5bcd4847891d0960bfa0dd312f1761e93"
+   ]
   },
   {
    "start": 590.0,
@@ -985,7 +1184,13 @@
     "타석 후: 1사, 점수 원정 5 : 홈 3"
    ],
    "prev_play": "송찬의 : 중견수 앞 1루타",
-   "result": "오스틴 : 좌익수 앞 1루타"
+   "result": "오스틴 : 좌익수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:ac16c27a5515475b45ed98ba8f087247d18b66a1c8b3b689dca2576217a81fb8",
+   "prev_play_id": "20261007OBLG02026:play:42abaadc496934dda2faa9e87b4846a5bcd4847891d0960bfa0dd312f1761e93",
+   "play_ids": [
+    "20261007OBLG02026:play:ac16c27a5515475b45ed98ba8f087247d18b66a1c8b3b689dca2576217a81fb8",
+    "20261007OBLG02026:play:eb53aef166fa089f74270e8c3772fcc56977956e4d4024bdec0fbddcb733c940"
+   ]
   },
   {
    "start": 605.0,
@@ -1015,7 +1220,15 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "문정빈 : 볼넷",
-   "result": "문보경 : 우익수 앞 1루타 → 오스틴·송찬의 홈인 (5:3 → 5:5)"
+   "result": "문보경 : 우익수 앞 1루타 → 오스틴·송찬의 홈인 (5:3 → 5:5)",
+   "play_id": "20261007OBLG02026:play:32f20499941571c676c9952399cf6eb3d0964ba2cebaf0b4d54e2259b7acbc02",
+   "prev_play_id": "20261007OBLG02026:play:a6c97eca07e486ee28a74fbf74ae5103c326fec054f1fd894fa5c19cc5434b04",
+   "play_ids": [
+    "20261007OBLG02026:play:32f20499941571c676c9952399cf6eb3d0964ba2cebaf0b4d54e2259b7acbc02",
+    "20261007OBLG02026:play:aeca898fb1286adb444dbffb285f06f9c6d87f46c5d2fad51ca563e0e655ee77",
+    "20261007OBLG02026:play:af4b04d84729616ffad409d40dae0f390360021a37f45ac370bdd5a4f7d11f10",
+    "20261007OBLG02026:play:74d3597121811e4c17b6af51e83c48d4e104bae92a00289f7a4725f414a654c6"
+   ]
   },
   {
    "start": 610.0,
@@ -1050,7 +1263,15 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "문정빈 : 볼넷",
-   "result": "문보경 : 우익수 앞 1루타 → 오스틴·송찬의 홈인 (5:3 → 5:5)"
+   "result": "문보경 : 우익수 앞 1루타 → 오스틴·송찬의 홈인 (5:3 → 5:5)",
+   "play_id": "20261007OBLG02026:play:32f20499941571c676c9952399cf6eb3d0964ba2cebaf0b4d54e2259b7acbc02",
+   "prev_play_id": "20261007OBLG02026:play:a6c97eca07e486ee28a74fbf74ae5103c326fec054f1fd894fa5c19cc5434b04",
+   "play_ids": [
+    "20261007OBLG02026:play:32f20499941571c676c9952399cf6eb3d0964ba2cebaf0b4d54e2259b7acbc02",
+    "20261007OBLG02026:play:aeca898fb1286adb444dbffb285f06f9c6d87f46c5d2fad51ca563e0e655ee77",
+    "20261007OBLG02026:play:af4b04d84729616ffad409d40dae0f390360021a37f45ac370bdd5a4f7d11f10",
+    "20261007OBLG02026:play:74d3597121811e4c17b6af51e83c48d4e104bae92a00289f7a4725f414a654c6"
+   ]
   },
   {
    "start": 655.0,
@@ -1085,7 +1306,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "문보경 : 우익수 앞 1루타 → 오스틴·송찬의 홈인 (5:3 → 5:5)",
-   "result": "이재원 : 삼진 아웃"
+   "result": "이재원 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:fcb74f88de2f8cb2b0b01112d989b27e7305b27f42adc1b8cbd69e110632be0f",
+   "prev_play_id": "20261007OBLG02026:play:32f20499941571c676c9952399cf6eb3d0964ba2cebaf0b4d54e2259b7acbc02",
+   "play_ids": [
+    "20261007OBLG02026:play:fcb74f88de2f8cb2b0b01112d989b27e7305b27f42adc1b8cbd69e110632be0f"
+   ]
   },
   {
    "start": 675.0,
@@ -1115,7 +1341,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "이재원 : 삼진 아웃",
-   "result": "구본혁 : 좌익수 플라이 아웃"
+   "result": "구본혁 : 좌익수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:8e7fafd2acf7a97b2f226b65c4545d835ce5951ab1ca0b8c1efc6353c53f4225",
+   "prev_play_id": "20261007OBLG02026:play:fcb74f88de2f8cb2b0b01112d989b27e7305b27f42adc1b8cbd69e110632be0f",
+   "play_ids": [
+    "20261007OBLG02026:play:8e7fafd2acf7a97b2f226b65c4545d835ce5951ab1ca0b8c1efc6353c53f4225"
+   ]
   },
   {
    "start": 690.0,
@@ -1145,7 +1376,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "이재원 : 삼진 아웃",
-   "result": "구본혁 : 좌익수 플라이 아웃"
+   "result": "구본혁 : 좌익수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:8e7fafd2acf7a97b2f226b65c4545d835ce5951ab1ca0b8c1efc6353c53f4225",
+   "prev_play_id": "20261007OBLG02026:play:fcb74f88de2f8cb2b0b01112d989b27e7305b27f42adc1b8cbd69e110632be0f",
+   "play_ids": [
+    "20261007OBLG02026:play:8e7fafd2acf7a97b2f226b65c4545d835ce5951ab1ca0b8c1efc6353c53f4225"
+   ]
   },
   {
    "start": 695.0,
@@ -1173,7 +1409,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": null,
-   "result": "세베리노 : 삼진 아웃"
+   "result": "세베리노 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8292a0a8ca6b53e7bb96761e58d17b85ea64c126aa5a49a5a5652b0f4658236d",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8292a0a8ca6b53e7bb96761e58d17b85ea64c126aa5a49a5a5652b0f4658236d"
+   ]
   },
   {
    "start": 700.0,
@@ -1201,7 +1442,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": null,
-   "result": "세베리노 : 삼진 아웃"
+   "result": "세베리노 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8292a0a8ca6b53e7bb96761e58d17b85ea64c126aa5a49a5a5652b0f4658236d",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8292a0a8ca6b53e7bb96761e58d17b85ea64c126aa5a49a5a5652b0f4658236d"
+   ]
   },
   {
    "start": 705.0,
@@ -1229,7 +1475,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "양의지 : 2루수 플라이 아웃",
-   "result": "김민석 : 1루수 땅볼 아웃"
+   "result": "김민석 : 1루수 땅볼 아웃",
+   "play_id": "20261007OBLG02026:play:99e268a64a9f3e135ec27b04dabb3581201cfa6dc8012e4915d19bd845a1e7f9",
+   "prev_play_id": "20261007OBLG02026:play:c174372a5228bb85334c86c3c15703ffd1060e2d0d5a7e82827732333235148b",
+   "play_ids": [
+    "20261007OBLG02026:play:99e268a64a9f3e135ec27b04dabb3581201cfa6dc8012e4915d19bd845a1e7f9"
+   ]
   },
   {
    "start": 715.0,
@@ -1257,7 +1508,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "양의지 : 2루수 플라이 아웃",
-   "result": "김민석 : 1루수 땅볼 아웃"
+   "result": "김민석 : 1루수 땅볼 아웃",
+   "play_id": "20261007OBLG02026:play:99e268a64a9f3e135ec27b04dabb3581201cfa6dc8012e4915d19bd845a1e7f9",
+   "prev_play_id": "20261007OBLG02026:play:c174372a5228bb85334c86c3c15703ffd1060e2d0d5a7e82827732333235148b",
+   "play_ids": [
+    "20261007OBLG02026:play:99e268a64a9f3e135ec27b04dabb3581201cfa6dc8012e4915d19bd845a1e7f9"
+   ]
   },
   {
    "start": 720.0,
@@ -1285,7 +1541,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "송찬의 : 삼진 아웃",
-   "result": "오스틴 : 유격수 왼쪽 내야안타"
+   "result": "오스틴 : 유격수 왼쪽 내야안타",
+   "play_id": "20261007OBLG02026:play:333156a1ff4e6f2740f52c846881fe5ab9fbdf9720689931a50d6b02ccfe7f22",
+   "prev_play_id": "20261007OBLG02026:play:92741da4cf86a1dea3dac246821aeba776f5706ad66a69b65059d9944311e070",
+   "play_ids": [
+    "20261007OBLG02026:play:333156a1ff4e6f2740f52c846881fe5ab9fbdf9720689931a50d6b02ccfe7f22"
+   ]
   },
   {
    "start": 730.0,
@@ -1313,7 +1574,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "송찬의 : 삼진 아웃",
-   "result": "오스틴 : 유격수 왼쪽 내야안타"
+   "result": "오스틴 : 유격수 왼쪽 내야안타",
+   "play_id": "20261007OBLG02026:play:333156a1ff4e6f2740f52c846881fe5ab9fbdf9720689931a50d6b02ccfe7f22",
+   "prev_play_id": "20261007OBLG02026:play:92741da4cf86a1dea3dac246821aeba776f5706ad66a69b65059d9944311e070",
+   "play_ids": [
+    "20261007OBLG02026:play:333156a1ff4e6f2740f52c846881fe5ab9fbdf9720689931a50d6b02ccfe7f22"
+   ]
   },
   {
    "start": 735.0,
@@ -1341,7 +1607,13 @@
     "타석 후: 2사, 점수 원정 5 : 홈 5"
    ],
    "prev_play": "문정빈 : 2루수 플라이 아웃",
-   "result": "문보경 : 중견수 앞 1루타"
+   "result": "문보경 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+   "prev_play_id": "20261007OBLG02026:play:fcac93fd41a443ddcc9268dad82ef70c29aed9c3386d56b6a6ea980d345078da",
+   "play_ids": [
+    "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+    "20261007OBLG02026:play:0ccd878abaab42b9b3d1db818afbcb14bf8f2f68c9f27520cdb642a3bc7eeb44"
+   ]
   },
   {
    "start": 745.0,
@@ -1370,7 +1642,16 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)"
+   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)",
+   "play_id": "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+   "prev_play_id": "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+   "play_ids": [
+    "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+    "20261007OBLG02026:play:3c73a6e03f3b981cdef151dd107ba3c28873a917beef2f661f15a7549dac0cfb",
+    "20261007OBLG02026:play:9da27c62800d80aac189993be4472bd4a94757ab67a71524ea426bbdc33bd5a7",
+    "20261007OBLG02026:play:c211b4c08fb875f4e51aa01575a62352de4bd22c6178b6046ef9f55ea4654e77",
+    "20261007OBLG02026:play:520c9d874458f1d42bba87511c9000de492e8363727cfc42b710bacc228a5177"
+   ]
   },
   {
    "start": 750.0,
@@ -1399,7 +1680,16 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)"
+   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)",
+   "play_id": "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+   "prev_play_id": "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+   "play_ids": [
+    "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+    "20261007OBLG02026:play:3c73a6e03f3b981cdef151dd107ba3c28873a917beef2f661f15a7549dac0cfb",
+    "20261007OBLG02026:play:9da27c62800d80aac189993be4472bd4a94757ab67a71524ea426bbdc33bd5a7",
+    "20261007OBLG02026:play:c211b4c08fb875f4e51aa01575a62352de4bd22c6178b6046ef9f55ea4654e77",
+    "20261007OBLG02026:play:520c9d874458f1d42bba87511c9000de492e8363727cfc42b710bacc228a5177"
+   ]
   },
   {
    "start": 755.0,
@@ -1428,7 +1718,16 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)"
+   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)",
+   "play_id": "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+   "prev_play_id": "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+   "play_ids": [
+    "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+    "20261007OBLG02026:play:3c73a6e03f3b981cdef151dd107ba3c28873a917beef2f661f15a7549dac0cfb",
+    "20261007OBLG02026:play:9da27c62800d80aac189993be4472bd4a94757ab67a71524ea426bbdc33bd5a7",
+    "20261007OBLG02026:play:c211b4c08fb875f4e51aa01575a62352de4bd22c6178b6046ef9f55ea4654e77",
+    "20261007OBLG02026:play:520c9d874458f1d42bba87511c9000de492e8363727cfc42b710bacc228a5177"
+   ]
   },
   {
    "start": 760.0,
@@ -1457,7 +1756,16 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 앞 1루타",
-   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)"
+   "result": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)",
+   "play_id": "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+   "prev_play_id": "20261007OBLG02026:play:8740e19ebe6d43ce229d926bd90aa34359539824dc9609302ceb7c140db5a942",
+   "play_ids": [
+    "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+    "20261007OBLG02026:play:3c73a6e03f3b981cdef151dd107ba3c28873a917beef2f661f15a7549dac0cfb",
+    "20261007OBLG02026:play:9da27c62800d80aac189993be4472bd4a94757ab67a71524ea426bbdc33bd5a7",
+    "20261007OBLG02026:play:c211b4c08fb875f4e51aa01575a62352de4bd22c6178b6046ef9f55ea4654e77",
+    "20261007OBLG02026:play:520c9d874458f1d42bba87511c9000de492e8363727cfc42b710bacc228a5177"
+   ]
   },
   {
    "start": 770.0,
@@ -1486,7 +1794,13 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "이재원 : 3루수 앞 내야안타 → 문보경·오스틴 홈인 [3루수 송구 실책] (5:5 → 5:7)",
-   "result": "구본혁 : 중견수 왼쪽 앞 1루타"
+   "result": "구본혁 : 중견수 왼쪽 앞 1루타",
+   "play_id": "20261007OBLG02026:play:903685661ef73411168fc7e3831ad044411fb9f70e102206e9cd1332939949b5",
+   "prev_play_id": "20261007OBLG02026:play:2bcc236ec2b19401ec5f1f63f274204f6ea1539812fe336542397f0f191c4e87",
+   "play_ids": [
+    "20261007OBLG02026:play:903685661ef73411168fc7e3831ad044411fb9f70e102206e9cd1332939949b5",
+    "20261007OBLG02026:play:e84f1778dcceea9b34fd833788654ad3b934c694a695d42e5fade5513b961747"
+   ]
   },
   {
    "start": 775.0,
@@ -1519,7 +1833,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": null,
-   "result": "문정빈 : 삼진 아웃"
+   "result": "문정빈 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c"
+   ]
   },
   {
    "start": 815.0,
@@ -1547,7 +1866,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": null,
-   "result": "문정빈 : 삼진 아웃"
+   "result": "문정빈 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c"
+   ]
   },
   {
    "start": 820.0,
@@ -1575,7 +1899,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": null,
-   "result": "문정빈 : 삼진 아웃"
+   "result": "문정빈 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c"
+   ]
   },
   {
    "start": 825.0,
@@ -1603,7 +1932,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": null,
-   "result": "문정빈 : 삼진 아웃"
+   "result": "문정빈 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c"
+   ]
   },
   {
    "start": 830.0,
@@ -1631,7 +1965,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문정빈 : 삼진 아웃",
-   "result": "문보경 : 중견수 플라이 아웃"
+   "result": "문보경 : 중견수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "prev_play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "play_ids": [
+    "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8"
+   ]
   },
   {
    "start": 840.0,
@@ -1659,7 +1998,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문정빈 : 삼진 아웃",
-   "result": "문보경 : 중견수 플라이 아웃"
+   "result": "문보경 : 중견수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "prev_play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "play_ids": [
+    "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8"
+   ]
   },
   {
    "start": 850.0,
@@ -1687,7 +2031,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문정빈 : 삼진 아웃",
-   "result": "문보경 : 중견수 플라이 아웃"
+   "result": "문보경 : 중견수 플라이 아웃",
+   "play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "prev_play_id": "20261007OBLG02026:play:8d2ea584a662901688ced103892cb6ae58f68047f32eab5c6c19e8ee0496fc9c",
+   "play_ids": [
+    "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8"
+   ]
   },
   {
    "start": 855.0,
@@ -1715,7 +2064,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 플라이 아웃",
-   "result": "이재원 : 포수 스트라이크 낫 아웃"
+   "result": "이재원 : 포수 스트라이크 낫 아웃",
+   "play_id": "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f",
+   "prev_play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "play_ids": [
+    "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f"
+   ]
   },
   {
    "start": 860.0,
@@ -1743,7 +2097,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 플라이 아웃",
-   "result": "이재원 : 포수 스트라이크 낫 아웃"
+   "result": "이재원 : 포수 스트라이크 낫 아웃",
+   "play_id": "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f",
+   "prev_play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "play_ids": [
+    "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f"
+   ]
   },
   {
    "start": 865.0,
@@ -1771,7 +2130,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "문보경 : 중견수 플라이 아웃",
-   "result": "이재원 : 포수 스트라이크 낫 아웃"
+   "result": "이재원 : 포수 스트라이크 낫 아웃",
+   "play_id": "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f",
+   "prev_play_id": "20261007OBLG02026:play:953d6acb9b4ff8dd1d5f2c6ae4d827dda505be1e4b582e9b972ba1c00e9a10f8",
+   "play_ids": [
+    "20261007OBLG02026:play:eaf7dc3a3befa93cc4d699abe4efe6abfb19f6f2b33d126392c384d42955dc7f"
+   ]
   },
   {
    "start": 880.0,
@@ -1804,7 +2168,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "세베리노 : 1루수 땅볼 아웃",
-   "result": "양의지 : 삼진 아웃"
+   "result": "양의지 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:610663d196eb9f7a9a13155541f0027b080e571e09ec2038bb4f809ea172f3a2",
+   "prev_play_id": "20261007OBLG02026:play:0cec80472b7c2c69842b23b710c378b914c792c9c41dd672d28f1a39d9bf16e2",
+   "play_ids": [
+    "20261007OBLG02026:play:610663d196eb9f7a9a13155541f0027b080e571e09ec2038bb4f809ea172f3a2"
+   ]
   },
   {
    "start": 900.0,
@@ -1832,7 +2201,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "세베리노 : 1루수 땅볼 아웃",
-   "result": "양의지 : 삼진 아웃"
+   "result": "양의지 : 삼진 아웃",
+   "play_id": "20261007OBLG02026:play:610663d196eb9f7a9a13155541f0027b080e571e09ec2038bb4f809ea172f3a2",
+   "prev_play_id": "20261007OBLG02026:play:0cec80472b7c2c69842b23b710c378b914c792c9c41dd672d28f1a39d9bf16e2",
+   "play_ids": [
+    "20261007OBLG02026:play:610663d196eb9f7a9a13155541f0027b080e571e09ec2038bb4f809ea172f3a2"
+   ]
   },
   {
    "start": 905.0,
@@ -1860,7 +2234,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "양의지 : 삼진 아웃",
-   "result": "김민석 : 중견수 앞 1루타"
+   "result": "김민석 : 중견수 앞 1루타",
+   "play_id": "20261007OBLG02026:play:a76003cdbe2d29bcdf9b3a5fadf30143910460889d2a43c6dbec93a13555414b",
+   "prev_play_id": "20261007OBLG02026:play:610663d196eb9f7a9a13155541f0027b080e571e09ec2038bb4f809ea172f3a2",
+   "play_ids": [
+    "20261007OBLG02026:play:a76003cdbe2d29bcdf9b3a5fadf30143910460889d2a43c6dbec93a13555414b"
+   ]
   },
   {
    "start": 910.0,
@@ -1888,7 +2267,13 @@
     "타석 후: 3사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "김민석 : 중견수 앞 1루타",
-   "result": "강승호 : 포수 스트라이크 낫 아웃"
+   "result": "강승호 : 포수 스트라이크 낫 아웃",
+   "play_id": "20261007OBLG02026:play:f99426b0c96c6a801bdb2c46f0c9d3c35527169dd9b8c3262c10a06e90f197ab",
+   "prev_play_id": "20261007OBLG02026:play:a76003cdbe2d29bcdf9b3a5fadf30143910460889d2a43c6dbec93a13555414b",
+   "play_ids": [
+    "20261007OBLG02026:play:9ba71ffd7282d4c0845df47e8893510e0470def368907eef6730384654b7a9da",
+    "20261007OBLG02026:play:f99426b0c96c6a801bdb2c46f0c9d3c35527169dd9b8c3262c10a06e90f197ab"
+   ]
   },
   {
    "start": 935.0,
@@ -1921,7 +2306,12 @@
     "타석 후: 1사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": null,
-   "result": "양석환 : 3루수 땅볼 아웃"
+   "result": "양석환 : 3루수 땅볼 아웃",
+   "play_id": "20261007OBLG02026:play:9853787feb464f74efd4e9bd2898cb3df6fe385b2009459a8a23f8d9c414e85b",
+   "prev_play_id": null,
+   "play_ids": [
+    "20261007OBLG02026:play:9853787feb464f74efd4e9bd2898cb3df6fe385b2009459a8a23f8d9c414e85b"
+   ]
   },
   {
    "start": 965.0,
@@ -1949,7 +2339,12 @@
     "타석 후: 2사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "양석환 : 3루수 땅볼 아웃",
-   "result": "박지훈 : 3루수 땅볼 아웃"
+   "result": "박지훈 : 3루수 땅볼 아웃",
+   "play_id": "20261007OBLG02026:play:a42bdac7ad40d1d0a2d1a3d321886b526994408fbf17e39fb2675951dda3558e",
+   "prev_play_id": "20261007OBLG02026:play:9853787feb464f74efd4e9bd2898cb3df6fe385b2009459a8a23f8d9c414e85b",
+   "play_ids": [
+    "20261007OBLG02026:play:a42bdac7ad40d1d0a2d1a3d321886b526994408fbf17e39fb2675951dda3558e"
+   ]
   },
   {
    "start": 975.0,
@@ -1977,7 +2372,12 @@
     "타석 후: 3사, 점수 원정 5 : 홈 7"
    ],
    "prev_play": "박지훈 : 3루수 땅볼 아웃",
-   "result": "정수빈 : 유격수 땅볼 아웃"
+   "result": "정수빈 : 유격수 땅볼 아웃",
+   "play_id": "20261007OBLG02026:play:501e3f1d65ccc3f43481fb698943c2380061893c9087e19fcc29b8a66322eeb9",
+   "prev_play_id": "20261007OBLG02026:play:a42bdac7ad40d1d0a2d1a3d321886b526994408fbf17e39fb2675951dda3558e",
+   "play_ids": [
+    "20261007OBLG02026:play:501e3f1d65ccc3f43481fb698943c2380061893c9087e19fcc29b8a66322eeb9"
+   ]
   },
   {
    "start": 995.0,
