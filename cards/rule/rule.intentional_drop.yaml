@@ -17,7 +17,8 @@ related:
 - rule.infield_fly
 - rule.force_play
 - term.fly_ball
-event_types: []
+event_types:
+- INTENTIONAL_DROP
 aliases:
 - 고의 낙구
 - 고의로 공 떨어뜨림

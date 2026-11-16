@@ -20,6 +20,7 @@ related:
 event_types:
 - CAUGHT_STEALING
 - PICKOFF
+- TAG_OUT
 aliases:
 - 태그 아웃
 - 태그아웃

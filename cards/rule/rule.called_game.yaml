@@ -14,7 +14,8 @@ related:
 - rule.regulation_game
 - rule.no_game
 - rule.suspended_game
-event_types: []
+event_types:
+- GAME_CALLED
 aliases:
 - 콜드 게임
 - 강우 콜드

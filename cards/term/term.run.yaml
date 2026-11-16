@@ -12,7 +12,8 @@ related:
 - rule.run_scoring
 - term.rbi
 - rule.tag_up
-event_types: []
+event_types:
+- SCORE
 aliases:
 - 득점
 - 점수
