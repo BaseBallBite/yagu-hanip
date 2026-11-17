@@ -51,13 +51,13 @@ export function HighlightsPage() {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100/90 text-purple-700 text-xs font-bold mb-2">
               <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-              <span>AI 경기 맥락 해설</span>
+              <span>AI 장면 복원</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
               경기 하이라이트
             </h1>
             <p className="text-sm text-gray-500 mt-1">
-              놓친 장면을 다시 보고, AI에게 그 장면의 맥락도 물어보세요.
+              놓친 장면의 직전 상황과 경기 흐름을 확인해 보세요.
             </p>
           </div>
 

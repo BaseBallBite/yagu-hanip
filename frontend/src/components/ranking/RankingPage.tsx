@@ -8,7 +8,7 @@ import { MOCK_STANDINGS, TeamStanding } from '../../data/mockRankingData';
 import { StandingsTable } from './StandingsTable';
 import { TeamDetailCard } from './TeamDetailCard';
 import { BeginnerHelpBox } from './BeginnerHelpBox';
-import { Trophy, Calendar, Sparkles, ChevronDown } from 'lucide-react';
+import { Calendar, Sparkles, ChevronDown, Heart } from 'lucide-react';
 
 interface RankingPageProps {
   onNavigate: (path: string) => void;
@@ -55,15 +55,18 @@ export function RankingPage({ onNavigate }: RankingPageProps) {
               <span>실시간 리그 순위 분석</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-              2026 KBO 순위
+              2026 KBO 정규시즌 순위와 최근 경기 흐름
             </h1>
-            <p className="text-sm text-gray-500 mt-1">
-              현재 팀 순위와 최근 흐름을 한눈에 확인해보세요.
-            </p>
           </div>
 
           {/* Right: Season Selector UI (Mock UI) */}
-          <div className="flex items-center gap-2 self-start sm:self-auto">
+          <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+            {favoriteTeamName && favoriteTeamName !== 'NONE' && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs font-bold">
+                <Heart className="w-3.5 h-3.5 fill-purple-600 text-purple-600" />
+                <span>MY 응원 팀: {favoriteTeamName}</span>
+              </div>
+            )}
             <div className="bg-white rounded-2xl px-4 py-2.5 border border-gray-200 shadow-xs flex items-center gap-2 text-xs font-bold text-gray-700 cursor-pointer hover:border-purple-300 transition-colors">
               <Calendar className="w-4 h-4 text-purple-600" />
               <span>2026 정규시즌</span>

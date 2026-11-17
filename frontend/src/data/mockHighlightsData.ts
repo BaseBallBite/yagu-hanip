@@ -25,12 +25,14 @@ export interface HighlightResultContext {
 }
 
 export interface HighlightItem {
+  status?: '확정' | '추정' | '확인 불가';
   id: string;
   gameId: string;
   sceneNumber: string; // "01", "02", etc.
   inning: string;
   playerName: string;
   playerTeam: string;
+  playerRole?: '투수' | '타자';
   playResult: string;
   playShortSummary: string;
   video: HighlightVideo;
@@ -480,6 +482,7 @@ export const MOCK_HIGHLIGHT_SCENES: Record<string, HighlightItem[]> = {
       inning: '1회초',
       playerName: '소형준',
       playerTeam: 'KT',
+      playerRole: '투수',
       playResult: '삼자범퇴 이닝',
       playShortSummary: '공 9개로 1회를 완벽하게 정리',
       video: {
