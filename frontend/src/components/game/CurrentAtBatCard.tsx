@@ -9,7 +9,6 @@ import type { AtBatPlay } from '../../data/mockGameData';
 import { StrikeZoneMini } from './StrikeZoneMini';
 import {
   Zap,
-  Sparkles,
   ListOrdered,
   Eye,
   History,
@@ -136,7 +135,7 @@ export function CurrentAtBatCard({
             <StrikeZoneMini
               currentPitch={lastPitch}
               pitchesHistory={atBat.pitchesHistory}
-              showAllPitches={showPitchDetail}
+              showAllPitches={true}
             />
           </div>
         ) : (
@@ -193,6 +192,13 @@ export function CurrentAtBatCard({
         )}
       </div>
 
+      {isAiExplaining && (
+        <div className="mt-4 rounded-2xl border border-purple-200 bg-purple-50 p-4" role="status">
+          <p className="text-sm font-black text-purple-800">한입만! 해설</p>
+          <p className="mt-1 text-xs leading-relaxed text-purple-700">AI 경기 해설 API 연동 예정입니다. 준비되면 이 자리에서 선택한 타석의 해설을 보여줄게요.</p>
+        </div>
+      )}
+
       {/* 하단 버튼 */}
       <div className="mt-6 pt-5 border-t border-gray-100 flex flex-col sm:flex-row items-center gap-3">
         <button
@@ -228,7 +234,7 @@ export function CurrentAtBatCard({
             이 장면 쉽게 이해하기
           </span>
 
-          <Sparkles className="w-4 h-4 ml-auto text-yellow-300 animate-pulse" />
+          <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="ml-auto h-7 w-7 shrink-0 object-contain" />
         </button>
       </div>
     </div>

@@ -69,13 +69,13 @@ export function StrikeZoneMini({
       </div>
 
       {/* 스트라이크존 전체 프레임 */}
-      <div className="relative w-44 h-52 sm:w-48 sm:h-56 bg-white rounded-xl border border-dashed border-gray-300 shadow-inner flex items-center justify-center p-3 select-none">
+      <div className="relative w-40 h-48 sm:w-44 sm:h-52 bg-white rounded-xl border border-dashed border-gray-300 shadow-inner flex items-center justify-center p-3 select-none">
 
         {/* 바깥 경계 */}
         <div className="absolute inset-2 border border-dashed border-gray-200/80 rounded pointer-events-none" />
 
         {/* 3x3 스트라이크존 */}
-        <div className="relative w-28 h-36 sm:w-32 sm:h-40 border-2 border-purple-500/80 bg-purple-500/5 shadow-xs rounded-md">
+        <div className="relative w-24 h-32 sm:w-28 sm:h-36 border-2 border-purple-500/80 bg-purple-500/5 shadow-xs rounded-md">
 
           <div className="absolute inset-0 grid grid-cols-3 grid-rows-3">
             {Array.from({ length: 9 }).map((_, index) => (
@@ -190,7 +190,7 @@ export function StrikeZoneMini({
       {/* 위치 제공 여부 */}
       <div className="mt-2 text-[11px] text-gray-500 text-center">
         {currentAvailable
-          ? '보라색 공은 마지막 투구의 기록된 위치예요.'
+          ? '번호가 표시된 공은 실제 기록된 투구 위치예요.'
           : '마지막 투구의 위치 정보가 없어 탄착점을 표시하지 않았어요.'}
       </div>
 

@@ -155,10 +155,10 @@ export function StrikeZoneVisual({ className = '' }: StrikeZoneVisualProps) {
             </div>
 
             {/* Height Label Helper */}
-            <div className="absolute -left-6 top-1 text-[9px] font-semibold text-gray-400 [writing-mode:vertical-lr] rotate-180">
+            <div className="absolute -left-6 top-1 text-[9px] font-semibold text-gray-400 [writing-mode:vertical-lr]">
               타자 가슴 높이
             </div>
-            <div className="absolute -left-6 bottom-1 text-[9px] font-semibold text-gray-400 [writing-mode:vertical-lr] rotate-180">
+            <div className="absolute -left-6 bottom-1 text-[9px] font-semibold text-gray-400 [writing-mode:vertical-lr]">
               타자 무릎 높이
             </div>
           </div>

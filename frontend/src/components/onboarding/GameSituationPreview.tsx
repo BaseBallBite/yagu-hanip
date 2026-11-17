@@ -135,6 +135,7 @@ export function GameSituationPreview() {
           }`}
           aria-expanded={isOpen}
         >
+          <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="h-7 w-7 shrink-0 object-contain" />
           <span>한입만!</span>
 
           <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-white/20 ml-1">

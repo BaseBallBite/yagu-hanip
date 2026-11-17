@@ -26,7 +26,6 @@ import { InningPlaysHistory } from './InningPlaysHistory';
 import {
   AlertCircle,
   LoaderCircle,
-  Sparkles,
   RefreshCw,
   CalendarDays,
   Search,
@@ -34,7 +33,6 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-const VISIBLE_AT_BATS = 15;
 const GAMES_PER_PAGE = 12;
 
 const TEAMS = [
@@ -300,33 +298,6 @@ export function GameDashboard() {
       currentAtBat
     );
   }, [gameData, currentAtBat, selectedGameId]);
-
-  // 선택된 타석 주변 15개 표시
-  const visibleAtBats = useMemo(() => {
-    if (atBats.length <= VISIBLE_AT_BATS) {
-      return atBats;
-    }
-
-    if (currentAtBatIndex < 0) {
-      return atBats.slice(-VISIBLE_AT_BATS);
-    }
-
-    const halfWindow =
-      Math.floor(VISIBLE_AT_BATS / 2);
-
-    const start = Math.max(
-      0,
-      Math.min(
-        currentAtBatIndex - halfWindow,
-        atBats.length - VISIBLE_AT_BATS
-      )
-    );
-
-    return atBats.slice(
-      start,
-      start + VISIBLE_AT_BATS
-    );
-  }, [atBats, currentAtBatIndex]);
 
   const handleDateChange = (value: string) => {
     setSelectedDate(value);
@@ -653,78 +624,30 @@ export function GameDashboard() {
             <>
               <GameScoreHeader summary={summary} />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-                {/* 선택한 타석 */}
-                <div className="lg:col-span-7 w-full">
+              {/* 한 화면에서 이닝 목록과 선택 타석 상세를 같이 확인 */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start mt-5">
+                <div className="lg:col-span-6 min-w-0">
+                  <InningPlaysHistory
+                    atBats={atBats}
+                    selectedAtBatId={selectedAtBatId}
+                    onSelectAtBat={handleSelectAtBat}
+                    onPrevAtBat={handlePrevAtBat}
+                    onNextAtBat={handleNextAtBat}
+                    hasPrev={currentAtBatIndex > 0}
+                    hasNext={currentAtBatIndex >= 0 && currentAtBatIndex < atBats.length - 1}
+                    awayTeam={gameData.game.away}
+                    homeTeam={gameData.game.home}
+                  />
+                </div>
+                <div className="lg:col-span-6 min-w-0 lg:sticky lg:top-20 self-start">
                   <CurrentAtBatCard
                     key={currentAtBat.id}
                     atBat={currentAtBat}
-                    onAskWhy={() => setAiNotice(true)}
-                    isAiExplaining={false}
+                    onAskWhy={() => setAiNotice(previous => !previous)}
+                    isAiExplaining={aiNotice}
                   />
                 </div>
-
-                {/* AI 해설 준비 중 */}
-                <div className="lg:col-span-5 w-full">
-                  <div className="w-full min-h-[460px] bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-xl shadow-purple-950/5 flex flex-col justify-between">
-
-                    <div>
-                      <div className="flex items-center gap-2 border-b border-gray-100 pb-4">
-                        <div className="w-8 h-8 rounded-xl bg-purple-100 flex items-center justify-center">
-                          <Sparkles className="w-4 h-4 text-purple-600" />
-                        </div>
-
-                        <h2 className="text-base sm:text-lg font-black text-gray-900">
-                          AI 경기 해설
-                        </h2>
-                      </div>
-
-                      <div className="py-12 flex flex-col items-center justify-center text-center">
-                        <div className="w-16 h-16 rounded-3xl bg-purple-50 border border-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                          <Sparkles className="w-7 h-7" />
-                        </div>
-
-                        <h3 className="text-lg font-black text-gray-900 mb-2">
-                          {aiNotice
-                            ? '한입만! 해설 준비 중'
-                            : '이 장면, 한입만!'}
-                        </h3>
-
-                        <p className="text-xs sm:text-sm text-gray-500 max-w-xs leading-relaxed">
-                          실제 경기 기록을 연결했어요.
-                          AI 해설 기능이 준비되면
-                          선택한 타석을 초보자도 이해하기 쉽게
-                          설명해 드릴게요.
-                        </p>
-
-                        <div className="mt-5 bg-purple-50 text-purple-700 border border-purple-100 px-4 py-2 rounded-xl text-xs font-bold">
-                          선택한 타자: {currentAtBat.batterName}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t border-gray-100 pt-3 text-[11px] text-gray-400">
-                      AI 해설 API 연동 예정
-                    </div>
-                  </div>
-                </div>
               </div>
-
-              {/* 타석 탐색 */}
-              <InningPlaysHistory
-                atBats={visibleAtBats}
-                selectedAtBatId={selectedAtBatId}
-                onSelectAtBat={handleSelectAtBat}
-                onPrevAtBat={handlePrevAtBat}
-                onNextAtBat={handleNextAtBat}
-                hasPrev={currentAtBatIndex > 0}
-                hasNext={
-                  currentAtBatIndex >= 0 &&
-                  currentAtBatIndex < atBats.length - 1
-                }
-              />
-
               <div className="mt-3 text-center text-xs text-gray-400">
                 전체 {atBats.length}개 타석 중{' '}
                 {currentAtBatIndex + 1}번째 타석

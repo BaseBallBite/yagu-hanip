@@ -21,7 +21,12 @@ export interface OnboardingStep2Props {
 }
 
 function HanipLabel() {
-  return <span className="whitespace-nowrap">한입만!</span>;
+  return (
+    <span className="inline-flex items-center gap-1 whitespace-nowrap align-middle">
+      <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="inline-block h-[1.2em] w-[1.2em] shrink-0 object-contain" />
+      한입만!
+    </span>
+  );
 }
 
 export function OnboardingStep2({ onNavigate }: OnboardingStep2Props) {
