@@ -141,6 +141,34 @@ def list_scenes(con, video_id: str) -> list[dict]:
         "SELECT data_json FROM highlight_scene WHERE video_id = ? ORDER BY idx", (video_id,))]
 
 
+def add_type_tags(scenes: list[dict], game_con: sqlite3.Connection | None) -> list[dict]:
+    """장면의 play_id·prev_play_id 로 경기 DB(B4 plays)의 유형 태그를 찾아 붙인다.
+
+        prev_type_tags    prev_play(방금 일어난 플레이)의 태그. 바로 보여줘도 된다
+        result_type_tags  play_id(이 타석 결과)의 태그. result 와 같이 "결과 보기" 뒤에 둔다 (스포일러)
+
+    태그로 /dict/events/{태그} 를 부르면 용어 카드가 나온다. 경기 DB가 없거나(game_con=None)
+    플레이를 못 찾으면 그 필드만 빠진다. 장면 표 원본은 바꾸지 않는다.
+    """
+    if game_con is None:
+        return scenes
+    ids = sorted({s[k] for s in scenes for k in ("play_id", "prev_play_id") if s.get(k)})
+    if not ids:
+        return scenes
+    rows = game_con.execute(
+        f"SELECT play_id, type_tags FROM plays WHERE play_id IN ({','.join('?' * len(ids))})", ids)
+    tags = {r[0]: json.loads(r[1]) for r in rows}
+    out = []
+    for s in scenes:
+        s = dict(s)
+        if s.get("prev_play_id") in tags:
+            s["prev_type_tags"] = tags[s["prev_play_id"]]
+        if s.get("play_id") in tags:
+            s["result_type_tags"] = tags[s["play_id"]]
+        out.append(s)
+    return out
+
+
 def scene_at(con, video_id: str, t: float) -> dict:
     """start ≤ t < end 인 장면. 없으면(영상 끝 넘어감 등) {"status": "확인 불가"}."""
     r = con.execute(

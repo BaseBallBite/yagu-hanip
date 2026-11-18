@@ -14,6 +14,7 @@ from fastapi.testclient import TestClient
 
 from backend.api import highlights as highlights_api
 from backend.api.main import app
+from backend.game import store as game_store
 from backend.highlight import store
 
 DEMO = "YQD3hMI2LPo"  # 10/7 두산 vs LG (시연 경기)
@@ -30,12 +31,15 @@ class HighlightsApiTest(unittest.TestCase):
         cls.info = store.build(db)
         cls.con = store.connect(db, build_if_missing=False)
         cls._orig = highlights_api.get_con
+        cls._orig_game = highlights_api.get_game_con
         highlights_api.get_con = lambda: cls.con
+        highlights_api.get_game_con = lambda: None  # 기본은 경기 DB 없이 (장면 표 원본 그대로)
         cls.raw = json.loads((store.SCENE_DIR / f"scenes_{DEMO_GAME}.json").read_text(encoding="utf-8"))
 
     @classmethod
     def tearDownClass(cls):
         highlights_api.get_con = cls._orig
+        highlights_api.get_game_con = cls._orig_game
         cls.con.close()
         cls.tmp.cleanup()
 
@@ -108,6 +112,54 @@ class HighlightsApiTest(unittest.TestCase):
             Path(d, f"scenes_{DEMO_GAME}.json").write_text(json.dumps(bad), encoding="utf-8")
             with self.assertRaises(ValueError):
                 store.build(Path(d) / "x.sqlite", game_ids=[DEMO_GAME], scene_dir=Path(d))
+
+
+@unittest.skipUnless(game_store.DB_PATH.exists(), "경기 DB(yagu.sqlite)가 없어서 건너뜀")
+class HighlightTypeTagsTest(unittest.TestCase):
+    """경기 DB가 있으면 장면에 유형 태그가 붙어서 /dict/events/{태그} 로 용어 카드를 찾을 수 있다."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        db = Path(cls.tmp.name) / "highlights.sqlite"
+        store.build(db)
+        cls.con = store.connect(db, build_if_missing=False)
+        cls.game_con = game_store.connect()
+        cls._orig, cls._orig_game = highlights_api.get_con, highlights_api.get_game_con
+        highlights_api.get_con = lambda: cls.con
+        highlights_api.get_game_con = lambda: cls.game_con
+
+    @classmethod
+    def tearDownClass(cls):
+        highlights_api.get_con, highlights_api.get_game_con = cls._orig, cls._orig_game
+        cls.con.close()
+        cls.game_con.close()
+        cls.tmp.cleanup()
+
+    def test_1235_error_tags(self):
+        """12:35 이재원 내야안타 → 실책 홈인. 결과 태그에 ERROR, 방금(문보경 1루타)은 SINGLE."""
+        s = client.get(f"/highlights/{DEMO}/scene", params={"t": 755}).json()
+        self.assertIn("ERROR", s["result_type_tags"])
+        self.assertIn("SINGLE", s["prev_type_tags"])
+        # 시연 흐름: 12:35 → 용어 카드 "실책"
+        titles = [c["title"] for c in client.get("/dict/events/ERROR").json()["items"]]
+        self.assertIn("실책", titles)
+
+    def test_715_hit_by_pitch(self):
+        s = client.get(f"/highlights/{DEMO}/scene", params={"t": 435}).json()
+        self.assertIn("HIT_BY_PITCH", s["prev_type_tags"])
+
+    def test_scenes_keep_original_fields(self):
+        """태그만 더해지고 장면 표 원래 값은 그대로."""
+        raw = json.loads((store.SCENE_DIR / f"scenes_{DEMO_GAME}.json").read_text(encoding="utf-8"))
+        got = client.get(f"/highlights/{DEMO}/scenes").json()["scenes"]
+        extra = {"prev_type_tags", "result_type_tags"}
+        self.assertEqual([{k: v for k, v in g.items() if k not in extra} for g in got], raw["scenes"])
+        tagged = [g for g in got if "result_type_tags" in g]
+        with_id = [r for r in raw["scenes"] if r.get("play_id")]
+        self.assertEqual(len(tagged), len(with_id))
+        unknown = [g for g in got if g["status"] == "확인 불가"]
+        self.assertTrue(all("result_type_tags" not in g for g in unknown))
 
 
 if __name__ == "__main__":
