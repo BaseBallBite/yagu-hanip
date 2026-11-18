@@ -200,35 +200,27 @@ function convertApiCard(
   };
 }
 
-function extractSearchId(response: unknown): string | null {
-  if (Array.isArray(response)) {
-    for (const item of response) {
-      const id = extractSearchId(item);
-      if (id) return id;
-    }
-    return null;
-  }
-
+function extractSearchIds(response: unknown): string[] {
+  if (Array.isArray(response)) return response.flatMap(extractSearchIds);
   const obj = asObject(response);
-  if (!obj) return null;
-
-  if (typeof obj.id === 'string') {
-    return obj.id;
-  }
-
-  if (typeof obj.card_id === 'string') {
-    return obj.card_id;
-  }
-
+  if (!obj) return [];
+  const id = asString(obj.id) || asString(obj.card_id);
+  if (id) return [id];
   for (const key of ['items', 'results', 'cards', 'matches']) {
-    const collection = obj[key];
-
-    if (collection !== undefined) {
-      return extractSearchId(collection);
+    const value = obj[key];
+    if (value !== undefined) {
+      if (asObject(value)) return Object.keys(asObject(value) || {});
+      return extractSearchIds(value);
     }
   }
-
-  return null;
+  return [];
+}
+function findLocalMatches(query: string): string[] {
+  const normalized = query.replace(/\s/g, '').toLowerCase();
+  return Object.values(DICTIONARY_CARDS)
+    .filter(card => [card.title, card.category, card.one_liner, ...(card.aliases || [])]
+      .some(value => typeof value === 'string' && value.replace(/\s/g, '').toLowerCase().includes(normalized)))
+    .map(card => card.id);
 }
 
 async function fetchApi(
@@ -298,6 +290,7 @@ export function DictionaryPage() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isSearching, setIsSearching] = useState(false);
+  const [searchMatchedIds, setSearchMatchedIds] = useState<string[]>([]);
   const [error, setError] = useState('');
 
   // B7 카드 상세 API
@@ -378,44 +371,29 @@ export function DictionaryPage() {
     if (!DICTIONARY_CARDS[id]) return;
 
     setSearchNotFoundTerm(null);
+    setSearchMatchedIds([]);
     setSelectedTermId(id);
     setError('');
   };
 
-  // B7 검색 API
+  // B7 API 검색: 여러 후보를 모두 보여주고, 선택은 사용자가 직접 하도록 처리
   const handleSearchSubmit = async (query: string) => {
     const trimmed = query.trim();
-
-    if (!trimmed) {
-      setSearchNotFoundTerm(null);
-      return;
-    }
-
+    if (!trimmed) { setSearchNotFoundTerm(null); setSearchMatchedIds([]); return; }
     setIsSearching(true);
     setError('');
     setSearchNotFoundTerm(null);
-
     try {
-      const response = await fetchApi(
-        `/dict/search?q=${encodeURIComponent(trimmed)}`
-      );
-
-      const matchedId = extractSearchId(response);
-
-      if (matchedId && DICTIONARY_CARDS[matchedId]) {
-        handleSelectTerm(matchedId);
-      } else {
-        setSearchNotFoundTerm(trimmed);
-      }
+      const response = await fetchApi(`/dict/search?q=${encodeURIComponent(trimmed)}`);
+      const apiIds = extractSearchIds(response).filter(id => Boolean(DICTIONARY_CARDS[id]));
+      const localIds = findLocalMatches(trimmed);
+      const allIds = Array.from(new Set([...apiIds, ...localIds]));
+      setSearchMatchedIds(allIds);
+      if (allIds.length === 0) setSearchNotFoundTerm(trimmed);
+      else if (allIds.length === 1) setSelectedTermId(allIds[0]);
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : '사전 검색에 실패했어요.'
-      );
-    } finally {
-      setIsSearching(false);
-    }
+      setError(err instanceof Error ? err.message : '사전 검색에 실패했어요.');
+    } finally { setIsSearching(false); }
   };
 
   return (
@@ -443,6 +421,15 @@ export function DictionaryPage() {
             onSearchSubmit={handleSearchSubmit}
           />
 
+          {searchMatchedIds.length > 0 && (
+            <div className="mt-3 rounded-2xl border border-purple-100 bg-white p-3 text-left shadow-sm">
+              <p className="mb-2 text-xs font-bold text-gray-600">검색 결과 {searchMatchedIds.length}개 · 원하는 용어를 선택해 주세요.</p>
+              <div className="flex max-h-36 flex-wrap gap-2 overflow-y-auto">
+                {searchMatchedIds.map(id => <button type="button" key={id} onClick={() => handleSelectTerm(id)} className="rounded-lg border border-purple-200 bg-purple-50 px-2.5 py-1.5 text-xs font-bold text-purple-700 hover:bg-purple-100">{DICTIONARY_CARDS[id]?.title}</button>)}
+              </div>
+            </div>
+          )}
+
           {isSearching && (
             <p className="mt-2 text-xs text-purple-600">
               용어 검색 중...
@@ -456,6 +443,7 @@ export function DictionaryPage() {
             <CategoryTermsNav
               selectedTermName={selectedTermId}
               onSelectTerm={handleSelectTerm}
+              searchMatchedIds={searchMatchedIds}
             />
           </div>
 
