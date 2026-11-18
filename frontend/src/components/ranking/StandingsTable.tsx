@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { TeamStanding } from '../../data/mockRankingData';
-import { Trophy, Star, ChevronRight, Heart } from 'lucide-react';
 
 interface StandingsTableProps {
   standings: TeamStanding[];
@@ -23,30 +22,6 @@ export function StandingsTable({
   return (
     <div className="w-full bg-white rounded-3xl p-5 sm:p-7 border border-gray-100 shadow-xl shadow-purple-950/5 overflow-hidden">
       
-      {/* Table Header Section */}
-      <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-2">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
-            <Trophy className="w-4 h-4 text-purple-600" />
-          </div>
-          <div>
-            <h2 className="text-base sm:text-lg font-black text-gray-900 tracking-tight">
-              KBO 리그 정규시즌 순위
-            </h2>
-            <p className="text-xs text-gray-400">
-              팀을 클릭하면 우측에서 상세 전력과 최근 경기 흐름을 확인할 수 있어요.
-            </p>
-          </div>
-        </div>
-
-        {favoriteTeamName && favoriteTeamName !== 'NONE' && (
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs font-bold">
-            <Heart className="w-3.5 h-3.5 fill-purple-600 text-purple-600" />
-            <span>MY 응원 팀: {favoriteTeamName}</span>
-          </div>
-        )}
-      </div>
-
       {/* Responsive Table Wrapper */}
       <div className="overflow-x-auto -mx-2 sm:mx-0">
         <table className="w-full text-left border-collapse min-w-[620px]">

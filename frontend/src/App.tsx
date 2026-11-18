@@ -31,19 +31,6 @@ const KNOWN_PATHS = [
   '/my',
 ];
 
-function BrandLogo({ size = 'sm' }: { size?: 'sm' | 'md' }) {
-  return (
-    <img
-      src={LOGO_PATH}
-      alt=""
-      aria-hidden="true"
-      className={`inline-block shrink-0 rounded-full object-cover ${
-        size === 'md' ? 'w-7 h-7' : 'w-5 h-5'
-      }`}
-    />
-  );
-}
-
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     const path = window.location.pathname;
@@ -328,6 +315,7 @@ export default function App() {
                   야구를 하나도 몰라도,{"\n"}
 
                   <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-purple-100/80 text-purple-900 mx-1 align-middle">
+                    <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="inline-block h-[1em] w-[1em] shrink-0 object-contain" />
                     <span>한입만!</span>
                   </span>{' '}
 
@@ -357,7 +345,7 @@ export default function App() {
                         <span>경기 중</span>
 
                         <span className="inline-flex items-center gap-1 text-purple-600 font-black">
-                          <BrandLogo />
+                          <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="h-5 w-5 shrink-0 object-contain" />
                           한입만!
                         </span>
 
@@ -637,6 +625,7 @@ export default function App() {
                         title="클릭하여 AI 해설 보기 또는 접기"
                       >
                         
+                        <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="h-5 w-5 shrink-0 object-contain" />
                         <span>한입만!</span>
 
                         <span className="text-[11px] font-normal opacity-90">
