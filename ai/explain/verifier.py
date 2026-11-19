@@ -88,3 +88,60 @@ def verify(output, pool, players, version="v1"):
         ok, why = verify_sentence(s, pool, players, version)
         (kept if ok else dropped).append({**s, "verdict": why})
     return {"sentences": kept, "dropped": dropped}
+
+# ---- 서비스용: 규칙 v2 + KLUE 검증 모델 ----
+# KLUE 모델은 (문장, 인용 근거)가 지지/모순/근거밖인지 배운 모델이라 '모름' 문장은 학습한 적이 없음.
+# 모름 문장은 내용 주장이 없어서 근거와 대조할 게 없으므로 모델에 넣지 않고 규칙으로만 판단함.
+UNKNOWN_MAX_LEN = 60   # 모름 문장에 다른 주장을 끼워 넣는 것을 막기 위한 길이 상한(글자)
+
+
+def check_unknown(sent, pool, players):
+    """evidence가 ["UNKNOWN"]뿐인 문장 판정. 반환: (통과 여부, 이유)"""
+    text = sent.get("text", "")
+    if not is_noinfo(text):
+        return False, "근거 없는 주장(UNKNOWN)"
+    # v2 숫자 검사는 '2루타'의 2를 위치 숫자로 보고 빼므로, 모름 문장에서는 숫자를 하나도 허용하지 않음
+    if re.search(r"\d", text):
+        return False, "모름 문장인데 숫자를 말함"
+    all_text = " ".join(pool.values())
+    miss = [p for p in players if p and p in text and p not in all_text]
+    if miss:
+        return False, f"모름 문장에 기록에 없는 선수 {miss}"
+    if len(text) > UNKNOWN_MAX_LEN:
+        return False, "모름 문장이 너무 김(다른 주장 섞임 의심)"
+    return True, "모름 문장(유지)"
+
+
+def verify_service(output, pool, players, p_support, threshold=0.05, max_unknown=1):
+    """서비스 B3. 문장 순서는 그대로 유지함.
+    - evidence가 ["UNKNOWN"]뿐: check_unknown 규칙만 적용, 모델 안 씀. 해설 하나에 max_unknown개까지
+    - evidence에 UNKNOWN과 실제 ID가 섞임: UNKNOWN을 빼고 일반 문장으로 처리
+    - 일반 문장: 규칙 v2 통과 → 인용 근거만 붙여서 모델 P(지지) >= threshold 이면 유지
+    p_support: apply_model.load_model(모델 폴더)가 돌려주는 함수 [(문장, 근거)] -> [P(지지)]
+    """
+    res, normal, n_unknown = [], [], 0
+    for i, s in enumerate(output.get("sentences", [])):
+        ev = s.get("evidence") or []
+        if ev == ["UNKNOWN"]:
+            ok, why = check_unknown(s, pool, players)
+            if ok and n_unknown >= max_unknown:
+                ok, why = False, "모름 문장 중복"
+            n_unknown += ok
+            res.append({**s, "verdict": why, "ok": ok, "check": "unknown_rule", "p_support": None})
+            continue
+        if "UNKNOWN" in ev:
+            s = {**s, "evidence": [e for e in ev if e != "UNKNOWN"]}
+        ok, why = verify_sentence(s, pool, players, "v2")
+        r = {**s, "verdict": why, "ok": ok, "check": "rule_v2", "p_support": None}
+        res.append(r)
+        if ok:
+            normal.append(r)
+    if normal:
+        probs = p_support([(r["text"], " / ".join(pool[e] for e in r["evidence"])) for r in normal])
+        for r, p in zip(normal, probs):
+            r["check"], r["p_support"] = "rule_v2+model", round(float(p), 4)
+            if p < threshold:
+                r["ok"], r["verdict"] = False, f"모델 P(지지) {p:.4f} < {threshold}"
+    kept = [{k: v for k, v in r.items() if k != "ok"} for r in res if r["ok"]]
+    dropped = [{k: v for k, v in r.items() if k != "ok"} for r in res if not r["ok"]]
+    return {"sentences": kept, "dropped": dropped}
