@@ -13,6 +13,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from backend.explanation.live_runtime import get_live_dependencies
+from backend.explanation.question_scope import question_targets_another_batter
 from backend.explanation.service_pipeline import build_verified_explanation
 from backend.game import store
 
@@ -52,6 +53,13 @@ def generate_explanation(req: GenerateRequest) -> dict:
         ).fetchone()
         if row is None:
             raise HTTPException(status_code=404, detail="해당 플레이를 찾을 수 없습니다")
+        # A clearly mismatched batter/play question is a client input error,
+        # not a generation failure. Reject before loading Gemini or KLUE.
+        if question_targets_another_batter(con, req.game_id, req.play_id, req.question):
+            raise HTTPException(
+                status_code=422,
+                detail="질문에 지정한 타자의 플레이가 선택한 해설 대상과 일치하지 않습니다",
+            )
         try:
             deps = get_live_dependencies()
         except (OSError, ValueError, ImportError, RuntimeError) as exc:

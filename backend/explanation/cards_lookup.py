@@ -98,6 +98,37 @@ def get_cards_for_play(
     _, sub = play_type(play)
     dictionary = json.loads(Path(dict_path).read_text(encoding="utf-8"))
     ids = pick_cards(play, dictionary, sub=sub)
+    # 삼진이라는 이벤트만으로 파울 팁 여부는 알 수 없다.
+    # B4 사실 또는 이벤트 태그에 파울 팁이 명시된 경우에만 해당 카드를 제공한다.
+    # 단순한 "파울" 또는 "헛스윙" 기록은 파울 팁의 증거가 아니다.
+    if play["event_type"] == "STRIKEOUT" and "term.foul_tip" in ids:
+        explicit_foul_tip = "FOUL_TIP" in play["tags"] or any(
+            re.search(r"파울\s*팁|foul[\s_-]*tip", fact, re.IGNORECASE)
+            for fact in play["facts"]
+        )
+        if not explicit_foul_tip:
+            ids.remove("term.foul_tip")
+
+    # SINGLE 이벤트만으로 내야안타인지 판단할 수 없다.
+    # 명시적인 외야 안타 기록이 있을 때만 내야안타 카드를 제외한다.
+    if play["event_type"] == "SINGLE" and "term.infield_hit" in ids:
+        hit_records = [fact for fact in play["facts"] if fact.startswith("기록:")]
+        if any(
+            re.search(r"좌익수|중견수|우익수", fact) and "내야안타" not in fact
+            for fact in hit_records
+        ):
+            ids.remove("term.infield_hit")
+
+    # 주자 없는 땅볼 아웃은 주자를 진루시키는 진루타가 될 수 없다.
+    # 주자 유무가 불명확하면 기존 카드 선정을 유지한다.
+    if play["event_type"] == "GROUNDOUT" and "term.productive_out" in ids:
+        before = next(
+            (fact for fact in play["facts"] if re.match(r"^\d+회[초말],", fact)),
+            None,
+        )
+        if before and re.search(r"(?:^|,\s*)주자 없음(?:,|$)", before):
+            ids.remove("term.productive_out")
+
     # 이벤트 종류만으로는 만루홈런 여부를 알 수 없다. B4 득점 사실이
     # 명시되어 있고 4득점이 아니라면 만루홈런 카드는 제거한다.
     # 득점 정보가 없으면 추측하여 제거하지 않는다.
