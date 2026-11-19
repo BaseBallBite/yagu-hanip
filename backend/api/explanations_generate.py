@@ -1,19 +1,22 @@
-"""Guarded draft API for future Gemini generation integration.
+"""Production-guarded B3 explanation endpoint backed by trusted R/F/K, Gemini and KLUE.
 
-Default behavior is intentionally 503: team-approved trusted R/F/K resolver and
-Gemini runtime are NOT yet connected. Test code injects fake providers and a
-fake generator; production must NEVER accept fabricated evidence from a client.
+The experimental run_rule_b3() remains available separately, but the HTTP route
+must never serve its provisional rule-only output. GET /explanations/demo is unchanged.
 """
-
 from __future__ import annotations
 
+import logging
 import os
+from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from backend.explanation.pipeline import EvidenceContractError, run_rule_b3
+from backend.explanation.live_runtime import get_live_dependencies
+from backend.explanation.service_pipeline import build_verified_explanation
+from backend.game import store
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/explanations", tags=["explanations"])
 
 
@@ -23,34 +26,48 @@ class GenerateRequest(BaseModel):
     question: str = Field(min_length=1, max_length=300)
 
 
-def load_trusted_context(req: GenerateRequest) -> tuple[dict, dict]:
-    """Future BE provider: exact play_id -> source R, F, <=3 K, players.
-
-    Deliberately NOT substituting `plays.description` for the full source R or
-    guessing a player's full roster. Cannot ship live until this is agreed.
-    """
-    raise HTTPException(status_code=503, detail="장면별 R/F/K 근거 조회 방식이 아직 확정되지 않았습니다")
-
-
-def get_live_generator():
-    """To be wired to AI-A's GeminiRunner when service runtime is approved."""
-    raise HTTPException(status_code=503, detail="Gemini 서비스 연결이 아직 활성화되지 않았습니다")
-
-
 @router.post("/generate")
 def generate_explanation(req: GenerateRequest) -> dict:
-    # An explicit operator opt-in is necessary even to use this incomplete API.
+    """Generate one B2 answer and return only rule-v2+KLUE verified B3 sentences.
+
+    Explicit operator opt-in avoids accidental network calls and Gemini charges.
+    Keep this endpoint local/private until the team adds auth and request limits.
+    """
+    if not all((req.game_id.strip(), req.play_id.strip(), req.question.strip())):
+        raise HTTPException(status_code=422, detail="game_id, play_id, question은 공백일 수 없습니다")
     if os.environ.get("EXPLANATION_GENERATION_ENABLED") != "1":
         raise HTTPException(status_code=503, detail="실제 해설 생성 API는 현재 비활성화 상태입니다")
-    item, cards = load_trusted_context(req)
-    if item.get("game_id") != req.game_id or item.get("play_id") != req.play_id:
-        raise HTTPException(status_code=422, detail="요청한 경기/플레이와 근거가 일치하지 않습니다")
-    item = {**item, "question": req.question, "qid": "service-request"}
-    generator = get_live_generator()
+
+    db = Path(os.environ.get("YAGU_DB", str(store.DB_PATH)))
     try:
-        result = run_rule_b3(item, cards, generator.generate)
-    except EvidenceContractError as exc:
-        raise HTTPException(status_code=422, detail=str(exc)) from exc
-    # Network/permission errors will be handled when AI-A runtime is connected.
-    return {"game_id": req.game_id, "play_id": req.play_id,
-            "question": req.question, **result}
+        con = store.connect(db)  # B4 uses SQLite mode=ro; never create/modify the DB.
+    except (FileNotFoundError, OSError) as exc:
+        raise HTTPException(status_code=503, detail="경기 DB를 사용할 수 없습니다") from exc
+
+    try:
+        # Reject invalid IDs without initializing Gemini/KLUE dependencies.
+        row = con.execute(
+            "SELECT 1 FROM plays WHERE game_id=? AND play_id=?",
+            (req.game_id, req.play_id),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(status_code=404, detail="해당 플레이를 찾을 수 없습니다")
+        try:
+            deps = get_live_dependencies()
+        except (OSError, ValueError, ImportError, RuntimeError) as exc:
+            logger.warning("Explanation runtime unavailable: %s", type(exc).__name__)
+            raise HTTPException(status_code=503, detail="해설 모델 또는 설정을 사용할 수 없습니다") from exc
+        try:
+            answer = build_verified_explanation(
+                con, req.game_id, req.play_id, req.question,
+                generate=deps.generate, p_support=deps.p_support,
+                threshold=deps.threshold,
+            )
+        except Exception as exc:
+            logger.exception("Explanation generation/verification failed")
+            raise HTTPException(status_code=502, detail="해설 생성 또는 검증에 실패했습니다") from exc
+        if answer is None:
+            raise HTTPException(status_code=404, detail="해당 플레이는 해설 대상이 아닙니다")
+        return answer
+    finally:
+        con.close()
