@@ -45,21 +45,21 @@ class SafePipelineTests(unittest.TestCase):
 
     def test_default_disabled_without_accessing_providers(self):
         with patch.dict(os.environ, {"EXPLANATION_GENERATION_ENABLED": "0"}), \
-             patch("backend.api.explanations_generate.load_trusted_context") as ctx, \
-             patch("backend.api.explanations_generate.get_live_generator") as gen:
+             patch("backend.api.explanations_generate.store.connect") as db, \
+             patch("backend.api.explanations_generate.get_live_dependencies") as deps:
             res = self.client.post("/explanations/generate", json={
                 "game_id": GAME, "play_id": PLAY, "question": "왜?"})
             self.assertEqual(res.status_code, 503)
-            ctx.assert_not_called()
-            gen.assert_not_called()
+            db.assert_not_called()
+            deps.assert_not_called()
 
     def test_default_unconfigured_context_is_503_even_if_opted_in(self):
-        with patch.dict(os.environ, {"EXPLANATION_GENERATION_ENABLED": "1"}), \
-             patch("backend.api.explanations_generate.get_live_generator") as gen:
+        with patch.dict(os.environ, {"EXPLANATION_GENERATION_ENABLED": "1", "YAGU_DB": "does-not-exist.sqlite"}), \
+             patch("backend.api.explanations_generate.get_live_dependencies") as deps:
             res = self.client.post("/explanations/generate", json={
                 "game_id": GAME, "play_id": PLAY, "question": "왜?"})
             self.assertEqual(res.status_code, 503)
-            gen.assert_not_called()
+            deps.assert_not_called()
 
     def test_synthetic_mock_pipeline_and_unknown_kept(self):
         item, cards = fake_context(None)
@@ -71,26 +71,36 @@ class SafePipelineTests(unittest.TestCase):
         self.assertFalse(out["model_verification_applied"])
 
     def test_api_with_mock_dependencies(self):
+        from unittest.mock import MagicMock
+        fake_con = MagicMock()
+        fake_con.execute.return_value.fetchone.return_value = (1,)
+        expected = {"display_condition": "B3", "source": "gemini+rule_v2+klue", "sentences": []}
         with patch.dict(os.environ, {"EXPLANATION_GENERATION_ENABLED": "1"}), \
-             patch("backend.api.explanations_generate.load_trusted_context", fake_context), \
-             patch("backend.api.explanations_generate.get_live_generator", return_value=FakeRunner()):
+             patch("backend.api.explanations_generate.store.connect", return_value=fake_con), \
+             patch("backend.api.explanations_generate.get_live_dependencies") as deps, \
+             patch("backend.api.explanations_generate.build_verified_explanation", return_value=expected) as build:
+            deps.return_value.generate = FakeRunner().generate
+            deps.return_value.p_support = lambda pairs: [0.99] * len(pairs)
+            deps.return_value.threshold = 0.05
             res = self.client.post("/explanations/generate", json={
                 "game_id": GAME, "play_id": PLAY, "question": "왜 아웃인가요?"})
             self.assertEqual(res.status_code, 200, res.text)
-            self.assertEqual(res.json()["verification"], "rule_v2_provisional")
-            self.assertEqual(len(res.json()["sentences"]), 2)
+            self.assertEqual(res.json(), expected)
+            build.assert_called_once()
+            fake_con.close.assert_called_once()
 
-    def test_mismatched_ids_rejected_before_runner(self):
-        def altered(req):
-            item,cards=fake_context(req)
-            return {**item, "play_id": "OTHER"}, cards
+    def test_missing_play_rejected_before_runtime(self):
+        from unittest.mock import MagicMock
+        fake_con = MagicMock()
+        fake_con.execute.return_value.fetchone.return_value = None
         with patch.dict(os.environ, {"EXPLANATION_GENERATION_ENABLED": "1"}), \
-             patch("backend.api.explanations_generate.load_trusted_context", altered), \
-             patch("backend.api.explanations_generate.get_live_generator") as gen:
+             patch("backend.api.explanations_generate.store.connect", return_value=fake_con), \
+             patch("backend.api.explanations_generate.get_live_dependencies") as deps:
             res = self.client.post("/explanations/generate", json={
-                "game_id": GAME, "play_id": PLAY, "question": "왜?"})
-            self.assertEqual(res.status_code, 422)
-            gen.assert_not_called()
+                "game_id": GAME, "play_id": "MISSING", "question": "왜?"})
+            self.assertEqual(res.status_code, 404)
+            deps.assert_not_called()
+            fake_con.close.assert_called_once()
 
     def test_missing_R_prevents_any_call(self):
         item,cards=fake_context(None)
