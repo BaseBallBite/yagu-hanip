@@ -95,10 +95,10 @@ class StateRuleTest(unittest.TestCase):
         r = self.assertKept(GROUNDOUT, text, ["F1", "F5"], HIGH)
         self.assertEqual(r["check"], "rule_v2+model")
 
-    # 카드만 인용한 문장은 상태 규칙 대상이 아님
+    # 카드만 인용한 문장은 상태 규칙 대상이 아님 (카드 대조를 끄면 모델로 감)
     def test_card_sentence_goes_to_model(self):
         pool = {**GROUNDOUT, "term.ground_ball": "[땅볼] 땅에 튀며 굴러가는 타구"}
-        kept, _ = run(pool, "땅볼은 땅에 튀며 굴러가는 타구를 말합니다.", ["term.ground_ball"], HIGH)
+        kept, _ = run(pool, "땅볼은 땅에 튀며 굴러가는 타구를 말합니다.", ["term.ground_ball"], HIGH, card_rule=False)
         self.assertEqual(kept[0]["check"], "rule_v2+model")
 
     # 끄면 예전과 같음
@@ -111,6 +111,67 @@ class StateRuleTest(unittest.TestCase):
         out = verifier.verify_service({"sentences": [{"text": "투수 교체 이유는 기록에 없어 알 수 없습니다.", "evidence": ["UNKNOWN"]}]},
                                       GROUNDOUT, PLAYERS, LOW)
         self.assertEqual(out["sentences"][0]["check"], "unknown_rule")
+
+
+
+# BE1 서비스 카드 본문 모양 그대로 (출처 포함)
+HIT = ("[안타] (출처: 9.05 안타) 수비 실수 없이 타자가 쳐서 베이스에 나간 거예요. 타자가 친 공이 페어가 되고, "
+       "실책이나 야수선택 없이 타자가 1루 이상 가면 안타예요. 1루까지 가면 단타, 2루는 2루타, 3루는 3루타, 홈까지 오면 홈런이에요.")
+BB = ("[볼넷] (출처: 용어의 정의 7. BASE ON BALLS, 5.05(b)(1), 규칙위원회 합의(2018.3.5), 9.14) 스트라이크 존을 벗어난 공 4개를 "
+      "골라내면 1루로 걸어 나가요. 타자가 치지 않은 공 중 스트라이크 존 밖으로 들어온 공이 4개가 되면 1루가 주어져요. "
+      "수비팀 감독이 고의4구를 알리면 공을 던지지 않아도 바로 1루로 보내요(자동 고의4구). 만루에서 볼넷이 나오면 3루 주자가 밀려 들어와 1점이 나요.")
+AWARD = ("[안전진루권] (출처: 5.06(b)(2)(3), 5.06(c)(3)) 볼넷이나 몸에 맞는 공처럼 정해진 경우 아웃될 걱정 없이 베이스가 주어지는 거예요. "
+         "타자가 아웃될 염려 없이 1루에 나가야 할 때(볼넷, 몸에 맞는 공, 타격방해) 그 때문에 베이스를 비워줘야 하는 주자들도 "
+         "한 베이스씩 안전하게 진루해요. 그 밖에 보크가 선언되면 모든 주자가 한 베이스 진루해요. 안전진루권을 얻었다고 해도 베이스를 밟아야 인정돼요.")
+IFF = ("[인필드 플라이] (출처: 용어의 정의 40. INFIELD FLY) 무사나 1사에 주자가 1·2루 또는 만루일 때 내야로 높이 뜬 공이 나오면 "
+       "심판이 인필드 플라이를 선언해요. 선언되면 공을 잡든 못 잡든 타자는 아웃이에요.")
+CARDS = {**GROUNDOUT, "term.hit": HIT, "rule.base_on_balls": BB, "rule.award_bases": AWARD, "rule.infield_fly": IFF}
+
+
+class CardRuleTest(unittest.TestCase):
+    def check(self, text, ev):
+        kept, dropped = run(CARDS, text, ev, LOW)
+        return (kept + dropped)[0], bool(kept)
+
+    # BE1 3경기에서 KLUE가 지운 맞는 카드 문장 (p 0.0008~0.0114) -> 유지
+    def test_be1_card_sentences_kept(self):
+        cases = [
+            ("1루타는 타자가 수비 실수 없이 공을 쳐서 1루까지 안전하게 진루하는 안타를 말합니다.", ["term.hit"]),
+            ("1루타는 타자가 수비 실수 없이 공을 쳐서 안전하게 1루까지 살아 들어가는 안타를 말합니다.", ["term.hit"]),
+            ("1루타(단타)는 수비 실책 없이 타자가 공을 쳐서 1루까지 안전하게 진루하는 안타를 말합니다.", ["term.hit"]),
+            ("볼넷은 투수가 던진 공 중 스트라이크 존을 벗어난 공 4개를 골라내면 아웃 걱정 없이 1루로 걸어 나가는 규칙입니다.",
+             ["rule.base_on_balls", "rule.award_bases"]),
+        ]
+        for text, ev in cases:
+            r, kept = self.check(text, ev)
+            self.assertTrue(kept, (text, r))
+            self.assertEqual(r["check"], "rule_v2+card")
+
+    # 카드를 바꿔 쓴 틀린 문장 -> 카드 대조 통과 못 함. 모델(여기서는 낮은 점수)이나 규칙 v2가 지움
+    def test_distorted_card_sentences_go_to_model(self):
+        cases = [
+            ("볼넷은 스트라이크 존을 벗어난 공 3개를 골라내면 1루로 걸어 나가는 규칙입니다.", ["rule.base_on_balls"]),   # 숫자
+            ("2루타는 타자가 수비 실수 없이 1루까지 가는 안타를 말합니다.", ["term.hit"]),                               # 구절 섞기
+            ("1루타는 타자가 2루까지 가는 안타를 말합니다.", ["term.hit"]),                                               # 베이스
+            ("안타는 실책으로 타자가 1루에 나가도 안타로 기록하는 것을 말합니다.", ["term.hit"]),                       # 부정 빠짐
+            ("인필드 플라이는 1사에 만루일 때 심판이 선언하는 규칙입니다.", ["rule.infield_fly"]),                       # 조건 좁힘
+            ("양석환 선수는 스트라이크 존을 벗어난 공 4개를 골라내 1루로 걸어 나갔습니다.", ["rule.base_on_balls"]),    # 선수 이름
+            ("볼넷이 나오면 감독이 퇴장을 당하는 규칙입니다.", ["rule.base_on_balls"]),                                   # 카드에 없는 말
+        ]
+        for text, ev in cases:
+            r, kept = self.check(text, ev)
+            self.assertFalse(kept, (text, r))
+            self.assertNotEqual(r["check"], "rule_v2+card", (text, r))
+
+    # F/R을 같이 인용한 문장은 카드 대조 대상이 아님
+    def test_mixed_citation_not_card_rule(self):
+        r, _ = self.check("서건창 선수는 2루수 땅볼로 아웃됐고 안타를 치지 못했습니다.", ["F3", "term.hit"])
+        self.assertNotEqual(r["check"], "rule_v2+card")
+
+    def test_card_rule_off(self):
+        kept, dropped = run(CARDS, "1루타는 타자가 수비 실수 없이 공을 쳐서 1루까지 안전하게 진루하는 안타를 말합니다.",
+                            ["term.hit"], LOW, card_rule=False)
+        self.assertEqual((len(kept), len(dropped)), (0, 1))
 
 
 if __name__ == "__main__":
