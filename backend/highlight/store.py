@@ -91,24 +91,30 @@ def build(db_path: Path = DB_PATH, game_ids: list[str] | None = None,
     tmp = db_path.with_suffix(".building")
     tmp.unlink(missing_ok=True)
     con = sqlite3.connect(tmp)
-    con.executescript(SCHEMA)
-    n_scenes = 0
-    for gid in ids:
-        d = load_scene_file(scene_dir / f"scenes_{gid}.json")
-        scenes = d["scenes"]
-        con.execute("INSERT INTO highlights VALUES (?,?,?,?,?,?,?)",
-                    (d["video_id"], d["game_id"], _game_date(d["game_id"]), d["away"], d["home"],
-                     len(scenes), scenes[-1]["end"]))
-        con.executemany(
-            "INSERT INTO highlight_scene VALUES (?,?,?,?,?,?,?)",
-            [(d["video_id"], i, d["game_id"], s["start"], s["end"], s["status"],
-              json.dumps(s, ensure_ascii=False)) for i, s in enumerate(scenes)],
-        )
-        n_scenes += len(scenes)
-    info = {"version": VERSION, "videos": len(ids), "scenes": n_scenes,
-            "built_at": time.strftime("%Y-%m-%dT%H:%M:%S")}
-    con.executemany("INSERT INTO meta VALUES (?,?)", [(k, str(v)) for k, v in info.items()])
-    con.commit()
+    try:
+        con.executescript(SCHEMA)
+        n_scenes = 0
+        for gid in ids:
+            d = load_scene_file(scene_dir / f"scenes_{gid}.json")
+            scenes = d["scenes"]
+            con.execute("INSERT INTO highlights VALUES (?,?,?,?,?,?,?)",
+                        (d["video_id"], d["game_id"], _game_date(d["game_id"]), d["away"], d["home"],
+                         len(scenes), scenes[-1]["end"]))
+            con.executemany(
+                "INSERT INTO highlight_scene VALUES (?,?,?,?,?,?,?)",
+                [(d["video_id"], i, d["game_id"], s["start"], s["end"], s["status"],
+                  json.dumps(s, ensure_ascii=False)) for i, s in enumerate(scenes)],
+            )
+            n_scenes += len(scenes)
+        info = {"version": VERSION, "videos": len(ids), "scenes": n_scenes,
+                "built_at": time.strftime("%Y-%m-%dT%H:%M:%S")}
+        con.executemany("INSERT INTO meta VALUES (?,?)", [(k, str(v)) for k, v in info.items()])
+        con.commit()
+    except BaseException:
+        # 장면 표가 잘못돼 중간에 실패해도 연결을 닫고 만들다 만 파일을 지운다 (기존 DB는 그대로)
+        con.close()
+        tmp.unlink(missing_ok=True)
+        raise
     con.close()
     os.replace(tmp, db_path)
     return info

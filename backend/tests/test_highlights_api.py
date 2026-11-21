@@ -112,6 +112,8 @@ class HighlightsApiTest(unittest.TestCase):
             Path(d, f"scenes_{DEMO_GAME}.json").write_text(json.dumps(bad), encoding="utf-8")
             with self.assertRaises(ValueError):
                 store.build(Path(d) / "x.sqlite", game_ids=[DEMO_GAME], scene_dir=Path(d))
+            # 실패해도 만들다 만 파일·DB가 남지 않는다 (연결이 닫혀야 지울 수 있음)
+            self.assertEqual(sorted(p.name for p in Path(d).iterdir()), [f"scenes_{DEMO_GAME}.json"])
 
 
 @unittest.skipUnless(game_store.DB_PATH.exists(), "경기 DB(yagu.sqlite)가 없어서 건너뜀")
