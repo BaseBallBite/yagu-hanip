@@ -10,7 +10,10 @@
 | `config.py` | 모델, RPM, 재시도 횟수, 단가표 (여기만 고치면 됨) |
 | `prompts.py` | 시스템 프롬프트, 조건별 입력 구성, R 템플릿 |
 | `gemini_client.py` | 캐시 → 속도 제한 → 호출 → 재시도 → `logs/usage.jsonl` 기록 |
-| `verifier.py` | B3 검증기: 근거 표시 / ID 존재 / 숫자 / 선수 이름 대조 |
+| `verifier.py` | B3 검증기: 근거 표시 / ID 존재 / 숫자 / 선수 이름 대조. 서비스용 `verify_service()`는 규칙 v2 → 상태 규칙 → KLUE 순 |
+| `service_state_check.py` | 서비스 F 모양을 읽어 문장 속 아웃카운트·주자·점수·이닝·투구 순서를 F/R과 대조 |
+| `state_rule_check.py` | 위 대조의 기본 규칙(학습 F 모양 기준) |
+| `test_verify_service_state.py` | 상태 규칙 테스트 (`python -m unittest test_verify_service_state`) |
 | `generate.py` | 실행 스크립트 → `outputs/<모델>_<프롬프트버전>/generations.jsonl` |
 | `build_testset.py` | BE 상태 복원 결과 + picks.csv → 테스트셋 (raw_relay·facts·players 자동) |
 | `check_testset.py` | 테스트셋 형식 검사 (무료) |
@@ -73,3 +76,15 @@ python generate.py                 # 전체
 - 숫자는 아라비아 숫자 + "1사/원아웃" 같은 아웃카운트 표현만 정규화함. "세 번째", "두 점" 같은 한글 수사는 못 잡음
 - 이름은 `players` 목록에 있는 이름만 검사함. 목록에 없는 선수를 지어내면 못 잡으니 목록은 그 경기 출전 선수 전체로 넣을 것
 - 근거 표시 없는 문장은 접속 문장이어도 지움 (채점에서도 접속 문장은 분모에서 빠지니까 지표엔 영향 적음)
+
+## 서비스 검증 순서 (verify_service)
+
+1. 규칙 v2: 근거 표시, ID 존재, 숫자, 선수 이름
+2. 상태 규칙(service_state_check.py): 아웃카운트, 주자 위치와 이름, 점수, 이닝, 투구 순서를 F/R 값과 비교
+   - 하나라도 다르면 삭제
+   - 모두 맞고 상태만 말하는 문장이면 KLUE 없이 유지
+   - 그 밖은 3으로
+3. KLUE: 인용 근거만 붙여 P(지지) >= threshold 이면 유지
+
+2를 넣은 이유: KLUE가 맞는 상태 문장("무사에서 1사로 늘어났고 주자는 계속 없음" 등)에 0.001대 점수를 줘서 지웠음. KLUE 학습 데이터에 서비스 F 모양과 상태 변화 서술이 없었기 때문으로 봄. 실제 서비스 문장 36개(3경기)에서 맞는데 지워지던 문장이 8개에서 6개로 줄었고, 틀린 값으로 바꾼 문장은 모두 지움. 남은 6개 중 4개는 카드 설명 문장이라 이 규칙 범위 밖.
+끄려면 `verify_service(..., state_rule=False)`.
