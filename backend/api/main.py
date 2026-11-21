@@ -14,6 +14,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.dictionary import router as dictionary_router
+from backend.api.explanations import router as explanations_router
+from backend.api.explanations_generate import router as generation_router
 from backend.api.games import router as games_router
 from backend.api.highlights import router as highlights_router
 
@@ -24,13 +26,15 @@ origins = os.environ.get("CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[o.strip() for o in origins if o.strip()],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
 app.include_router(dictionary_router)
 app.include_router(games_router)
 app.include_router(highlights_router)
+app.include_router(explanations_router)
+app.include_router(generation_router)
 
 
 @app.get("/health")
