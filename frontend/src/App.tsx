@@ -273,7 +273,7 @@ export default function App() {
         </main>
       ) : currentPath === '/highlights' ? (
         <main className="flex-1 flex flex-col justify-center">
-          <HighlightsPage />
+          <HighlightsPage onNavigate={navigate} />
         </main>
       ) : currentPath === '/ranking' ? (
         <main className="flex-1 flex flex-col justify-center">
