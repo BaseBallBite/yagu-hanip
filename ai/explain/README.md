@@ -10,10 +10,11 @@
 | `config.py` | 모델, RPM, 재시도 횟수, 단가표 (여기만 고치면 됨) |
 | `prompts.py` | 시스템 프롬프트, 조건별 입력 구성, R 템플릿 |
 | `gemini_client.py` | 캐시 → 속도 제한 → 호출 → 재시도 → `logs/usage.jsonl` 기록 |
-| `verifier.py` | B3 검증기: 근거 표시 / ID 존재 / 숫자 / 선수 이름 대조. 서비스용 `verify_service()`는 규칙 v2 → 상태 규칙 → KLUE 순 |
+| `verifier.py` | B3 검증기: 근거 표시 / ID 존재 / 숫자 / 선수 이름 대조. 서비스용 `verify_service()`는 규칙 v2 → 상태 규칙 → 카드 대조 → KLUE 순 |
 | `service_state_check.py` | 서비스 F 모양을 읽어 문장 속 아웃카운트·주자·점수·이닝·투구 순서를 F/R과 대조 |
 | `state_rule_check.py` | 위 대조의 기본 규칙(학습 F 모양 기준) |
-| `test_verify_service_state.py` | 상태 규칙 테스트 (`python -m unittest test_verify_service_state`) |
+| `card_text_check.py` | 카드만 인용한 문장을 카드 본문(별칭 포함)과 대조 |
+| `test_verify_service_state.py` | 상태 규칙·카드 대조 테스트 (`python -m unittest test_verify_service_state`) |
 | `generate.py` | 실행 스크립트 → `outputs/<모델>_<프롬프트버전>/generations.jsonl` |
 | `build_testset.py` | BE 상태 복원 결과 + picks.csv → 테스트셋 (raw_relay·facts·players 자동) |
 | `check_testset.py` | 테스트셋 형식 검사 (무료) |
@@ -84,7 +85,14 @@ python generate.py                 # 전체
    - 하나라도 다르면 삭제
    - 모두 맞고 상태만 말하는 문장이면 KLUE 없이 유지
    - 그 밖은 3으로
-3. KLUE: 인용 근거만 붙여 P(지지) >= threshold 이면 유지
+3. 카드 대조(card_text_check.py): 카드만 인용한 문장을 카드 본문과 비교
+   - 카드 내용으로 다 설명되면 KLUE 없이 유지
+   - 아니면 4로. 이 단계는 문장을 지우지 않음
+4. KLUE: 인용 근거만 붙여 P(지지) >= threshold 이면 유지
 
-2를 넣은 이유: KLUE가 맞는 상태 문장("무사에서 1사로 늘어났고 주자는 계속 없음" 등)에 0.001대 점수를 줘서 지웠음. KLUE 학습 데이터에 서비스 F 모양과 상태 변화 서술이 없었기 때문으로 봄. 실제 서비스 문장 36개(3경기)에서 맞는데 지워지던 문장이 8개에서 6개로 줄었고, 틀린 값으로 바꾼 문장은 모두 지움. 남은 6개 중 4개는 카드 설명 문장이라 이 규칙 범위 밖.
-끄려면 `verify_service(..., state_rule=False)`.
+2를 넣은 이유: KLUE가 맞는 상태 문장("무사에서 1사로 늘어났고 주자는 계속 없음" 등)에 0.001대 점수를 줘서 지웠음. KLUE 학습 데이터에 서비스 F 모양과 상태 변화 서술이 없었기 때문으로 봄.
+3을 넣은 이유: 카드 정의를 거의 그대로 옮긴 문장도 KLUE가 지움. "1루타는 수비 실수 없이 1루까지 가는 안타" 3개(p 0.0008~0.0033, 카드에는 '단타'만 있고 '1루타'는 별칭), 볼넷 정의는 거의 같은 문장 3개 중 하나만 0.0114로 삭제.
+카드 대조 통과 조건: 선수 이름 없음, 숫자·베이스·아웃 표현이 카드 한 구절 안에 같이 있음("2루타는 1루까지"는 탈락), 카드의 "X나 Y" 조건을 한쪽만 말하지 않음, 카드의 "실책 없이"를 부정 없이 말하지 않음, 문장 단어 85% 이상이 카드(별칭 포함)에 있음. 별칭은 저장소 `cards/` yaml의 aliases에서 읽음.
+
+실제 서비스 문장 36개(3경기)에서 맞는데 지워지던 문장: 8개 → 상태 규칙 6개 → 카드 대조까지 2개. 틀린 값으로 바꾼 상태 문장, 카드를 바꿔 쓴 문장은 테스트에서 모두 통과 못 함. 사람 채점 731문장 중 카드만 인용한 문장 132개에서 카드 대조가 새로 살린 틀린 문장은 없음(틀림 1개가 통과하지만 원래도 KLUE가 남기던 문장). 다만 허용어와 85% 기준은 이 문장들을 보고 정한 것이라 새 경기 문장으로 계속 확인 필요.
+끄려면 `verify_service(..., state_rule=False)`, `card_rule=False`.
