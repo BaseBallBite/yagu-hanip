@@ -89,6 +89,21 @@ class StateRuleTest(unittest.TestCase):
         self.assertDropped(WALK, "양석환 선수는 이 타석에서 7번째 공까지 승부한 끝에 4번째 볼을 골라내며 2루로 진루했습니다.", ["R1", "R2", "R4", "R7", "F4", "F5"], HIGH)
 
     # 상태는 맞지만 다른 주장이 섞이면 모델로 넘김
+    # 11/24 새 3경기(BE1)에서 KLUE가 지운 맞는 상태 문장 (p 0.0012~0.0121)
+    def test_new3games_state_sentences_kept(self):
+        for text, pool in [
+            ("이 플레이로 아웃카운트는 무사에서 1사로 늘어났으며, 주자는 계속 없고 점수도 KIA 3-0 키움으로 변화가 없습니다.", GROUNDOUT),
+            ("이 플레이로 아웃카운트는 늘어나지 않아 2사가 이어졌고, 양석환 선수가 1루에 진루하면서 점수는 두산 5-3 LG 상태를 유지했습니다.", WALK),
+            ("이 플레이로 아웃카운트의 증가 없이 2사 상태가 유지되었고, 타자 양석환 선수가 1루에 나가 주자가 생겼으며 점수는 여전히 두산 5-3 LG로 유지되었습니다.", WALK),
+        ]:
+            r = self.assertKept(pool, text, ["F1", "F5"])
+            self.assertEqual(r["check"], "rule_v2+state")
+
+    # F에 주자로 없는 선수를 베이스에 보낸 문장은 삭제
+    def test_unknown_runner_dropped(self):
+        r = self.assertDropped(GROUNDOUT, "이 플레이로 아웃카운트는 1사가 되었고, 양현종 선수가 1루에 진루했습니다.", ["F2", "F5"], HIGH)
+        self.assertEqual(r["check"], "rule_v2+state")
+
     def test_extra_claim_goes_to_model(self):
         text = "실책 덕분에 아웃카운트는 무사에서 1사로 늘어났고, 주자는 계속 없는 상태를 유지했습니다."
         self.assertDropped(GROUNDOUT, text, ["F1", "F5"], LOW)

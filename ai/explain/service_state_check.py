@@ -90,7 +90,7 @@ def parse_service_facts(facts, raw_relay=()):
 
 
 # ---------------- 추가 대조 (서비스 문장에서 자주 나오는 표현) ----------------
-def check_named_bases(body, st):
+def check_named_bases(body, st, players=()):
     """'1루 강승호에서 2루 강승호로', '강승호 선수는 2루에 남은 채', '1루(문정빈)' 같은 주자 이름+베이스."""
     # 판정에서 빼는 것
     #  - '1루 주자 김상수', '1루주자 X'는 역할 이름이라 위치 주장으로 안 봄(출발 베이스는 state_rule_check의 runner_from 몫)
@@ -137,6 +137,13 @@ def check_named_bases(body, st):
                 if dm and not any(r[0] == "named_base" and r[2].startswith(n) for r in res):
                     b = int(dm.group(1))
                     res.append(("named_dest", b in ok_set, f"{n} {b}루 도착" + ("" if b in ok_set else f" F:{sorted(ok_set)}")))
+    # F에 주자로 안 나오는 선수를 베이스에 보낸 문장: '박성한 선수가 1루에 나가' (박성한은 이 플레이 주자가 아님)
+    known = set(pre) | set(post) | set(froms)
+    for n in sorted(set(players) - known, key=len, reverse=True):
+        m = re.search(rf"{re.escape(n)}(?:\s*선수)?\s*(?:가|이|는|은)\s*[^,.]{{0,6}}?([123])\s*루(?!\s*수|\s*타)\s*(?:로|으로|에|까지)\s*"
+                      r"(?:다시\s*)?(진루|나가|나갔|출루|이동|도착|살아|걸어|남)", body)
+        if m:
+            res.append(("named_dest", False, f"{n} {m.group(1)}루: F에 이 선수가 주자로 없음"))
     return res
 
 
@@ -176,7 +183,9 @@ EXTRA_FILLER = sorted("""
 변함이 없었습니다|변함이 없습니다|변함이 없었|변함이 없|변함없이|변함없|변화 없이|여전히|계속|그대로|동일하게|전과 동일|
 늘어났고|늘어났으며|늘어났습니다|늘어났|늘어나지 않아|늘어나지 않고|늘어나지|머물렀고|머물렀으며|머물렀습니다|머물렀|
 진출했고|진출했습니다|진출했|진출|생겼으며|생겼고|생겼|득점하지 못해|득점하지 못하고|득점하지 못했|하여|하면서|이번 타석에서|공이|
-없는 상태를 유지했습니다|없는 상태를 유지|없는 상태|없으며|없고|플레이 전후|플레이 전에는|플레이 전과|플레이 전|-
+없는 상태를 유지했습니다|없는 상태를 유지|없는 상태|없으며|없고|플레이 전후|플레이 전에는|플레이 전과|플레이 전|-|
+변화가 없었습니다|변화가 없습니다|변화가 없었|변화가 없|변화 없|이어졌고|이어졌습니다|이어졌|증가 없이|증가|
+출루하였으며|출루했으며|출루했고|출루했습니다|출루하며|출루|타자|채워지며|채워졌|더해
 """.replace("\n", "").split("|"), key=len, reverse=True)
 EXTRA_FILLER = [x for x in EXTRA_FILLER if x.strip()]
 
@@ -189,7 +198,7 @@ def state_check(sentence, facts, raw_relay=(), players=()):
     sentence = re.sub(r"(?<![\d.])(\d{1,2})\s*-\s*(\d{1,2})(?![\d.])", r"\1:\2", sentence)
     body = re.sub(r"\s+", " ", S.TAG.sub(" ", sentence)).strip()
     base = S.check(sentence, st, players=list(players))
-    checks = base["checks"] + check_named_bases(body, st) + check_ordinal_pitches(body, st)
+    checks = base["checks"] + check_named_bases(body, st, players) + check_ordinal_pitches(body, st)
     # 이름+베이스를 이 함수가 따로 봤으면 기존 'bases'(아웃 표현 뒤 주자) 판정은 그대로 둠
     decided = [c for c in checks if c[1] is not None]
     bad = [c for c in decided if c[1] is False]
