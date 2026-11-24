@@ -55,6 +55,9 @@ def parse_service_line(t):
         if bm:
             return [body], {"batter": (bm.group(1), bm.group(2))}
         return [body], {}
+    m = re.match(r"^이 플레이로 득점:\s*(\S+)\s+(\d+)점$", t)
+    if m:
+        return [f"{m.group(1)} {m.group(2)}점 득점"], {}
     m = re.match(r"^이 타석 투구 수 (\d+)개", t)
     if m:
         return [f"투구 {m.group(1)}구"], {"pitch_total": int(m.group(1))}
