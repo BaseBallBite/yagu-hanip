@@ -37,6 +37,13 @@ WALK = {
     "F5": "플레이 후 2사, 1,2루 (1루 양석환, 2루 강승호), 점수 두산 5-3 LG",
     "R1": "1구 볼", "R2": "2구 볼", "R3": "3구 헛스윙", "R4": "4구 볼", "R5": "5구 스트라이크", "R6": "6구 파울", "R7": "7구 볼",
 }
+HOMER = {
+    "F1": "2회초, 무사, 주자 없음, 점수 롯데 0-0 한화",
+    "F2": "타자 한동희, 투수 박준영",
+    "F3": "기록: 한동희 : 좌익수 뒤 홈런 (홈런거리:110M)",
+    "F5": "플레이 후 무사, 주자 없음, 점수 롯데 1-0 한화",
+    "F6": "이 플레이로 득점: 롯데 1점",
+}
 PLAYERS = ["서건창", "양현종", "강승호", "양석환", "임찬규"]
 
 
@@ -98,6 +105,15 @@ class StateRuleTest(unittest.TestCase):
         ]:
             r = self.assertKept(pool, text, ["F1", "F5"])
             self.assertEqual(r["check"], "rule_v2+state")
+
+    # 11/24 새 경기(BE1): F에 "이 플레이로 득점: 롯데 1점" 형식이 있으면 플레이 전 점수(0-0)도 맞는 값
+    def test_scoring_play_before_after_score_kept(self):
+        text = "이 홈런으로 롯데가 1점을 올려 점수는 0-0에서 롯데 1-0 한화가 되었으며, 플레이 후에도 아웃카운트 없이 주자가 없는 무사 상태가 이어졌습니다."
+        kept, dropped = run(HOMER, text, ["F1", "F5", "F6"], HIGH)
+        self.assertEqual(len(kept), 1, dropped)
+        wrong = "이 홈런으로 롯데가 1점을 올려 점수는 0-0에서 롯데 2-0 한화가 되었습니다."
+        kept, dropped = run(HOMER, wrong, ["F1", "F5", "F6"], HIGH)
+        self.assertEqual(len(dropped), 1, kept)
 
     # F에 주자로 없는 선수를 베이스에 보낸 문장은 삭제
     def test_unknown_runner_dropped(self):
