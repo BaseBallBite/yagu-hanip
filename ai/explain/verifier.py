@@ -112,13 +112,41 @@ def check_unknown(sent, pool, players):
     return True, "모름 문장(유지)"
 
 
-def verify_service(output, pool, players, p_support, threshold=0.05, max_unknown=1):
+def _state_facts(pool):
+    """pool에서 상태 규칙 대조에 쓸 F 목록과 R 줄(번호순)을 꺼냄."""
+    def num(k):
+        return int(k[1:])
+    facts = [{"id": k, "text": pool[k]} for k in sorted((k for k in pool if re.match(r"^F\d+$", k)), key=num)]
+    relay = [pool[k] for k in sorted((k for k in pool if re.match(r"^R\d+$", k)), key=num)]
+    return facts, relay
+
+
+def _tagged(s):
+    return s.get("text", "") + " " + "".join(f"[{e}]" if re.match(r"^[FR]\d+$", e) else f"[K:{e}]" for e in s.get("evidence", []))
+
+
+def verify_service(output, pool, players, p_support, threshold=0.05, max_unknown=1, state_rule=True, card_rule=True):
     """서비스 B3. 문장 순서는 그대로 유지함.
     - evidence가 ["UNKNOWN"]뿐: check_unknown 규칙만 적용, 모델 안 씀. 해설 하나에 max_unknown개까지
     - evidence에 UNKNOWN과 실제 ID가 섞임: UNKNOWN을 빼고 일반 문장으로 처리
-    - 일반 문장: 규칙 v2 통과 → 인용 근거만 붙여서 모델 P(지지) >= threshold 이면 유지
+    - 일반 문장: 규칙 v2 통과 → (state_rule) 상태 규칙 대조 → 인용 근거만 붙여서 모델 P(지지) >= threshold 이면 유지
+      상태 규칙 대조(service_state_check.py): 아웃카운트·주자·점수·이닝·투구 순서가 F/R과 다르면 삭제,
+      모두 맞고 상태만 말하는 문장이면 모델 없이 유지, 그 밖은 모델로 넘김
+    - (card_rule) 카드만 인용한 문장: 카드 본문과 대조(card_text_check.py). 카드 내용으로 다 설명되면 모델 없이 유지,
+      아니면 모델로 넘김. 이 대조는 문장을 지우지 않음
     p_support: apply_model.load_model(모델 폴더)가 돌려주는 함수 [(문장, 근거)] -> [P(지지)]
     """
+    if state_rule:
+        try:
+            from . import service_state_check as state
+        except ImportError:  # ai/explain 폴더에서 스크립트로 실행할 때
+            import service_state_check as state
+        facts, relay = _state_facts(pool)
+    if card_rule:
+        try:
+            from . import card_text_check as cardc
+        except ImportError:
+            import card_text_check as cardc
     res, normal, n_unknown = [], [], 0
     for i, s in enumerate(output.get("sentences", [])):
         ev = s.get("evidence") or []
@@ -134,6 +162,21 @@ def verify_service(output, pool, players, p_support, threshold=0.05, max_unknown
         ok, why = verify_sentence(s, pool, players, "v2")
         r = {**s, "verdict": why, "ok": ok, "check": "rule_v2", "p_support": None}
         res.append(r)
+        if ok and state_rule:
+            st = state.state_check(_tagged(s), facts, relay, players)
+            if st["status"] == "bad":
+                r["ok"], r["check"], r["verdict"] = False, "rule_v2+state", f"상태 규칙: {st['why']}"
+                continue
+            if st["status"] == "ok" and st["state_only"]:
+                r["check"], r["verdict"] = "rule_v2+state", "상태 규칙 통과(모델 생략)"
+                continue
+        if ok and card_rule:
+            cards = [e for e in s.get("evidence", []) if not re.match(r"^[FR]\d+$", e)]
+            if cards and len(cards) == len(s.get("evidence", [])):
+                cc = cardc.card_check(s.get("text", ""), [pool[e] for e in cards if e in pool], players, cards)
+                if cc["status"] == "covered":
+                    r["check"], r["verdict"] = "rule_v2+card", "카드 대조 통과(모델 생략)"
+                    continue
         if ok:
             normal.append(r)
     if normal:
