@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { User } from 'lucide-react';
+import { User, Settings, HelpCircle } from 'lucide-react';
 import {
   MOCK_RECENT_GAMES,
   MOCK_RECENT_TERMS,
@@ -13,7 +13,6 @@ import {
 } from '../../data/mockMyData';
 
 import { MyTeamCard } from './MyTeamCard';
-import { MySettingsCard } from './MySettingsCard';
 import { RecentActivityCard } from './RecentActivityCard';
 
 export interface MyPageProps {
@@ -76,7 +75,8 @@ export function MyPage({ onNavigate }: MyPageProps) {
       <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="mb-8 lg:mb-10">
+        <div className="mb-8 lg:mb-10 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold border border-purple-100 mb-3 shadow-2xs">
             <User className="w-3.5 h-3.5 text-purple-600" />
             <span>개인화 대시보드</span>
@@ -90,23 +90,23 @@ export function MyPage({ onNavigate }: MyPageProps) {
             내가 응원하는 팀과 최근 본 경기, 찾아본 야구 용어를
             한곳에서 확인해보세요.
           </p>
+          </div>
+          <div className="flex flex-wrap gap-2 sm:pt-2">
+            <button type="button" onClick={() => onNavigate('/team-select')} className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-700 hover:border-purple-300 hover:text-purple-700"><Settings className="w-4 h-4"/> 응원 팀 변경</button>
+            <button type="button" onClick={() => onNavigate('/guide')} className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-700 hover:border-purple-300 hover:text-purple-700"><HelpCircle className="w-4 h-4"/> 이용 가이드</button>
+          </div>
         </div>
 
         {/* Main content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 
           {/* Left column */}
-          <div className="lg:col-span-5 space-y-6">
-            <MyTeamCard
-              team={favoriteTeamInfo}
-              onNavigate={onNavigate}
-            />
-
-            <MySettingsCard onNavigate={onNavigate} />
+          <div className="min-w-0">
+            <MyTeamCard team={favoriteTeamInfo} onNavigate={onNavigate} />
           </div>
 
           {/* Right column */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-2 min-w-0">
             <RecentActivityCard
               games={MOCK_RECENT_GAMES}
               terms={recentTerms}
