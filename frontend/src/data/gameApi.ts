@@ -71,6 +71,7 @@ interface ApiPitch {
 }
 
 interface ApiPlay {
+  play_id?: string | null;
   seq: number;
   inning: number;
   half: 'top' | 'bottom';
@@ -92,6 +93,7 @@ interface PlaysResponse {
 }
 
 export interface RealAtBat extends AtBatPlay {
+  resultPlayId: string | null;
   inning: number;
   half: 'top' | 'bottom';
   stateAfter: BaseballState;
@@ -346,6 +348,7 @@ function toRealAtBat(
     inning: group.inning,
     half: group.half,
     stateAfter: group.stateAfter,
+    resultPlayId: group.resultPlay?.play_id ?? null,
     startSeq: group.startSeq,
     endSeq: group.endSeq,
 

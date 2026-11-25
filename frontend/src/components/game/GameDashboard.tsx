@@ -93,7 +93,7 @@ function normalizeTeam(value: string): string {
   return TEAM_ALIASES[value] || value;
 }
 
-export function GameDashboard() {
+export function GameDashboard({ onNavigate }: { onNavigate?: (path: string) => void }) {
   const [games, setGames] = useState<GameRecord[]>([]);
   const [selectedGameId, setSelectedGameId] = useState('');
 
@@ -111,6 +111,7 @@ export function GameDashboard() {
     useState('전체 구단');
 
   const [page, setPage] = useState(1);
+  const [filtersCollapsed, setFiltersCollapsed] = useState(false);
 
   const [isLoadingGames, setIsLoadingGames] =
     useState(true);
@@ -235,7 +236,10 @@ export function GameDashboard() {
         setGameData(result);
 
         if (result.atBats.length > 0) {
+          // 결과가 없는 진행 중/불완전한 투구 기록은 해설 대상으로 자동 선택하지 않는다.
+          // 실제 결과 플레이 ID가 있는 가장 최근 타석을 우선 선택한다.
           const lastAtBat =
+            [...result.atBats].reverse().find((item) => item.resultPlayId) ??
             result.atBats[result.atBats.length - 1];
 
           setSelectedAtBatId(lastAtBat.id);
@@ -311,6 +315,7 @@ export function GameDashboard() {
 
   const handleSelectGame = (gameId: string) => {
     setSelectedGameId(gameId);
+    setFiltersCollapsed(true);
     setAiNotice(false);
   };
 
@@ -358,7 +363,7 @@ export function GameDashboard() {
 
   return (
     <div className="w-full flex-1 py-6 sm:py-8 animate-fade-in">
-      <div className="max-w-[1350px] w-full mx-auto px-4 sm:px-6">
+      <div className="max-w-[1760px] w-full mx-auto px-4 sm:px-6">
 
         {/* 페이지 제목 */}
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
@@ -377,25 +382,27 @@ export function GameDashboard() {
           </span>
         </div>
 
+        {/* 데스크톱에서는 좌측 경기 선택 + 우측 실제 경기 기록 */}
+        <div className="grid grid-cols-1 xl:grid-cols-[260px_minmax(0,1fr)] gap-5 items-start">
+          <aside className="min-w-0 space-y-4 xl:sticky xl:top-20">
         {/* 날짜 / 구단 검색 */}
-        <div className="mb-5 p-5 sm:p-6 bg-white border border-gray-100 rounded-3xl shadow-sm">
+        <div className="p-4 bg-white border border-gray-100 rounded-3xl shadow-sm">
 
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
             <Search className="w-4 h-4 text-purple-600" />
 
             <h2 className="text-sm sm:text-base font-black text-gray-900">
               경기 찾아보기
             </h2>
 
-            <span className="text-xs text-gray-400">
-              날짜와 구단을 선택해 주세요.
-            </span>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-3 md:items-end">
+            <button type="button" onClick={() => setFiltersCollapsed(v => !v)} aria-expanded={!filtersCollapsed} className="ml-auto rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-bold text-purple-700 hover:bg-purple-50">{filtersCollapsed ? '검색 조건 변경' : '조건 접기'}</button>
+          </div>
+          {filtersCollapsed ? <p className="text-xs font-medium text-gray-500">{selectedDate || '전체 날짜'} · {selectedTeam} · {filteredGames.length}경기 검색됨</p> : <>
+          <div className="flex flex-col gap-3">
 
             {/* 날짜 선택 */}
-            <div className="flex-1">
+            <div className="w-full min-w-0">
               <label
                 htmlFor="game-search-date"
                 className="block text-xs font-bold text-gray-600 mb-1.5"
@@ -421,7 +428,7 @@ export function GameDashboard() {
             </div>
 
             {/* 구단 선택 */}
-            <div className="flex-1">
+            <div className="w-full min-w-0">
               <label
                 htmlFor="game-search-team"
                 className="block text-xs font-bold text-gray-600 mb-1.5"
@@ -471,7 +478,7 @@ export function GameDashboard() {
           </div>
 
           {/* 조회 결과 */}
-          <div className="mt-4 pt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div className="mt-4 pt-3 border-t border-gray-100 flex flex-col gap-1 text-xs">
             <span className="font-bold text-gray-600">
               검색 결과{' '}
               <span className="text-purple-700">
@@ -488,6 +495,7 @@ export function GameDashboard() {
               {selectedTeam}
             </span>
           </div>
+          </>}
         </div>
 
         {/* 목록 로딩 */}
@@ -586,6 +594,8 @@ export function GameDashboard() {
             </>
           )}
 
+          </aside>
+          <div className="min-w-0">
         {/* 상세 경기 기록 로딩 */}
         {isLoadingPlays && gameMatchesFilter && (
           <div className="mb-6 bg-white border border-gray-100 rounded-3xl p-10 flex flex-col items-center justify-center gap-3">
@@ -625,8 +635,8 @@ export function GameDashboard() {
               <GameScoreHeader summary={summary} />
 
               {/* 한 화면에서 이닝 목록과 선택 타석 상세를 같이 확인 */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start mt-5">
-                <div className="lg:col-span-6 min-w-0">
+              <div className="grid grid-cols-1 2xl:grid-cols-12 gap-5 items-start mt-5">
+                <div className="2xl:col-span-6 min-w-0">
                   <InningPlaysHistory
                     atBats={atBats}
                     selectedAtBatId={selectedAtBatId}
@@ -639,11 +649,14 @@ export function GameDashboard() {
                     homeTeam={gameData.game.home}
                   />
                 </div>
-                <div className="lg:col-span-6 min-w-0 lg:sticky lg:top-20 self-start">
+                <div className="2xl:col-span-6 min-w-0 2xl:sticky 2xl:top-20 self-start">
                   <CurrentAtBatCard
                     key={currentAtBat.id}
                     atBat={currentAtBat}
                     onAskWhy={() => setAiNotice(previous => !previous)}
+                    gameId={selectedGameId}
+                    playId={currentAtBat.resultPlayId}
+                    onNavigate={onNavigate}
                     isAiExplaining={aiNotice}
                   />
                 </div>
@@ -657,6 +670,8 @@ export function GameDashboard() {
               </div>
             </>
           )}
+          </div>
+        </div>
       </div>
     </div>
   );

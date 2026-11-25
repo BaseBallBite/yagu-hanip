@@ -37,8 +37,8 @@ export function OnboardingLayout({
   rightColClass = 'lg:col-span-7',
 }: OnboardingLayoutProps) {
   return (
-    <div className="w-full flex-1 flex flex-col justify-between py-6 sm:py-10 animate-fade-in">
-      <div className="max-w-[1150px] w-full mx-auto px-6">
+    <div className="w-full flex-1 flex flex-col py-6 sm:py-10 animate-fade-in">
+      <div className="max-w-[1150px] w-full mx-auto px-6 flex flex-1 flex-col">
         
         {/* Top Bar inside Onboarding: Skip link in top-right */}
         <div className="flex items-center justify-between pb-6 mb-2">
@@ -73,7 +73,7 @@ export function OnboardingLayout({
         </div>
 
         {/* Bottom Navigation & Progress Indicator Bar */}
-        <div className="mt-12 sm:mt-16 pt-6 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-between gap-5">
+        <div className="mt-auto pt-6 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-between gap-5 min-h-24">
           {/* Left area: Previous button if provided, otherwise Progress Indicator */}
           <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-start">
             {onPrev ? (
