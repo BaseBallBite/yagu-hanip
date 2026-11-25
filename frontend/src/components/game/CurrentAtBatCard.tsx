@@ -7,6 +7,7 @@
 import { useState } from 'react';
 import type { AtBatPlay } from '../../data/mockGameData';
 import { StrikeZoneMini } from './StrikeZoneMini';
+import { VerifiedExplanation } from './VerifiedExplanation';
 import {
   Zap,
   ListOrdered,
@@ -18,6 +19,9 @@ interface CurrentAtBatCardProps {
   atBat: AtBatPlay;
   onAskWhy: () => void;
   isAiExplaining: boolean;
+  gameId: string;
+  playId: string | null;
+  onNavigate?: (path: string) => void;
 }
 
 function formatSpeed(speed: number) {
@@ -28,6 +32,9 @@ export function CurrentAtBatCard({
   atBat,
   onAskWhy,
   isAiExplaining,
+  gameId,
+  playId,
+  onNavigate,
 }: CurrentAtBatCardProps) {
   const [showPitchDetail, setShowPitchDetail] = useState(false);
 
@@ -192,12 +199,7 @@ export function CurrentAtBatCard({
         )}
       </div>
 
-      {isAiExplaining && (
-        <div className="mt-4 rounded-2xl border border-purple-200 bg-purple-50 p-4" role="status">
-          <p className="text-sm font-black text-purple-800">한입만! 해설</p>
-          <p className="mt-1 text-xs leading-relaxed text-purple-700">AI 경기 해설 API 연동 예정입니다. 준비되면 이 자리에서 선택한 타석의 해설을 보여줄게요.</p>
-        </div>
-      )}
+      {isAiExplaining && <VerifiedExplanation gameId={gameId} playId={playId} batter={atBat.batterName} onNavigate={onNavigate}/> }
 
       {/* 하단 버튼 */}
       <div className="mt-6 pt-5 border-t border-gray-100 flex flex-col sm:flex-row items-center gap-3">

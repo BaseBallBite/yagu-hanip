@@ -19,7 +19,7 @@ export function RecentGamesBar({
   onSelectGame,
 }: RecentGamesBarProps) {
   return (
-    <div className="w-full mb-6">
+    <div className="w-full rounded-3xl border border-gray-100 bg-white p-4 shadow-sm">
 
       {/* 경기 목록 제목 */}
       <div className="flex items-center justify-between gap-2 mb-3">
@@ -28,13 +28,11 @@ export function RecentGamesBar({
           <span>경기 선택</span>
         </div>
 
-        <span className="text-[11px] text-gray-400">
-          원하는 경기를 눌러 기록을 확인하세요.
-        </span>
+
       </div>
 
       {/* 선택 가능한 실제 경기 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="flex flex-col gap-2 max-h-[60vh] overflow-y-auto pr-1">
         {games.map((game) => {
           const isSelected =
             game.id === selectedGameId;
@@ -45,7 +43,7 @@ export function RecentGamesBar({
               type="button"
               onClick={() => onSelectGame(game.id)}
               aria-pressed={isSelected}
-              className={`p-3.5 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between gap-2 group ${
+              className={`w-full min-w-0 shrink-0 px-3 py-2.5 rounded-xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between gap-2 group ${
                 isSelected
                   ? 'bg-purple-50/70 border-2 border-purple-600 ring-2 ring-purple-200/50 shadow-sm'
                   : 'bg-white border-gray-200/80 hover:border-purple-300 hover:shadow-sm hover:-translate-y-0.5'

@@ -73,7 +73,7 @@ export function HighlightsPage({ onNavigate }: { onNavigate?: (path: string) => 
         <p className="mt-1 text-sm text-gray-500">YouTube 영상과 함께 AI가 경기 기록에서 복원한 장면 상황을 확인해 보세요.</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <aside className="lg:col-span-4 space-y-5">
+        <aside className="lg:col-span-3 space-y-5">
           <section className="rounded-3xl border border-gray-100 bg-white p-5 shadow-lg shadow-purple-950/5">
             <h2 className="mb-3 flex items-center gap-2 text-sm font-black text-gray-900"><Calendar size={17} className="text-purple-600"/> 시연 경기</h2>
             {listError && <p role="alert" className="text-xs text-rose-600">{listError}</p>}
@@ -96,13 +96,18 @@ export function HighlightsPage({ onNavigate }: { onNavigate?: (path: string) => 
             </div>}
           </section>
         </aside>
-        <section className="lg:col-span-8 min-w-0 rounded-3xl border border-gray-100 bg-white p-4 sm:p-6 shadow-lg shadow-purple-950/5">
+        <div className="lg:col-span-9 grid grid-cols-1 xl:grid-cols-9 gap-5 items-start min-w-0">
+        <section className="xl:col-span-5 min-w-0 rounded-3xl border border-gray-100 bg-white p-4 sm:p-5 shadow-lg shadow-purple-950/5">
           <div className="mb-3 flex items-center justify-between gap-3"><h2 className="font-black text-gray-900">{videoName}</h2><span className="text-xs font-mono text-gray-500">{formatHighlightTime(currentTime)} / {formatHighlightTime(data?.duration_sec ?? 0)}</span></div>
           <YouTubeHighlightPlayer key={selectedId} videoId={selectedId} onTimeUpdate={updateTime} seekSeconds={seekSeconds} seekToken={seekToken}/>
+        </section>
+        <section className="xl:col-span-4 min-w-0 rounded-3xl border border-gray-100 bg-white p-3 sm:p-4 shadow-lg shadow-purple-950/5">
+          <h2 className="px-1 pt-1 text-sm font-black text-gray-900">현재 장면 상황</h2>
           {loading && <div className="mt-5 flex items-center gap-2 rounded-xl bg-slate-50 p-4 text-sm text-gray-600"><LoaderCircle className="animate-spin" size={17}/> 장면 데이터 불러오는 중…</div>}
           {sceneError && <div role="alert" className="mt-5 flex items-center gap-2 rounded-xl bg-rose-50 p-4 text-sm text-rose-700"><AlertCircle size={17}/>{sceneError}</div>}
           {!loading && !sceneError && data && <HighlightDetailPanel key={`${selectedId}-${activeIndex}`} scene={activeScene} video={data} onNavigate={onNavigate}/>}
         </section>
+        </div>
       </div>
     </div>
   </div>;
