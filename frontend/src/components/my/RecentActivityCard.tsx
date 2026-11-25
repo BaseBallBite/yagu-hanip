@@ -37,10 +37,10 @@ export function RecentActivityCard({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="grid h-full grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
 
       {/* 최근 본 경기 */}
-      <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+      <div className="h-full min-w-0 bg-white rounded-3xl p-6 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export function RecentActivityCard({
       </div>
 
       {/* 최근 검색한 야구 용어 */}
-      <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+      <div className="h-full min-w-0 bg-white rounded-3xl p-6 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">

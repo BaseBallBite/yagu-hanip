@@ -58,7 +58,7 @@ export function OnboardingStep1({ onNavigate }: OnboardingStep1Props) {
               countNumber={4}
               countUnit="개"
               actionText="타자는 1루로 이동"
-              description="스트라이크 존 밖으로 벗어난 공이에요. 4번 모이면 볼넷으로 진루해요."
+              description={"스트라이크 존 밖으로 벗어난 공이에요.\n4번 모이면 볼넷으로 진루해요."}
             />
 
             {/* [스트라이크] Card */}
@@ -68,7 +68,7 @@ export function OnboardingStep1({ onNavigate }: OnboardingStep1Props) {
               countNumber={3}
               countUnit="개"
               actionText="타자는 아웃"
-              description="스트라이크 존을 통과했거나 헛스윙한 공이에요. 3번 모이면 삼진 아웃!"
+              description={"스트라이크 존을 통과했거나 헛스윙한 공이에요.\n3번 모이면 삼진 아웃!"}
             />
           </div>
 
