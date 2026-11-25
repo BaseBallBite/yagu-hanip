@@ -363,7 +363,7 @@ export function GameDashboard({ onNavigate }: { onNavigate?: (path: string) => v
 
   return (
     <div className="w-full flex-1 py-6 sm:py-8 animate-fade-in">
-      <div className="max-w-[1760px] w-full mx-auto px-4 sm:px-6">
+      <div className="max-w-[1450px] w-full mx-auto px-5 sm:px-8 lg:px-10">
 
         {/* 페이지 제목 */}
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
@@ -383,7 +383,7 @@ export function GameDashboard({ onNavigate }: { onNavigate?: (path: string) => v
         </div>
 
         {/* 데스크톱에서는 좌측 경기 선택 + 우측 실제 경기 기록 */}
-        <div className="grid grid-cols-1 xl:grid-cols-[260px_minmax(0,1fr)] gap-5 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-[250px_minmax(0,1fr)] gap-5 items-start">
           <aside className="min-w-0 space-y-4 xl:sticky xl:top-20">
         {/* 날짜 / 구단 검색 */}
         <div className="p-4 bg-white border border-gray-100 rounded-3xl shadow-sm">
