@@ -238,15 +238,7 @@ export default function App() {
               >
                 시작하기
               </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => navigate('/')}
-                className="px-4 py-2 rounded-xl border border-gray-200 hover:border-purple-300 text-gray-700 hover:text-purple-700 font-semibold text-xs transition cursor-pointer"
-              >
-                홈으로
-              </button>
-            )}
+            ) : null}
           </div>
         </div>
       </header>
@@ -269,7 +261,7 @@ export default function App() {
         </main>
       ) : currentPath === '/game' ? (
         <main className="flex-1 flex flex-col justify-center">
-          <GameDashboard />
+          <GameDashboard onNavigate={navigate} />
         </main>
       ) : currentPath === '/highlights' ? (
         <main className="flex-1 flex flex-col justify-center">
@@ -297,7 +289,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
               {/* LEFT */}
-              <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left">
+              <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left">
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
@@ -311,7 +303,7 @@ export default function App() {
                 </h1>
 
                 {/* Main Copy */}
-                <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-gray-900 leading-[1.38] tracking-tight mb-5 whitespace-pre-line">
+                <h2 className="text-2xl sm:text-3xl lg:text-[30px] xl:text-[32px] font-extrabold text-gray-900 leading-[1.38] tracking-tight mb-5 whitespace-pre-line">
                   야구를 하나도 몰라도,{"\n"}
 
                   <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-purple-100/80 text-purple-900 mx-1 align-middle">
@@ -319,12 +311,12 @@ export default function App() {
                     <span>한입만!</span>
                   </span>{' '}
 
-                  한 번으로 방금 장면을 이해해요
+                  한 번으로 방금 장면을 <span className="whitespace-nowrap">이해해요</span>
                 </h2>
 
                 {/* Description */}
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mb-8 max-w-xl">
-                  경기를 보다 이해하기 어려운 장면을 만나면,<br className="hidden sm:block" />
+                <p className="text-base lg:text-[15px] xl:text-base text-gray-600 leading-relaxed font-normal mb-8 max-w-none lg:whitespace-nowrap">
+                  경기를 보다 이해하기 어려운 장면을 만나면,{" "}
                   <span className="font-semibold text-gray-800">
                     AI가 쉽고 빠르게 설명
                   </span>
@@ -415,7 +407,7 @@ export default function App() {
               </div>
 
               {/* RIGHT */}
-              <div className="lg:col-span-6 xl:col-span-6">
+              <div className="lg:col-span-5 xl:col-span-5">
                 <div className="relative group">
 
                   {/* Backdrop */}
