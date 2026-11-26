@@ -137,6 +137,7 @@ def build_verified_explanation(
     p_support: Callable,
     threshold: float,
     cards_dir: Path = CARDS_DIR,
+    extra_card_ids: tuple[str, ...] = (),
 ) -> dict | None:
     """GeminiRunner.generate와 KLUE load_model의 p_support를 연결한다.
 
@@ -150,6 +151,12 @@ def build_verified_explanation(
         return None
 
     cards = _get_cards(Path(cards_dir))
+    if extra_card_ids:
+        # 질문 칩이 꼭 필요로 하는 카드(예: 볼넷 칩 → 볼넷 규칙)를 앞에 붙인다.
+        # 플레이 기준 카드는 최대 3장이므로, 칩 카드를 더해도 5장을 넘기지 않는다.
+        merged = [cid for cid in extra_card_ids if cid in cards]
+        merged += [cid for cid in item["card_ids"] if cid not in merged]
+        item["card_ids"] = merged[:5]
     pool = evidence_pool(item, cards, "B2")
     user_prompt = build_user_prompt(item, cards, "B2")
     # R IDs are trustworthy but neighboring plays are context, not the target.
