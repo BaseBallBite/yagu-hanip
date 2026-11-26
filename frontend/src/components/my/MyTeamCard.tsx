@@ -90,7 +90,7 @@ export function MyTeamCard({
   // 응원팀이 선택되지 않았을 때
   if (!team) {
     return (
-      <div className="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+      <div className="h-full min-w-0 bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
 
         <div className="absolute -top-12 -right-12 w-40 h-40 bg-purple-50 rounded-full blur-2xl pointer-events-none" />
 
@@ -146,7 +146,7 @@ export function MyTeamCard({
   };
 
   return (
-    <div className="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+    <div className="h-full min-w-0 bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
 
       {/* Top Header */}
       <div className="flex items-center justify-between mb-6">
@@ -176,17 +176,9 @@ export function MyTeamCard({
       >
         <div className="flex items-center gap-4">
 
-          {/* 구단 PNG 대신 구단명 텍스트 배지 */}
-          <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm font-black text-base select-none transition-transform hover:scale-105"
-            style={{
-              backgroundColor: teamColors.background,
-              color: teamColors.text,
-              border: '1px solid transparent',
-            }}
-            aria-label={`${team.fullName} 응원팀`}
-          >
-            <span>{team.initial || team.name}</span>
+          {/* 저장소에 포함된 10개 구단 로고 이미지 사용 */}
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 bg-white/90 p-1.5 shadow-sm">
+            <img src={team.logo} alt={`${team.fullName} 구단 로고`} className="h-full w-full object-contain" />
           </div>
 
           <div className="flex-1 min-w-0">
@@ -208,7 +200,7 @@ export function MyTeamCard({
       </div>
 
       {/* Quick Team Stats Grid */}
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-2 gap-3 mb-6">
 
         {/* Current Rank */}
         <div className="bg-gray-50/80 rounded-2xl p-3.5 border border-gray-100 flex flex-col justify-between">
@@ -245,13 +237,13 @@ export function MyTeamCard({
         </div>
 
         {/* Recent 5 Games Flow */}
-        <div className="bg-gray-50/80 rounded-2xl p-3.5 border border-gray-100 flex flex-col justify-between">
+        <div className="col-span-2 min-w-0 bg-gray-50/80 rounded-2xl p-3.5 border border-gray-100 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium mb-1">
             <TrendingUp className="w-3.5 h-3.5 text-purple-500" />
             <span>최근 5경기</span>
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap items-center gap-1.5 min-w-0">
             {team.last5.map((result, idx) => (
               <span
                 key={idx}

@@ -98,15 +98,15 @@ export function MyPage({ onNavigate }: MyPageProps) {
         </div>
 
         {/* Main content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
           {/* Left column */}
-          <div className="min-w-0">
+          <div className="min-w-0 h-full">
             <MyTeamCard team={favoriteTeamInfo} onNavigate={onNavigate} />
           </div>
 
           {/* Right column */}
-          <div className="lg:col-span-2 min-w-0">
+          <div className="lg:col-span-2 min-w-0 h-full">
             <RecentActivityCard
               games={MOCK_RECENT_GAMES}
               terms={recentTerms}

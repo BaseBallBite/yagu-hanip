@@ -66,7 +66,7 @@ export function InfoCard({
 
       {/* Sub explanation if provided */}
       {description && (
-        <p className="mt-2 text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
+        <p className="mt-2 whitespace-pre-line break-keep text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
           {description}
         </p>
       )}

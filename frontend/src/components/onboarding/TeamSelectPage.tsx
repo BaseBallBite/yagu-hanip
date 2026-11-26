@@ -145,18 +145,11 @@ hoverBorder: '#FDA4AF',
   },
 ];
 
-// 구단 로고 대신 사용하는 텍스트 배지
+// 최신 main에 포함된 구단별 PNG 로고를 사용합니다.
 function TeamLogoRenderer({ team }: { team: TeamData }) {
   return (
-    <div
-      className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2 font-black text-sm shadow-xs select-none transition-transform group-hover:scale-105 shrink-0"
-      style={{
-        backgroundColor: team.primaryColor,
-        color: team.textColor,
-      }}
-      aria-label={`${team.name} 구단`}
-    >
-      <span>{team.initial}</span>
+    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-2 bg-white/90 p-1 shadow-xs transition-transform group-hover:scale-105 shrink-0">
+      <img src={`/logos/${team.id}.png`} alt={`${team.name} 구단 로고`} className="w-full h-full object-contain" />
     </div>
   );
 }
