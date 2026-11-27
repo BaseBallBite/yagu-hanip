@@ -1,2 +1,3 @@
-# Main
-Main repository
+# ⚾ 야구한입 (Yagu-Hanip)
+
+야구를 하나도 몰라도, "🤔 왜?" 한 번으로 방금 장면을 이해하는 AI 야구 해설 서비스
