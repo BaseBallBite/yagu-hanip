@@ -16,8 +16,8 @@ import { HighlightsPage } from './components/highlights/HighlightsPage';
 import { RankingPage } from './components/ranking/RankingPage';
 import { DictionaryPage } from './components/dictionary/DictionaryPage';
 import { MyPage } from './components/my/MyPage';
+import { TeamMascot } from './components/common/TeamMascot';
 
-const LOGO_PATH = '/images/yagu-hanip-logo.png';
 
 const KNOWN_PATHS = [
   '/guide',
@@ -83,9 +83,11 @@ export default function App() {
 
     applyTeamTheme();
     window.addEventListener('storage', applyTeamTheme);
+    window.addEventListener('yagu:favorite-team-changed', applyTeamTheme);
 
     return () => {
       window.removeEventListener('storage', applyTeamTheme);
+      window.removeEventListener('yagu:favorite-team-changed', applyTeamTheme);
     };
   }, [currentPath]);
 
@@ -187,11 +189,7 @@ export default function App() {
             aria-label="야구한입 홈으로 이동"
           >
             <div className="w-10 h-10 rounded-2xl overflow-hidden transition-transform group-hover:scale-105 shrink-0">
-              <img
-                src={LOGO_PATH}
-                alt="야구한입 로고"
-                className="w-full h-full object-cover"
-              />
+              <TeamMascot variant="header" alt="야구한입 로고" className="w-full h-full object-cover" />
             </div>
 
             <div className="flex items-baseline gap-2">
@@ -307,7 +305,7 @@ export default function App() {
                   야구를 하나도 몰라도,{"\n"}
 
                   <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-purple-100/80 text-purple-900 mx-1 align-middle">
-                    <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="inline-block h-[1em] w-[1em] shrink-0 object-contain" />
+                    <TeamMascot alt="" className="inline-block h-[1em] w-[1em] shrink-0 object-contain" />
                     <span>한입만!</span>
                   </span>{' '}
 
@@ -337,7 +335,7 @@ export default function App() {
                         <span>경기 중</span>
 
                         <span className="inline-flex items-center gap-1 text-purple-600 font-black">
-                          <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="h-5 w-5 shrink-0 object-contain" />
+                          <TeamMascot alt="" className="h-5 w-5 shrink-0 object-contain" />
                           한입만!
                         </span>
 
@@ -617,7 +615,7 @@ export default function App() {
                         title="클릭하여 AI 해설 보기 또는 접기"
                       >
                         
-                        <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="h-5 w-5 shrink-0 object-contain" />
+                        <TeamMascot alt="" className="h-5 w-5 shrink-0 object-contain" />
                         <span>한입만!</span>
 
                         <span className="text-[11px] font-normal opacity-90">

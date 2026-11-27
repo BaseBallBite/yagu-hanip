@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { TeamMascot } from '../common/TeamMascot';
 import { useState } from 'react';
 import type { AtBatPlay } from '../../data/mockGameData';
 import { StrikeZoneMini } from './StrikeZoneMini';
@@ -236,7 +237,7 @@ export function CurrentAtBatCard({
             이 장면 쉽게 이해하기
           </span>
 
-          <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="ml-auto h-7 w-7 shrink-0 object-contain" />
+          <TeamMascot alt="" className="ml-auto h-7 w-7 shrink-0 object-contain" />
         </button>
       </div>
     </div>
