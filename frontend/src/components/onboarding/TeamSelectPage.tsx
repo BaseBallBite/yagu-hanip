@@ -173,6 +173,7 @@ export function TeamSelectPage({
 
     if (typeof window !== 'undefined') {
       localStorage.setItem('favoriteTeam', teamName);
+      window.dispatchEvent(new Event('yagu:favorite-team-changed'));
     }
   };
 
@@ -181,6 +182,7 @@ export function TeamSelectPage({
 
     if (typeof window !== 'undefined') {
       localStorage.setItem('favoriteTeam', 'NONE');
+      window.dispatchEvent(new Event('yagu:favorite-team-changed'));
     }
   };
 

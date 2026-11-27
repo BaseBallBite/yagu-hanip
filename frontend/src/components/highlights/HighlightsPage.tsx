@@ -72,8 +72,8 @@ export function HighlightsPage({ onNavigate }: { onNavigate?: (path: string) => 
         <h1 className="text-2xl sm:text-3xl font-black text-gray-900">경기 하이라이트</h1>
         <p className="mt-1 text-sm text-gray-500">YouTube 영상과 함께 AI가 경기 기록에서 복원한 장면 상황을 확인해 보세요.</p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[225px_minmax(0,1fr)] 2xl:grid-cols-[245px_minmax(0,1fr)] gap-4 xl:gap-5 items-start">
-        <aside className="min-w-0 space-y-5">
+      <div className="grid grid-cols-1 lg:grid-cols-[225px_minmax(0,1fr)] 2xl:grid-cols-[245px_minmax(0,1fr)] gap-4 xl:gap-5 items-start xl:h-[calc(100dvh-235px)] xl:min-h-[450px] xl:overflow-hidden">
+        <aside className="min-w-0 space-y-5 xl:h-full xl:min-h-0 xl:overflow-y-auto xl:overscroll-contain xl:pr-1" aria-label="시연 경기와 장면 탐색">
           <section className="rounded-3xl border border-gray-100 bg-white p-5 shadow-lg shadow-purple-950/5">
             <h2 className="mb-3 flex items-center gap-2 text-sm font-black text-gray-900"><Calendar size={17} className="text-purple-600"/> 시연 경기</h2>
             {listError && <p role="alert" className="text-xs text-rose-600">{listError}</p>}
@@ -96,12 +96,12 @@ export function HighlightsPage({ onNavigate }: { onNavigate?: (path: string) => 
             </div>}
           </section>
         </aside>
-        <div className="min-w-0 grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(275px,310px)] gap-4 xl:gap-5 items-start">
+        <div className="min-w-0 grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(275px,310px)] gap-4 xl:gap-5 items-start xl:h-full xl:min-h-0">
         <section className="min-w-0 rounded-3xl border border-gray-100 bg-white p-3 sm:p-4 shadow-lg shadow-purple-950/5">
           <div className="mb-3 flex items-center justify-between gap-3"><h2 className="font-black text-gray-900">{videoName}</h2><span className="text-xs font-mono text-gray-500">{formatHighlightTime(currentTime)} / {formatHighlightTime(data?.duration_sec ?? 0)}</span></div>
           <YouTubeHighlightPlayer key={selectedId} videoId={selectedId} onTimeUpdate={updateTime} seekSeconds={seekSeconds} seekToken={seekToken}/>
         </section>
-        <section className="min-w-0 rounded-3xl border border-gray-100 bg-white p-4 sm:p-5 shadow-lg shadow-purple-950/5" aria-live="polite">
+        <section className="min-w-0 rounded-3xl border border-gray-100 bg-white p-4 sm:p-5 shadow-lg shadow-purple-950/5 xl:h-full xl:min-h-0 xl:overflow-y-auto xl:overscroll-contain" aria-live="polite" aria-label="현재 장면 상황 스크롤 영역">
           <h2 className="px-1 pt-1 text-sm font-black text-gray-900">현재 장면 상황</h2>
           <div className="mt-3 mb-3 flex flex-wrap items-center gap-2 text-xs" aria-label="영상과 연동된 현재 장면 요약">
             <span className="rounded-full bg-purple-50 px-2.5 py-1 font-bold text-purple-800">현재 장면</span>

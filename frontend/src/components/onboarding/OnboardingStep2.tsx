@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { TeamMascot } from '../common/TeamMascot';
 import React from 'react';
 import {
   Sparkles,
@@ -23,7 +24,7 @@ export interface OnboardingStep2Props {
 function HanipLabel() {
   return (
     <span className="inline-flex items-center gap-1 whitespace-nowrap align-middle">
-      <img src="/images/hanip-bite-mascot.png" alt="" aria-hidden="true" className="inline-block h-[1.2em] w-[1.2em] shrink-0 object-contain" />
+      <TeamMascot alt="" className="inline-block h-[1.2em] w-[1.2em] shrink-0 object-contain" />
       한입만!
     </span>
   );
